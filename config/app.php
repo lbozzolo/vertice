@@ -181,6 +181,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        /*
+         * GUI Interface - Generator Builder...
+         */
+        \InfyOm\GeneratorBuilder\GeneratorBuilderServiceProvider::class,
 
     ],
 
