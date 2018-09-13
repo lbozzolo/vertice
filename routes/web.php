@@ -15,6 +15,7 @@ Route::get('/', function () {
   return redirect('home');
 });
 
+
 Route::group(['prefix' => 'admin'], function(){
 
     Route::get('/', [
@@ -51,6 +52,8 @@ Route::get('imagenes/principal/{id}', [
     'uses' => 'EmpresaController@principalImage',
 ]);*/
 
+Route::resource('users', 'UserController');
+
 Route::resource('servicios', 'ServicioController');
 
 Route::resource('proyectos', 'ProyectoController');
@@ -80,7 +83,5 @@ Route::get('imagenes/{id}/{class}/{imagen}/principal', [
 Route::resource('categorias', 'CategoriaController');
 
 Route::resource('categoriables', 'CategoriableController');
-
-Route::resource('sliders', 'SliderController');
 
 Route::resource('sliders', 'SliderController');

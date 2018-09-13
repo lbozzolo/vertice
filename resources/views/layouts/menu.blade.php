@@ -1,4 +1,4 @@
-@if(Auth::user()->isAdmin())
+@if(Auth::user()->isSuperAdmin())
 <li>
     <a href="generator_builder">
         <i class="fa fa-building-o"></i>
@@ -6,6 +6,11 @@
     </a>
 </li>
 @endif
+
+
+<li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
+    <a href="{!! route('users.index') !!}"><i class="fa fa-edit"></i><span>Usuarios</span></a>
+</li>
 <li class="{{ Request::is('empresas*') ? 'active' : '' }}">
     <a href="{!! route('empresas.index') !!}"><i class="fa fa-edit"></i><span>Empresas</span></a>
 </li>

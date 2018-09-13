@@ -13,6 +13,10 @@ class User extends Authenticatable
     use Notifiable;
     use SoftDeletes;
 
+    public $table = 'users';
+
+    protected $dates = ['deleted_at'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -34,8 +38,23 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function isAdmin()
+    protected $casts = [
+        'name' => 'string',
+        'lastname' => 'string',
+        'email' => 'string'
+    ];
+
+    public static $rules = [
+
+    ];
+
+    public function isSuperAdmin()
     {
         return ($this->email == 'lucas@verticedigital.com.ar' || $this->email == 'fernando@verticedigital.com.ar');
+    }
+
+    public function getFullnameAttribute()
+    {
+        return $this->name . ' ' . $this->lastname;
     }
 }

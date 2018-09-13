@@ -14,11 +14,11 @@
     @forelse($slider->images as $imagen)
 
         <li>
-                <span style="display: inline-block">
-                    <a href="" data-toggle="modal" data-target="#modalVerImage{!! $imagen->id !!}">
-                        <img src="{{ route('imagenes.ver', $imagen->path) }}" alt="{!! $imagen->title !!}" class="img-responsive" style="{!! ($imagen->main == 0)? 'opacity: 0.5;' : '' !!} height: 80px">
-                    </a>
-                </span>
+            <span style="display: inline-block">
+                <a href="" data-toggle="modal" data-target="#modalVerImage{!! $imagen->id !!}">
+                    <img src="{{ route('imagenes.ver', $imagen->path) }}" alt="{!! $imagen->title !!}" class="img-responsive" style="{!! ($imagen->main == 0)? 'opacity: 0.5;' : '' !!} height: 80px">
+                </a>
+            </span>
         </li>
 
     @empty

@@ -75,11 +75,8 @@ class SliderController extends AppBaseController
     {
         $slider = $this->sliderRepository->findWithoutFail($id);
 
-        if (empty($slider)) {
-            Flash::error('Slider not found');
-
-            return redirect(route('sliders.index'));
-        }
+        if (empty($slider))
+            return redirect(route('sliders.index'))->withErrors('Slider no encontrado');
 
         return view('sliders.show')->with('slider', $slider);
     }
@@ -95,11 +92,8 @@ class SliderController extends AppBaseController
     {
         $slider = $this->sliderRepository->findWithoutFail($id);
 
-        if (empty($slider)) {
-            Flash::error('Slider not found');
-
-            return redirect(route('sliders.index'));
-        }
+        if (empty($slider))
+            return redirect(route('sliders.index'))->withErrors('Slider no encontrado');
 
         return view('sliders.edit')->with('slider', $slider);
     }
@@ -116,17 +110,12 @@ class SliderController extends AppBaseController
     {
         $slider = $this->sliderRepository->findWithoutFail($id);
 
-        if (empty($slider)) {
-            Flash::error('Slider not found');
-
-            return redirect(route('sliders.index'));
-        }
+        if (empty($slider))
+            return redirect(route('sliders.index'))->withErrors('Slider no encontrado');
 
         $slider = $this->sliderRepository->update($request->all(), $id);
 
-        Flash::success('Slider updated successfully.');
-
-        return redirect(route('sliders.index'));
+        return redirect(route('sliders.index'))->with('ok', 'Slider editado con éxito');
     }
 
     /**
@@ -140,16 +129,11 @@ class SliderController extends AppBaseController
     {
         $slider = $this->sliderRepository->findWithoutFail($id);
 
-        if (empty($slider)) {
-            Flash::error('Slider not found');
-
-            return redirect(route('sliders.index'));
-        }
+        if (empty($slider))
+            return redirect(route('sliders.index'))->withErrors('Slider no encontrado');
 
         $this->sliderRepository->delete($id);
 
-        Flash::success('Slider deleted successfully.');
-
-        return redirect(route('sliders.index'));
+        return redirect(route('sliders.index'))->with('ok', 'Slider eliminado con éxito');
     }
 }

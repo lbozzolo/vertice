@@ -133,7 +133,9 @@ class ImageController extends AppBaseController
         if (empty($image))
             return redirect(route('images.index'))->withErrors('Imagen no encontrada');
 
-        $this->imageRepository->forceDelete($id);
+        //$this->imageRepository->forceDelete($id);
+        $image->forceDelete();
+
         File::delete(public_path("imagenes/".$image->path));
 
         return redirect()->back()->with('ok', 'Imagen eliminada con éxito');
@@ -153,6 +155,7 @@ class ImageController extends AppBaseController
 
         $class = 'App\Models\\'.$class;
         $model = $class::find($id);
+        //dd($request->file('img'));
 
         // Redirección si supera el máximo de fotos permitido
         if($model->images->count() >= config('imagenes.MAX_NUMBER_IMAGES'))

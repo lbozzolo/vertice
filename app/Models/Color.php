@@ -14,12 +14,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Color extends Model
 {
-    use SoftDeletes;
 
     public $table = 'colors';
-    
-
-    protected $dates = ['deleted_at'];
 
 
     public $fillable = [
