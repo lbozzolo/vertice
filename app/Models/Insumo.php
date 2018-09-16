@@ -44,7 +44,10 @@ class Insumo extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|max:255',
+        'code' => 'required',
+        'colors' => 'min:1',
+        'categorias' => 'min:1',
     ];
 
     public function images()

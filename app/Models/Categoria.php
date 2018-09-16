@@ -44,12 +44,13 @@ class Categoria extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required'
     ];
 
     public function insumos()
     {
         return $this->morphedByMany('App\Models\Insumo', 'categoriable');
     }
+
     
 }

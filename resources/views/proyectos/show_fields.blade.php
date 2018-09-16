@@ -6,13 +6,13 @@
 
 <!-- Title Field -->
 <div class="form-group">
-    {!! Form::label('title', 'Title:') !!}
+    {!! Form::label('title', 'Título:') !!}
     <p>{!! $proyecto->title !!}</p>
 </div>
 
 <!-- Body Field -->
 <div class="form-group">
-    {!! Form::label('body', 'Body:') !!}
+    {!! Form::label('body', 'Texto:') !!}
     <p>{!! $proyecto->body !!}</p>
 </div>
 

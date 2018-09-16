@@ -18,14 +18,18 @@
             <td>{!! $insumo->name !!}</td>
             <td>{!! $insumo->code !!}</td>
             <td>
-                @foreach($insumo->colors as $color)
+                @forelse($insumo->colors as $color)
                     <span class="label label-default">{!! $color->name !!}</span>
-                @endforeach
+                @empty
+                    --
+                @endforelse
             </td>
             <td>
-                @foreach($insumo->categorias as $categoria)
+                @forelse($insumo->categorias as $categoria)
                     <span class="label label-default">{!! $categoria->name !!}</span>
-                @endforeach
+                @empty
+                    --
+                @endforelse
             </td>
             <td>{!! $insumo->created_at !!}</td>
             <td>{!! $insumo->updated_at !!}</td>
@@ -34,7 +38,7 @@
                 <div class='btn-group'>
                     <a href="{!! route('insumos.show', [$insumo->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                     <a href="{!! route('insumos.edit', [$insumo->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('¿Está seguro que desea eliminar este insumo?')"]) !!}
                 </div>
                 {!! Form::close() !!}
             </td>

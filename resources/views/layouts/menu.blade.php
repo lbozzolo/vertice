@@ -32,19 +32,17 @@
 </li>
 
 <li class="{{ Request::is('colors*') ? 'active' : '' }}">
-    <a href="{!! route('colors.index') !!}"><i class="fa fa-edit"></i><span>Colors</span></a>
+    <a href="{!! route('colors.index') !!}"><i class="fa fa-edit"></i><span>Colores</span></a>
 </li>
 
+@if(Auth::user()->isSuperAdmin())
 <li class="{{ Request::is('images*') ? 'active' : '' }}">
-    <a href="{!! route('images.index') !!}"><i class="fa fa-edit"></i><span>Images</span></a>
+    <a href="{!! route('images.index') !!}"><i class="fa fa-edit"></i><span>Imágenes</span></a>
 </li>
+@endif
 
 <li class="{{ Request::is('categorias*') ? 'active' : '' }}">
     <a href="{!! route('categorias.index') !!}"><i class="fa fa-edit"></i><span>Categorias</span></a>
-</li>
-
-<li class="{{ Request::is('categoriables*') ? 'active' : '' }}">
-    <a href="{!! route('categoriables.index') !!}"><i class="fa fa-edit"></i><span>Categoriables</span></a>
 </li>
 
 <li class="{{ Request::is('sliders*') ? 'active' : '' }}">

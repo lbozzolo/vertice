@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Slider
+            Sliders / Agregar
         </h1>
     </section>
     <div class="content">

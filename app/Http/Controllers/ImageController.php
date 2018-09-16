@@ -13,6 +13,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\Models\Image;
 use App\Models\Empresa;
+use Illuminate\Support\Facades\Auth;
 
 class ImageController extends AppBaseController
 {
@@ -32,6 +33,9 @@ class ImageController extends AppBaseController
      */
     public function index(Request $request)
     {
+        if(!Auth::user()->isSuperAdmin())
+            return abort(403);
+
         $this->imageRepository->pushCriteria(new RequestCriteria($request));
         $images = $this->imageRepository->all();
 

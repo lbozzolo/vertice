@@ -6,6 +6,7 @@ use App\Http\Requests\CreateInsumoRequest;
 use App\Http\Requests\UpdateInsumoRequest;
 use App\Models\Color;
 use App\Models\Categoria;
+use App\Models\Insumo;
 use App\Repositories\InsumoRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -34,8 +35,7 @@ class InsumoController extends AppBaseController
         $this->insumoRepository->pushCriteria(new RequestCriteria($request));
         $data['insumos'] = $this->insumoRepository->all();
 
-        return view('insumos.index')
-            ->with($data);
+        return view('insumos.index')->with($data);
     }
 
     /**
@@ -45,7 +45,9 @@ class InsumoController extends AppBaseController
      */
     public function create()
     {
-        return view('insumos.create');
+        $data['colors'] = Color::all()->pluck('name', 'id');
+        $data['categorias'] = Categoria::all()->pluck('name', 'id');
+        return view('insumos.create')->with($data);
     }
 
     /**
@@ -58,17 +60,13 @@ class InsumoController extends AppBaseController
     public function store(CreateInsumoRequest $request)
     {
         $input = $request->all();
+
         $insumo = $this->insumoRepository->create($input);
 
-        /*if($request->categorias){
-            foreach($request->categorias as $id){
-                $insumo->categorias()->create([
-                    'categoriable_id' => $insumo->id,
-                    'categoriable_type' => 'App\Models\Insumo',
-                    'categoria_id' => $id
-                ]);
-            }
-        }*/
+        foreach($input['categorias'] as $key => $value){
+            $categoria = Categoria::find($value);
+            $insumo->categorias()->attach($categoria);
+        }
 
         return redirect(route('insumos.index'))->with('ok', 'Insumo creado con éxito');
     }

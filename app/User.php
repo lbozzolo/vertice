@@ -45,7 +45,10 @@ class User extends Authenticatable
     ];
 
     public static $rules = [
-
+        'name' => 'required',
+        'lastname' => 'required',
+        'email' => 'required|unique:users,email|email',
+        'password' => 'required|max:6'
     ];
 
     public function isSuperAdmin()

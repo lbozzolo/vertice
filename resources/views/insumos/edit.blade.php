@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Insumo
+            Insumo / Editar
         </h1>
    </section>
    <div class="content">

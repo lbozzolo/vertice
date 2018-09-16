@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Insumo
+            Insumo / Agrear
         </h1>
     </section>
     <div class="content">
@@ -21,4 +21,17 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('scripts')
+
+    <script>
+
+        $('.select2').select2({
+           multiple: true
+        });
+
+    </script>
+
 @endsection

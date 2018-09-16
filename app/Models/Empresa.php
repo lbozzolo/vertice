@@ -45,7 +45,8 @@ class Empresa extends Model
      * @var array
      */
     public static $rules = [
-        
+        'title' => 'required',
+        'body' => 'required'
     ];
 
     public function images()

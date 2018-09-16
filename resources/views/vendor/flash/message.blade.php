@@ -1,4 +1,4 @@
-<div class="row navbar-fixed-top">
+<div class="row">
 
     {{-- Errores --}}
     @if ($errors->count() > 0)

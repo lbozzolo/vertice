@@ -16,7 +16,7 @@ class Color extends Model
 {
 
     public $table = 'colors';
-
+    public $timestamps = false;
 
     public $fillable = [
         'name'
@@ -37,7 +37,7 @@ class Color extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required'
     ];
 
     public function insumos()

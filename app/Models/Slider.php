@@ -41,7 +41,7 @@ class Slider extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required'
     ];
 
     public function images()
