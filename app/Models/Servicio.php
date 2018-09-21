@@ -53,5 +53,10 @@ class Servicio extends Model
         return $this->morphMany(Image::class, 'imageable');
     }
 
+    public function getTitleMayusAttribute()
+    {
+        return strtoupper($this->title);
+    }
+
     
 }

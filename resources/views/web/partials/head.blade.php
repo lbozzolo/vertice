@@ -11,6 +11,7 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('template-web/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-web/estilos.css') }}">
 
     <!-- Colors -->
     <link rel="stylesheet" type="text/css" href="{{ asset('template-web/assets/css/colors/color1.css') }}" id="colors">

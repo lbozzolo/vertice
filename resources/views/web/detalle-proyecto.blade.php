@@ -46,6 +46,7 @@
                                                         {{--<a href="#" class="themesflat-button font-default bg-light-white w100"><span>Brochures.DOC <span class="icon"><i class="fa fa-file-word-o"></i></span></span></a>--}}
                                                     {{--</div>--}}
                                                 {{--</div>--}}
+
                                             </div>
                                             <div class="detail-gallery">
                                                 <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21"></div>

@@ -24,23 +24,21 @@
                                                         </div>
                                                     </div>
                                                     <ul class="list-info has-icon icon-left">
-                                                        <li><span class="text">Insumo <span class="icon"><i class="fa fa-user"></i></span></span><span class="right">{!! $insumo->name !!}</span></li>
-                                                        <li><span class="text">Código <span class="icon"><i class="fa fa-search"></i></span></span><span class="right">{!! $insumo->code !!}</span></li>
+                                                        <li><span class="text">Insumo <span class="icon"><i class="fa fa-cube"></i></span></span><span class="right">{!! $insumo->name !!}</span></li>
+                                                        <li><span class="text">Código <span class="icon"><i class="fa fa-code"></i></span></span><span class="right">{!! $insumo->code !!}</span></li>
                                                         <li>
-                                                            <span class="text">Colores<span class="icon"><i class="fa fa-calendar"></i></span></span><span class="right">
+                                                            <span class="text">Colores<span class="icon"><i class="fa fa-flag-o"></i></span></span><span class="right">
                                                                 @forelse($insumo->colors as $color)
-                                                                    <span class="label label-default">{!! $color->name !!}</span>
+                                                                    <span class="label">{!! $color->name !!}</span>
                                                                 @empty
                                                                     <span>no hay información</span>
                                                                 @endforelse
                                                             </span>
                                                         </li>
                                                         <li>
-                                                            <span class="text">Categorías<span class="icon"><i class="fa fa-calendar"></i></span></span><span class="right">
+                                                            <span class="text">Categorías<span class="icon"><i class="fa fa-random"></i></span></span><span class="right">
                                                                 @foreach($insumo->categorias as $categoria)
-                                                                    <span class="text-muted"> | </span>
-                                                                    <span>{!! $categoria->name !!}</span>
-                                                                    <span class="text-muted"> | </span>
+                                                                    <span class="label">{!! $categoria->name !!}</span>
                                                                 @endforeach
                                                             </span>
                                                         </li>
@@ -72,7 +70,7 @@
                                                     </div>
                                                 </div><!-- /.themesflat-cousel-box -->
                                                 <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="40" data-smobile="40"></div>
-                                               
+
                                             </div>
                                         </div>
                                         <div class="themesflat-spacer clearfix" data-desktop="58" data-mobile="60" data-smobile="60"></div>

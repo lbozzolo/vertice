@@ -8,8 +8,11 @@
                 <div id="inner-content" class="inner-content-wrap">
                    <div class="page-content" style="padding-bottom: 100px">
 
+                    @if($slider)
 
                        @include('web.partials.sliders')
+
+                   @endif
 
 
                        @include('web.partials.eleccion')

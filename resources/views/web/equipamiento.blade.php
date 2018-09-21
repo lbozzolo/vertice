@@ -51,9 +51,7 @@
                                                             <div class="elm-meta">
                                                                 <ul class="list-inline">
                                                                     @foreach($insumo->categorias as $categoria)
-                                                                        <span style="color: lightgray"> | </span>
-                                                                        <span class="label label-default">{!! $categoria->name !!}</span>
-                                                                        <span style="color: lightgray"> | </span>
+                                                                        <span class="label">{!! $categoria->name !!}</span>
                                                                     @endforeach
                                                                 </ul>
                                                             </div>

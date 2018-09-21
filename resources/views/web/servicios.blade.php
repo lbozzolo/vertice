@@ -30,6 +30,8 @@
                                     </div><!-- /.col-md-12 -->
                                 </div><!-- /.row -->
 
+
+
                                 <div class="themesflat-row gutter-30 clearfix">
                                     <div class="col span_1_of_6">
                                         <div class="themesflat-icon-box icon-left accent-color style-2 clearfix">
@@ -37,8 +39,8 @@
                                                 <i class="autora-icon-build"></i>
                                             </div>
                                             <div class="text-wrap">
-                                                <h5 class="heading"><a href="#">DIRECCION TECNICA</a></h5>
-                                                <p class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                <h5 class="heading"><a href="#">{!! $servicios[0]->title_mayus !!}</a></h5>
+                                                <p class="sub-heading">{!! $servicios[0]->body !!}</p>
                                             </div>
                                         </div><!-- /.themesflat-icon-box -->
                                         <div class="themesflat-spacer clearfix" data-desktop="62" data-mobile="35" data-smobile="35"></div>
@@ -47,8 +49,8 @@
                                                 <i class="autora-icon-hat-outline"></i>
                                             </div>
                                             <div class="text-wrap">
-                                                <h5 class="heading"><a href="#">ARMADO DE STANDS</a></h5>
-                                                <p class="sub-heading margin-top-18">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                <h5 class="heading"><a href="#">{!! $servicios[1]->title_mayus !!}</a></h5>
+                                                <p class="sub-heading margin-top-18">{!! $servicios[1]->body !!}</p>
                                             </div>
                                         </div><!-- /.themesflat-icon-box -->
                                     </div><!-- /.col-md-4 -->
@@ -60,8 +62,8 @@
                                                 <i class="autora-icon-author-outline"></i>
                                             </div>
                                             <div class="text-wrap">
-                                                <h5 class="heading"><a href="#">MANAGEMENT</a></h5>
-                                                <p class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                <h5 class="heading"><a href="#">{!! $servicios[2]->title_mayus !!}</a></h5>
+                                                <p class="sub-heading">{!! $servicios[2]->body !!}</p>
                                             </div>
                                         </div><!-- /.themesflat-icon-box -->
                                         <div class="themesflat-spacer clearfix" data-desktop="62" data-mobile="35" data-smobile="35"></div>
@@ -70,8 +72,8 @@
                                                 <i class="autora-icon-build-home"></i>
                                             </div>
                                             <div class="text-wrap">
-                                                <h5 class="heading"><a href="#">IDEAS Y CREATIVIDAD</a></h5>
-                                                <p class="sub-heading margin-top-18">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                <h5 class="heading"><a href="#">{!! $servicios[3]->title_mayus !!}</a></h5>
+                                                <p class="sub-heading margin-top-18">{!! $servicios[3]->body !!}</p>
                                             </div>
                                         </div><!-- /.themesflat-icon-box -->
                                     </div><!-- /.col-md-4 -->

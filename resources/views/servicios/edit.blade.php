@@ -21,11 +21,11 @@
                            {!! Form::close() !!}
                        </div>
                    </div>
-                   <div class="col-lg-6">
+                   {{--<div class="col-lg-6">--}}
 
-                       @include('servicios.images')
+                       {{--@include('servicios.images')--}}
 
-                   </div>
+                   {{--</div>--}}
                </div>
            </div>
        </div>

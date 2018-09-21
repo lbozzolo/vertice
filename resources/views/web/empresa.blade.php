@@ -41,7 +41,7 @@
                             <div class="container-fluid">
                                 <div class="row equalize sm-equalize-auto">
                                     <div class="col-md-6 half-background style-1">
-                                        <img src="{{ asset('template-web/assets/img/gallery/gallery-1-960x560.jpg') }}" alt="" data-bgposition="center center" data-no-retina>
+                                        <img src="{{ asset('imagenes/estaticas/gallery-1-960x560.jpg') }}" alt="" data-bgposition="center center" data-no-retina>
                                     </div><!-- /.col-md-6 -->
                                     <div class="col-md-6 bg-light-grey">
                                         <div class="themesflat-spacer clearfix" data-desktop="64" data-mobile="35" data-smobile="35"></div>

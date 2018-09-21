@@ -23,17 +23,10 @@
                                                         <div class="sep has-width w80 accent-bg clearfix">
                                                         </div>
                                                     </div>
-                                                    <ul class="list-info has-icon icon-left">
-                                                        <li><span class="text">Evento <span class="icon"><i class="fa fa-user"></i></span></span><span class="right">{!! $evento->title !!}</span></li>
-                                                        <li><span class="text">Código <span class="icon"><i class="fa fa-search"></i></span></span><span class="right">145, mts </span></li>
-                                                        <li><span class="text">Colores<span class="icon"><i class="fa fa-calendar"></i></span></span><span class="right">2017</span></li>
-                                                        <li>
-                                                            <span class="text">Categorías<span class="icon"><i class="fa fa-calendar"></i></span></span><span class="right">
-
-                                                            </span>
-                                                        </li>
-                                                    </ul>
+                                                    <div class="themesflat-spacer clearfix" data-desktop="34" data-mobile="35" data-smobile="35"></div>
+                                                    <p>{!! $evento->body !!}</p>
                                                 </div><!-- /.content-info -->
+
 
                                                 <div class="themesflat-spacer clearfix" data-desktop="46" data-mobile="35" data-smobile="35"></div>
 
@@ -60,15 +53,7 @@
 
                                                     </div>
                                                 </div><!-- /.themesflat-cousel-box -->
-                                                <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="40" data-smobile="40"></div>
-                                                <div class="flat-content-wrap style-3 clearfix">
-                                                    <h5 class="title">DESCRIPCION DEL EVENTO</h5>
-                                                    <div class="sep has-width w60 accent-bg margin-top-18 clearfix"></div>
-                                                    <p class="margin-top-28">{!! $evento->body !!}</p>
-
-                                                </div>
                                             </div>
-                                        </div>
                                         <div class="themesflat-spacer clearfix" data-desktop="58" data-mobile="60" data-smobile="60"></div>
                                     </div>
                                 </div><!-- /.row -->
