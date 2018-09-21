@@ -50,9 +50,23 @@ class Insumo extends Model
         'categorias' => 'min:1',
     ];
 
+    public function getMainImageAttribute()
+    {
+        $images = $this->images();
+        return $images->where('main', 1)->first();
+    }
+
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function getImagesOrderedAttribute()
+    {
+        $images = $this->images()->get();
+        $imagenes = $images->sortByDesc('main')->all();
+
+        return $imagenes;
     }
 
     public function colors()

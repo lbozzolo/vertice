@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Eloquent as Model;
 
 /**
  * Class Proyecto
@@ -51,6 +51,20 @@ class Proyecto extends Model
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function getImagesOrderedAttribute()
+    {
+        $images = $this->images()->get();
+        $imagenes = $images->sortByDesc('main')->all();
+
+        return $imagenes;
+    }
+
+    public function getMainImageAttribute()
+    {
+        $images = $this->images();
+        return $images->where('main', 1)->first();
     }
 
     

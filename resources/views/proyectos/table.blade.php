@@ -4,6 +4,7 @@
             <th>Id</th>
             <th>Título</th>
             <th>Texto</th>
+            <th>Imágenes</th>
             <th>Created_at</th>
             <th>Updated_at</th>
             <th colspan="3">Action</th>
@@ -15,6 +16,7 @@
             <td>{!! $proyecto->id !!}</td>
             <td>{!! $proyecto->title !!}</td>
             <td>{!! $proyecto->body !!}</td>
+            <td class="text-center">{!! count($proyecto->images) !!}</td>
             <td>{!! $proyecto->created_at !!}</td>
             <td>{!! $proyecto->updated_at !!}</td>
             <td>

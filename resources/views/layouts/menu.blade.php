@@ -1,4 +1,4 @@
-@if(Auth::user()->isSuperAdmin())
+@if(Auth::check() && Auth::user()->isSuperAdmin())
 <li>
     <a href="generator_builder">
         <i class="fa fa-building-o"></i>
@@ -35,7 +35,7 @@
     <a href="{!! route('colors.index') !!}"><i class="fa fa-edit"></i><span>Colores</span></a>
 </li>
 
-@if(Auth::user()->isSuperAdmin())
+@if(Auth::check() && Auth::user()->isSuperAdmin())
 <li class="{{ Request::is('images*') ? 'active' : '' }}">
     <a href="{!! route('images.index') !!}"><i class="fa fa-edit"></i><span>Imágenes</span></a>
 </li>

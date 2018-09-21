@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Slider;
 
 class SliderController extends AppBaseController
 {
@@ -118,6 +119,21 @@ class SliderController extends AppBaseController
         return redirect(route('sliders.index'))->with('ok', 'Slider editado con éxito');
     }
 
+    public function activate($id)
+    {
+        $slider = Slider::find($id);
+        $sliders = Slider::all();
+
+        foreach($sliders as $item){
+            $item->active = null;
+            $item->save();
+        }
+
+        $slider->active = 1;
+        $slider->save();
+
+        return redirect()->back()->with('ok', 'Slider activado');
+    }
     /**
      * Remove the specified Slider from storage.
      *
@@ -131,6 +147,9 @@ class SliderController extends AppBaseController
 
         if (empty($slider))
             return redirect(route('sliders.index'))->withErrors('Slider no encontrado');
+
+        if($slider->active)
+            return redirect()->back()->withErrors('No se puede eliminar el slider porque está activo. Active otro slider y vuelva a intentar');
 
         $this->sliderRepository->delete($id);
 

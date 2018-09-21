@@ -4,6 +4,7 @@
             <th>Id</th>
             <th>Título</th>
             <th>Texto</th>
+            <th>Imágenes</th>
             <th>Created_at</th>
             <th>Updated_at</th>
             <th colspan="3">Action</th>
@@ -15,6 +16,7 @@
             <td>{!! $evento->id !!}</td>
             <td>{!! $evento->title !!}</td>
             <td>{!! $evento->body !!}</td>
+            <td class="text-center">{!! count($evento->images) !!}</td>
             <td>{!! $evento->created_at !!}</td>
             <td>{!! $evento->updated_at !!}</td>
             <td>

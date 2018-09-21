@@ -43,10 +43,11 @@
 
                     @if($imagen->main == 0)
                         <a href="{{ route('images.main', ['id' => $proyecto->id, 'class' => 'Proyecto', 'imagen' => $imagen->id]) }}" class="btn btn-primary" title="Marcar como principal">Marcar como principal</a>
+                        <button class="btn btn-danger" title="Eliminar foto" data-toggle="modal" data-target="#modalDeleteImage{!! $imagen->id !!}">Eliminar</button>
                     @else
-                        <a href="#" class="btn btn-primary" disabled title="Marcar como principal">Marcar como principal</a>
+                        <span class="btn btn-primary" disabled title="Marcar como principal">Marcar como principal</span>
+                        <span class="btn btn-danger" title="Eliminar foto" data-toggle="modal" disabled>Eliminar</span>
                     @endif
-                    <button class="btn btn-danger" title="Eliminar foto" data-toggle="modal" data-target="#modalDeleteImage{!! $imagen->id !!}">Eliminar</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <div class="modal fade text-left" id="modalDeleteImage{!! $imagen->id !!}">
                         <div class="modal-dialog">

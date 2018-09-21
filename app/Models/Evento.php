@@ -48,6 +48,20 @@ class Evento extends Model
         'body' => 'required'
     ];
 
+    public function getMainImageAttribute()
+    {
+        $images = $this->images();
+        return $images->where('main', 1)->first();
+    }
+
+    public function getImagesOrderedAttribute()
+    {
+        $images = $this->images()->get();
+        $imagenes = $images->sortByDesc('main')->all();
+
+        return $imagenes;
+    }
+
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');

@@ -11,77 +11,74 @@
 |
 */
 
+require(__DIR__ . '/admin.php');
+
 Route::get('/', function () {
   return redirect('home');
 });
 
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'web'], function () {
 
     Route::get('/', [
-        'as' => 'admin',
-        'uses' => 'HomeController@index'
+        'as' => 'home',
+        'uses' => 'WebController@index'
     ]);
+
+    Route::get('empresa', [
+        'as' => 'web.empresa',
+        'uses' => 'WebController@empresa'
+    ]);
+
+    Route::get('servicios', [
+        'as' => 'web.servicios',
+        'uses' => 'WebController@servicios'
+    ]);
+
+    Route::get('proyectos', [
+        'as' => 'web.proyectos',
+        'uses' => 'WebController@proyectos'
+    ]);
+
+    Route::get('proyectos/{id}/detalle', [
+        'as' => 'web.proyectos.detalle',
+        'uses' => 'WebController@detalleProyecto'
+    ]);
+
+    Route::get('eventos', [
+        'as' => 'web.eventos',
+        'uses' => 'WebController@eventos'
+    ]);
+
+    Route::get('eventos/{id}/detalle', [
+        'as' => 'web.eventos.detalle',
+        'uses' => 'WebController@detalleEvento'
+    ]);
+
+    Route::get('equipamiento', [
+        'as' => 'web.equipamiento',
+        'uses' => 'WebController@equipamiento'
+    ]);
+
+    Route::get('equipamiento/{id}/detalle', [
+        'as' => 'web.equipamiento.detalle',
+        'uses' => 'WebController@detalleEquipamiento'
+    ]);
+
+    Route::get('contacto', [
+        'as' => 'web.contacto',
+        'uses' => 'WebController@contacto'
+    ]);
+
+    Route::post('contacto', [
+        'as' => 'web.post.contacto',
+        'uses' => 'WebController@postContacto'
+    ]);
+
+    Route::get('/home', 'WebController@index');
 
 });
 
 
-Auth::routes();
-
-Route::get('/home', 'WebController@index');
 
 
-/*Route::get('/panel', 'HomeController@index');*/
-
-
-
-Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder');
-
-Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate');
-
-Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate');
-
-
-Route::resource('empresas', 'EmpresaController');
-/*Route::post('empresas/{id}/imagenes', [
-    'as' => 'empresas.images',
-    'uses' => 'EmpresaController@storeImage'
-]);
-Route::get('imagenes/principal/{id}', [
-    'as' => 'empresas.image.main',
-    'uses' => 'EmpresaController@principalImage',
-]);*/
-
-Route::resource('users', 'UserController');
-
-Route::resource('servicios', 'ServicioController');
-
-Route::resource('proyectos', 'ProyectoController');
-
-Route::resource('eventos', 'EventoController');
-
-Route::resource('insumos', 'InsumoController');
-
-Route::resource('colors', 'ColorController');
-
-Route::resource('images', 'ImageController');
-
-Route::get('imagenes/{file}', [
-    'as' => 'imagenes.ver',
-    'uses' => 'ImageController@verImage'
-]);
-
-Route::post('imagenes/{id}/{class}', [
-    'as' => 'images.save',
-    'uses' => 'ImageController@storeImage'
-]);
-Route::get('imagenes/{id}/{class}/{imagen}/principal', [
-    'as' => 'images.main',
-    'uses' => 'ImageController@principalImage',
-]);
-
-Route::resource('categorias', 'CategoriaController');
-
-Route::resource('categoriables', 'CategoriableController');
-
-Route::resource('sliders', 'SliderController');

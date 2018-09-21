@@ -55,7 +55,7 @@
                             <img src="{{ asset('logo-small.jpg') }}"
                                  class="user-image" alt="User Image"/>
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">{!! Auth::user()->name !!}</span>
+                            <span class="hidden-xs">{!! (Auth::check())? Auth::user()->name : '' !!}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
@@ -63,8 +63,8 @@
                                 <img src="{{ asset('logo-small.jpg') }}"
                                      class="img-circle" alt="User Image"/>
                                 <p>
-                                    {!! Auth::user()->name !!}
-                                    <small>Miembro desde {!! Auth::user()->created_at->format('M. Y') !!}</small>
+                                    {!! (Auth::check())? Auth::user()->name : '' !!}
+                                    <small>Miembro desde {!! (Auth::check())? Auth::user()->created_at->format('M. Y') : '' !!}</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->

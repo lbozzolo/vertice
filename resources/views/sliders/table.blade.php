@@ -4,6 +4,7 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Imágenes</th>
+            <th>Activar</th>
             <th colspan="3">Action</th>
         </tr>
     </thead>
@@ -30,6 +31,15 @@
 
                     @endforelse
                 </ul>
+            </td>
+            <td>
+
+                @if(!$slider->active && count($slider->images) != 0)
+                    <a href="{!! route('sliders.activate', $slider->id) !!}" class="btn btn-primary">Activar este slider</a>
+                @else
+                    <span class="btn btn-primary" disabled>Activar este slider</span>
+                @endif
+
             </td>
             <td>
                 {!! Form::open(['route' => ['sliders.destroy', $slider->id], 'method' => 'delete']) !!}
