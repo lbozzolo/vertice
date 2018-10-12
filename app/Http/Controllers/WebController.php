@@ -18,6 +18,7 @@ class WebController extends AppBaseController
     public function index()
     {
         $slider = Slider::where('active', '1')->first();
+
         return view('web.home', compact('slider'));
     }
 

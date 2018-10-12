@@ -2,7 +2,7 @@
     <div id="bottom-bar-inner" class="container">
         <div class="bottom-bar-inner-wrap">
             <div class="bottom-bar-content">
-                <div id="copyright">© <span class="text">Rizoma Group. Design by<a href="http://www.verticedigital.com.ar" target="_new" class="text-accent"> Vertice Digital</a></span>
+                <div id="copyright">© <span class="text">Rizoma Group. Desarrollado por<a href="http://www.verticedigital.com.ar" target="_new" class="text-accent"> Vertice Digital</a></span>
                 </div>
             </div><!-- /.bottom-bar-content -->
 
