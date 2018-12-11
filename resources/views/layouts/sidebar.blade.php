@@ -6,11 +6,11 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ asset('logo-small.jpg') }}" class="img-circle" alt="User Image"/>
+                <img src="{{ asset('imagenes/logos/osvaldini_logo.png') }}" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                <p>Rizoma</p>
+                <p>Farmacia Osvaldini</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
                 @endif

@@ -19,20 +19,14 @@
                     <li class="{{ (Request::is('/') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
                         <a href="{{ route('home') }}">HOME</a>
                     </li>
-                    <li class="{{ (Request::is('web/empresa') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
-                        <a href="{{ route('web.empresa') }}">LA EMPRESA </a>
+                    <li class="{{ (Request::is('web/farmacia') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
+                        <a href="{{ route('web.farmacia') }}">LA EMPRESA </a>
                     </li>
                     <li class="{{ (Request::is('web/servicios') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
                         <a href="{{ route('web.servicios') }}">SERVICIOS</a>
                     </li>
-                    <li class="{{ (Request::is('web/proyectos') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
-                        <a href="{{ route('web.proyectos') }}">PROYECTOS</a>
-                    </li>
-                    <li class="{{ (Request::is('web/eventos') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
-                        <a href="{{ route('web.eventos') }}">EVENTOS</a>
-                    </li>
                     <li class="{{ (Request::is('web/equipamiento') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
-                        <a href="{{ route('web.equipamiento') }}">EQUIPAMIENTOS</a>
+                        <a href="{{ route('web.insumos') }}">PRODUCTOS</a>
                     </li>
                     <li class="{{ (Request::is('web/contacto') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
                         <a href="{{ route('web.contacto') }}">CONTACTANOS</a>

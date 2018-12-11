@@ -25,9 +25,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@index'
     ]);
 
-    Route::get('empresa', [
-        'as' => 'web.empresa',
-        'uses' => 'WebController@empresa'
+    Route::get('farmacia', [
+        'as' => 'web.farmacia',
+        'uses' => 'WebController@farmacia'
     ]);
 
     Route::get('servicios', [
@@ -55,9 +55,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@detalleEvento'
     ]);
 
-    Route::get('equipamiento', [
-        'as' => 'web.equipamiento',
-        'uses' => 'WebController@equipamiento'
+    Route::get('productos', [
+        'as' => 'web.insumos',
+        'uses' => 'WebController@insumos'
     ]);
 
     Route::get('equipamiento/{id}/detalle', [

@@ -23,19 +23,13 @@ Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuil
 Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate');
 
 
-Route::resource('empresas', 'EmpresaController');
+Route::resource('farmacias', 'FarmaciaController');
 
 Route::resource('users', 'UserController');
 
 Route::resource('servicios', 'ServicioController');
 
-Route::resource('proyectos', 'ProyectoController');
-
-Route::resource('eventos', 'EventoController');
-
 Route::resource('insumos', 'InsumoController');
-
-Route::resource('colors', 'ColorController');
 
 Route::resource('images', 'ImageController');
 

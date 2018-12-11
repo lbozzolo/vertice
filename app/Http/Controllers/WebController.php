@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\AppBaseController;
-use App\Models\Empresa;
-use App\Models\Evento;
+use App\Models\Farmacia;
 use App\Models\Insumo;
-use App\Models\Proyecto;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -22,54 +20,16 @@ class WebController extends AppBaseController
         return view('web.home', compact('slider'));
     }
 
-    public function empresa()
+    public function farmacia()
     {
-        $data['empresas'] = Empresa::all();
-        return view('web.empresa')->with($data);
+        $data['farmacias'] = Farmacia::all();
+        return view('web.farmacia')->with($data);
     }
 
     public function servicios()
     {
         $data['servicios'] = Servicio::all();
         return view('web.servicios')->with($data);
-    }
-
-    public function proyectos()
-    {
-        $data['proyectos'] = Proyecto::all();
-        return view('web.proyectos')->with($data);
-    }
-
-    public function detalleProyecto($id)
-    {
-        $proyecto = Proyecto::find($id);
-
-        if (empty($proyecto))
-            return redirect()->back()->withErrors('Proyecto no encontrado');
-
-        return view('web.detalle-proyecto', compact('proyecto'));
-    }
-
-    public function eventos()
-    {
-        $data['eventos'] = Evento::all();
-        return view('web.eventos')->with($data);
-    }
-
-    public function detalleEvento($id)
-    {
-        $evento = Evento::find($id);
-
-        if (empty($evento))
-            return redirect()->back()->withErrors('Evento no encontrado');
-
-        return view('web.detalle-evento', compact('evento'));
-    }
-
-    public function equipamiento()
-    {
-        $data['insumos'] = Insumo::all();
-        return view('web.equipamiento')->with($data);
     }
 
     public function detalleEquipamiento($id)

@@ -11,28 +11,16 @@
 <li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
     <a href="{!! route('users.index') !!}"><i class="fa fa-edit"></i><span>Usuarios</span></a>
 </li>
-<li class="{{ Request::is('empresas*') ? 'active' : '' }}">
-    <a href="{!! route('empresas.index') !!}"><i class="fa fa-edit"></i><span>Empresas</span></a>
+<li class="{{ Request::is('farmacias*') ? 'active' : '' }}">
+    <a href="{!! route('farmacias.index') !!}"><i class="fa fa-edit"></i><span>Farmacia</span></a>
 </li>
 
 <li class="{{ Request::is('servicios*') ? 'active' : '' }}">
     <a href="{!! route('servicios.index') !!}"><i class="fa fa-edit"></i><span>Servicios</span></a>
 </li>
 
-<li class="{{ Request::is('proyectos*') ? 'active' : '' }}">
-    <a href="{!! route('proyectos.index') !!}"><i class="fa fa-edit"></i><span>Proyectos</span></a>
-</li>
-
-<li class="{{ Request::is('eventos*') ? 'active' : '' }}">
-    <a href="{!! route('eventos.index') !!}"><i class="fa fa-edit"></i><span>Eventos</span></a>
-</li>
-
 <li class="{{ Request::is('insumos*') ? 'active' : '' }}">
-    <a href="{!! route('insumos.index') !!}"><i class="fa fa-edit"></i><span>Insumos</span></a>
-</li>
-
-<li class="{{ Request::is('colors*') ? 'active' : '' }}">
-    <a href="{!! route('colors.index') !!}"><i class="fa fa-edit"></i><span>Colores</span></a>
+    <a href="{!! route('insumos.index') !!}"><i class="fa fa-edit"></i><span>Productos</span></a>
 </li>
 
 @if(Auth::check() && Auth::user()->isSuperAdmin())
