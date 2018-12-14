@@ -32,6 +32,24 @@ class WebController extends AppBaseController
         return view('web.servicios')->with($data);
     }
 
+    public function productos()
+    {
+        $data['insumos'] = Insumo::all();
+        return view('web.productos')->with($data);
+    }
+
+    public function nosotros()
+    {
+        $data = [];
+        return view('web.nosotros')->with($data);
+    }
+
+    public function galeria()
+    {
+        $data = [];
+        return view('web.galeria')->with($data);
+    }
+
     public function detalleEquipamiento($id)
     {
         $insumo = Insumo::find($id);
@@ -49,7 +67,7 @@ class WebController extends AppBaseController
 
     public function postContacto(Request $request)
     {
-
+        dd($request->all());
         $this->validate($request, [
             'name' => 'required',
             'email' =>'required|email',

@@ -3,116 +3,121 @@
 
 @section('content')
 
+    <section class="parallax_window_in short" data-parallax="scroll" data-image-src="{{ asset('template-web/assets/img/subheader_in_5.jpg') }}" data-natural-width="1400" data-natural-height="400">
+        <div id="sub_content_in">
+            <div class="container">
+                <h1>Contactanos</h1>
+                <p></p>
+            </div>
+        </div>
+    </section><!-- End section -->
 
-<!-- Main Content -->
-<div id="main-content" class="site-main clearfix">
-    <div id="content-wrap">
-        <div id="site-content" class="site-content clearfix">
-            <div id="inner-content" class="inner-content-wrap">
-                <div class="page-content">
-                    <!-- CONTACT -->
-                    <div class="row-contact">
-                        <div class="container">
+    <div id="position">
+        <div class="container">
+
+        </div>
+    </div><!-- End position -->
+
+    <main>
+        <div class="container margin_60_35">
+            <div class="row">
+
+                <div class="col-md-9">
+                    <h3>Contactanos</h3>
+                    <p>
+                        Recuerde que en Farmacia Osvaldini estamos siempre prestos a atenderlo con amabilidad y respeto. Si requiere de servicio de inyectología, perfumería, medicamentos y más, no dude en hacer uso de todos los canales de comunicación que tenemos dispuestos para que usted pueda llamarnos o escribirnos.
+                    </p>
+                    <div>
+                        <div id="message-contact"></div>
+                        {!! Form::open(['method' => 'post', 'url' => route('web.post.contacto'), 'class' => 'form', 'id' => 'contactform']) !!}
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Nombre:</label>
+                                        <input type="text" class="form-control styled" id="name_contact" name="name_contact" placeholder="Jhon">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Apellido:</label>
+                                        <input type="text" class="form-control styled" id="lastname_contact" name="lastname_contact" placeholder="Doe">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Email:</label>
+                                        <input type="email" id="email_contact" name="email_contact" class="form-control styled" placeholder="jhon@email.com">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Teléfono:</label>
+                                        <input type="text" id="phone_contact" name="phone_contact" class="form-control styled" placeholder="00 44 5435435">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="themesflat-spacer clearfix" data-desktop="61" data-mobile="60" data-smobile="60"></div>
-                                </div><!-- /.col-md-12 -->
-                            </div><!-- /.row -->
+                                    <div class="form-group">
+                                        <label>Mensaje:</label>
+                                        <textarea rows="5" id="message_contact" name="message_contact" class="form-control styled" style="height:100px;" placeholder="Hello world!"></textarea>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="themesflat-headings style-2 clearfix">
-                                        <h2 class="heading">CONTACTANOS</h2>
-                                        <div class="sep has-width w80 accent-bg clearfix"></div>
-                                        <p class="sub-heading">Para mayor informacion podra ponerse en contacto completando el siguiente formulario, nosotros nos encargaremos de comunicarnos con usted para poder brindarle toda la informacion detallada que necesita.</p>
+                                    <div class="form-group">
+                                        <label>Es usted Humano? 3 + 1 =</label>
+                                        <input type="text" id="verify_contact" class=" form-control styled" placeholder=" 3 + 1 =">
                                     </div>
-                                    <div class="themesflat-spacer clearfix" data-desktop="36" data-mobile="35" data-smobile="35"></div>
-                                    <div class="themesflat-contact-form style-2 clearfix">
-                                        {!! Form::open(['url' => route('web.post.contacto'), 'method' => 'post', 'class' => 'contact-form wpcf7-form']) !!}
+                                    <p><input type="submit" value="Enviar" class="btn_1" id="submit-contact"></p>
+                                </div>
+                            </div>
 
+                        {!! Form::close() !!}
 
-                                                    <span class="wpcf7-form-control-wrap your-name">
-                                                        <input type="text" tabindex="1" id="name" name="name" value="" class="wpcf7-form-control" placeholder="Nombre*" required>
-                                                    </span>
-                                            <span class="wpcf7-form-control-wrap your-phone">
-                                                        <input type="text" tabindex="2" id="phone" name="phone" value="" class="wpcf7-form-control" placeholder="Telefono">
-                                                    </span>
-                                            <span class="wpcf7-form-control-wrap your-email">
-                                                        <input type="email" tabindex="3" id="email" name="email" value="" class="wpcf7-form-control" placeholder="Email*" required>
-                                                    </span>
-                                            <span class="wpcf7-form-control-wrap your-subject">
-                                                        <input type="text" tabindex="4" id="subject" name="subject" value="" class="wpcf7-form-control" placeholder="Tema">
-                                                    </span>
-                                            <span class="wpcf7-form-control-wrap your-message">
-                                                       <textarea name="textarea" tabindex="5" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Mensaje*" required ></textarea>
-                                                    </span>
-                                            <span class="wrap-submit">
-                                                        <input type="submit" value="ENVIAR" class="submit wpcf7-form-control wpcf7-submit" id="submit" name="submit">
-                                                    </span>
-
-                                        {!! Form::close() !!}
-                                    </div><!-- /.themesflat-contact-form -->
-                                </div><!-- /.col-md-6 -->
-                                <div class="col-md-6">
-                                    <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="35"></div>
-                                    <div class="themesflat-headings style-2 clearfix">
-                                        <h2 class="heading">INFOMACION</h2>
-                                        <div class="sep has-width w80 accent-bg clearfix"></div>
-                                    </div>
-                                    <div class="themesflat-spacer clearfix" data-desktop="36" data-mobile="35" data-smobile="35"></div>
-                                    <div class="themesflat-tabs style-1 w168 clearfix">
-                                        <ul class="tab-title clearfix">
-                                            <li class="item-title active">
-                                                <span class="inner">Nuestras Oficinas</span>
-                                            </li>
-                                        </ul>
-
-                                        <div class="tab-content-wrap clearfix">
-                                            <div class="tab-content">
-                                                <div class="item-content">
-                                                    <ul>
-                                                        <li class="clearfix">
-                                                            <div class="inner">
-                                                                <span class="fa fa-map-marker"></span>
-                                                                <span class="text">Cucha Cucha 1736 - Caballito - Ciudad Autonoma de Buenos Aires </span>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="clearfix">
-                                                            <div class="inner">
-                                                                <span class="fa fa-phone"></span>
-                                                                <span class="text">TELEFONO : +11 - 4585-7774/5</span>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="clearfix">
-                                                            <div class="inner">
-                                                                <span class="fa fa-envelope"></span>
-                                                                <span class="text">EMAIL : info@rizomagroup.com.ar</span>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div><!-- /.tab-content -->
-
-
-                                        </div>
-                                    </div><!-- /.themesflat-tabs -->
-                                    <div class="themesflat-spacer clearfix" data-desktop="20" data-mobile="35" data-smobile="35"></div>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0305107470695!2d-58.45769688433931!3d-34.60338998045957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca069958a23d%3A0x22a5b3ad487d5edd!2sCucha+Cucha+1736%2C+C1416CJN+CABA!5e0!3m2!1ses-419!2sar!4v1537211832206" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                </div><!-- /.col-md-6 -->
-                            </div><!-- /.row -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="themesflat-spacer clearfix" data-desktop="78" data-mobile="60" data-smobile="60"></div>
-                                </div><!-- /.col-md-12 -->
-                            </div><!-- /.row -->
-                        </div><!-- /.container -->
                     </div>
-                    <!-- END CONTACT -->
-                </div><!-- /.page-content -->
-            </div><!-- /#inner-content -->
-        </div><!-- /#site-content -->
-    </div><!-- /#content-wrap -->
-</div><!-- /#main-content -->
+                </div>
+                <!-- End col lg 9 -->
+                <aside class="col-md-3">
+                    <div class="box_style_2">
+                        <h4>Información de Contacto</h4>
+                        <p>
+                            Av. Shaw 658
+                            Entre del Pejerrey y de la Trucha
+                            Pinamar
+                            <br> (02254) 48 2867
+                            <br>
+                            <a href="mailto:info@farmaciaosvaldini.com">info@farmaciaosvaldini.com</a>
+                        </p>
+
+                        <hr class="styled">
+                        <h4>Otros Datos</h4>
+                        <ul class="contacts_info">
+                            <li>Horario de atención
+                                <br>
+                                <a href="#">Durante Enero y Febrero abierto todos los días.</a>
+                                <br>
+                                <br>
+
+                            </li>
+                            <li>Formas de Pago
+                                <br>
+                                <a href="#">Efectivo, Tarjetas de Crédito y Débito.</a>
+                                <br>
+                                <br>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <!--End aside -->
+
+            </div>
+            <!-- End row -->
+        </div>
+        <!-- End container -->
 
 @endsection

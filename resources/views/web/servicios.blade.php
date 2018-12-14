@@ -3,95 +3,86 @@
 
 @section('content')
 
-    <!-- Main Content -->
-    <div id="main-content" class="site-main clearfix">
-        <div id="content-wrap">
-            <div id="site-content" class="site-content clearfix">
-                <div id="inner-content" class="inner-content-wrap">
-                    <div class="page-content">
-                        <!-- SERVICES -->
-                        <div class="row-iconbox">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="themesflat-spacer clearfix" data-desktop="61" data-mobile="60" data-smobile="60"></div>
-                                        <div class="themesflat-headings style-1 text-center clearfix">
-                                            <h2 class="heading font-size-30">NUESTROS SERVICIOS</h2>
-                                            <div class="sep has-icon width-125 clearfix">
-                                                <div class="sep-icon">
-                                                    <span class="sep-icon-before sep-center sep-solid"></span>
-                                                    <span class="icon-wrap"><i class="autora-icon-build"></i></span>
-                                                    <span class="sep-icon-after sep-center sep-solid"></span>
-                                                </div>
-                                            </div>
-                                            <p class="sub-heading font-weight-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        </div>
-                                        <div class="themesflat-spacer clearfix" data-desktop="57" data-mobile="35" data-smobile="35"></div>
-                                    </div><!-- /.col-md-12 -->
-                                </div><!-- /.row -->
+    <section class="parallax_window_in short" data-parallax="scroll" data-image-src="{{ asset('template-web/assets/img/subheader_in_1.jpg') }}" data-natural-width="1400" data-natural-height="400">
+        <div id="sub_content_in">
+            <div class="container">
+                <h1>Nuestros Servicios</h1>
+                <p></p>
+            </div>
+        </div>
+    </section><!-- /section -->
 
+    <div id="position">
+        <div class="container">
 
+        </div>
+    </div><!-- /position -->
 
-                                <div class="themesflat-row gutter-30 clearfix">
-                                    <div class="col span_1_of_6">
-                                        <div class="themesflat-icon-box icon-left accent-color style-2 clearfix">
-                                            <div class="icon-wrap">
-                                                <i class="autora-icon-build"></i>
-                                            </div>
-                                            <div class="text-wrap">
-                                                <h5 class="heading"><a href="#">{!! $servicios[0]->title_mayus !!}</a></h5>
-                                                <p class="sub-heading">{!! $servicios[0]->body !!}</p>
-                                            </div>
-                                        </div><!-- /.themesflat-icon-box -->
-                                        <div class="themesflat-spacer clearfix" data-desktop="62" data-mobile="35" data-smobile="35"></div>
-                                        <div class="themesflat-icon-box icon-left accent-color style-2 clearfix">
-                                            <div class="icon-wrap font-size-35 line-height-50">
-                                                <i class="autora-icon-hat-outline"></i>
-                                            </div>
-                                            <div class="text-wrap">
-                                                <h5 class="heading"><a href="#">{!! $servicios[1]->title_mayus !!}</a></h5>
-                                                <p class="sub-heading margin-top-18">{!! $servicios[1]->body !!}</p>
-                                            </div>
-                                        </div><!-- /.themesflat-icon-box -->
-                                    </div><!-- /.col-md-4 -->
+    <main>
+        <div class="container margin_60_35">
+            <h2 class="main_title"><em></em>Nuestros Clientes nos eligen porque nuestro servicio es de calidad.</span></h2>
 
-                                    <div class="col span_1_of_6">
-                                        <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="35" data-smobile="35"></div>
-                                        <div class="themesflat-icon-box icon-left accent-color style-2 clearfix">
-                                            <div class="icon-wrap">
-                                                <i class="autora-icon-author-outline"></i>
-                                            </div>
-                                            <div class="text-wrap">
-                                                <h5 class="heading"><a href="#">{!! $servicios[2]->title_mayus !!}</a></h5>
-                                                <p class="sub-heading">{!! $servicios[2]->body !!}</p>
-                                            </div>
-                                        </div><!-- /.themesflat-icon-box -->
-                                        <div class="themesflat-spacer clearfix" data-desktop="62" data-mobile="35" data-smobile="35"></div>
-                                        <div class="themesflat-icon-box icon-left accent-color style-2 clearfix">
-                                            <div class="icon-wrap ">
-                                                <i class="autora-icon-build-home"></i>
-                                            </div>
-                                            <div class="text-wrap">
-                                                <h5 class="heading"><a href="#">{!! $servicios[3]->title_mayus !!}</a></h5>
-                                                <p class="sub-heading margin-top-18">{!! $servicios[3]->body !!}</p>
-                                            </div>
-                                        </div><!-- /.themesflat-icon-box -->
-                                    </div><!-- /.col-md-4 -->
+            <!--/row-->
 
-                                </div><!-- /.row -->
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="themesflat-spacer clearfix" data-desktop="72" data-mobile="60" data-smobile="60"></div>
-                                    </div><!-- /.col-md-12 -->
-                                </div><!-- /.row -->
-                            </div><!-- /.container -->
+            <!--/row-->
+        </div><!--/container-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 nopadding">
+                    <div class="features-bg">
+                        <div class="features-img">
                         </div>
-                        <!-- END SERVICES -->
-                    </div><!-- /.page-content -->
-                </div><!-- /#inner-content -->
-            </div><!-- /#site-content -->
-        </div><!-- /#content-wrap -->
-    </div><!-- /#main-content -->
+                    </div>
+                </div>
+                <div class="col-md-6 nopadding">
+                    <div class="features-content">
+                        <h3>"Marcando la Diferencia"</h3>
+                        <p>
+                            Visítenos, nuestros clientes nos prefieren por el amplio surtido de productos, la atención y la buena disposición que hace de nuestra marca un hábito diario.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- /container-fluid  -->
+        <div class="bg_white">
+            <div class="container margin_60_35">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="box_service_2">
+                            <i class="icon_check_alt2"></i>
+                            <h4>Servicio 1</h4>
+                            <p>Ut unum diceret eos, mel cu velit principes, ut quo inani dolorem mediocritatem. Mea in justo posidonium necessitatibus. Augue honestatis vis no, ius quot mazim forensibus in, per sale virtute legimus ne. Mea dicta facilisis eu.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="box_service_2">
+                            <i class="icon_check_alt2"></i>
+                            <h4>Servicio 2</h4>
+                            <p>Ut unum diceret eos, mel cu velit principes, ut quo inani dolorem mediocritatem. Mea in justo posidonium necessitatibus. Augue honestatis vis no, ius quot mazim forensibus in, per sale virtute legimus ne. Mea dicta facilisis eu.</p>
+                        </div>
+                    </div>
+                </div><!-- /row  -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="box_service_2">
+                            <i class="icon_check_alt2"></i>
+                            <h4>Servicio 3</h4>
+                            <p>Ut unum diceret eos, mel cu velit principes, ut quo inani dolorem mediocritatem. Mea in justo posidonium necessitatibus. Augue honestatis vis no, ius quot mazim forensibus in, per sale virtute legimus ne. Mea dicta facilisis eu.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="box_service_2">
+                            <i class="icon_check_alt2"></i>
+                            <h4>Servicio 4</h4>
+                            <p>Ut unum diceret eos, mel cu velit principes, ut quo inani dolorem mediocritatem. Mea in justo posidonium necessitatibus. Augue honestatis vis no, ius quot mazim forensibus in, per sale virtute legimus ne. Mea dicta facilisis eu.</p>
+                        </div>
+                    </div>
+                </div><!-- /row  -->
+            </div><!-- /container  -->
+        </div><!-- /bg_white  -->
+    </main><!--/main-->
+
 
 @endsection

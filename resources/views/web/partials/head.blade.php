@@ -1,29 +1,30 @@
 <head>
-    <!-- Basic Page Needs -->
+
     <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Rizoma Group - Arquitectura y Producción de Eventos</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Los medicamentos que suministramos en nuestra farmacia son de excelente calidad y a los mejores precios. Visítenos en Farmacia Osvaldini. ¡Visítenos en Pinamar!">
+    <meta name="author" content="Verticedigital.com.ar">
+    <title>Farmacia Osvaldini - Medicamentos en Pinamar con Farmacia Osvaldini</title>
 
-    <meta name="author" content="themesflat.com">
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="{{ asset('template-web/assets/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('template-web/assets/img/apple-touch-icon-57x57-precomposed.png') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{ asset('template-web/assets/img/apple-touch-icon-72x72-precomposed.png') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{ asset('template-web/assets/img/apple-touch-icon-114x114-precomposed.png') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{{ asset('template-web/assets/img/apple-touch-icon-144x144-precomposed.png') }}">
 
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- BASE CSS -->
+    <link href="{{ asset('template-web/assets/css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('template-web/assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('template-web/assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('template-web/assets/css/icon_fonts/css/all_icons_min.css') }}" rel="stylesheet">
 
-    <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('template-web/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('template-web/estilos.css') }}">
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{{ asset('template-web/assets/css/custom.css') }}" rel="stylesheet">
 
-    <!-- Colors -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('template-web/assets/css/colors/color1.css') }}" id="colors">
-
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="{{ asset('template-web/assets/icon/favicon.png')}}">
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('template-web/assets/icon/apple-touch-icon-158-precomposed.png') }}">
-
-    <!--[if lt IE 9]>
-        <!--<script src="javascript/html5shiv.js"></script>
-        <script src="javascript/respond.min.js"></script>-->
-    <![endif]-->
+    <!-- LayerSlider stylesheet -->
+    <link href="{{ asset('template-web/assets/layerslider/css/layerslider.css') }}" rel="stylesheet">
 
     @yield('css')
 

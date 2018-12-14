@@ -35,9 +35,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@servicios'
     ]);
 
-    Route::get('proyectos', [
-        'as' => 'web.proyectos',
-        'uses' => 'WebController@proyectos'
+    Route::get('nosotros', [
+        'as' => 'web.nosotros',
+        'uses' => 'WebController@nosotros'
     ]);
 
     Route::get('proyectos/{id}/detalle', [
@@ -45,9 +45,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@detalleProyecto'
     ]);
 
-    Route::get('eventos', [
-        'as' => 'web.eventos',
-        'uses' => 'WebController@eventos'
+    Route::get('galeria', [
+        'as' => 'web.galeria',
+        'uses' => 'WebController@galeria'
     ]);
 
     Route::get('eventos/{id}/detalle', [
@@ -56,8 +56,8 @@ Route::group(['prefix' => 'web'], function () {
     ]);
 
     Route::get('productos', [
-        'as' => 'web.insumos',
-        'uses' => 'WebController@insumos'
+        'as' => 'web.productos',
+        'uses' => 'WebController@productos'
     ]);
 
     Route::get('equipamiento/{id}/detalle', [

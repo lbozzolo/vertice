@@ -1,39 +1,28 @@
-<!-- Header -->
-<header id="site-header">
-    <div id="site-header-inner" class="container">
-        <div class="wrap-inner clearfix">
-            <div id="site-logo" class="clearfix">
-                <div id="site-log-inner">
-                    <a href="{{ route('home') }}" rel="home" class="main-logo">
-                        <img src="{{ asset('imagenes/logos/logo-small.png') }}" alt="" width="300" height="63" data-retina="{{ asset('imagenes/logos/logo-small@2x.png') }}" data-width="300" data-height="63">
-                    </a>
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header-wp">
+                <div class="navbar-header">
+                    <a class="cmn-toggle-switch cmn-toggle-switch__htx" href="javascript:void(0);" data-toggle="collapse" data-target="#navbar"><span>Menu mobile</span></a>
+                    <div id="logo_home">
+                        <h1><a href="{{ route('home') }}" title="Farmacia Osvaldini">Los medicamentos que suministramos en nuestra farmacia son de excelente calidad y a los mejores precios. Visítenos en Farmacia Osvaldini. ¡Visítenos en Pinamar!</a></h1>
+                    </div>
+
                 </div>
-            </div><!-- /#site-logo -->
-
-            <div class="mobile-button">
-                <span></span>
-            </div><!-- /.mobile-button -->
-
-            <nav id="main-nav" class="main-nav">
-                <ul id="menu-primary-menu" class="menu">
-                    <li class="{{ (Request::is('/') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
-                        <a href="{{ route('home') }}">HOME</a>
-                    </li>
-                    <li class="{{ (Request::is('web/farmacia') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
-                        <a href="{{ route('web.farmacia') }}">LA EMPRESA </a>
-                    </li>
-                    <li class="{{ (Request::is('web/servicios') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
-                        <a href="{{ route('web.servicios') }}">SERVICIOS</a>
-                    </li>
-                    <li class="{{ (Request::is('web/equipamiento') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
-                        <a href="{{ route('web.insumos') }}">PRODUCTOS</a>
-                    </li>
-                    <li class="{{ (Request::is('web/contacto') ? 'menu-item menu-item-has-children current-menu-item' : 'menu-item menu-item-has-children') }}">
-                        <a href="{{ route('web.contacto') }}">CONTACTANOS</a>
-                    </li>
+                <!--/navbar-header-->
+            </div>
+            <!--/navbar-header-wp-->
+            <div class="collapse navbar-collapse navbar-right" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ route('home') }}"><span>Home</span></a></li>
+                    <li><a href="{{ route('web.servicios') }}">Servicios</a></li>
+                    <li><a href="{{ route('web.nosotros') }}">Nuestra Farmacia</a></li></li>
+                    <li><a href="{{ route('web.productos') }}">Productos</a></li>
+                    <li><a href="{{ route('web.galeria') }}">Galería</a></li>
+                    <li><a href="{{ route('web.contacto') }}">Contacto</a></li>
                 </ul>
-            </nav><!-- /#main-nav -->
-
-        </div><!-- /.wrap-inner -->
-    </div><!-- /#site-header-inner -->
-</header><!-- /#site-header -->
+            </div>
+        </div>
+    </nav>
+    <!-- /Nav -->
+</header><!-- /Header -->

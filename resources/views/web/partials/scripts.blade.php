@@ -1,32 +1,13 @@
-<!-- Javascript -->
-<script src="{{ asset('template-web/assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/plugins.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/tether.min.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/animsition.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/countto.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/equalize.min.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/jquery.isotope.min.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/owl.carousel2.thumbs.js') }}"></script>
 
-<script src="{{ asset('template-web/assets/js/jquery.cookie.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/gmap3.min.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIEU6OT3xqCksCetQeNLIPps6-AYrhq-s&region=GB"></script>
-<script src="{{ asset('template-web/assets/js/shortcodes.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/main.js') }}"></script>
+<!-- COMMON SCRIPTS -->
+<script src="{{ asset('template-web/assets/js/jquery-2.2.4.min.js') }}"></script>
+<script src="{{ asset('template-web/assets/js/common_scripts.js') }}"></script>
+<script src="{{ asset('template-web/assets/assets/validate.js') }}"></script>
+<script src="{{ asset('template-web/assets/js/header_sticky_1.js') }}"></script>
+<script src="{{ asset('template-web/assets/js/functions.js') }}"></script>
 
-<!-- Revolution Slider -->
-<script src="{{ asset('template-web/includes/rev-slider/js/jquery.themepunch.tools.min.js') }}"></script>
-<script src="{{ asset('template-web/includes/rev-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
-<script src="{{ asset('template-web/assets/js/rev-slider.js') }}"></script>
-<!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->
-<script src="{{ asset('template-web/includes/rev-slider/js/extensions/revolution.extension.actions.min.js') }}"></script>
-<script src="{{ asset('template-web/includes/rev-slider/js/extensions/revolution.extension.carousel.min.js') }}"></script>
-<script src="{{ asset('template-web/includes/rev-slider/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
-<script src="{{ asset('template-web/includes/rev-slider/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
-<script src="{{ asset('template-web/includes/rev-slider/js/extensions/revolution.extension.migration.min.js') }}"></script>
-<script src="{{ asset('template-web/includes/rev-slider/js/extensions/revolution.extension.navigation.min.js') }}"></script>
-<script src="{{ asset('template-web/includes/rev-slider/js/extensions/revolution.extension.parallax.min.js') }}"></script>
-<script src="{{ asset('template-web/includes/rev-slider/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
-<script src="{{ asset('template-web/includes/rev-slider/js/extensions/revolution.extension.video.min.js') }}"></script>
+<!-- LayerSlider script files -->
+<script src="{{ asset('template-web/assets/layerslider/js/greensock.js') }}"></script>
+<script src="{{ asset('template-web/assets/layerslider/js/layerslider.transitions.js') }}"></script>
+<script src="{{ asset('template-web/assets/layerslider/js/layerslider.kreaturamedia.jquery.js') }}"></script>
+<script src="{{ asset('template-web/assets/js/slider_func.js') }}"></script>
