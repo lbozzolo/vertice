@@ -19,6 +19,7 @@ class CreateFarmaciaTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
+            $table->integer('active')->nullable();
 
             $table->index('id');
 

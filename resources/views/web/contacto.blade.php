@@ -29,19 +29,19 @@
                     </p>
                     <div>
                         <div id="message-contact"></div>
-                        {!! Form::open(['method' => 'post', 'url' => route('web.post.contacto'), 'class' => 'form', 'id' => 'contactform']) !!}
-
+                        {!! Form::open(['method' => 'post', 'url' => route('web.post.contacto'), 'class' => 'form', ]) !!}
+                        {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
                                         <label>Nombre:</label>
-                                        <input type="text" class="form-control styled" id="name_contact" name="name_contact" placeholder="Jhon">
+                                        <input type="text" class="form-control styled" id="name_contact" name="name_contact" placeholder="Juan">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
                                         <label>Apellido:</label>
-                                        <input type="text" class="form-control styled" id="lastname_contact" name="lastname_contact" placeholder="Doe">
+                                        <input type="text" class="form-control styled" id="lastname_contact" name="lastname_contact" placeholder="Perez">
                                     </div>
                                 </div>
                             </div>
@@ -49,13 +49,13 @@
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
                                         <label>Email:</label>
-                                        <input type="email" id="email_contact" name="email_contact" class="form-control styled" placeholder="jhon@email.com">
+                                        <input type="email" id="email_contact" name="email_contact" class="form-control styled" placeholder="jperezn@email.com">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
                                         <label>Teléfono:</label>
-                                        <input type="text" id="phone_contact" name="phone_contact" class="form-control styled" placeholder="00 44 5435435">
+                                        <input type="text" id="phone_contact" name="phone_contact" class="form-control styled" placeholder="(02254) 44 4444">
                                     </div>
                                 </div>
                             </div>
@@ -63,15 +63,15 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Mensaje:</label>
-                                        <textarea rows="5" id="message_contact" name="message_contact" class="form-control styled" style="height:100px;" placeholder="Hello world!"></textarea>
+                                        <textarea rows="5" id="message_contact" name="message_contact" class="form-control styled" style="height:100px;" placeholder=""></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Es usted Humano? 3 + 1 =</label>
-                                        <input type="text" id="verify_contact" class=" form-control styled" placeholder=" 3 + 1 =">
+                                        <label>¿Es usted Humano? 3 + 1 =</label>
+                                        <input name="verify_contact" type="text" id="verify_contact" class=" form-control styled" placeholder="Indique aquí el resultado de la suma 3 + 1 =">
                                     </div>
                                     <p><input type="submit" value="Enviar" class="btn_1" id="submit-contact"></p>
                                 </div>

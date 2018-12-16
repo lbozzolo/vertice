@@ -1,5 +1,11 @@
 <!-- Id Field -->
 <div class="form-group">
+    {!! Form::label('active', 'Entrada activs:') !!}
+    <p>{!! ($farmacia->active)? 'Activa' : 'Inactiva' !!}</p>
+</div>
+
+<!-- Id Field -->
+<div class="form-group">
     {!! Form::label('id', 'Id:') !!}
     <p>{!! $farmacia->id !!}</p>
 </div>

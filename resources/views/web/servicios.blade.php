@@ -49,37 +49,22 @@
             <div class="container margin_60_35">
 
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div class="box_service_2">
-                            <i class="icon_check_alt2"></i>
-                            <h4>Servicio 1</h4>
-                            <p>Ut unum diceret eos, mel cu velit principes, ut quo inani dolorem mediocritatem. Mea in justo posidonium necessitatibus. Augue honestatis vis no, ius quot mazim forensibus in, per sale virtute legimus ne. Mea dicta facilisis eu.</p>
+
+                    @forelse($servicios as $servicio)
+
+                        <div class="col-sm-6">
+                            <div class="box_service_2">
+                                <i class="icon_check_alt2"></i>
+                                <h4>{!! $servicio->title !!}</h4>
+                                <p>{!! $servicio->body !!}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="box_service_2">
-                            <i class="icon_check_alt2"></i>
-                            <h4>Servicio 2</h4>
-                            <p>Ut unum diceret eos, mel cu velit principes, ut quo inani dolorem mediocritatem. Mea in justo posidonium necessitatibus. Augue honestatis vis no, ius quot mazim forensibus in, per sale virtute legimus ne. Mea dicta facilisis eu.</p>
-                        </div>
-                    </div>
+
+                    @empty
+                    @endforelse
+
                 </div><!-- /row  -->
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="box_service_2">
-                            <i class="icon_check_alt2"></i>
-                            <h4>Servicio 3</h4>
-                            <p>Ut unum diceret eos, mel cu velit principes, ut quo inani dolorem mediocritatem. Mea in justo posidonium necessitatibus. Augue honestatis vis no, ius quot mazim forensibus in, per sale virtute legimus ne. Mea dicta facilisis eu.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="box_service_2">
-                            <i class="icon_check_alt2"></i>
-                            <h4>Servicio 4</h4>
-                            <p>Ut unum diceret eos, mel cu velit principes, ut quo inani dolorem mediocritatem. Mea in justo posidonium necessitatibus. Augue honestatis vis no, ius quot mazim forensibus in, per sale virtute legimus ne. Mea dicta facilisis eu.</p>
-                        </div>
-                    </div>
-                </div><!-- /row  -->
+
             </div><!-- /container  -->
         </div><!-- /bg_white  -->
     </main><!--/main-->

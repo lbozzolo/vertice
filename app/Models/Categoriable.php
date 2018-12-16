@@ -37,7 +37,7 @@ class Categoriable extends Model
      */
     protected $casts = [
         'categoriable_id' => 'integer',
-        'categoriable_type' => 'integer',
+        'categoriable_type' => 'string',
         'categoria_id' => 'integer'
     ];
 

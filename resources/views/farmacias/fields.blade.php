@@ -10,6 +10,12 @@
     {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Active Field -->
+<div class="form-group col-lg-6" style="padding-top: 30px">
+    {!! Form::label('active', 'Activo') !!}
+    {!! Form::checkbox('active', '1') !!}
+</div>
+
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}

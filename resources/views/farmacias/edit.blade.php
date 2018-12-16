@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Empresa / Editar
+            Nuestra Farmacia / Editar
         </h1>
    </section>
    <div class="content">

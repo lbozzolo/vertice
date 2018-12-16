@@ -12,7 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>[SUBJECT]</title>
+    <title>{!! $data['subject'] !!}</title>
     <style type="text/css">
         body {
             padding-top: 0 !important;
@@ -274,7 +274,7 @@
                                                                                     <td valign="middle" style='vertical-align: middle;'>
                                                                                         <div class='contentEditableContainer contentTextEditable'>
                                                                                             <div class='contentEditable' style='text-align: left;font-weight: light; color:#555555;font-size:26;line-height: 39px;font-family: Helvetica Neue;'>
-                                                                                                <h1 class='big'>Rizoma Group</h1>
+                                                                                                <h1 class='big'>Farmacia Osvaldini</h1>
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>
@@ -316,9 +316,9 @@
                                                                                     <td>
                                                                                         <div class='contentEditableContainer contentTextEditable'>
                                                                                             <div class='contentEditable' style='text-align: center;'>
-                                                                                                <h2 style="font-size: 20px;">Contacto vía web de {!! $data['name'] !!}</h2>
+                                                                                                <h2 style="font-size: 20px;">Contacto vía web de {!! $data['name_contact'] !!} {!! $data['lastname_contact'] !!}</h2>
                                                                                                 <br>
-                                                                                                <p>{!! $data['textarea'] !!}</p>
+                                                                                                <p>{!! $data['message_contact'] !!}</p>
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>
@@ -356,9 +356,9 @@
                                                                                         <div class='contentEditableContainer contentTextEditable'>
                                                                                             <div class='contentEditable' style='text-align: center;color:#AAAAAA;'>
                                                                                                 <p>
-                                                                                                    Sent by {!! $data['name'] !!} <br/>
-                                                                                                    {!! $data['email'] !!}<br/>
-                                                                                                    {!! $data['phone'] !!} <br/>
+                                                                                                    Enviado por {!! $data['name_contact'] !!} {!! $data['lastname_contact'] !!}<br/>
+                                                                                                    {!! $data['email_contact'] !!}<br/>
+                                                                                                    Teléfono: {!! $data['phone_contact'] !!} <br/>
                                                                                                 </p>
                                                                                             </div>
                                                                                         </div>

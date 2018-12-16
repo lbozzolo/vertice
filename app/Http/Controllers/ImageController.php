@@ -148,6 +148,7 @@ class ImageController extends AppBaseController
     public function verImage($file)
     {
         $ruta = storage_path("imagenes\\".$file);
+        //dd($ruta);
         return response()->make(File::get($ruta),200)
             ->header('Content-Type', 'image/jpg');
     }

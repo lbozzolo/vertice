@@ -12,15 +12,15 @@
     <a href="{!! route('users.index') !!}"><i class="fa fa-edit"></i><span>Usuarios</span></a>
 </li>
 <li class="{{ Request::is('farmacias*') ? 'active' : '' }}">
-    <a href="{!! route('farmacias.index') !!}"><i class="fa fa-edit"></i><span>Farmacia</span></a>
+    <a href="{!! route('farmacias.index') !!}"><i class="fa fa-edit"></i><span>Nuestra farmacia</span></a>
+</li>
+
+<li class="{{ Request::is('productos*') ? 'active' : '' }}">
+    <a href="{!! route('productos.index') !!}"><i class="fa fa-edit"></i><span>Productos</span></a>
 </li>
 
 <li class="{{ Request::is('servicios*') ? 'active' : '' }}">
     <a href="{!! route('servicios.index') !!}"><i class="fa fa-edit"></i><span>Servicios</span></a>
-</li>
-
-<li class="{{ Request::is('insumos*') ? 'active' : '' }}">
-    <a href="{!! route('insumos.index') !!}"><i class="fa fa-edit"></i><span>Productos</span></a>
 </li>
 
 @if(Auth::check() && Auth::user()->isSuperAdmin())

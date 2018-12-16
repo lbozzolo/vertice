@@ -25,7 +25,8 @@ class Servicio extends Model
 
     public $fillable = [
         'title',
-        'body'
+        'body',
+        'active'
     ];
 
     /**

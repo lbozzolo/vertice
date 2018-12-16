@@ -49,7 +49,7 @@ class Categoria extends Model
 
     public function insumos()
     {
-        return $this->morphedByMany('App\Models\Insumo', 'categoriable');
+        return $this->morphedByMany('App\Models\Producto', 'categoriable');
     }
 
     

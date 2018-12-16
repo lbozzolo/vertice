@@ -14,13 +14,13 @@
 
         @include('web.partials.header')
 
-        @include('flash::web-messages')
+        <div style="margin-top: 100px">@include('flash::web-messages')</div>
 
         @yield('content')
 
         @include('web.partials.footer')
 
-    @include('web.partials.scripts')
+        @include('web.partials.scripts')
 
 </body>
 </html>

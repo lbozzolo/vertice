@@ -60,9 +60,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@productos'
     ]);
 
-    Route::get('equipamiento/{id}/detalle', [
-        'as' => 'web.equipamiento.detalle',
-        'uses' => 'WebController@detalleEquipamiento'
+    Route::get('producto/{id}/detalle', [
+        'as' => 'web.producto.detalle',
+        'uses' => 'WebController@detalleProducto'
     ]);
 
     Route::get('contacto', [

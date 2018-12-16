@@ -11,22 +11,43 @@
     </thead>
     <tbody>
     @foreach($users as $user)
-        <tr>
-            <td>{!! $user->id !!}</td>
-            <td>{!! $user->fullname !!}</td>
-            <td>{!! $user->email !!}</td>
-            <td>{!! $user->created_at !!}</td>
-            <td>{!! $user->updated_at !!}</td>
-            <td>
-                {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
-                <div class='btn-group'>
-                    <a href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
-                    <a href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Está seguro que desea eliminar este usuario?')"]) !!}
-                </div>
-                {!! Form::close() !!}
-            </td>
-        </tr>
+        @if(Auth::check() && Auth::user()->isSuperAdmin())
+            <tr>
+                <td>{!! $user->id !!}</td>
+                <td>{!! $user->fullname !!}</td>
+                <td>{!! $user->email !!}</td>
+                <td>{!! $user->created_at !!}</td>
+                <td>{!! $user->updated_at !!}</td>
+                <td>
+                    {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
+                    <div class='btn-group'>
+                        <a href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                        <a href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Está seguro que desea eliminar este usuario?')"]) !!}
+                    </div>
+                    {!! Form::close() !!}
+                </td>
+            </tr>
+        @else
+            @if($user->email != 'lucas@verticedigital.com.ar' && $user->email != 'fernando@verticedigital.com.ar')
+                <tr>
+                    <td>{!! $user->id !!}</td>
+                    <td>{!! $user->fullname !!}</td>
+                    <td>{!! $user->email !!}</td>
+                    <td>{!! $user->created_at !!}</td>
+                    <td>{!! $user->updated_at !!}</td>
+                    <td>
+                        {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
+                        <div class='btn-group'>
+                            <a href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                            <a href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                            {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Está seguro que desea eliminar este usuario?')"]) !!}
+                        </div>
+                        {!! Form::close() !!}
+                    </td>
+                </tr>
+            @endif
+        @endif
     @endforeach
     </tbody>
 </table>

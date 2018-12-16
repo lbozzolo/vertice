@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\AppBaseController;
+use App\Http\Requests\ContactRequest;
 use App\Models\Farmacia;
-use App\Models\Insumo;
+use App\Models\Image;
+use App\Models\Producto;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -15,49 +17,52 @@ class WebController extends AppBaseController
 
     public function index()
     {
-        $slider = Slider::where('active', '1')->first();
+        $data['slider'] = Slider::where('active', '1')->first();
+        $data['productos'] = Producto::all();
+        //$data['productos'] = [];
 
-        return view('web.home', compact('slider'));
+        return view('web.home')->with($data);
     }
 
     public function farmacia()
     {
-        $data['farmacias'] = Farmacia::all();
+        $data['farmacias'] = Farmacia::where('active', '==', 1)->first();
         return view('web.farmacia')->with($data);
     }
 
     public function servicios()
     {
-        $data['servicios'] = Servicio::all();
+        $data['servicios'] = Servicio::where('active', '!=', null)->get();
         return view('web.servicios')->with($data);
     }
 
     public function productos()
     {
-        $data['insumos'] = Insumo::all();
+        $data['productos'] = Producto::all();
         return view('web.productos')->with($data);
     }
 
     public function nosotros()
     {
-        $data = [];
+        $data['nosotros'] = Farmacia::where('active', 1)->first();
+        //dd($data);
         return view('web.nosotros')->with($data);
     }
 
     public function galeria()
     {
-        $data = [];
+        $data['productos'] = Producto::with('images')->get();
         return view('web.galeria')->with($data);
     }
 
-    public function detalleEquipamiento($id)
+    public function detalleProducto($id)
     {
-        $insumo = Insumo::find($id);
+        $producto = Producto::find($id);
 
-        if (empty($insumo))
-            return redirect()->back()->withErrors('Equipamiento no encontrado');
+        if (empty($producto))
+            return redirect()->back()->withErrors('Producto no encontrado');
 
-        return view('web.detalle-equipamiento', compact('insumo'));
+        return view('web.detalle-producto', compact('producto'));
     }
 
     public function contacto()
@@ -65,27 +70,23 @@ class WebController extends AppBaseController
         return view('web.contacto');
     }
 
-    public function postContacto(Request $request)
+    public function postContacto(ContactRequest $request)
     {
-        dd($request->all());
-        $this->validate($request, [
-            'name' => 'required',
-            'email' =>'required|email',
-            'textarea' =>'required'
-        ]);
+        //dd($request->all());
 
         $data = array(
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'subject' => $request->subject,
-            'textarea' => $request->textarea
+            'name_contact' => $request->name_contact,
+            'lastname_contact' => $request->lastname_contact,
+            'phone_contact' => $request->phone_contact,
+            'email_contact' => $request->email_contact,
+            'message_contact' => $request->message_contact,
+            'subject' => 'Contacto de cliente'
         );
 
         Mail::send('emails.contacto', ['data' => $data], function($message) use ($data){
             $message->to('lucas@verticedigital.com.ar');
             $message->subject($data['subject']);
-            $message->from($data['email']);
+            $message->from($data['email_contact']);
         });
 
         return redirect()->back()->with('ok', 'Su correo se ha enviado con éxito.');

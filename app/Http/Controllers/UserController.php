@@ -8,6 +8,7 @@ use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController as AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Auth;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Illuminate\Support\Facades\Hash;
@@ -113,7 +114,7 @@ class UserController extends AppBaseController
     {
         $user = $this->userRepository->findWithoutFail($id);
 
-        if (empty($user))
+        if (empty($user) || $user->email == 'lucas@verticedigital.com.ar' || $user->email == 'fernando@verticedigital.com.ar')
             return redirect(route('users.index'))->withErrors('Usuario no encontrado');
 
         $user = $this->userRepository->update($request->all(), $id);
@@ -134,6 +135,9 @@ class UserController extends AppBaseController
 
         if (empty($user))
             return redirect(route('users.index'))->withErrors('Usuario no encontrado');
+
+        if ($user->id == Auth::user()->id)
+            return redirect(route('users.index'))->withErrors('No puede eliminarse a sí mismo');
 
         $this->userRepository->delete($id);
 

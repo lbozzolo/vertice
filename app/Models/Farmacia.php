@@ -26,7 +26,8 @@ class Farmacia extends Model
 
     public $fillable = [
         'title',
-        'body'
+        'body',
+        'active'
     ];
 
     /**
@@ -36,7 +37,7 @@ class Farmacia extends Model
      */
     protected $casts = [
         'title' => 'string',
-        'body' => 'string'
+        'body' => 'string',
     ];
 
     /**

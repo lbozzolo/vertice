@@ -18,7 +18,7 @@ class CreateCategoriablesTable extends Migration
 
             $table->increments('id');
             $table->integer('categoriable_id');
-            $table->integer('categoriable_type');
+            $table->string('categoriable_type');
             $table->integer('categoria_id');
 
             $table->index('id');

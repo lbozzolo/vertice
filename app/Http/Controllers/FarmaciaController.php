@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateFarmaciaRequest;
 use App\Http\Requests\UpdateFarmaciaRequest;
+use App\Models\Farmacia;
 use App\Repositories\FarmaciaRepository;
 use App\Http\Controllers\AppBaseController as AppBaseController;
 use Illuminate\Http\Request;
@@ -109,11 +110,22 @@ class FarmaciaController extends AppBaseController
     public function update($id, UpdateFarmaciaRequest $request)
     {
         $farmacia = $this->farmaciaRepository->findWithoutFail($id);
+        $farmacias = Farmacia::all();
 
         if (empty($farmacia))
             return redirect(route('farmacias.index'))->withErrors('Farmacia no encontrada');
 
         $farmacia = $this->farmaciaRepository->update($request->all(), $id);
+
+        if($farmacia->active == 1){
+            foreach($farmacias as $far){
+                $far->active = null;
+                $far->save();
+            }
+            $farmacia->active = 1;
+            $farmacia->save();
+        }
+
 
         return redirect(route('farmacias.index'))->with('ok', 'Farmacia actualizada con éxito');
     }

@@ -29,7 +29,7 @@ Route::resource('users', 'UserController');
 
 Route::resource('servicios', 'ServicioController');
 
-Route::resource('insumos', 'InsumoController');
+Route::resource('productos', 'ProductoController');
 
 Route::resource('images', 'ImageController');
 
