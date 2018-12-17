@@ -36,7 +36,7 @@
             <ul>
                 <li><a href="https://www.facebook.com/pg/Osvaldini-Farmacia-y-Perfumería-645094478857713" target="_new"><i class="icon-facebook"></i></a></li>
                 <li><a href="https://www.instagram.com/farmaciaosvaldini" target="_new"><i class="icon-instagram"></i></a></li>
-                <li><a href="{{ route('admin') }}" title="Panel de control">admin </a></li>
+                {{--<li><a href="{{ route('admin') }}" title="Panel de control">admin </a></li>--}}
             </ul>
         </div>
     </div><!-- End container -->
