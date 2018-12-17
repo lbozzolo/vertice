@@ -17,6 +17,10 @@ Route::get('/', function () {
   return redirect('home');
 });
 
+Route::get('home', function () {
+    return redirect('web');
+});
+
 
 Route::group(['prefix' => 'web'], function () {
 

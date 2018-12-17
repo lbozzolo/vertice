@@ -7,15 +7,6 @@ Route::get('/admin', [
     'uses' => 'HomeController@index'
 ]);
 
-//Route::group(['prefix' => 'admin'], function(){
-//
-//    Route::get('/', [
-//        'as' => 'admin',
-//        'uses' => 'HomeController@index'
-//    ]);
-//
-//});
-
 Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder');
 
 Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate');
