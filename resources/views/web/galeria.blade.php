@@ -23,28 +23,21 @@
             <h2 class="main_title"><em></em>Artículos de dermocosmética en Pinamar<span>Conozca la variedad de productos de dermocosmética que tenemos a su disposición. Recuerde que los productos de higiene y de belleza personal ofrecen un universo de posibilidades para verse siempre mejor, solo se trata de elegir el correcto y para eso puede contar con nosotros, Farmacia Osvaldini, más de 30 años de experiencia nos avala.</span></h2>
             <div class="grid">
                 <ul class="magnific-gallery">
-                    @forelse($productos as $producto)
+                    @forelse($images as $imagen)
 
-                        @foreach($producto->images as $imagen)
-
-                            @if($imagen->main)
-
-                                <li>
-                                    <figure>
-                                        <img src="{{ route('imagenes.ver', $imagen->path) }}" class="img-responsive" alt="{!! $imagen->title !!}" style="margin: 0px auto;">
-                                        <figcaption>
-                                            <div class="caption-content">
-                                                <a href="{{ asset('imagenes/'.$imagen->path) }}" title="Farmacia Osvaldini" data-effect="mfp-zoom-in">
-                                                    <i class="pe-7s-albums"></i>
-                                                    <p>Ampliar Imagen</p>
-                                                </a>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </li>
-
-                            @endif
-                        @endforeach
+                        <li>
+                            <figure>
+                                <img src="{{ route('imagenes.ver', $imagen->path) }}" class="img-responsive" alt="{!! $imagen->title !!}" style="margin: 0px auto;">
+                                <figcaption>
+                                    <div class="caption-content">
+                                        <a href="{{ asset('imagenes/'.$imagen->path) }}" title="Farmacia Osvaldini" data-effect="mfp-zoom-in">
+                                            <i class="pe-7s-albums"></i>
+                                            <p>Ampliar Imagen</p>
+                                        </a>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </li>
 
                     @empty
                         <li>

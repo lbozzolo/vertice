@@ -51,7 +51,7 @@ class WebController extends AppBaseController
 
     public function galeria()
     {
-        $data['productos'] = Producto::with('images')->get();
+        $data['images'] = Image::where('imageable_id', null)->get();
         return view('web.galeria')->with($data);
     }
 

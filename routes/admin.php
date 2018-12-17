@@ -33,6 +33,12 @@ Route::post('imagenes/{id}/{class}', [
     'as' => 'images.save',
     'uses' => 'ImageController@storeImage'
 ]);
+
+Route::post('imagenes/store', [
+    'as' => 'images.store',
+    'uses' => 'ImageController@store'
+]);
+
 Route::get('imagenes/{id}/{class}/{imagen}/principal', [
     'as' => 'images.main',
     'uses' => 'ImageController@principalImage',

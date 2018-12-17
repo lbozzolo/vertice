@@ -37,10 +37,13 @@ class ImageController extends AppBaseController
             return abort(403);
 
         $this->imageRepository->pushCriteria(new RequestCriteria($request));
-        $images = $this->imageRepository->all();
+        //$images = $this->imageRepository->all();
+
+        $images = Image::where('imageable_id', null)->get();
+        $otras = Image::where('imageable_id', '!=', null)->get();
 
         return view('images.index')
-            ->with('images', $images);
+            ->with(['images' => $images, 'otras' => $otras]);
     }
 
     /**
@@ -66,6 +69,26 @@ class ImageController extends AppBaseController
         $image = $this->imageRepository->create($input);
 
         return redirect(route('images.index'))->with('ok', 'Imagen creada con éxito');*/
+        if(!$request->hasFile('img'))
+            return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
+
+        if($request->file('img')){
+
+            $file = $request->file('img');
+
+            // Redirección si excede el máximo tamaño de imagen permitido
+            if($file->getClientSize() > config('imagenes.MAX_SIZE_IMAGE'))
+                return redirect()->back()->withErrors('La foto es demasiado grande (Debe ser menor a 2M)');
+
+            // Confirma que el archivo no exista en el destino
+            $nombre = $this->changeFileNameIfExists($file);
+
+            $imagen = Image::create(['path' => $nombre, 'main' => 0]);
+            $imagen->title = ($request->title)? $request->title : '';
+            $file->move(public_path('imagenes'), $nombre);
+
+        }
+        return redirect()->route('images.index')->with('ok', 'Imagen subida con éxito');
 
     }
 
