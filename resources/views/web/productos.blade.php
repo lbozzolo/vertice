@@ -28,7 +28,7 @@
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="results_shop">
-                                        Mostrando 1–9 de 15 resultados
+                                        {!! $productos->render() !!}
                                     </div>
                                 </div>
 
@@ -37,128 +37,55 @@
 
                         <div class="row">
 
-                            <div class="shop-item col-lg-4 col-md-6 col-sm-6">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image"><a href="detalle_producto.html"><img src="{{ asset('template-web/assets/img/products/image-1.jpg') }}" alt=""></a></figure>
-                                        <div class="item-options clearfix">
-                                            <a href="detalle_producto.html" class="btn_shop"><span class="icon-eye"></span>
-                                                <div class="tool-tip">
-                                                    Ver Producto
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product_description">
-                                        <h3><a href="detalle_producto.html">Producto 1</a></h3>
-                                    </div>
-                                </div>
-                            </div><!--End Shop Item-->
 
-                            <div class="shop-item col-lg-4 col-md-6 col-sm-6">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image"><a href="detalle_producto.html"><img src="{{ asset('template-web/assets/img/products/image-1.jpg') }}" alt=""></a></figure>
-                                        <div class="item-options clearfix">
-                                            <a href="detalle_producto.html" class="btn_shop"><span class="icon-eye"></span>
-                                                <div class="tool-tip">
-                                                    Ver Producto
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product_description">
-                                        <h3><a href="detalle_producto.html">Producto 2</a></h3>
-                                    </div>
-                                </div>
-                            </div><!--End Shop Item-->
+                            @foreach($productos as $producto)
 
-                            <div class="shop-item col-lg-4 col-md-6 col-sm-6">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image"><a href="detalle_producto.html"><img src="{{ asset('template-web/assets/img/products/image-1.jpg') }}" alt=""></a></figure>
-                                        <div class="item-options clearfix">
-                                            <a href="detalle_producto.html" class="btn_shop"><span class="icon-eye"></span>
-                                                <div class="tool-tip">
-                                                    Ver Producto
-                                                </div>
-                                            </a>
+                                <div class="shop-item col-lg-4 col-md-6 col-sm-6">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <figure class="image">
+                                                <a href="{!! route('web.producto.detalle', $producto->id) !!}">
+                                                    @if($producto->mainImage())
+                                                    <img src="{{ route('imagenes.ver', $producto->mainImage()->path) }}" class="img-responsive" alt="{!! $producto->mainImage()->title !!}" style="margin: 0px auto;">
+                                                    @else
+                                                        <img src="{{ asset('template-web/assets/img/products/thumb-1.jpg') }}" alt="">
+                                                    @endif
+                                                </a>
+                                            </figure>
+                                            <div class="item-options clearfix">
+                                                <a href="{!! route('web.producto.detalle', $producto->id) !!}" class="btn_shop"><span class="icon-eye"></span>
+                                                    <div class="tool-tip">
+                                                        Ver Producto
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product_description">
+                                            <h3><a href="{!! route('web.producto.detalle', $producto->id) !!}">{!! $producto->name !!}</a></h3>
                                         </div>
                                     </div>
-                                    <div class="product_description">
-                                        <h3><a href="detalle_producto.html">Producto 3</a></h3>
-                                    </div>
-                                </div>
-                            </div><!--End Shop Item-->
+                                </div><!--End Shop Item-->
 
-                            <div class="shop-item col-lg-4 col-md-6 col-sm-6">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image"><a href="detalle_producto.html"><img src="{{ asset('template-web/assets/img/products/image-1.jpg') }}" alt=""></a></figure>
-                                        <div class="item-options clearfix">
-                                            <a href="detalle_producto.html" class="btn_shop"><span class="icon-eye"></span>
-                                                <div class="tool-tip">
-                                                    Ver Producto
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product_description">
-                                        <h3><a href="detalle_producto.html">Producto 4</a></h3>
-                                    </div>
-                                </div>
-                            </div><!--End Shop Item-->
+                            @endforeach
 
-                            <div class="shop-item col-lg-4 col-md-6 col-sm-6">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image"><a href="detalle_producto.html"><img src="{{ asset('template-web/assets/img/products/image-1.jpg') }}" alt=""></a></figure>
-                                        <div class="item-options clearfix">
-                                            <a href="detalle_producto.html" class="btn_shop"><span class="icon-eye"></span>
-                                                <div class="tool-tip">
-                                                    Ver Producto
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product_description">
-                                        <h3><a href="detalle_producto.html">Producto 5</a></h3>
-                                    </div>
-                                </div>
-                            </div><!--End Shop Item-->
 
-                            <div class="shop-item col-lg-4 col-md-6 col-sm-6">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image"><a href="detalle_producto.html"><img src="{{ asset('template-web/assets/img/products/image-1.jpg') }}" alt=""></a></figure>
-                                        <div class="item-options clearfix">
-                                            <a href="detalle_producto.html" class="btn_shop"><span class="icon-eye"></span>
-                                                <div class="tool-tip">
-                                                    Ver Producto
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product_description">
-                                        <h3><a href="detalle_producto.html">Producto 6</a></h3>
-                                    </div>
-                                </div>
-                            </div><!--End Shop Item-->
+
+
                         </div><!--End Shop Item-->
 
                         <hr>
 
-                        <div class="text-center">
-                            <ul class="pagination">
-                                <li><a href="#">Ant</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">Sig</a></li>
-                            </ul>
-                        </div><!-- End pagination-->
+                        {{--<div class="text-center">--}}
+                            {{--<ul class="pagination">--}}
+                                {{--<li><a href="#">Ant</a></li>--}}
+                                {{--<li><a href="#">1</a></li>--}}
+                                {{--<li><a href="#">2</a></li>--}}
+                                {{--<li><a href="#">3</a></li>--}}
+                                {{--<li><a href="#">4</a></li>--}}
+                                {{--<li><a href="#">5</a></li>--}}
+                                {{--<li><a href="#">Sig</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</div><!-- End pagination-->--}}
                     </div><!-- End row -->
                 </div><!-- End col -->
 
@@ -170,6 +97,9 @@
                         <div class="widget" id="cat_shop">
                             <h4>Categorias</h4>
                             <ul>
+                                @foreach($categorias as $categoria)
+                                    <li><a href="{!! route('web.productos', $categoria->id) !!}">{!! ucfirst($categoria->name) !!}</a></li>
+                                @endforeach
                                 <li><a href="#">Categoria 1</a></li>
                                 <li><a href="#">Categoria 2</a></li>
                                 <li><a href="#">Categoria 3</a></li>

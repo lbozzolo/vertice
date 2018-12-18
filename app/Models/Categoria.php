@@ -47,7 +47,7 @@ class Categoria extends Model
         'name' => 'required'
     ];
 
-    public function insumos()
+    public function productos()
     {
         return $this->morphedByMany('App\Models\Producto', 'categoriable');
     }

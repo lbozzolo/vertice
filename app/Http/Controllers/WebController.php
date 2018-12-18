@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\ContactRequest;
+use App\Models\Categoria;
 use App\Models\Farmacia;
 use App\Models\Image;
 use App\Models\Producto;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Slider;
+use Illuminate\Support\Facades\DB;
 
 class WebController extends AppBaseController
 {
@@ -36,9 +39,13 @@ class WebController extends AppBaseController
         return view('web.servicios')->with($data);
     }
 
-    public function productos()
+    public function productos($categoriaId = null)
     {
-        $data['productos'] = Producto::all();
+        $categoria = ($categoriaId)? Categoria::find($categoriaId) : null;
+
+        $data['productos'] = ($categoria)? new Paginator($categoria->productos, 9) : Producto::with('images')->paginate(9);
+        $data['categorias'] = Categoria::all();
+
         return view('web.productos')->with($data);
     }
 

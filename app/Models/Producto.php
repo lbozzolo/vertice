@@ -44,7 +44,7 @@ class Producto extends Model
      */
     public static $rules = [
         'name' => 'required|max:255',
-        'description' => 'max:255',
+        'description' => 'max:1500',
         'code' => 'required',
         'price' => '',
         'categorias' => 'min:1',
@@ -60,7 +60,7 @@ class Producto extends Model
         return date_format($this->updated_at,"d/m/Y");
     }
 
-    public function getMainImageAttribute()
+    public function mainImage()
     {
         $images = $this->images();
         return $images->where('main', 1)->first();
