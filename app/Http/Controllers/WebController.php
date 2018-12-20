@@ -91,7 +91,7 @@ class WebController extends AppBaseController
         );
 
         Mail::send('emails.contacto', ['data' => $data], function($message) use ($data){
-            $message->to('lucas@verticedigital.com.ar');
+            $message->to(config('mail.username'));
             $message->subject($data['subject']);
             $message->from($data['email_contact']);
         });
