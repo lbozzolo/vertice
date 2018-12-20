@@ -21,8 +21,7 @@ class WebController extends AppBaseController
     public function index()
     {
         $data['slider'] = Slider::where('active', '1')->first();
-        $data['productos'] = Producto::all();
-        //$data['productos'] = [];
+        $data['productos'] = Producto::where('highlight', 1)->get();
 
         return view('web.home')->with($data);
     }

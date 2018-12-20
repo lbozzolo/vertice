@@ -19,8 +19,8 @@
                     <div>
                         <a href="{{ route('web.producto.detalle', $producto->id) }}" title="{!! $producto->name !!}">
                             <figure>
-                                @if($producto->main_image)
-                                    <img src="{{ route('imagenes.ver', $producto->main_image->path) }}" class="img-responsive" alt="{!! $producto->main_image->title !!}" style="margin: 0px auto;">
+                                @if($producto->mainImage())
+                                    <img src="{{ route('imagenes.ver', $producto->mainImage()->path) }}" class="img-responsive" alt="{!! $producto->mainImage()->title !!}" style="margin: 0px auto;">
                                 @endif
                             </figure>
                             <h4>{!! $producto->name !!}</h4>
