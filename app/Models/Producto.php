@@ -62,8 +62,7 @@ class Producto extends Model
 
     public function mainImage()
     {
-        $images = $this->images();
-        return $images->where('main', 1)->first();
+        return $this->images()->where('main', 1)->first();
     }
 
     public function images()

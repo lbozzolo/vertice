@@ -24,6 +24,8 @@ Route::resource('productos', 'ProductoController');
 
 Route::resource('images', 'ImageController');
 
+Route::resource('newsletter', 'NewsletterController');
+
 Route::get('imagenes/{file}', [
     'as' => 'imagenes.ver',
     'uses' => 'ImageController@verImage'

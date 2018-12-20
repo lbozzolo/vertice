@@ -75,17 +75,6 @@
 
                         <hr>
 
-                        {{--<div class="text-center">--}}
-                            {{--<ul class="pagination">--}}
-                                {{--<li><a href="#">Ant</a></li>--}}
-                                {{--<li><a href="#">1</a></li>--}}
-                                {{--<li><a href="#">2</a></li>--}}
-                                {{--<li><a href="#">3</a></li>--}}
-                                {{--<li><a href="#">4</a></li>--}}
-                                {{--<li><a href="#">5</a></li>--}}
-                                {{--<li><a href="#">Sig</a></li>--}}
-                            {{--</ul>--}}
-                        {{--</div><!-- End pagination-->--}}
                     </div><!-- End row -->
                 </div><!-- End col -->
 
@@ -93,23 +82,18 @@
                 <div class="col-md-3">
                     <aside class="sidebar">
 
-
                         <div class="widget" id="cat_shop">
                             <h4>Categorias</h4>
                             <ul>
-                                @foreach($categorias as $categoria)
+                                @forelse($categorias as $categoria)
                                     <li><a href="{!! route('web.productos', $categoria->id) !!}">{!! ucfirst($categoria->name) !!}</a></li>
-                                @endforeach
-                                <li><a href="#">Categoria 1</a></li>
-                                <li><a href="#">Categoria 2</a></li>
-                                <li><a href="#">Categoria 3</a></li>
-                                <li><a href="#">Categoria 4</a></li>
+                                @empty
+                                    <li>No hay ninguna categoría cargada</li>
+                                @endforelse
                             </ul>
                         </div><!-- End widget -->
 
-
-                </div>
-                </aside>
+                    </aside>
             </div><!--/Sidebar-->
         </div><!--/row-->
         </div><!--/container-->

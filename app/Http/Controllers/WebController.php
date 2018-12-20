@@ -65,6 +65,7 @@ class WebController extends AppBaseController
     public function detalleProducto($id)
     {
         $producto = Producto::find($id);
+        //dd($producto->mainImage());
 
         if (empty($producto))
             return redirect()->back()->withErrors('Producto no encontrado');

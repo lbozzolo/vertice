@@ -14,8 +14,8 @@
                             <div class="row">
                                 <div class="image-column col-md-6 col-sm-6 col-xs-12">
                                     <figure class="image-box">
-                                        @if($producto->main_image)
-                                            <img src="{{ route('imagenes.ver', $producto->main_image->path) }}" class="img-responsive" alt="{!! $producto->main_image->title !!}" style="margin: 0px auto;">
+                                        @if($producto->mainImage())
+                                            <img src="{{ route('imagenes.ver', $producto->mainImage()->path) }}" class="img-responsive" alt="{!! $producto->mainImage()->title !!}" style="margin: 0px auto;">
                                         @endif
                                     </figure>
                                 </div>
@@ -46,27 +46,28 @@
                             </div>
                         </div><!--End Basic Details-->
 
-                        <div class="product-info-tabs">
+                        {{--<div class="product-info-tabs">--}}
 
-                            <div class="prod-tabs" id="product-tabs">
-                                <div class="tab-btns clearfix">
-                                    <a href="#prod-description" class="tab-btn active-btn">Descripción del Producto</a>
-                                </div>
+                            {{--<div class="prod-tabs" id="product-tabs">--}}
+                                {{--<div class="tab-btns clearfix">--}}
+                                    {{--<a href="#prod-description" class="tab-btn active-btn">Descripción del Producto</a>--}}
+                                {{--</div>--}}
 
-                                <div class="tabs-container">
-                                    <div class="tab active-tab" id="prod-description">
+                                {{--<div class="tabs-container">--}}
+                                    {{--<div class="tab active-tab" id="prod-description">--}}
 
-                                        <div class="content">
-                                            <p>
-                                                Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-                                            </p>
-                                        </div>
-                                    </div><!--End Tab-->
+                                        {{--<div class="content">--}}
+                                            {{--<p>--}}
+                                                {{--Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.--}}
+                                            {{--</p>--}}
+                                        {{--</div>--}}
+                                    {{--</div><!--End Tab-->--}}
 
 
-                                </div><!--End tabs-container-->
-                            </div><!--End prod-tabs-->
-                        </div><!--End product-info-tabs-->
+                                {{--</div><!--End tabs-container-->--}}
+                            {{--</div><!--End prod-tabs-->--}}
+                        {{--</div><!--End product-info-tabs-->--}}
+
                     </div><!--End Product-details-->
                 </div><!--End Col-->
 

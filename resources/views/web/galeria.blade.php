@@ -28,14 +28,14 @@
                         <li>
                             <figure>
                                 <img src="{{ route('imagenes.ver', $imagen->path) }}" class="img-responsive" alt="{!! $imagen->title !!}" style="margin: 0px auto;">
-                                <figcaption>
-                                    <div class="caption-content">
-                                        <a href="{{ asset('imagenes/'.$imagen->path) }}" title="Farmacia Osvaldini" data-effect="mfp-zoom-in">
-                                            <i class="pe-7s-albums"></i>
-                                            <p>Ampliar Imagen</p>
-                                        </a>
-                                    </div>
-                                </figcaption>
+                                {{--<figcaption>--}}
+                                    {{--<div class="caption-content">--}}
+                                        {{--<a href="{{ route('imagenes.ver', $imagen->path) }}" title="{!! $imagen->title !!}" data-effect="mfp-zoom-in">--}}
+                                            {{--<i class="pe-7s-albums"></i>--}}
+                                            {{--<p>Ampliar Imagen</p>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                {{--</figcaption>--}}
                             </figure>
                         </li>
 

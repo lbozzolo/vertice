@@ -33,6 +33,10 @@
     <a href="{!! route('categorias.index') !!}"><i class="fa fa-edit"></i><span>Categorias</span></a>
 </li>
 
+<li class="{{ Request::is('newsletter*') ? 'active' : '' }}">
+    <a href="{!! route('newsletter.index') !!}"><i class="fa fa-edit"></i><span>Newsletter</span></a>
+</li>
+
 <li class="{{ Request::is('sliders*') ? 'active' : '' }}">
     <a href="{!! route('sliders.index') !!}"><i class="fa fa-edit"></i><span>Sliders</span></a>
 </li>

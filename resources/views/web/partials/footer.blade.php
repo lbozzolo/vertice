@@ -4,10 +4,12 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <h3>Subscribete a nuestro newletter y recibiras nuestras novedades.</h3>
                 <div id="message-newsletter_2"></div>
-                <form method="post" action="assets/newsletter.php" name="newsletter_2" id="newsletter_2" class="form-inline">
-                    <input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Tu Email" class="form-control">
-                    <button id="submit-newsletter_2" class="button">Subscribete</button>
-                </form>
+
+                {!! Form::open(['url' => route('web.suscribe.newsletter'), 'method' => 'post', 'name' => 'newsletter_2', 'class' => 'form-inline']) !!}
+                {!! Form::email('email_newsletter_2', null, ['class' => 'form-control', 'id' => 'email_newsletter_2', 'placeholder' => 'Tu email']) !!}
+                {!! Form::submit('Suscribite', ['class' => 'button', 'id' => 'submit-newsletter_2']) !!}
+                {!! Form::close() !!}
+
             </div>
         </div>
     </div>
