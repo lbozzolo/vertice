@@ -52,13 +52,7 @@
                                                     @endif
                                                 </a>
                                             </figure>
-                                            <div class="item-options clearfix">
-                                                <a href="{!! route('web.producto.detalle', $producto->id) !!}" class="btn_shop"><span class="icon-eye"></span>
-                                                    <div class="tool-tip">
-                                                        Ver Producto
-                                                    </div>
-                                                </a>
-                                            </div>
+                                            
                                         </div>
                                         <div class="product_description">
                                             <h3><a href="{!! route('web.producto.detalle', $producto->id) !!}">{!! $producto->name !!}</a></h3>
