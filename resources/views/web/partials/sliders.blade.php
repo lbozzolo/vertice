@@ -1,4 +1,4 @@
-<div id="full-slider-wrapper">
+<div id="full-slider-wrapper" style="margin-top: 0px">
     <div id="layerslider" style="width:100%;height:600px;">
 
         @foreach($slider->images as $imagen)
