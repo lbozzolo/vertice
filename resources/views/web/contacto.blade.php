@@ -88,9 +88,7 @@
                     <div class="box_style_2">
                         <h4>Información de Contacto</h4>
                         <p>
-                            Av. Shaw 658
-                            Entre del Pejerrey y de la Trucha
-                            Pinamar
+                            Del Lenguado 1296, 7167 Balneario Pinamar, Buenos Aires, Argentina
                             <br> (02254) 48 2867
                             <br>
                             <a href="mailto:info@farmaciaosvaldini.com">info@farmaciaosvaldini.com</a>
