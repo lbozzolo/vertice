@@ -20,7 +20,15 @@
 
     <main>
         <div class="container margin_60">
-            <h2 class="main_title"><em></em>Artículos de dermocosmética en Pinamar<span>Conozca la variedad de productos de dermocosmética que tenemos a su disposición. Recuerde que los productos de higiene y de belleza personal ofrecen un universo de posibilidades para verse siempre mejor, solo se trata de elegir el correcto y para eso puede contar con nosotros, Farmacia Osvaldini, más de 30 años de experiencia nos avala.</span></h2>
+            <h2 class="main_title">
+                Artículos de dermocosmética en Pinamar
+                <span>
+                    Conocé la variedad de productos de dermocosmética que tenemos a tu disposición.
+                    Recordá que los productos de higiene y de belleza personal ofrecen un universo de posibilidades para verse siempre mejor,
+                    sólo se trata de elegir el correcto y para eso podés contar con nosotros.
+                    Farmacia Osvaldini, más de 30 años de experiencia nos avalan.
+                </span>
+            </h2>
             <div class="grid">
                 <ul class="magnific-gallery">
                     @forelse($images as $imagen)

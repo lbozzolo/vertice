@@ -2,7 +2,7 @@
     <div class="container margin_60">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
-                <h3>Subscribete a nuestro newletter y recibiras nuestras novedades.</h3>
+                <h3>Subscribite a nuestro newsletter y recibirás nuestras novedades.</h3>
                 <div id="message-newsletter_2"></div>
 
                 {!! Form::open(['url' => route('web.suscribe.newsletter'), 'method' => 'post', 'name' => 'newsletter_2', 'class' => 'form-inline']) !!}

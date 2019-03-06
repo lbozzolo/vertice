@@ -25,7 +25,9 @@
                 <div class="col-md-9">
                     <h3>Contactanos</h3>
                     <p>
-                        Recuerde que en Farmacia Osvaldini estamos siempre prestos a atenderlo con amabilidad y respeto. Si requiere de servicio de inyectología, perfumería, medicamentos y más, no dude en hacer uso de todos los canales de comunicación que tenemos dispuestos para que usted pueda llamarnos o escribirnos.
+                        Recordá que en Farmacia Osvaldini estamos siempre prestos a atenderte con amabilidad y respeto.<br>
+                        Si necesitás servicio de inyectología, perfumería, medicamentos y más,
+                        no dudes en hacer uso de todos los canales <br>de comunicación que tenemos dispuestos para que puedas llamarnos o escribirnos.
                     </p>
                     <div>
                         <div id="message-contact"></div>
@@ -69,10 +71,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>¿Es usted Humano? 3 + 1 =</label>
-                                        <input name="verify_contact" type="text" id="verify_contact" class=" form-control styled" placeholder="Indique aquí el resultado de la suma 3 + 1 =">
-                                    </div>
+                                    {{--<div class="form-group">--}}
+                                        {{--<label>¿Es usted Humano? 3 + 1 =</label>--}}
+                                        {{--<input name="verify_contact" type="text" id="verify_contact" class=" form-control styled" placeholder="Indique aquí el resultado de la suma 3 + 1 =">--}}
+                                    {{--</div>--}}
                                     <p><input type="submit" value="Enviar" class="btn_1" id="submit-contact"></p>
                                 </div>
                             </div>

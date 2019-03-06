@@ -38,7 +38,7 @@
                     <div class="features-content">
                         <h3>"Marcando la Diferencia"</h3>
                         <p>
-                            Visítenos, nuestros clientes nos prefieren por el amplio surtido de productos, la atención y la buena disposición que hace de nuestra marca un hábito diario.
+                            ¡Visitanos! Nuestros clientes nos prefieren por el amplio surtido de productos, la atención y la buena disposición que hace de nuestra marca un hábito diario.
                         </p>
 
                     </div>

@@ -29,7 +29,7 @@ class ContactRequest extends FormRequest
             'name_contact' => 'required|max:255',
             'lastname_contact' => 'required|max:255',
             'email_contact' => 'required|email',
-            'verify_contact' => 'required|in:4',
+            //'verify_contact' => 'required|in:4',
         ];
     }
 
@@ -45,8 +45,8 @@ class ContactRequest extends FormRequest
             'email_contact.required' => 'El campo Email es obligatorio',
             'email_contact.email' => 'El campo Email debe tener un formato correcto',
 
-            'verify_contact.required' => 'El campo "¿Es usted Humano?" debe ser completado',
-            'verify_contact.in' => 'El campo "¿Es usted Humano?" debe ser completado correctamente',
+            //'verify_contact.required' => 'El campo "¿Es usted Humano?" debe ser completado',
+            //'verify_contact.in' => 'El campo "¿Es usted Humano?" debe ser completado correctamente',
         ];
     }
 }
