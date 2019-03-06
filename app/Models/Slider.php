@@ -23,7 +23,7 @@ class Slider extends Model
 
 
     public $fillable = [
-        'name'
+        'name', 'active', 'text_active',
     ];
 
     /**

@@ -1,16 +1,16 @@
 
-{!! Form::open(['url' => route('images.save', ['id' => $slider->id, 'class' => 'Slider']), 'method' => 'post', 'files' => true]) !!}
+{{--{!! Form::open(['url' => route('images.save', ['id' => $slider->id, 'class' => 'Slider']), 'method' => 'post', 'files' => true]) !!}--}}
 
-<div class="form-group">
-    {!! Form::label('img', 'Imágenes') !!}
-    {!! Form::file('img') !!}
-</div>
-<div class="form-group">
-    {!! Form::label('title', 'Descripción') !!}<br>
-    {!! Form::text('title') !!}
-    {!! Form::submit('Subir imagen', ['class' => 'btn btn-info btn-sm']) !!}
-</div>
-<ul class="list-inline" style="border: 2px dotted lightgrey; padding: 5px">
+{{--<div class="form-group">--}}
+    {{--{!! Form::label('img', 'Imágenes') !!}--}}
+    {{--{!! Form::file('img') !!}--}}
+{{--</div>--}}
+{{--<div class="form-group">--}}
+    {{--{!! Form::label('title', 'Descripción') !!}<br>--}}
+    {{--{!! Form::text('title') !!}--}}
+    {{--{!! Form::submit('Subir imagen', ['class' => 'btn btn-info btn-sm']) !!}--}}
+{{--</div>--}}
+<ul class="list-inline" style="border: 2px dotted lightgrey; padding: 5px" id="list-images">
     @forelse($slider->images as $imagen)
 
         <li>
@@ -28,8 +28,42 @@
     @endforelse
 </ul>
 
-{!! Form::close() !!}
+{{--{!! Form::close() !!}--}}
 
+<div class="">
+    <div class="box-body">
+
+        <span id="producto-id" data-producto-id="{!! route('subir.imagen', ['id' => $slider->id, 'class' => 'Slider']) !!}"></span>
+
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <div class="d-flex p-3">
+            <div class="text-center">
+                <div>
+                    <div>
+                        <input type="file" class="file-upload form-control" id="file-upload" name="img" accept="image/*">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="croppie-image" style="display: none; padding: 20px">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="lead text-center">
+                    ¿Desea cortar y subir esta imagen?
+                    <button class="btn btn-primary" id="upload" >Aceptar</button>
+                    <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-default mt-3">Cancelar</a>
+                </div>
+
+                <div id="resizer2" style="padding-top: 10px;">
+                    <button class="btn btn-default rotate pull-left" data-deg="90"><i class="fa fa-rotate-left" style="font-size: 2em"></i></button>
+                    <button class="btn btn-default rotate pull-right" data-deg="-90"><i class="fa fa-rotate-right" style="font-size: 2em"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 @foreach($slider->images as $imagen)
 
@@ -50,7 +84,7 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <div class="modal fade text-left" id="modalDeleteImage{!! $imagen->id !!}">
                         <div class="modal-dialog">
-                            <div class="modal-content">
+                            <div class="modal-content col-lg-6 col-lg-offset-3">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span></button>
@@ -62,7 +96,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
                                     {!! Form::open(['method' => 'DELETE', 'url' => route('images.destroy', $imagen->id)]) !!}
-                                    {!! Form::submit('Eliminar de todos modos', ['class' => 'btn btn-danger']) !!}
+                                    {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
                                     {!! Form::close() !!}
                                 </div>
                             </div>

@@ -26,6 +26,8 @@ Route::resource('images', 'ImageController');
 
 Route::resource('newsletter', 'NewsletterController');
 
+// Imágenes
+
 Route::get('imagenes/{file}', [
     'as' => 'imagenes.ver',
     'uses' => 'ImageController@verImage'
@@ -39,6 +41,11 @@ Route::post('imagenes/{id}/{class}', [
 Route::post('imagenes/store', [
     'as' => 'images.store',
     'uses' => 'ImageController@store'
+]);
+
+Route::post('/{id}/{class}/demos/jquery-image-upload', [
+    'as' => 'subir.imagen',
+    'uses' => 'ImageController@saveJqueryImageUpload'
 ]);
 
 Route::get('imagenes/{id}/{class}/{imagen}/principal', [

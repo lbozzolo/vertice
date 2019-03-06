@@ -34,10 +34,19 @@
             </td>
             <td>
 
-                @if(!$slider->active && count($slider->images) != 0)
-                    <a href="{!! route('sliders.activate', $slider->id) !!}" class="btn btn-primary">Activar este slider</a>
+                <div>
+                    @if(!$slider->active && count($slider->images) != 0)
+                        <a href="{!! route('sliders.activate', $slider->id) !!}" class="btn btn-primary">Activar este slider</a>
+                    @else
+                        <span class="btn btn-primary" disabled>Activar este slider</span>
+                    @endif
+                </div>
+
+
+                @if($slider->text_active)
+                    <span class="text-center text-success">Texto sobre la imagen activado</span>
                 @else
-                    <span class="btn btn-primary" disabled>Activar este slider</span>
+                    <span class="text-center text-danger">Texto sobre la imagen desactivado</span>
                 @endif
 
             </td>

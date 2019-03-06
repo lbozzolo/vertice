@@ -11,7 +11,7 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   <div class="col-lg-6">
+                   <div class="col-lg-12" id="form-fields">
                        <div class="row">
                            {!! Form::model($producto, ['route' => ['productos.update', $producto->id], 'method' => 'patch']) !!}
 
@@ -20,7 +20,7 @@
                            {!! Form::close() !!}
                        </div>
                    </div>
-                   <div class="col-lg-6">
+                   <div class="col-lg-12">
 
                        @include('productos.images')
 
@@ -33,6 +33,9 @@
 
 @section('scripts')
 
+    <script src="{{ asset('croppie/croppie.js') }}"></script>
+    <script src="{{ asset('exif-js/exif.js') }}"></script>
+    <script src="{{ asset('js/croppie-file.js') }}"></script>
     <script>
 
         $('.select2').select2({
