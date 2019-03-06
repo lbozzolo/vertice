@@ -9,10 +9,10 @@
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="{{ asset('template-web/assets/img/favicon.ico') }}" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('template-web/assets/img/apple-touch-icon-57x57-precomposed.png') }}">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{ asset('template-web/assets/img/apple-touch-icon-72x72-precomposed.png') }}">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{ asset('template-web/assets/img/apple-touch-icon-114x114-precomposed.png') }}">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{{ asset('template-web/assets/img/apple-touch-icon-144x144-precomposed.png') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('template-web/assets/img/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{ asset('template-web/assets/img/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{ asset('template-web/assets/img/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{{ asset('template-web/assets/img/apple-icon-144x144.png') }}">
 
     <!-- BASE CSS -->
     <link href="{{ asset('template-web/assets/css/animate.min.css') }}" rel="stylesheet">
