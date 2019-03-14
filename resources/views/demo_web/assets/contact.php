@@ -73,7 +73,7 @@ $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 $user = "$email_contact";
 $usersubject = "Gracias";
 $userheaders = "From: info@farmaciaosvaldini.com\n";
-$usermessage = "Gracias por contactar con Farmacia Osvaldini. Le contestaremos en breve!";
+$usermessage = "Gracias por contactar con Estatuto Osvaldini. Le contestaremos en breve!";
 mail($user,$usersubject,$usermessage,$userheaders);
 
 if(mail($address, $e_subject, $msg, $headers)) {

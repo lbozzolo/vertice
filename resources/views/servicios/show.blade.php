@@ -1,19 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Servicio
-        </h1>
-    </section>
-    <div class="content">
-        <div class="box box-primary">
-            <div class="box-body">
-                <div class="row" style="padding-left: 20px">
+
+    <div class="card">
+        <div class="card-body">
+            <h1>
+                Servicio /
+                <span class="text-warning">Detalles</span>
+            </h1>
+
+            <div class="row">
+                <div class="table-responsive col-lg-6">
+
                     @include('servicios.show_fields')
-                    <a href="{!! route('servicios.index') !!}" class="btn btn-default">Volver</a>
+
                 </div>
             </div>
+
         </div>
     </div>
+
+    <div class="card col-lg-12 mt-3">
+        <div class="card-body">
+
+            @include('servicios.images-show')
+
+        </div>
+    </div>
+
 @endsection

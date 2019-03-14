@@ -1,17 +1,22 @@
 <!-- Title Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-lg-6">
     {!! Form::label('title', 'Título:') !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Active Field -->
-<div class="form-group col-lg-6" style="padding-top: 30px">
-    {!! Form::label('active', 'Activo') !!}
-    {!! Form::checkbox('active', '1') !!}
+<div class="form-group col-lg-6 mt-4">
+    {!! Form::checkbox('active') !!}
+    {!! Form::label('active', 'Marcar este servicio como ACTIVO', ['style' => 'padding-top: 6px']) !!}
 </div>
+{{--<!-- Active Field -->--}}
+{{--<div class="form-group col-lg-6" style="padding-top: 30px">--}}
+    {{--{!! Form::label('active', 'Activo') !!}--}}
+    {{--{!! Form::checkbox('active', '1') !!}--}}
+{{--</div>--}}
 
 <!-- Body Field -->
-<div class="form-group col-sm-12 col-lg-12">
+<div class="form-group col-lg-12">
     {!! Form::label('body', 'Texto:') !!}
     {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
 </div>

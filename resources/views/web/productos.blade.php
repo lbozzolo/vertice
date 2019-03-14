@@ -80,7 +80,7 @@
                             <h4>Categorias</h4>
                             <ul>
                                 @forelse($categorias as $categoria)
-                                    <li><a href="{!! route('web.productos', $categoria->id) !!}">{!! ucfirst($categoria->name) !!}</a></li>
+                                    <li><a href="{!! route('noticias', $categoria->id) !!}">{!! ucfirst($categoria->name) !!}</a></li>
                                 @empty
                                     <li>No hay ninguna categoría cargada</li>
                                 @endforelse

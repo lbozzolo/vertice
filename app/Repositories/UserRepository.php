@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace Amghi\Repositories;
 
-use App\User;
+use Amghi\User;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class ColorRepository
- * @package App\Repositories
+ * @package Amghi\Repositories
  * @version September 3, 2018, 10:45 pm UTC
  *
  * @method Color findWithoutFail($id, $columns = ['*'])

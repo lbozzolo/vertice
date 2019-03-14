@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Amghi\Http\Controllers;
 
-use App\Http\Controllers\AppBaseController;
-use App\Http\Requests\ContactRequest;
-use App\Models\Categoria;
-use App\Models\Farmacia;
-use App\Models\Image;
-use App\Models\Producto;
-use App\Models\Servicio;
+use Amghi\Http\Controllers\AppBaseController;
+use Amghi\Http\Requests\ContactRequest;
+use Amghi\Models\Categoria;
+use Amghi\Models\Estatuto;
+use Amghi\Models\Image;
+use Amghi\Models\Noticia;
+use Amghi\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Mail;
-use App\Models\Slider;
+use Amghi\Models\Slider;
 use Illuminate\Support\Facades\DB;
 
 class WebController extends AppBaseController
@@ -21,14 +21,14 @@ class WebController extends AppBaseController
     public function index()
     {
         $data['slider'] = Slider::where('active', '1')->first();
-        $data['productos'] = Producto::where('highlight', 1)->get();
+        $data['noticias'] = Noticia::where('highlight', 1)->get();
 
         return view('web.home')->with($data);
     }
 
     public function farmacia()
     {
-        $data['farmacias'] = Farmacia::where('active', '==', 1)->first();
+        $data['estatutos'] = Estatuto::where('active', '==', 1)->first();
         return view('web.farmacia')->with($data);
     }
 
@@ -42,15 +42,15 @@ class WebController extends AppBaseController
     {
         $categoria = ($categoriaId)? Categoria::find($categoriaId) : null;
 
-        $data['productos'] = ($categoria)? new Paginator($categoria->productos, 9) : Producto::with('images')->paginate(9);
+        $data['noticias'] = ($categoria)? new Paginator($categoria->productos, 9) : Noticia::with('images')->paginate(9);
         $data['categorias'] = Categoria::all();
 
-        return view('web.productos')->with($data);
+        return view('web.noticias')->with($data);
     }
 
     public function nosotros()
     {
-        $data['nosotros'] = Farmacia::where('active', 1)->first();
+        $data['nosotros'] = Estatuto::where('active', 1)->first();
         //dd($data);
         return view('web.nosotros')->with($data);
     }
@@ -63,11 +63,11 @@ class WebController extends AppBaseController
 
     public function detalleProducto($id)
     {
-        $producto = Producto::find($id);
+        $producto = Noticia::find($id);
         //dd($producto->mainImage());
 
         if (empty($producto))
-            return redirect()->back()->withErrors('Producto no encontrado');
+            return redirect()->back()->withErrors('Noticia no encontrado');
 
         return view('web.detalle-producto', compact('producto'));
     }

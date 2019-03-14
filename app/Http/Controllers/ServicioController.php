@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Amghi\Http\Controllers;
 
-use App\Http\Requests\CreateServicioRequest;
-use App\Http\Requests\UpdateServicioRequest;
-use App\Repositories\ServicioRepository;
-use App\Http\Controllers\AppBaseController;
+use Amghi\Http\Requests\CreateServicioRequest;
+use Amghi\Http\Requests\UpdateServicioRequest;
+use Amghi\Repositories\ServicioRepository;
+use Amghi\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -13,7 +13,6 @@ use Response;
 
 class ServicioController extends AppBaseController
 {
-    /** @var  ServicioRepository */
     private $servicioRepository;
 
     public function __construct(ServicioRepository $servicioRepo)
@@ -21,12 +20,6 @@ class ServicioController extends AppBaseController
         $this->servicioRepository = $servicioRepo;
     }
 
-    /**
-     * Display a listing of the Servicio.
-     *
-     * @param Request $request
-     * @return Response
-     */
     public function index(Request $request)
     {
         $this->servicioRepository->pushCriteria(new RequestCriteria($request));
@@ -36,23 +29,11 @@ class ServicioController extends AppBaseController
             ->with('servicios', $servicios);
     }
 
-    /**
-     * Show the form for creating a new Servicio.
-     *
-     * @return Response
-     */
     public function create()
     {
         return view('servicios.create');
     }
 
-    /**
-     * Store a newly created Servicio in storage.
-     *
-     * @param CreateServicioRequest $request
-     *
-     * @return Response
-     */
     public function store(CreateServicioRequest $request)
     {
         $input = $request->all();
@@ -61,13 +42,6 @@ class ServicioController extends AppBaseController
         return redirect(route('servicios.index'))->with('ok', 'Servicio creado con éxito');
     }
 
-    /**
-     * Display the specified Servicio.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function show($id)
     {
         $servicio = $this->servicioRepository->findWithoutFail($id);
@@ -78,13 +52,6 @@ class ServicioController extends AppBaseController
         return view('servicios.show')->with('servicio', $servicio);
     }
 
-    /**
-     * Show the form for editing the specified Servicio.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function edit($id)
     {
         $servicio = $this->servicioRepository->findWithoutFail($id);
@@ -95,14 +62,6 @@ class ServicioController extends AppBaseController
         return view('servicios.edit')->with('servicio', $servicio);
     }
 
-    /**
-     * Update the specified Servicio in storage.
-     *
-     * @param  int              $id
-     * @param UpdateServicioRequest $request
-     *
-     * @return Response
-     */
     public function update($id, UpdateServicioRequest $request)
     {
         $servicio = $this->servicioRepository->findWithoutFail($id);
@@ -112,16 +71,12 @@ class ServicioController extends AppBaseController
 
         $servicio = $this->servicioRepository->update($request->all(), $id);
 
+        $servicio->active = ($request->active == '1')? 1 : 0;
+        $servicio->save();
+
         return redirect(route('servicios.index'))->with('ok', 'Servicio actualizado con éxito');
     }
 
-    /**
-     * Remove the specified Servicio from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function destroy($id)
     {
         $servicio = $this->servicioRepository->findWithoutFail($id);

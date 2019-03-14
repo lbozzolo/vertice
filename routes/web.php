@@ -54,9 +54,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@galeria'
     ]);
 
-    Route::get('productos/{categoriaId?}', [
-        'as' => 'web.productos',
-        'uses' => 'WebController@productos'
+    Route::get('noticias/{categoriaId?}', [
+        'as' => 'web.noticias',
+        'uses' => 'WebController@noticias'
     ]);
 
     Route::get('producto/{id}/detalle', [

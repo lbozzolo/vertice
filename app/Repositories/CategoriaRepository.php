@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace Amghi\Repositories;
 
-use App\Models\Categoria;
+use Amghi\Models\Categoria;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class CategoriaRepository
- * @package App\Repositories
+ * @package Amghi\Repositories
  * @version September 3, 2018, 10:55 pm UTC
  *
  * @method Categoria findWithoutFail($id, $columns = ['*'])

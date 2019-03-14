@@ -1,35 +1,37 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $user->id !!}</p>
-</div>
-
-<!-- Title Field -->
-<div class="form-group">
-    {!! Form::label('name', 'Nombre:') !!}
-    <p>{!! $user->name !!}</p>
-</div>
-
-<!-- Body Field -->
-<div class="form-group">
-    {!! Form::label('lastname', 'Apellido:') !!}
-    <p>{!! $user->lastname !!}</p>
-</div>
-
-<div class="form-group">
-    {!! Form::label('email', 'Email:') !!}
-    <p>{!! $user->email !!}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $user->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $user->updated_at !!}</p>
-</div>
+<table class="table table-striped table-bordered">
+    <tbody>
+        <tr>
+            <td>Id:</td>
+            <td>{!! $user->id !!}</td>
+        </tr>
+        <tr>
+            <td>Nombre:</td>
+            <td>{!! $user->name !!}</td>
+        </tr>
+        <tr>
+            <td>Apellido:</td>
+            <td>{!! $user->lastname !!}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{!! $user->email !!}</td>
+        </tr>
+        <tr>
+            <td>Created At:</td>
+            <td>{!! $user->created_at !!}</td>
+        </tr>
+        <tr>
+            <td>Updated At:</td>
+            <td>{!! $user->updated_at !!}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                <a href="{!! route('users.edit', $user->id) !!}" class="btn btn-primary">Editar</a>
+                <a href="{!! route('users.index') !!}" class="btn btn-default">Cancelar</a>
+            </td>
+        </tr>
+    </tfoot>
+</table>
 

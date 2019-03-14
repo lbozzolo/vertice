@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace Amghi\Repositories;
 
-use App\Models\Image;
+use Amghi\Models\Image;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class ImageRepository
- * @package App\Repositories
+ * @package Amghi\Repositories
  * @version September 3, 2018, 10:53 pm UTC
  *
  * @method Image findWithoutFail($id, $columns = ['*'])

@@ -50,7 +50,7 @@
 
                             {{--<div class="prod-tabs" id="product-tabs">--}}
                                 {{--<div class="tab-btns clearfix">--}}
-                                    {{--<a href="#prod-description" class="tab-btn active-btn">Descripción del Producto</a>--}}
+                                    {{--<a href="#prod-description" class="tab-btn active-btn">Descripción del Noticia</a>--}}
                                 {{--</div>--}}
 
                                 {{--<div class="tabs-container">--}}

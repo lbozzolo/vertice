@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace Amghi\Repositories;
 
-use App\Models\Servicio;
+use Amghi\Models\Servicio;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class ServicioRepository
- * @package App\Repositories
+ * @package Amghi\Repositories
  * @version September 3, 2018, 10:39 pm UTC
  *
  * @method Servicio findWithoutFail($id, $columns = ['*'])

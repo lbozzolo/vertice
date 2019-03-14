@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Amghi\Http\Controllers;
 
-use App\Http\Requests\CreateImageRequest;
-use App\Http\Requests\UpdateImageRequest;
-use App\Repositories\ImageRepository;
-use App\Http\Controllers\AppBaseController;
+use Amghi\Http\Requests\CreateImageRequest;
+use Amghi\Http\Requests\UpdateImageRequest;
+use Amghi\Repositories\ImageRepository;
+use Amghi\Http\Controllers\AppBaseController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Facades\Validator;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
-use App\Models\Image;
-use App\Models\Empresa;
+use Amghi\Models\Image;
+use Amghi\Models\Empresa;
 use Illuminate\Support\Facades\Auth;
 
 class ImageController extends AppBaseController
@@ -182,7 +182,7 @@ class ImageController extends AppBaseController
         if(!$request->hasFile('img'))
             return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
 
-        $class = 'App\Models\\'.$class;
+        $class = 'Amghi\Models\\'.$class;
         $model = $class::find($id);
         //dd($request->file('img'));
 
@@ -227,7 +227,7 @@ class ImageController extends AppBaseController
     public function principalImage($id, $class, $image)
     {
         $imagen = Image::find($image);
-        $class = 'App\Models\\'.$class;
+        $class = 'Amghi\Models\\'.$class;
         $model = $class::find($id);
 
         foreach($model->images as $img){
@@ -258,7 +258,7 @@ class ImageController extends AppBaseController
         if(!$request->hasFile('img'))
             return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
 
-        $class = 'App\Models\\'.$class;
+        $class = 'Amghi\Models\\'.$class;
         $model = $class::find($id);
 
         // Redirección si supera el máximo de fotos permitido

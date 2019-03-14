@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     $(function() {
         var croppie = null;
-        var el = document.getElementById('resizer2');
+        var el = document.getElementById('resizer');
 
         $.base64ImageToBlob = function(str) {
             // extract content type and base64 payload from original string
@@ -48,6 +48,8 @@ $(document).ready(function() {
             $("#croppie-image").show();
             $("#form-fields").hide();
             $("#list-images").hide();
+            $("#file-upload").hide();
+
             // Initailize croppie instance and assign it to global variable
             croppie = new Croppie(el, {
                 viewport: {

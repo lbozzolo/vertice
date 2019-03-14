@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace Amghi\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Categoria
- * @package App\Models
+ * @package Amghi\Models
  * @version September 3, 2018, 10:55 pm UTC
  *
  * @property string name
@@ -47,9 +47,9 @@ class Categoria extends Model
         'name' => 'required'
     ];
 
-    public function productos()
+    public function noticias()
     {
-        return $this->morphedByMany('App\Models\Producto', 'categoriable');
+        return $this->belongsToMany(Noticia::class, 'categorias_noticias');
     }
 
     

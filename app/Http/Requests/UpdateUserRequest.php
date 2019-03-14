@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Amghi\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\User;
+use Amghi\User;
 
 class UpdateUserRequest extends FormRequest
 {

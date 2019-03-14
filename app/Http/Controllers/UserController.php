@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Amghi\Http\Controllers;
 
-use App\Http\Requests\CreateUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use App\Repositories\UserRepository;
-use App\Http\Controllers\AppBaseController as AppBaseController;
+use Amghi\Http\Requests\CreateUserRequest;
+use Amghi\Http\Requests\UpdateUserRequest;
+use Amghi\Repositories\UserRepository;
+use Amghi\Http\Controllers\AppBaseController as AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Facades\Auth;

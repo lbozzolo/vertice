@@ -17,7 +17,7 @@
                     <li><a href="{{ route('home') }}"><span>Home</span></a></li>
                     <li><a href="{{ route('web.servicios') }}">Servicios</a></li>
                     <li><a href="{{ route('web.nosotros') }}">Nuestra Farmacia</a></li></li>
-                    <li><a href="{{ route('web.productos') }}">Productos</a></li>
+                    <li><a href="{{ route('noticias') }}">Productos</a></li>
                     <li><a href="{{ route('web.galeria') }}">Galería</a></li>
                     <li><a href="{{ route('web.contacto') }}">Contacto</a></li>
                 </ul>

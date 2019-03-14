@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Amghi\Http\Controllers;
 
-use App\Http\Requests\CreateCategoriaRequest;
-use App\Http\Requests\UpdateCategoriaRequest;
-use App\Repositories\CategoriaRepository;
-use App\Http\Controllers\AppBaseController;
+use Amghi\Http\Requests\CreateCategoriaRequest;
+use Amghi\Http\Requests\UpdateCategoriaRequest;
+use Amghi\Repositories\CategoriaRepository;
+use Amghi\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

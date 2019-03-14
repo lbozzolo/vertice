@@ -1,29 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Usuario / Agregar
-        </h1>
-    </section>
-    <div class="content">
-        @include('adminlte-templates::common.errors')
-        <div class="box box-primary">
 
-            <div class="box-body">
-                <div class="row">
+    <div class="card col-lg-6">
+        <div class="card-body">
+
+            <h1>Usuario / <span class="text-warning">Agregar</span></h1>
+            <div class="row">
+                <div class="card-body">
                     {!! Form::open(['route' => 'users.store']) !!}
 
-                    <div class="form-group col-sm-4 col-lg-4">
+                    <div class="form-group col-lg-12">
                         {!! Form::label('password', 'Ingrese una contraseña provisoria (máximo 6 caracteres)') !!}
                         {!! Form::password('password', ['class' => 'form-control', 'maxlength' => '6']) !!}
                     </div>
 
-                        @include('users.fields')
+                    @include('users.fields')
 
                     {!! Form::close() !!}
                 </div>
+
             </div>
+
         </div>
     </div>
+
+
 @endsection

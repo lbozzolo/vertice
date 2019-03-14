@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Amghi\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Servicio;
+use Amghi\Models\Servicio;
 
 class CreateServicioRequest extends FormRequest
 {

@@ -1,33 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Servicio / Editar
-        </h1>
-   </section>
-   <div class="content">
-       @include('adminlte-templates::common.errors')
-       <div class="box box-primary">
-           <div class="box-body">
-               <div class="row">
 
-                   <div class="col-lg-6">
-                       <div class="row">
-                           {!! Form::model($servicio, ['route' => ['servicios.update', $servicio->id], 'method' => 'patch']) !!}
+    <div class="card" id="form-fields">
+        <div class="card-body">
 
-                                @include('servicios.fields')
+            <h1>
+                Servicio /
+                <span class="text-warning">Editar</span>
+            </h1>
+            <div class="row">
+                <div class="card-body">
 
-                           {!! Form::close() !!}
-                       </div>
-                   </div>
-                   <div class="col-lg-6">
+                    {!! Form::model($servicio, ['route' => ['servicios.update', $servicio->id], 'method' => 'patch']) !!}
 
-                       @include('servicios.images')
+                    <div class="row">
+                        @include('servicios.fields')
+                    </div>
 
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
+                    {!! Form::close() !!}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card col-lg-12 mt-3">
+        <div class="card-body">
+
+            @include('servicios.images')
+
+        </div>
+    </div>
+
+@endsection
+
+@section('js')
+
+    <script src="{{ asset('croppie/croppie.js') }}"></script>
+    <script src="{{ asset('exif-js/exif.js') }}"></script>
+    <script src="{{ asset('js/croppie-file.js') }}"></script>
+
 @endsection

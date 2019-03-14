@@ -176,11 +176,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Amghi\Providers\AppServiceProvider::class,
+        Amghi\Providers\AuthServiceProvider::class,
+        // Amghi\Providers\BroadcastServiceProvider::class,
+        Amghi\Providers\EventServiceProvider::class,
+        Amghi\Providers\RouteServiceProvider::class,
         /*
          * GUI Interface - Generator Builder...
          */

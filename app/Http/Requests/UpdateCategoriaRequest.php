@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Amghi\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Categoria;
+use Amghi\Models\Categoria;
 
 class UpdateCategoriaRequest extends FormRequest
 {
