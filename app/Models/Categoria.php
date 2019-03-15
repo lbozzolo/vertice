@@ -47,6 +47,16 @@ class Categoria extends Model
         'name' => 'required'
     ];
 
+    public function getFechaCreadoAttribute()
+    {
+        return date_format($this->created_at,"d/m/Y");
+    }
+
+    public function getFechaEditadoAttribute()
+    {
+        return date_format($this->updated_at,"d/m/Y");
+    }
+
     public function noticias()
     {
         return $this->belongsToMany(Noticia::class, 'categorias_noticias');

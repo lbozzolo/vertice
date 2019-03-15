@@ -1,24 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Categoría / Agregar
-        </h1>
-    </section>
-    <div class="content">
-        @include('adminlte-templates::common.errors')
-        <div class="box box-primary">
 
-            <div class="box-body">
-                <div class="row">
+    <div class="card col-lg-12">
+        <div class="card-body">
+
+            <h1>Categoría / <span class="text-warning">Agregar</span></h1>
+            <div class="row">
+                <div class="card-body">
                     {!! Form::open(['route' => 'categorias.store']) !!}
 
+                    <div class="row">
                         @include('categorias.fields')
+                    </div>
 
                     {!! Form::close() !!}
                 </div>
+
             </div>
+
         </div>
     </div>
+
 @endsection

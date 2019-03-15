@@ -20,6 +20,7 @@
                 <label class="{!! ($estatuto->active)? 'badge badge-success' : 'badge badge-danger' !!}">{!! ($estatuto->active)? 'ACTIVO' : 'INACTIVO' !!}</label>
             </td>
             <td>
+
                 <div class='btn-group'>
                     <a href="{!! route('estatutos.show', [$estatuto->id]) !!}" class='btn btn-secondary btn-xs' title="Ver detalles"><i class="mdi mdi-18px mdi-file-document-box"></i></a>
                     <a href="{!! route('estatutos.edit', [$estatuto->id]) !!}" class='btn btn-dark btn-xs' title="Editar"><i class="mdi mdi-18px mdi-pencil-box"></i></a>

@@ -44,6 +44,11 @@ class Slider extends Model
         'name' => 'required'
     ];
 
+    public function mainImage()
+    {
+        return $this->images()->where('main', 1)->first();
+    }
+
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');

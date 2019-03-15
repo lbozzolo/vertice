@@ -1,23 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Categoría / Editar
-        </h1>
-   </section>
-   <div class="content">
-       @include('adminlte-templates::common.errors')
-       <div class="box box-primary">
-           <div class="box-body">
-               <div class="row">
-                   {!! Form::model($categoria, ['route' => ['categorias.update', $categoria->id], 'method' => 'patch']) !!}
 
+    <div class="card" id="form-fields">
+        <div class="card-body">
+
+            <h1>
+                Categorías /
+                <span class="text-warning">Editar</span>
+            </h1>
+            <div class="row">
+                <div class="card-body">
+
+                    {!! Form::model($categoria, ['route' => ['categorias.update', $categoria->id], 'method' => 'patch']) !!}
+
+                    <div class="row">
                         @include('categorias.fields')
+                    </div>
 
-                   {!! Form::close() !!}
-               </div>
-           </div>
-       </div>
-   </div>
+                    {!! Form::close() !!}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 @endsection

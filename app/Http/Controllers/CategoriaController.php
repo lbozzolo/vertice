@@ -13,7 +13,6 @@ use Response;
 
 class CategoriaController extends AppBaseController
 {
-    /** @var  CategoriaRepository */
     private $categoriaRepository;
 
     public function __construct(CategoriaRepository $categoriaRepo)
@@ -21,12 +20,6 @@ class CategoriaController extends AppBaseController
         $this->categoriaRepository = $categoriaRepo;
     }
 
-    /**
-     * Display a listing of the Categoria.
-     *
-     * @param Request $request
-     * @return Response
-     */
     public function index(Request $request)
     {
         $this->categoriaRepository->pushCriteria(new RequestCriteria($request));
@@ -36,23 +29,11 @@ class CategoriaController extends AppBaseController
             ->with('categorias', $categorias);
     }
 
-    /**
-     * Show the form for creating a new Categoria.
-     *
-     * @return Response
-     */
     public function create()
     {
         return view('categorias.create');
     }
 
-    /**
-     * Store a newly created Categoria in storage.
-     *
-     * @param CreateCategoriaRequest $request
-     *
-     * @return Response
-     */
     public function store(CreateCategoriaRequest $request)
     {
         $input = $request->all();
@@ -63,13 +44,6 @@ class CategoriaController extends AppBaseController
         return redirect(route('categorias.index'))->with('ok', 'Categoría creada con éxito');
     }
 
-    /**
-     * Display the specified Categoria.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function show($id)
     {
         $categoria = $this->categoriaRepository->findWithoutFail($id);
@@ -80,13 +54,6 @@ class CategoriaController extends AppBaseController
         return view('categorias.show')->with('categoria', $categoria);
     }
 
-    /**
-     * Show the form for editing the specified Categoria.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function edit($id)
     {
         $categoria = $this->categoriaRepository->findWithoutFail($id);
@@ -97,14 +64,6 @@ class CategoriaController extends AppBaseController
         return view('categorias.edit')->with('categoria', $categoria);
     }
 
-    /**
-     * Update the specified Categoria in storage.
-     *
-     * @param  int              $id
-     * @param UpdateCategoriaRequest $request
-     *
-     * @return Response
-     */
     public function update($id, UpdateCategoriaRequest $request)
     {
         $categoria = $this->categoriaRepository->findWithoutFail($id);
@@ -114,16 +73,12 @@ class CategoriaController extends AppBaseController
 
         $categoria = $this->categoriaRepository->update($request->all(), $id);
 
+        $categoria->slug = str_slug($categoria->name, '.');
+        $categoria->save();
+
         return redirect(route('categorias.index'))->with('ok', 'Categoría actualizada con éxito');
     }
 
-    /**
-     * Remove the specified Categoria from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function destroy($id)
     {
         $categoria = $this->categoriaRepository->findWithoutFail($id);

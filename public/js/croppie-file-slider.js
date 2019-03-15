@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     $(function() {
         var croppie = null;
-        var el = document.getElementById('resizer2');
+        var el = document.getElementById('resizer');
 
         $.base64ImageToBlob = function(str) {
             // extract content type and base64 payload from original string
@@ -44,10 +44,12 @@ $(document).ready(function() {
         };
 
         $("#file-upload").on("change", function(event) {
-            //$("#myModal").modal();
+
             $("#croppie-image").show();
             $("#form-fields").hide();
             $("#list-images").hide();
+            $("#file-upload").hide();
+
             // Initailize croppie instance and assign it to global variable
             croppie = new Croppie(el, {
                 viewport: {
@@ -67,9 +69,7 @@ $(document).ready(function() {
 
         $("#upload").on("click", function() {
             croppie.result('base64').then(function(base64) {
-                $("#myModal").modal("hide");
 
-                $("#profile-pic").attr("src","/images/ajax-loader.gif");
 
                 var url = $('#producto-id').attr('data-producto-id');
 
@@ -93,19 +93,7 @@ $(document).ready(function() {
                     processData: false,
                     contentType: false,
                     success: function(data) {
-                        if (data === "uploaded") {
-                            //$("#profile-pic").attr("src", base64);
-                            //$("#accept-image").show();
-                            //$("#file-upload").hide();
-                            location.reload();
-                        } else {
-                            location.reload();
-                            // $("#profile-pic").attr("src", base64);
-                            //$("#croppie-image").hide();
-                            //$("#form-fields").show();
-                            //$("#list-images").show();
-                            //$("#accept-image").show();
-                        }
+                        location.reload();
                     },
                     error: function(error) {
                         console.log(error);

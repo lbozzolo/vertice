@@ -1,11 +1,10 @@
-<table class="table table-responsive" id="categorias-table">
+<table class="table">
     <thead>
         <tr>
             <th>Id</th>
             <th>Nombre</th>
             <th>Slug</th>
-            <th>created_at</th>
-            <th>updated_at</th>
+            <th>Fecha</th>
             <th colspan="3">Action</th>
         </tr>
     </thead>
@@ -15,16 +14,39 @@
             <td>{!! $categoria->id !!}</td>
             <td>{!! $categoria->name !!}</td>
             <td>{!! $categoria->slug !!}</td>
-            <td>{!! $categoria->created_at !!}</td>
-            <td>{!! $categoria->updated_at !!}</td>
+            <td>{!! $categoria->fecha_creado !!}</td>
             <td>
-                {!! Form::open(['route' => ['categorias.destroy', $categoria->id], 'method' => 'delete']) !!}
+
                 <div class='btn-group'>
-                    <a href="{!! route('categorias.show', [$categoria->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
-                    <a href="{!! route('categorias.edit', [$categoria->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('¿Está seguro que desea eliminar esta categoría?')"]) !!}
+                    <a href="{!! route('categorias.edit', [$categoria->id]) !!}" class='btn btn-dark btn-xs' title="Editar"><i class="mdi mdi-18px mdi-pencil-box"></i></a>
+                    <button title="Eliminar" type="button" data-toggle="modal" data-target="#delete{!! $categoria->id !!}" class="btn btn-xs  btn-danger"><i class="mdi mdi-delete mdi-18px"></i></button>
                 </div>
-                {!! Form::close() !!}
+
+                <!-- Modal -->
+                <div class="modal fade" id="delete{!! $categoria->id !!}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" ><i class="mdi mdi-alert-circle text-danger"></i> Eliminar Categoría</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>¿Desea eliminar esta categoría?</p>
+                            </div>
+                            <div class="modal-footer">
+                                {!! Form::open(['route' => ['categorias.destroy', $categoria->id], 'method' => 'delete']) !!}
+
+                                <button title="Eliminar" type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </td>
         </tr>
     @endforeach

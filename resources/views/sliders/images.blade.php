@@ -1,65 +1,46 @@
+<div class="card" id="list-images">
+    <div class="card-header">
 
-{{--{!! Form::open(['url' => route('images.save', ['id' => $slider->id, 'class' => 'Slider']), 'method' => 'post', 'files' => true]) !!}--}}
+        <span class="float-right">
+            <span id="producto-id" data-producto-id="{!! route('subir.imagen', ['id' => $slider->id, 'class' => 'Slider']) !!}"></span>
+            <meta name="csrf-token" content="{{ csrf_token() }}">
+            <input type="file" class="file-upload form-control" id="file-upload" name="img" accept="image/*">
+        </span>
+        <span class="float-right text-secondary" style="padding: 5px; font-size: 1.5em"><i class="mdi mdi-cloud-upload"></i></span>
+        <h3>Imágenes</h3>
 
-{{--<div class="form-group">--}}
-    {{--{!! Form::label('img', 'Imágenes') !!}--}}
-    {{--{!! Form::file('img') !!}--}}
-{{--</div>--}}
-{{--<div class="form-group">--}}
-    {{--{!! Form::label('title', 'Descripción') !!}<br>--}}
-    {{--{!! Form::text('title') !!}--}}
-    {{--{!! Form::submit('Subir imagen', ['class' => 'btn btn-info btn-sm']) !!}--}}
-{{--</div>--}}
-<ul class="list-inline" style="border: 2px dotted lightgrey; padding: 5px" id="list-images">
-    @forelse($slider->images as $imagen)
+    </div>
+    <div class="card-body" style="background-color: #f2f8f9">
+        @forelse($slider->images as $imagen)
 
-        <li>
             <span style="display: inline-block">
-                <a href="" data-toggle="modal" data-target="#modalVerImage{!! $imagen->id !!}">
-                    <img src="{{ route('imagenes.ver', $imagen->path) }}" alt="{!! $imagen->title !!}" class="img-responsive" style="{!! ($imagen->main == 0)? 'opacity: 0.5;' : '' !!} height: 80px">
-                </a>
-            </span>
-        </li>
+            <a href="" data-toggle="modal" data-target="#modalVerImage{!! $imagen->id !!}">
+                <img src="{{ route('imagenes.ver', $imagen->path) }}" alt="{!! $imagen->title !!}" class="img-responsive" style="{!! ($imagen->main == 0)? 'opacity: 0.5;' : '' !!} height: 80px">
+            </a>
+        </span>
 
-    @empty
+        @empty
 
-        <li class="text-muted"><i class="fa fa-meh-o"></i> <small><em>No hay imágenes para mostrar.</em></small> </li>
+            <span class="text-muted"><i class="mdi mdi-vanish"></i> <small><em>No hay imágenes para mostrar.</em></small> </span>
 
-    @endforelse
-</ul>
+        @endforelse
+    </div>
+</div>
 
-{{--{!! Form::close() !!}--}}
+<div class="card">
+    <div class="card-body">
 
-<div class="">
-    <div class="box-body">
+        <div id="croppie-image" style="display: none">
 
-        <span id="producto-id" data-producto-id="{!! route('subir.imagen', ['id' => $slider->id, 'class' => 'Slider']) !!}"></span>
+            <div id="resizer" style="width: 100%"></div>
 
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <div class="d-flex p-3">
-            <div class="text-center">
-                <div>
-                    <div>
-                        <input type="file" class="file-upload form-control" id="file-upload" name="img" accept="image/*">
-                    </div>
-                </div>
+            <div class="lead text-center">
+                <button class="btn btn-secondary rotate" data-deg="90"><i class="mdi mdi-rotate-left" style="font-size: 2em"></i></button>
+                <button class="btn btn-primary" id="upload" >Aceptar</button>
+                <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-light">Cancelar</a>
+                <button class="btn btn-secondary rotate" data-deg="-90"><i class="mdi mdi-rotate-right" style="font-size: 2em"></i></button>
             </div>
-        </div>
 
-        <div id="croppie-image" style="display: none; padding: 20px">
-            <div class="col-lg-10 col-lg-offset-1">
-                <div class="lead text-center">
-                    ¿Desea cortar y subir esta imagen?
-                    <button class="btn btn-primary" id="upload" >Aceptar</button>
-                    <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-default mt-3">Cancelar</a>
-                </div>
-
-                <div id="resizer2" style="padding-top: 10px;">
-                    <button class="btn btn-default rotate pull-left" data-deg="90"><i class="fa fa-rotate-left" style="font-size: 2em"></i></button>
-                    <button class="btn btn-default rotate pull-right" data-deg="-90"><i class="fa fa-rotate-right" style="font-size: 2em"></i></button>
-                </div>
-            </div>
         </div>
 
     </div>
@@ -71,7 +52,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src="{{ route('imagenes.ver', $imagen->path) }}" class="img-responsive" alt="{!! $imagen->title !!}" style="margin: 0px auto">
+                    <img src="{{ route('imagenes.ver', $imagen->path) }}" class="img-responsive" alt="{!! $imagen->title !!}" style="width: 100%; margin: 0px auto">
                 </div>
                 <div class="modal-footer">
 
