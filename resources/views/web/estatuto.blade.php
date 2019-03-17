@@ -2,78 +2,39 @@
 
 @section('content')
 
-    @if($slider)
-    <section class="slider">
-        @include('web.partials.sliders')
+    <!-- Title page -->
+    <section class="bg-img1 kit-overlay1" style="background-image: url('{{ asset('template-web/images/bg-05.jpg') }}');">
+        <div class="container size-h-3 p-tb-30 flex-col-c-c">
+            <h2 class="t1-b-1 text-uppercase cl-0 txt-center m-b-25">
+                Nuestro Estatuto
+            </h2>
+
+        </div>
     </section>
-    @endif
+
+    <!--  -->
 
     <section class="bg-0 p-t-92 p-b-60">
         <div class="container">
-            <!-- Title section -->
-
-
-            <!--  -->
             <div class="row justify-content-center">
-                <div class="col-sm-10 col-md-8 col-lg-4 p-b-40">
-                    <div class="bg-10 h-full">
-                        <a href="services-detail-01.html" class="hov-img0 of-hidden bg-0">
-                            <img src="{{ asset('template-web/images/services-01.jpg') }}" alt="IMG">
-                        </a>
+                <div class="col-sm-12 col-md-12 p-b-35">
 
-                        <div class="p-rl-30 p-t-26 p-b-20">
-                            <h4 class="p-b-9">
-                                <a href="services-detail-01.html" class="t1-m-1 cl-0 hov-link2 trans-02">
-                                    Management Training
-                                </a>
-                            </h4>
+                    <div class="flex-col-c-s p-b-35">
+                        <h3 class="t1-b-1 cl-3 m-b-11">
+                            {!! ($estatuto)? $estatuto->title : '' !!}
+                        </h3>
 
-                            <p class="t1-s-2 cl-13">
-                                We support and help people increase manage-ment experience.
-                            </p>
-                        </div>
+                        <div class="size-a-2 bg-3"></div>
+                    </div>
+
+                    <div class="p-r-20 p-r-0-sr767">
+
+                        {!! ($estatuto)? $estatuto->body : 'Todavía no se ha cargado estatuto' !!}
+
                     </div>
                 </div>
 
-                <div class="col-sm-10 col-md-8 col-lg-4 p-b-40">
-                    <div class="bg-10 h-full">
-                        <a href="services-detail-01.html" class="hov-img0 of-hidden bg-0">
-                            <img src="{{ asset('template-web/images/services-02.jpg') }}" alt="IMG">
-                        </a>
 
-                        <div class="p-rl-30 p-t-26 p-b-20">
-                            <h4 class="p-b-9">
-                                <a href="services-detail-01.html" class="t1-m-1 cl-0 hov-link2 trans-02">
-                                    Business Consulting
-                                </a>
-                            </h4>
-
-                            <p class="t1-s-2 cl-13">
-                                If you are going to use a passage of Lorem Ipsum, you need to be sure
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-10 col-md-8 col-lg-4 p-b-40">
-                    <div class="bg-10 h-full">
-                        <a href="services-detail-01.html" class="hov-img0 of-hidden bg-0">
-                            <img src="{{ asset('template-web/images/services-03.jpg') }}" alt="IMG">
-                        </a>
-
-                        <div class="p-rl-30 p-t-26 p-b-20">
-                            <h4 class="p-b-9">
-                                <a href="services-detail-01.html" class="t1-m-1 cl-0 hov-link2 trans-02">
-                                    Financial Planning
-                                </a>
-                            </h4>
-
-                            <p class="t1-s-2 cl-13">
-                                Analysis the business plan for deployment in the market.
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -97,8 +58,8 @@
                     <div class="block1 trans-04">
                         <div class="block1-show trans-04">
                             <div class="block1-symbol txt-center wrap-pic-max-s m-b-23 pos-relative lh-00 trans-04">
-                                <img class="symbol-dark trans-04" src="{{ asset('template-web/images/icons/symbol-01-dark.png') }}" alt="IMG">
-                                <img class="symbol-light ab-t-c op-00 trans-04" src="{{ asset('template-web/images/icons/symbol-01-light.png') }}" alt="IMG">
+                                <img class="symbol-dark trans-04" src="images/icons/symbol-01-dark.png" alt="IMG">
+                                <img class="symbol-light ab-t-c op-00 trans-04" src="images/icons/symbol-01-light.png" alt="IMG">
                             </div>
 
                             <h4 class="block1-title t1-m-1 text-uppercase cl-3 txt-center trans-04">
@@ -123,8 +84,8 @@
                     <div class="block1 trans-04">
                         <div class="block1-show trans-04">
                             <div class="block1-symbol txt-center wrap-pic-max-s m-b-23 pos-relative lh-00 trans-04">
-                                <img class="symbol-dark trans-04" src="{{ asset('template-web/images/icons/symbol-02-dark.png') }}" alt="IMG">
-                                <img class="symbol-light ab-t-c op-00 trans-04" src="{{ asset('template-web/images/icons/symbol-02-light.png') }}" alt="IMG">
+                                <img class="symbol-dark trans-04" src="images/icons/symbol-02-dark.png" alt="IMG">
+                                <img class="symbol-light ab-t-c op-00 trans-04" src="images/icons/symbol-02-light.png" alt="IMG">
                             </div>
 
                             <h4 class="block1-title t1-m-1 text-uppercase cl-3 txt-center trans-04">
@@ -149,8 +110,8 @@
                     <div class="block1 trans-04">
                         <div class="block1-show trans-04">
                             <div class="block1-symbol txt-center wrap-pic-max-s m-b-23 pos-relative lh-00 trans-04">
-                                <img class="symbol-dark trans-04" src="{{ asset('template-web/images/icons/symbol-03-dark.png') }}" alt="IMG">
-                                <img class="symbol-light ab-t-c op-00 trans-04" src="{{ asset('template-web/images/icons/symbol-03-light.png') }}" alt="IMG">
+                                <img class="symbol-dark trans-04" src="images/icons/symbol-03-dark.png" alt="IMG">
+                                <img class="symbol-light ab-t-c op-00 trans-04" src="images/icons/symbol-03-light.png" alt="IMG">
                             </div>
 
                             <h4 class="block1-title t1-m-1 text-uppercase cl-3 txt-center trans-04">
@@ -175,8 +136,8 @@
                     <div class="block1 trans-04">
                         <div class="block1-show trans-04">
                             <div class="block1-symbol txt-center wrap-pic-max-s m-b-23 pos-relative lh-00 trans-04">
-                                <img class="symbol-dark trans-04" src="{{ asset('template-web/images/icons/symbol-04-dark.png') }}" alt="IMG">
-                                <img class="symbol-light ab-t-c op-00 trans-04" src="{{ asset('template-web/images/icons/symbol-04-light.png') }}" alt="IMG">
+                                <img class="symbol-dark trans-04" src="images/icons/symbol-04-dark.png" alt="IMG">
+                                <img class="symbol-light ab-t-c op-00 trans-04" src="images/icons/symbol-04-light.png" alt="IMG">
                             </div>
 
                             <h4 class="block1-title t1-m-1 text-uppercase cl-3 txt-center trans-04">
@@ -198,6 +159,5 @@
             </div>
         </div>
     </section>
-
 
 @endsection

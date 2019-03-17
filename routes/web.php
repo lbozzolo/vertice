@@ -29,9 +29,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@index'
     ]);
 
-    Route::get('farmacia', [
-        'as' => 'web.farmacia',
-        'uses' => 'WebController@farmacia'
+    Route::get('estatuto', [
+        'as' => 'web.estatuto',
+        'uses' => 'WebController@estatuto'
     ]);
 
     Route::get('servicios', [
@@ -39,19 +39,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@servicios'
     ]);
 
-    Route::get('nosotros', [
-        'as' => 'web.nosotros',
-        'uses' => 'WebController@nosotros'
-    ]);
-
-    Route::get('proyectos/{id}/detalle', [
-        'as' => 'web.proyectos.detalle',
-        'uses' => 'WebController@detalleProyecto'
-    ]);
-
-    Route::get('galeria', [
-        'as' => 'web.galeria',
-        'uses' => 'WebController@galeria'
+    Route::get('medicos', [
+        'as' => 'web.medicos',
+        'uses' => 'WebController@medicos'
     ]);
 
     Route::get('noticias/{categoriaId?}', [
@@ -59,9 +49,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@noticias'
     ]);
 
-    Route::get('producto/{id}/detalle', [
-        'as' => 'web.producto.detalle',
-        'uses' => 'WebController@detalleProducto'
+    Route::get('noticias/{id}/ver', [
+        'as' => 'web.noticias.ver',
+        'uses' => 'WebController@verNoticia'
     ]);
 
     Route::get('contacto', [
@@ -72,11 +62,6 @@ Route::group(['prefix' => 'web'], function () {
     Route::post('contacto', [
         'as' => 'web.post.contacto',
         'uses' => 'WebController@postContacto'
-    ]);
-
-    Route::post('newsletter', [
-        'as' => 'web.suscribe.newsletter',
-        'uses' => 'NewsletterController@suscribe'
     ]);
 
     Route::get('/home', 'WebController@index');

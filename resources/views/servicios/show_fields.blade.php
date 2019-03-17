@@ -10,7 +10,9 @@
     </tr>
     <tr>
         <td>Texto:</td>
-        <td>{!! $servicio->body !!}</td>
+        <td>
+            <p style="max-width: 300px; white-space: normal; overflow: hidden">{!! $servicio->body !!}</p>
+        </td>
     </tr>
     <tr>
         <td>Fecha:</td>

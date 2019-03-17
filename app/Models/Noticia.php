@@ -62,6 +62,12 @@ class Noticia extends Model
         return $this->images()->where('main', 1)->first();
     }
 
+    public function mainImageOrNext()
+    {
+        $images = $this->images;
+        return ($this->images()->where('main', 1)->first())? $this->images()->where('main', 1)->first() : $images->first();
+    }
+
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');

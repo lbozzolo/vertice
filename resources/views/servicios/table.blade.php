@@ -13,7 +13,9 @@
         <tr>
             <td>{!! $servicio->id !!}</td>
             <td>{!! $servicio->title !!}</td>
-            <td>{!! $servicio->body !!}</td>
+            <td>
+                <p style="max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{!! $servicio->body !!}</p>
+            </td>
             <td>
                 @if($servicio->active)
                     <label class="badge badge-success">ACTIVO</label>

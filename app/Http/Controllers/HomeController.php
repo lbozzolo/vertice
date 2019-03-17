@@ -2,6 +2,11 @@
 
 namespace Amghi\Http\Controllers;
 
+use Amghi\Models\Categoria;
+use Amghi\Models\Estatuto;
+use Amghi\Models\Noticia;
+use Amghi\Models\Servicio;
+
 class HomeController extends Controller
 {
     public function __construct()
@@ -11,6 +16,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        $data['estatutos'] = Estatuto::count();
+        $data['noticias'] = Noticia::count();
+        $data['servicios'] = Servicio::count();
+        $data['categorias'] = Categoria::count();
+
+        return view('home')->with($data);
     }
 }

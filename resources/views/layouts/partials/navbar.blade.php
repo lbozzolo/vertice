@@ -5,11 +5,11 @@
 
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-            <a class="navbar-brand brand-logo" href="{{ route('home') }}">
-                <img src="{{ asset('template-web/images/logo-a-amghi.png') }}" alt="logo" class="img-responsive" />
+            <a class="navbar-brand brand-logo" href="{{ route('admin') }}">
+                <img src="{{ asset('template-web/images/icons/logo_amghi.png') }}" alt="logo" class="img-responsive" />
             </a>
             <a class="navbar-brand brand-logo-mini" href="{{ route('home') }}">
-                <img src="{{ asset('staradmin/images/logo-mini.svg') }}" alt="logo" />
+                <img src="{{ asset('template-web/images/logo-a-amghi.png') }}" alt="logo" />
             </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">

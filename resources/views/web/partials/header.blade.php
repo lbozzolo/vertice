@@ -1,28 +1,147 @@
-<header>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header-wp">
-                <div class="navbar-header">
-                    <a class="cmn-toggle-switch cmn-toggle-switch__htx" href="javascript:void(0);" data-toggle="collapse" data-target="#navbar"><span>Menu mobile</span></a>
-                    <div id="logo_home">
-                        <h1><a href="{{ route('home') }}" title="Farmacia Osvaldini">Los medicamentos que suministramos en nuestra farmacia son de excelente calidad y a los mejores precios. Visítenos en Farmacia Osvaldini. ¡Visítenos en Pinamar!</a></h1>
-                    </div>
-
+<!-- Header desktop -->
+<nav class="container-header-desktop">
+    <div class="top-bar">
+        <div class="content-topbar container flex-sb-c h-full">
+            <div class="size-w-0 flex-wr-s-c">
+                <div class="t1-s-1 cl-13 m-r-50">
+							<span class="fs-16 m-r-6">
+								<i class="fa fa-home" aria-hidden="true"></i>
+							</span>
+                    <span>Av. 51 Numero 1725 e/29 y 30 - La Plata</span>
                 </div>
-                <!--/navbar-header-->
+
+                <div class="t1-s-1 cl-13 m-r-50">
+							<span class="fs-16 m-r-6">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+							</span>
+                    <span>0221-457-5000</span>
+                </div>
+
+
             </div>
-            <!--/navbar-header-wp-->
-            <div class="collapse navbar-collapse navbar-right" id="navbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ route('home') }}"><span>Home</span></a></li>
-                    <li><a href="{{ route('web.servicios') }}">Servicios</a></li>
-                    <li><a href="{{ route('web.nosotros') }}">Nuestra Farmacia</a></li></li>
-                    <li><a href="{{ route('noticias') }}">Productos</a></li>
-                    <li><a href="{{ route('web.galeria') }}">Galería</a></li>
-                    <li><a href="{{ route('web.contacto') }}">Contacto</a></li>
+
+            <div class="text-nowrap">
+                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+
+                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+                    <i class="fa fa-twitter"></i>
+                </a>
+
+                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+
+                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+                    <i class="fa fa-instagram"></i>
+                </a>
+
+                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-menu-desktop">
+        <div class="limiter-menu-desktop container">
+            <!-- Logo desktop -->
+            <div class="logo">
+                <a href="{{ route('home') }}"><img src="{{ asset('template-web/images/icons/logo_amghi.png') }}" alt="Logo Amghi"></a>
+            </div>
+
+            <!-- Menu desktop -->
+            <div class="menu-desktop">
+                <ul class="main-menu respon-sub-menu">
+                    <li>
+                        <a href="{{ route('home') }}">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('web.estatuto') }}">Estatuto de AMGHI</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('web.servicios') }}">Servicios</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('web.noticias') }}">Noticias</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('web.medicos') }}">Médicos</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('web.contacto') }}">Contactanos</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
-    <!-- /Nav -->
-</header><!-- /Header -->
+    </div>
+</nav>
+
+<!-- Header Mobile -->
+<nav class="container-header-mobile">
+    <div class="wrap-header-mobile">
+        <!-- Logo moblie -->
+        <div class="logo-mobile">
+            <a href="{{ route('home') }}"><img src="{{ asset('template-web/images/icons/logo_amghi.png') }}" alt="Logo Amghi"></a>
+        </div>
+
+        <!-- Button show menu -->
+        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </div>
+    </div>
+
+    <div class="menu-mobile">
+        <ul class="top-bar-m p-l-20 p-tb-8">
+            <li>
+                <div class="t1-s-1 cl-5 p-tb-3">
+                    <span class="fs-16 m-r-6">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </span>
+                    <span>Av. 51 Numero 1725 e/29 y 30 - La Plata</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="t1-s-1 cl-5 p-tb-3">
+                    <span class="fs-16 m-r-6">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                    <span>0221-457-5000</span>
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
+                        <i class="fa fa-facebook-official"></i>
+                    </a>
+
+                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+
+                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+
+                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

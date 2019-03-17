@@ -22,14 +22,15 @@ class WebController extends AppBaseController
     {
         $data['slider'] = Slider::where('active', '1')->first();
         $data['noticias'] = Noticia::where('highlight', 1)->get();
+        $data['images'] = ($data['slider'])? $data['slider']->images->sortByDesc('main') : '';
 
         return view('web.home')->with($data);
     }
 
-    public function farmacia()
+    public function estatuto()
     {
-        $data['estatutos'] = Estatuto::where('active', '==', 1)->first();
-        return view('web.farmacia')->with($data);
+        $data['estatuto'] = Estatuto::where('active', '=', 1)->first();
+        return view('web.estatuto')->with($data);
     }
 
     public function servicios()
@@ -38,38 +39,22 @@ class WebController extends AppBaseController
         return view('web.servicios')->with($data);
     }
 
-    public function productos($categoriaId = null)
+    public function medicos()
     {
-        $categoria = ($categoriaId)? Categoria::find($categoriaId) : null;
+        $data['nosotros'] = Estatuto::where('active', 1)->first();
+        return view('web.medicos')->with($data);
+    }
 
-        $data['noticias'] = ($categoria)? new Paginator($categoria->productos, 9) : Noticia::with('images')->paginate(9);
-        $data['categorias'] = Categoria::all();
-
+    public function noticias()
+    {
+        $data['noticias'] = Noticia::where('active', '!=', null)->get();
         return view('web.noticias')->with($data);
     }
 
-    public function nosotros()
+    public function verNoticia($id)
     {
-        $data['nosotros'] = Estatuto::where('active', 1)->first();
-        //dd($data);
-        return view('web.nosotros')->with($data);
-    }
-
-    public function galeria()
-    {
-        $data['images'] = Image::where('imageable_id', null)->get();
-        return view('web.galeria')->with($data);
-    }
-
-    public function detalleProducto($id)
-    {
-        $producto = Noticia::find($id);
-        //dd($producto->mainImage());
-
-        if (empty($producto))
-            return redirect()->back()->withErrors('Noticia no encontrado');
-
-        return view('web.detalle-producto', compact('producto'));
+        $data['noticia'] = Noticia::find($id);
+        return view('web.noticia-detalle')->with($data);
     }
 
     public function contacto()
@@ -82,18 +67,18 @@ class WebController extends AppBaseController
         //dd($request->all());
 
         $data = array(
-            'name_contact' => $request->name_contact,
-            'lastname_contact' => $request->lastname_contact,
-            'phone_contact' => $request->phone_contact,
-            'email_contact' => $request->email_contact,
-            'message_contact' => $request->message_contact,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'msg' => $request->msg,
             'subject' => 'Contacto de cliente'
         );
+
 
         Mail::send('emails.contacto', ['data' => $data], function($message) use ($data){
             $message->to(config('mail.username'));
             $message->subject($data['subject']);
-            $message->from($data['email_contact']);
+            $message->from($data['email']);
         });
 
         return redirect()->back()->with('ok', 'Su correo se ha enviado con éxito.');

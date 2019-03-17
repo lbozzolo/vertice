@@ -77,17 +77,17 @@ class EstatutoController extends AppBaseController
 
         $estatuto = $this->repository->update($request->all(), $id);
 
-        $estatuto->active = ($request->active == '1')? 1 : 0;
-        $estatuto->save();
+//        $estatuto->active = ($request->active == '1')? 1 : 0;
+//        $estatuto->save();
 
-//        if($estatuto->active == 1){
-//            foreach($estatutos as $far){
-//                $far->active = null;
-//                $far->save();
-//            }
-//            $estatuto->active = 1;
-//            $estatuto->save();
-//        }
+        if($estatuto->active == 1){
+            foreach($estatutos as $far){
+                $far->active = null;
+                $far->save();
+            }
+            $estatuto->active = 1;
+            $estatuto->save();
+        }
 
         return redirect(route('estatutos.index'))->with('ok', 'Estatuto actualizado con éxito');
     }

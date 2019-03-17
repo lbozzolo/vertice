@@ -4,7 +4,7 @@
 
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ asset('template-web/images/logo-a-amghi.png') }}" class="img-circle" alt="User Image"/>
+                <img src="{{ asset('template-web/images/icons/logo_amghi.png') }}" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())

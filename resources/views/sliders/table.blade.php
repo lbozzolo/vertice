@@ -3,10 +3,9 @@
         <tr>
             <th>Id</th>
             <th>Nombre</th>
-            <th>Imágenes</th>
-            <th>Texto</th>
+            <th>Texto visible</th>
             <th>Estado</th>
-            <th colspan="3">Action</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -14,28 +13,6 @@
         <tr>
             <td>{!! $slider->id !!}</td>
             <td>{!! $slider->name !!}</td>
-            <td>
-                {{--@if($slider->mainImage())--}}
-                {{--<img src="{{ route('imagenes.ver', $slider->mainImage()->path) }}"--}}
-                     {{--alt="{!! $slider->mainImage()->title !!}"--}}
-                     {{--style="{!! ($slider->mainImage()->main == 0)? 'opacity: 0.5;' : '' !!} border-radius: 0px!important">--}}
-                {{--@endif--}}
-                <ul class="list-inline" style="border: 2px dotted lightgrey; padding: 5px">
-                    @forelse($slider->images as $imagen)
-
-                        <li>
-                            <span style="display: inline-block">
-                                <img src="{{ route('imagenes.ver', $imagen->path) }}" alt="{!! $imagen->title !!}" style="{!! ($imagen->main == 0)? 'opacity: 0.5;' : '' !!} border-radius: 0px!important;">
-                            </span>
-                        </li>
-
-                    @empty
-
-                        <li class="text-muted"><i class="fa fa-meh-o"></i> <small><em>No hay imágenes para mostrar.</em></small> </li>
-
-                    @endforelse
-                </ul>
-            </td>
             <td>
                 @if($slider->text_active)
                     <label class="badge badge-primary">activado</label>
@@ -53,13 +30,12 @@
             <td>
 
                 <div class='btn-group'>
-                    <a href="{!! route('sliders.show', [$slider->id]) !!}" class='btn btn-secondary btn-xs' title="Ver detalles"><i class="mdi mdi-18px mdi-file-document-box"></i></a>
                     <a href="{!! route('sliders.edit', [$slider->id]) !!}" class='btn btn-dark btn-xs' title="Editar"><i class="mdi mdi-18px mdi-pencil-box"></i></a>
                     <button title="Eliminar" type="button" data-toggle="modal" data-target="#delete{!! $slider->id !!}" class="btn btn-xs  btn-danger"><i class="mdi mdi-delete mdi-18px"></i></button>
                     @if(!$slider->active && count($slider->images) != 0)
-                        <a href="{!! route('sliders.activate', $slider->id) !!}" class="btn btn-xs btn-success"><i class="mdi mdi-flag-variant mdi-18px"></i> </a>
+                        <a href="{!! route('sliders.activate', $slider->id) !!}" title="Activar este slider" class="btn btn-xs btn-success"><i class="mdi mdi-flag-variant mdi-18px"></i> </a>
                     @else
-                        <button type="button" class="btn btn-xs btn-success" disabled><i class="mdi mdi-flag-variant-outline mdi-18px"></i></button>
+                        <button type="button" class="btn btn-xs btn-success" title="Activar este slider" disabled><i class="mdi mdi-flag-variant-outline mdi-18px"></i></button>
                     @endif
                 </div>
 

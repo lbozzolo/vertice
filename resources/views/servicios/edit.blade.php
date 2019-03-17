@@ -40,6 +40,6 @@
 
     <script src="{{ asset('croppie/croppie.js') }}"></script>
     <script src="{{ asset('exif-js/exif.js') }}"></script>
-    <script src="{{ asset('js/croppie-file.js') }}"></script>
+    <script src="{{ asset('js/croppie-file-servicio.js') }}"></script>
 
 @endsection

@@ -3,71 +3,58 @@
 
 @section('content')
 
-    <section class="parallax_window_in short" data-parallax="scroll" data-image-src="{{ asset('template-web/assets/img/subheader_in_1.jpg') }}" data-natural-width="1400" data-natural-height="400">
-        <div id="sub_content_in">
-            <div class="container">
-                <h1>Nuestros Servicios</h1>
-                <p></p>
-            </div>
-        </div>
-    </section><!-- /section -->
+    <!-- Title page -->
+    <section class="bg-img1 kit-overlay1" style="background-image: url({{asset('template-web/images/bg-06.jpg')}});">
+        <div class="container size-h-3 p-tb-30 flex-col-c-c">
+            <h2 class="t1-b-1 text-uppercase cl-0 txt-center m-b-25">
+                Servicios que brindamos
+            </h2>
 
-    <div id="position">
+        </div>
+    </section>
+
+    <!-- Service -->
+    <div class="bg-0 p-t-100 p-b-50">
         <div class="container">
-
-        </div>
-    </div><!-- /position -->
-
-    <main>
-        <div class="container margin_60_35">
-            <h2 class="main_title"><em></em>Nuestros Clientes nos eligen porque nuestro servicio es de calidad.</span></h2>
-
-            <!--/row-->
-
-            <!--/row-->
-        </div><!--/container-->
-        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 nopadding">
-                    <div class="features-bg">
-                        <div class="features-img">
+
+            @forelse($servicios as $servicio)
+
+                <div class="col-sm-6 col-md-4 p-b-42">
+                    <div>
+                        <a href="#" class="hov-img0 of-hidden">
+                            @if($servicio->images->count())
+                                <img src="{{ route('imagenes.ver', $servicio->mainImageOrNext()->path) }}" alt="{!! ($servicio->mainImageOrNext()->title)? $servicio->mainImageOrNext()->title : 'Servicio AMGHI' !!}">
+                            @else
+                                <img src="{{ asset('template-web/images/project-01.jpg')}}">
+                            @endif
+                        </a>
+
+                        <div class="p-t-26">
+                            <a href="#" class="d-inline-block t1-m-1 cl-3 hov-link2 trans-02 m-b-7">
+                                {!! $servicio->title !!}
+                            </a>
+
+                            <p style="max-height: 200px; white-space: normal; overflow: hidden">{!! $servicio->body !!}</p>
+                            {{--<p class="t1-s-2 cl-6 m-b-17" style="overflow: hidden; width: 350px; word-break: break-all; height: 200px; text-overflow: ellipsis; ">--}}
+                                {{--{!! $servicio->body !!}--}}
+                            {{--</p>--}}
+
+
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 nopadding">
-                    <div class="features-content">
-                        <h3>"Marcando la Diferencia"</h3>
-                        <p>
-                            ¡Visitanos! Nuestros clientes nos prefieren por el amplio surtido de productos, la atención y la buena disposición que hace de nuestra marca un hábito diario.
-                        </p>
 
-                    </div>
-                </div>
+            @empty
+
+                <span class="text-muted">No hay ningún servicio cargado</span>
+
+            @endforelse
+
+
             </div>
-        </div><!-- /container-fluid  -->
-        <div class="bg_white">
-            <div class="container margin_60_35">
-
-                <div class="row">
-
-                    @forelse($servicios as $servicio)
-
-                        <div class="col-sm-6">
-                            <div class="box_service_2">
-                                <i class="icon_check_alt2"></i>
-                                <h4>{!! $servicio->title !!}</h4>
-                                <p>{!! $servicio->body !!}</p>
-                            </div>
-                        </div>
-
-                    @empty
-                    @endforelse
-
-                </div><!-- /row  -->
-
-            </div><!-- /container  -->
-        </div><!-- /bg_white  -->
-    </main><!--/main-->
+        </div>
+    </div>
 
 
 @endsection

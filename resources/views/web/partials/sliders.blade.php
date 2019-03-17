@@ -1,29 +1,100 @@
-<div id="full-slider-wrapper" style="margin-top: 0px">
-    <div id="layerslider" style="width:100%;height:600px;">
+<div class="rev_slider_wrapper fullwidthbanner-container">
+    <div id="rev_slider_1" class="rev_slider fullwidthabanner" data-version="5.4.5" style="display:none">
+        <ul>
 
-        @foreach($slider->images as $imagen)
+            @forelse($images as $image)
 
-            <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:5;">
-                <img src="{{ route('imagenes.ver', $imagen->path) }}" class="ls-bg" alt="{!! $imagen->title !!}">
-                @if($slider->text_active)
-                <h3 class="ls-l slide_typo"
-                    style="top: 45%; left: 50%;"
-                    data-ls="offsetxin:0;
-                    durationin:2000;
-                    delayin:1000;
-                    rotatexin:25;
-                    transformoriginin:50% bottom 0;
-                    offsetxout:0;
-                    rotatexout:45;
-                    transformoriginout:50% bottom 0;">
+                <li data-transition="slidingoverlayhorizontal">
 
-                    {!! $slider->name !!}
+                    <img src="{{ route('imagenes.ver', $image->path) }}" alt="{!! $image->title !!}" alt="IMG-SLIDE" class="rev-slidebg">
 
-                </h3>
-                @endif
-            </div>
+                    <h2 class="tp-caption tp-resizeme caption-1 text-uppercase"
+                        data-frames='[{"delay":500,"speed":1500,"frame":"0","from":"x:left;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                        data-visibility="['on', 'on', 'on', 'on']"
 
-        @endforeach
+                        data-fontsize="['48', '48', '48', '38']"
+                        data-lineheight="['58', '58', '58', '58']"
+                        data-color="['#FFF']"
+                        data-textAlign="['center', 'center', 'center', 'center']"
 
+                        data-x="['center']"
+                        data-y="['center']"
+                        data-hoffset="['0', '0', '0', '0']"
+                        data-voffset="['-83', '-83', '-83', '-93']"
+
+                        data-width="['1200','992','768','480']"
+                        data-height="['auto', 'auto', 'auto', 'auto']"
+                        data-whitespace="['normal']"
+
+                        data-paddingtop="[0, 0, 0, 0]"
+                        data-paddingright="[15, 15, 15, 15]"
+                        data-paddingbottom="[0, 0, 0, 0]"
+                        data-paddingleft="[15, 15, 15, 15]"
+
+                        data-basealign="slide"
+                        data-responsive_offset="off"
+                    >{!! $slider->text !!}</h2>
+
+                    <p class="tp-caption tp-resizeme caption-2"
+                       data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:right;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                       data-visibility="['on', 'on', 'on', 'on']"
+
+                       data-fontsize="['30', '30', '30', '25']"
+                       data-lineheight="['39', '39', '39', '39']"
+                       data-color="['#FFF']"
+                       data-textAlign="['center', 'center', 'center', 'center']"
+
+                       data-x="['center']"
+                       data-y="['center']"
+                       data-hoffset="['0', '0', '0', '0']"
+                       data-voffset="['-13', '-13', '-13', '-13']"
+
+                       data-width="['1200','992','768','480']"
+                       data-height="['auto', 'auto', 'auto', 'auto']"
+                       data-whitespace="['normal']"
+
+                       data-paddingtop="[0, 0, 0, 0]"
+                       data-paddingright="[15, 15, 15, 15]"
+                       data-paddingbottom="[0, 0, 0, 0]"
+                       data-paddingleft="[15, 15, 15, 15]"
+
+                       data-basealign="slide"
+                       data-responsive_offset="off"
+                    >
+                        {!! $slider->secondary_text !!}
+                    </p>
+
+                    <div class="tp-caption tp-resizeme caption-3 flex-wr-c-c d-flex"
+                         data-frames='[{"delay":3000,"speed":1500,"frame":"0","from":"y:bottom;rX:-20deg;rY:-20deg;rZ:0deg;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="['center']"
+                         data-y="['center']"
+                         data-hoffset="['0', '0', '0', '0']"
+                         data-voffset="['88', '88', '88', '88']"
+
+                         data-width="['1200','992','768','480']"
+                         data-height="['auto']"
+
+                         data-paddingtop="[0, 0, 0, 0]"
+                         data-paddingright="[10, 10, 10, 10]"
+                         data-paddingbottom="[0, 0, 0, 0]"
+                         data-paddingleft="[10, 10, 10, 10]"
+
+                         data-basealign="slide"
+                         data-responsive_offset="off"
+                    >
+                        <a href="" class="btn1 flex-c-c">
+                            Our project
+                        </a>
+
+                        <a href="" class="btn2 flex-c-c">
+                            Learn more
+                        </a>
+                    </div>
+                </li>
+
+            @empty
+            @endforelse
+
+        </ul>
     </div>
-</div><!-- End layerslider -->
+</div>

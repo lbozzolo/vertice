@@ -1,31 +1,35 @@
-<head>
+<title>AMGHI - Asociación Médica Gremial del Hospital Italiano</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="{{ asset('template-web/images/icons/favicon.png') }}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/revolution/css/layers.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/revolution/css/navigation.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/revolution/css/settings.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/slick/slick.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/vendor/MagnificPopup/magnific-popup.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/css/util.min.css') }}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ asset('template-web/css/main.css') }}">
+<!--===============================================================================================-->
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Los medicamentos que suministramos en nuestra farmacia son de excelente calidad y a los mejores precios. Visítenos en Farmacia Osvaldini. ¡Visítenos en Pinamar!">
-    <meta name="author" content="Verticedigital.com.ar">
-    <title>Farmacia Osvaldini - Medicamentos en Pinamar con Farmacia Osvaldini</title>
-
-    <!-- Favicons-->
-    <link rel="shortcut icon" href="{{ asset('template-web/assets/img/favicon.ico') }}" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('template-web/assets/img/apple-icon-57x57.png') }}">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{ asset('template-web/assets/img/apple-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{ asset('template-web/assets/img/apple-icon-114x114.png') }}">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{{ asset('template-web/assets/img/apple-icon-144x144.png') }}">
-
-    <!-- BASE CSS -->
-    <link href="{{ asset('template-web/assets/css/animate.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('template-web/assets/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('template-web/assets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('template-web/assets/css/icon_fonts/css/all_icons_min.css') }}" rel="stylesheet">
-
-    <!-- YOUR CUSTOM CSS -->
-    <link href="{{ asset('template-web/assets/css/custom.css') }}" rel="stylesheet">
-
-    <!-- LayerSlider stylesheet -->
-    <link href="{{ asset('template-web/assets/layerslider/css/layerslider.css') }}" rel="stylesheet">
 
     @yield('css')
 
-</head>
+

@@ -1,27 +1,21 @@
 <!DOCTYPE html>
+<html lang="en">
+    <head>
+        @include('web.partials.head')
+    </head>
+    <body class="animsition">
 
-    @include('web.partials.head')
+        <header>@include('web.partials.header')</header>
 
-<body class="header-fixed page no-sidebar header-style-1 topbar-style-1 menu-has-search">
+        <div class="card-body">@include('flash::web-messages')</div>
 
 
-    <div id="preloader">
-        <div data-loader="circle-side"></div>
-    </div><!-- /Preload -->
+            @yield('content')
 
-    <div class="layer"></div>
-    <!-- /Overlay mask -->
 
-        @include('web.partials.header')
-
-        <div style="margin-top: 100px">@include('flash::web-messages')</div>
-
-        @yield('content')
-
-        @include('web.partials.footer')
+        <footer>@include('web.partials.footer')</footer>
 
         @include('web.partials.scripts')
 
-</body>
+    </body>
 </html>
-
