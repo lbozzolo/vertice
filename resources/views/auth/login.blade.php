@@ -1,107 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AMGHI - Panel de control</title>
-
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-
-    <!-- Theme style -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/AdminLTE.min.css">
-
-    <!-- iCheck -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Star Admin Free Bootstrap Admin Dashboard Template</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{{ asset('staradmin/vendors/iconfonts/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('staradmin/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('staradmin/vendors/css/vendor.bundle.addons.css') }}">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{ asset('staradmin/css/style.css') }}">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{{ asset('staradmin/images/favicon.png') }}" />
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-    <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>AMGHI </b>Panel de control</a>
-    </div>
 
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-        <p class="login-box-msg">Iniciar sesión</p>
+<body>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper auth-page">
+        <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
+            <div class="row w-100">
+                <div class="col-lg-4 mx-auto">
+                    <div class="auto-form-wrapper">
 
-        <form method="post" action="{{ url('/login') }}">
-            {!! csrf_field() !!}
+                        <div class="card-body text-center">
+                            <img src="{{ asset('template-web/images/icons/logo_amghi.png') }}" alt="logo" class="img-responsive" />
+                        </div>
+                        <div class="card-body">
+                            <form action="{{ url('/login') }}" method="post">
+                                {!! csrf_field() !!}
+                                <div class="form-group">
+                                    <label class="label">Email</label>
+                                    @if ($errors->has('email'))
+                                        <p class="text-danger">{{ $errors->first('email') }}</p>
+                                    @endif
+                                    <div class="input-group">
+                                        <input type="email" name="email" class="form-control" value="{{ old('email') }}" placeholder="Email">
+                                        <div class="input-group-append">
+                                      <span class="input-group-text">
+                                        <i class="mdi mdi-check-circle-outline"></i>
+                                      </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label">Contraseña</label>
+                                    @if ($errors->has('password'))
+                                        <p class="text-danger">{{ $errors->first('password') }}</p>
+                                    @endif
+                                    <div class="input-group">
+                                        <input type="password" name="password" class="form-control" placeholder="*********">
+                                        <div class="input-group-append">
+                                      <span class="input-group-text">
+                                        <i class="mdi mdi-check-circle-outline"></i>
+                                      </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary submit-btn btn-block">Ingresar</button>
+                                </div>
+                                <div class="form-group d-flex justify-content-between">
+                                    <div class="form-check form-check-flat mt-0">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" name="remember" class="form-check-input" checked> Recordarme
+                                        </label>
+                                    </div>
+                                    <a href="{{ url('/password/reset') }}" class="text-small forgot-password text-black">Olvidé mi contraseña</a>
+                                </div>
+                            </form>
+                        </div>
 
-            <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
-                <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                @if ($errors->has('email'))
-                    <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-                @endif
-            </div>
-
-            <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" placeholder="Contraseña" name="password">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                @if ($errors->has('password'))
-                    <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-                @endif
-
-            </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox" name="remember"> Recordarme
-                        </label>
                     </div>
+                    <p class="footer-text text-center">copyright © 2019 Verticedigital. Todos los derechos reservados.</p>
                 </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-                </div>
-                <!-- /.col -->
             </div>
-        </form>
-
-        <a href="{{ url('/password/reset') }}">Olvidé mi contraseña</a><br>
-        <a href="{{ url('/register') }}" class="text-center">Registrarse como nuevo usuario</a>
-
+        </div>
+        <!-- content-wrapper ends -->
     </div>
-    <!-- /.login-box-body -->
+    <!-- page-body-wrapper ends -->
 </div>
-<!-- /.login-box -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
-
-<!-- AdminLTE App -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/js/app.min.js"></script>
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' // optional
-        });
-    });
-</script>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="{{ asset('staradmin/vendors/js/vendor.bundle.base.js') }}"></script>
+<script src="{{ asset('staradmin/vendors/js/vendor.bundle.addons.js') }}"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="{{ asset('staradmin/js/off-canvas.js') }}"></script>
+<script src="{{ asset('staradmin/js/misc.js') }}"></script>
+<!-- endinject -->
 </body>
+
 </html>

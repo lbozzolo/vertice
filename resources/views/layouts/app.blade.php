@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
 
-    @include('layouts.partials.htmlheader')
+        @include('layouts.partials.htmlheader')
 
-</head>
-<body>
+    </head>
+    <body>
 
-{{--@yield('body')--}}
-    @include('layouts.partials.navbar')
+        @include('layouts.partials.navbar')
 
-    <div class="container-fluid page-body-wrapper">
+        <div class="container-fluid page-body-wrapper">
 
-        @include('layouts.partials.sidebar')
+            @include('layouts.partials.sidebar')
 
-        <div class="main-panel">
+            <div class="main-panel">
 
-            <div class="content-wrapper">
+                <div class="content-wrapper">
 
-                <div class="row purchace-popup">
-                    <div class="col-12">
-                        @include('vendor.flash.message')
+                    <div class="row purchace-popup">
+                        <div class="col-12">
+                            @include('vendor.flash.message')
+                        </div>
                     </div>
+                    @yield('content')
                 </div>
-                @yield('content')
-            </div>
 
-            {{--@include('partials.footer')--}}
+                @include('layouts.partials.footer')
+
+            </div>
 
         </div>
 
-    </div>
+    @include('layouts.partials.scripts')
 
-@include('layouts.partials.scripts')
+    </body>
 
-</body>
 </html>
