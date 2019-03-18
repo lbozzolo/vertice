@@ -5,6 +5,7 @@ namespace Amghi\Http\Controllers;
 use Amghi\Http\Controllers\AppBaseController;
 use Amghi\Http\Requests\ContactRequest;
 use Amghi\Models\Categoria;
+use Amghi\Models\Comision;
 use Amghi\Models\Estatuto;
 use Amghi\Models\Image;
 use Amghi\Models\Noticia;
@@ -31,6 +32,12 @@ class WebController extends AppBaseController
     {
         $data['estatuto'] = Estatuto::where('active', '=', 1)->first();
         return view('web.estatuto')->with($data);
+    }
+
+    public function comision()
+    {
+        $data['comision'] = Comision::where('active', '=', 1)->first();
+        return view('web.comision')->with($data);
     }
 
     public function servicios()

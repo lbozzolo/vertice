@@ -34,6 +34,11 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@estatuto'
     ]);
 
+    Route::get('comision', [
+        'as' => 'web.comision',
+        'uses' => 'WebController@comision'
+    ]);
+
     Route::get('servicios', [
         'as' => 'web.servicios',
         'uses' => 'WebController@servicios'

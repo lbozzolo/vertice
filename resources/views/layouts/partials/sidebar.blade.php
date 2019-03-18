@@ -17,10 +17,18 @@
                 <span class="menu-title">Usuarios</span>
             </a>
         </li>
+
         <li class="{{ Request::is('estatutos*') ? 'active' : '' }} nav-item">
             <a href="{!! route('estatutos.index') !!}" class="nav-link">
                 <i class="fa fa-edit"></i>
                 <span class="menu-title">Estatutos</span>
+            </a>
+        </li>
+
+        <li class="{{ Request::is('comisiones*') ? 'active' : '' }} nav-item">
+            <a href="{!! route('comisiones.index') !!}" class="nav-link">
+                <i class="fa fa-edit"></i>
+                <span class="menu-title">Comisiones</span>
             </a>
         </li>
 

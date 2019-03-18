@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Title page -->
-    <section class="bg-img1 kit-overlay1" style="background-image: url('{{ asset('template-web/images/bg-05.jpg') }}');">
+    <section class="bg-img1 kit-overlay1" style="<background-image: url('{{ asset('template-web/images/bg-05.jpg') }}');">
         <div class="container size-h-3 p-tb-30 flex-col-c-c">
             <h2 class="t1-b-1 text-uppercase cl-0 txt-center m-b-25">
                 Nuestro Estatuto

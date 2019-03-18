@@ -63,12 +63,16 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('web.servicios') }}">Servicios</a>
+                        <a href="{{ route('web.comision') }}">Comisión</a>
                     </li>
 
                     <li>
-                        <a href="{{ route('web.noticias') }}">Noticias</a>
+                        <a href="{{ route('web.servicios') }}">Servicios</a>
                     </li>
+
+                    {{--<li>--}}
+                        {{--<a href="{{ route('web.noticias') }}">Noticias</a>--}}
+                    {{--</li>--}}
 
                     <li>
                         <a href="{{ route('web.medicos') }}">Médicos</a>

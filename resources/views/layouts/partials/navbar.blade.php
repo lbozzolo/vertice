@@ -15,7 +15,7 @@
         <div class="navbar-menu-wrapper d-flex align-items-center">
             <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                 <li class="nav-item">
-                    <a href="web" class="nav-link">
+                    <a href="web" target="_blank" class="nav-link">
                         <i class="mdi mdi-web"></i>WebSite</a>
                 </li>
             </ul>

@@ -10,14 +10,19 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'HomeController@index'
     ]);
 
+    // Generator builder
+
     Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder');
 
     Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate');
 
     Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate');
 
+    // Sidebar
 
     Route::resource('estatutos', 'EstatutoController');
+
+    Route::resource('comisiones', 'ComisionController');
 
     Route::resource('users', 'UserController');
 
@@ -27,8 +32,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('images', 'ImageController');
 
+    Route::resource('categorias', 'CategoriaController');
 
-// Imágenes
+    Route::resource('sliders', 'SliderController');
+
+    // Imágenes
 
     Route::get('imagenes/{file}', [
         'as' => 'imagenes.ver',
@@ -54,10 +62,6 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'images.main',
         'uses' => 'ImageController@principalImage',
     ]);
-
-    Route::resource('categorias', 'CategoriaController');
-
-    Route::resource('sliders', 'SliderController');
 
     Route::get('sliders/{id}/activate', [
         'as' => 'sliders.activate',
