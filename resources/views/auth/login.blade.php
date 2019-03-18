@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Star Admin Free Bootstrap Admin Dashboard Template</title>
+    <title>AMGHI - Panel de control</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('staradmin/vendors/iconfonts/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('staradmin/vendors/css/vendor.bundle.base.css') }}">
@@ -16,7 +16,8 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('staradmin/css/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('staradmin/images/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('staradmin/images/logo_icon.png') }}" />
+
 </head>
 
 <body>
