@@ -13,49 +13,49 @@
 
         <li class="{{ Request::is('usuarios*') ? 'active' : '' }} nav-item">
             <a href="{!! route('users.index') !!}" class="nav-link">
-                <i class="fa fa-edit"></i>
-                <span class="menu-title">Usuarios</span>
+                <i class="mdi mdi-account-multiple menu-icon"></i>
+                <span >Usuarios</span>
             </a>
         </li>
 
         <li class="{{ Request::is('estatutos*') ? 'active' : '' }} nav-item">
             <a href="{!! route('estatutos.index') !!}" class="nav-link">
-                <i class="fa fa-edit"></i>
+                <i class="mdi mdi-receipt menu-icon"></i>
                 <span class="menu-title">Estatutos</span>
             </a>
         </li>
 
         <li class="{{ Request::is('comisiones*') ? 'active' : '' }} nav-item">
             <a href="{!! route('comisiones.index') !!}" class="nav-link">
-                <i class="fa fa-edit"></i>
+                <i class="mdi mdi-medical-bag menu-icon"></i>
                 <span class="menu-title">Comisiones</span>
             </a>
         </li>
 
         <li class="{{ Request::is('noticias*') ? 'active' : '' }} nav-item">
             <a href="{!! route('noticias.index') !!}" class="nav-link">
-                <i class="fa fa-edit"></i>
+                <i class="mdi mdi-newspaper menu-icon"></i>
                 <span class="menu-title">Noticias</span>
             </a>
         </li>
 
         <li class="{{ Request::is('servicios*') ? 'active' : '' }} nav-item">
             <a href="{!! route('servicios.index') !!}" class="nav-link">
-                <i class="fa fa-edit"></i>
+                <i class="mdi mdi-polymer menu-icon"></i>
                 <span class="menu-title">Servicios</span>
             </a>
         </li>
 
         <li class="{{ Request::is('categorias*') ? 'active' : '' }} nav-item">
             <a href="{!! route('categorias.index') !!}" class="nav-link">
-                <i class="fa fa-edit"></i>
+                <i class="mdi mdi-cloud-tags menu-icon"></i>
                 <span class="menu-title">Categorias</span>
             </a>
         </li>
 
         <li class="{{ Request::is('sliders*') ? 'active' : '' }} nav-item">
             <a href="{!! route('sliders.index') !!}" class="nav-link">
-                <i class="fa fa-edit"></i>
+                <i class="mdi mdi-folder-multiple-image menu-icon"></i>
                 <span class="menu-title">Sliders</span>
             </a>
         </li>

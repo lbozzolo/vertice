@@ -5,7 +5,7 @@
             <th>Nombre</th>
             <th>Slug</th>
             <th>Fecha</th>
-            <th colspan="3">Action</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>

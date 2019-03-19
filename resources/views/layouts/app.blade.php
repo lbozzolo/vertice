@@ -18,12 +18,9 @@
 
                 <div class="content-wrapper">
 
-                    <div class="row purchace-popup">
-                        <div class="col-12">
-                            @include('vendor.flash.message')
-                        </div>
-                    </div>
+                    @include('vendor.flash.message')
                     @yield('content')
+
                 </div>
 
                 @include('layouts.partials.footer')

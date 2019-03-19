@@ -1,4 +1,4 @@
-<table class="table" id="empresas-table">
+<table class="table">
     <thead>
         <tr>
             <th>Id</th>
@@ -6,7 +6,7 @@
             <th>Email</th>
             <th>Created_at</th>
             <th>Updated_at</th>
-            <th colspan="3">Opciones</th>
+            <th>Opciones</th>
         </tr>
     </thead>
     <tbody>

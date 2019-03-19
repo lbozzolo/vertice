@@ -3,7 +3,6 @@
         <tr>
             <th>Id</th>
             <th>Título</th>
-            <th>Texto</th>
             <th>Fecha</th>
             <th>Estado</th>
             <th style="width: 100px">Action</th>
@@ -14,7 +13,6 @@
         <tr>
             <td>{!! $estatuto->id !!}</td>
             <td>{!! $estatuto->title !!}</td>
-            <td style="max-width: 150px; overflow: hidden">{!! $estatuto->body !!}</td>
             <td>{!! $estatuto->fecha_creado !!}</td>
             <td>
                 <label class="{!! ($estatuto->active)? 'badge badge-success' : 'badge badge-danger' !!}">{!! ($estatuto->active)? 'ACTIVO' : 'INACTIVO' !!}</label>

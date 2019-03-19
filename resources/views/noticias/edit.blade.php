@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('css')
+    <style type="text/css">
+        body .popover{display:none !important; }
+    </style>
+@endsection
+
 @section('content')
 
     <div class="card " id="form-fields">

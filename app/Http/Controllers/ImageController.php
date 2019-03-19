@@ -218,7 +218,6 @@ class ImageController extends AppBaseController
 //        if (file_exists( public_path("imagenes/".$nombre)))
 //            $nombre = preg_replace('/\\.[^.\\s]{3,4}$/', '', $nombre) . '-' . str_random(12) . '.' . $extension;
 
-
         $nombre = preg_replace('/\\.[^.\\s]{3,4}$/', '', $nombre) . '-' . str_random(18) . '.' . $extension;
 
         return $nombre;
@@ -279,6 +278,7 @@ class ImageController extends AppBaseController
             $imagen = Image::create(['path' => $nombre, 'main' => 0]);
             $imagen->title = ($request->title)? $request->title : '';
             $file->move(public_path('imagenes'), $nombre);
+
             $model->images()->save($imagen);
 
             $status = "uploaded";

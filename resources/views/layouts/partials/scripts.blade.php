@@ -19,4 +19,14 @@
 <script src="{{ asset('summernote/dist/summernote.js') }}"></script>
 
 
+
+<script>
+
+    $('.table').dataTable();
+
+</script>
+
+
+
+
 @yield('js')

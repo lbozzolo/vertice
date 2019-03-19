@@ -10,9 +10,13 @@
                 <a class="btn btn-primary btn-sm" href="{!! route('servicios.create') !!}">Agregar</a>
             </h1>
 
+            @if($servicios->count())
             <div class="table-responsive">
                 @include('servicios.table')
             </div>
+            @else
+            <span class="text-muted">No hay ningún servicio cargado en el sistema.</span>
+            @endif
 
         </div>
     </div>
