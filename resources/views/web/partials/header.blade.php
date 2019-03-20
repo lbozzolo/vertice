@@ -19,28 +19,6 @@
 
 
             </div>
-
-            <div class="text-nowrap">
-                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
-                    <i class="fa fa-facebook-official"></i>
-                </a>
-
-                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
-                    <i class="fa fa-twitter"></i>
-                </a>
-
-                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
-                    <i class="fa fa-google-plus"></i>
-                </a>
-
-                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
-                    <i class="fa fa-instagram"></i>
-                </a>
-
-                <a href="#" class="fs-16 cl-13 hov-link2 trans-02 m-l-15">
-                    <i class="fa fa-linkedin"></i>
-                </a>
-            </div>
         </div>
     </div>
 
@@ -120,30 +98,6 @@
                         <i class="fa fa-phone" aria-hidden="true"></i>
                     </span>
                     <span>0221-457-5000</span>
-                </div>
-            </li>
-
-            <li>
-                <div>
-                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
-                        <i class="fa fa-facebook-official"></i>
-                    </a>
-
-                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-
-                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-
-                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-
-                    <a href="#" class="fs-16 cl-5 hov-link2 trans-02 m-r-15">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
                 </div>
             </li>
         </ul>

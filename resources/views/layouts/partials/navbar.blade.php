@@ -15,8 +15,9 @@
         <div class="navbar-menu-wrapper d-flex align-items-center">
             <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                 <li class="nav-item">
-                    <a href="web" target="_blank" class="nav-link">
-                        <i class="mdi mdi-web"></i>WebSite</a>
+                    <a href="{{ asset('web/home') }}" target="_blank" class="nav-link">
+                        <i class="mdi mdi-web"></i>WebSiter
+                    </a>
                 </li>
             </ul>
             <ul class="navbar-nav navbar-nav-right">

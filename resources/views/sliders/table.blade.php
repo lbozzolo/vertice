@@ -44,13 +44,13 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" ><i class="mdi mdi-alert-circle text-danger"></i> Eliminar Estatuto</h5>
+                                <h5 class="modal-title" ><i class="mdi mdi-alert-circle text-danger"></i> Eliminar Slider</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p>¿Desea eliminar este estatuto?</p>
+                                <p>¿Desea eliminar este slider?</p>
                             </div>
                             <div class="modal-footer">
                                 {!! Form::open(['route' => ['sliders.destroy', $slider->id], 'method' => 'delete']) !!}

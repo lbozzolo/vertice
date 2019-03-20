@@ -82,13 +82,13 @@
                          data-basealign="slide"
                          data-responsive_offset="off"
                     >
-                        <a href="" class="btn1 flex-c-c">
-                            Our project
-                        </a>
+                        {{--<a href="" class="btn1 flex-c-c">--}}
+                            {{--Our project--}}
+                        {{--</a>--}}
 
-                        <a href="" class="btn2 flex-c-c">
-                            Learn more
-                        </a>
+                        {{--<a href="" class="btn2 flex-c-c">--}}
+                            {{--Learn more--}}
+                        {{--</a>--}}
                     </div>
                 </li>
 

@@ -7,32 +7,6 @@
                         <img class="max-s-full" src="{{ asset('template-web/images/icons/logo-03.png') }}" alt="IMG">
                     </a>
                 </div>
-
-                <div>
-
-                    <div class="flex-wr-s-c p-t-10">
-                        <a href="#" class="flex-c-c size-a-7 borad-50per bg-11 fs-16 cl-0 hov-btn2 trans-02 m-r-10">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-
-                        <a href="#" class="flex-c-c size-a-7 borad-50per bg-11 fs-16 cl-0 hov-btn2 trans-02 m-r-10">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-
-                        <a href="#" class="flex-c-c size-a-7 borad-50per bg-11 fs-16 cl-0 hov-btn2 trans-02 m-r-10">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-
-                        <a href="#" class="flex-c-c size-a-7 borad-50per bg-11 fs-16 cl-0 hov-btn2 trans-02 m-r-10">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-
-                        <a href="#" class="flex-c-c size-a-7 borad-50per bg-11 fs-16 cl-0 hov-btn2 trans-02 m-r-10">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </div>
-
-                </div>
             </div>
 
             <div class="col-sm-8 col-md-4 col-lg-3 p-b-20"></div>

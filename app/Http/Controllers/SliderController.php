@@ -42,7 +42,7 @@ class SliderController extends AppBaseController
         if(!$slider)
             return redirect()->back()->withErrors('Ocurrió un error. No se pudo crear el slider');
 
-        return redirect(route('sliders.index'))->with('ok', 'Slider creado correctamente');
+        return redirect(route('sliders.edit', $slider->id))->with('ok', 'Slider creado correctamente');
     }
 
     public function show($id)
