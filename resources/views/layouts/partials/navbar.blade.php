@@ -25,13 +25,13 @@
                 <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                     <li class="{{ Request::is('liquidaciones*') ? 'active' : '' }} nav-item">
                         <a href="{!! route('liquidaciones.index') !!}" class="nav-link">
-                            <i class="mdi mdi-medical-bag menu-icon"></i>
+                            <i class="mdi mdi-library-books menu-icon"></i>
                             <span class="menu-title">Liquidaciones</span>
                         </a>
                     </li>
                     <li class="{{ Request::is('resumenes-mensuales') ? 'active' : '' }} nav-item">
                         <a href="{!! route('liquidaciones.resumenes.mensuales') !!}" class="nav-link">
-                            <i class="mdi mdi-medical-bag menu-icon"></i>
+                            <i class="mdi mdi-calendar menu-icon"></i>
                             <span class="menu-title">Resúmenes mensuales</span>
                         </a>
                     </li>

@@ -26,7 +26,7 @@
                             <p>Usted adeuda recibos por los períodos detallados a continuación. Por favor, pase por AMGHI a confeccionar los recibos
                                 correspondientes.<br> En caso de acumularse, quedarán automáticamente bloqueados los depósitos.
                             </p>
-                            Período {!! $deuda[0]->mes !!} de {!! $deuda[0]->ano !!}" - Adeuda recibo por : {!! $deuda[0]->monto !!} pesos.
+                            Período {!! $deuda[0]->mes !!} de {!! $deuda[0]->ano !!} - Adeuda recibo por : {!! $deuda[0]->monto !!} pesos.
                         </div>
                     </div>
                 </div>

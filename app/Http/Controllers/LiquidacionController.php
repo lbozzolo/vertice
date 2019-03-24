@@ -56,6 +56,10 @@ class LiquidacionController extends AppBaseController
         $data['total_liq'] = DB::select($sql_total);
         $data['medico'] = Medico::where('matricula', $matricula)->first();
 
+        $data['fechas']= ['desde' => $fecha_desde, 'hasta' => $fecha_hasta];
+//        $data['fechas']['desde'] = $fecha_desde;
+//        $data['fechas']['hasta'] = $fecha_hasta;
+
         $sql_deuda = "SELECT * FROM acumcred WHERE recibo <> 's' AND matricula = $matricula";
         $data['deuda'] = DB::select($sql_deuda);
 
@@ -163,6 +167,36 @@ class LiquidacionController extends AppBaseController
         $data['deuda'] = DB::select($sql_deuda);
 
         return view('liquidaciones.resumenes-mensuales')->with($data);
+    }
+
+    public function liquidacionImprimible($id, $fecha_desde, $fecha_hasta)
+    {
+        //dd($fecha_hasta);
+        $matricula = Auth::user()->matricula;
+        $sql = "SELECT *, DATE_FORMAT(FECHA,'%d-%m-%Y') as FECHA2,CASE WHEN COBRADO < 0 THEN 0 ELSE COBRADO END as COBRADO2 FROM retiene WHERE matricula = ".$matricula." and fecha BETWEEN '".$fecha_desde."' AND '".$fecha_hasta."'";
+        $sql2 = "SELECT "
+            . " sum(TOTAL) as TOTAL,"
+            . " sum(AMGHI) as AMGHI,"
+            . " sum(CPSM) as CPSM,"
+            . " sum(HOSP) as HOSP,"
+            . " sum(ING_BRUT) as ING_BRUT,"
+            . " sum(GANANCIAS) as GANANCIAS,"
+            . " sum(IVA10) as IVA10,"
+            . " sum(IVA21) as IVA21,"
+            . " sum(CASE WHEN COBRADO < 0 THEN 0 ELSE COBRADO END) as COBRADO"
+            . " FROM retiene"
+            . " WHERE  matricula = ".$matricula." AND fecha BETWEEN '".$fecha_desde."' AND '".$fecha_hasta."'";
+
+
+        $data['result_imprimible'] = DB::select($sql);
+        $data['total_imprimible'] = DB::select($sql2);
+
+        $data['fechas']= [
+            'desde' => date_format(date_create($fecha_desde), 'd/m/Y'),
+            'hasta' => date_format(date_create($fecha_hasta), 'd/m/Y')
+        ];
+
+        return view('liquidaciones.liquidaciones-imprimible')->with($data);
     }
 
     function diacadena($f)

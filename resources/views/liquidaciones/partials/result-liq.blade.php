@@ -1,7 +1,12 @@
 <div class="card mt-3">
     <div class="card-body">
 
-        <h3>Detalle de las liquidaciones</h3>
+
+        <h3>Detalle de las liquidaciones
+            <a href="{{ route('liquidaciones.consultar.imprimible', ['id' => $medico->matricula, 'fecha_desde' => $fechas['desde'], 'fecha_hasta' => $fechas['hasta']]) }}" target="_blank" title=" Versión imprimible" class="btn  btn-sm btn-outline-primary">
+                <i class="mdi mdi-printer mdi-18px"></i>
+            </a>
+        </h3>
 
         <div class="table-responsive">
             <table class="table datatables table-striped table-bordered ">

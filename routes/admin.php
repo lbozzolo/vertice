@@ -52,6 +52,11 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'LiquidacionController@consultar'
     ]);
 
+    Route::get('liquidaciones/{id}/{fecha_desde}/{fecha_hasta}/imprimible', [
+        'as' => 'liquidaciones.consultar.imprimible',
+        'uses' => 'LiquidacionController@liquidacionImprimible'
+    ]);
+
     Route::get('liquidaciones/{id}/iibb', [
         'as' => 'liquidaciones.iibb',
         'uses' => 'LiquidacionController@consultarIIBB'
