@@ -10,6 +10,12 @@
             {{--</li>--}}
         {{--@endif--}}
 
+        @if(!Auth::user()->isMedico())
+        <li class="nav-item">
+            <hr>
+            <p class="text-center">WebSite</p>
+            <hr>
+        </li>
 
         <li class="{{ Request::is('usuarios*') ? 'active' : '' }} nav-item">
             <a href="{!! route('users.index') !!}" class="nav-link">
@@ -27,7 +33,7 @@
 
         <li class="{{ Request::is('comisiones*') ? 'active' : '' }} nav-item">
             <a href="{!! route('comisiones.index') !!}" class="nav-link">
-                <i class="mdi mdi-medical-bag menu-icon"></i>
+                <i class="mdi mdi-checkerboard menu-icon"></i>
                 <span class="menu-title">Comisiones</span>
             </a>
         </li>
@@ -60,6 +66,20 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <hr>
+            <p class="text-center">Sistema</p>
+            <hr>
+        </li>
+
+        <li class="{{ Request::is('medicos*') ? 'active' : '' }} nav-item">
+            <a href="{!! route('medicos.index') !!}" class="nav-link">
+                <i class="mdi mdi-medical-bag menu-icon"></i>
+                <span class="menu-title">Médicos</span>
+            </a>
+        </li>
+
+        @endif
 
     </ul>
 </nav>

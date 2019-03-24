@@ -6,6 +6,7 @@ use Amghi\Models\Categoria;
 use Amghi\Models\Estatuto;
 use Amghi\Models\Noticia;
 use Amghi\Models\Servicio;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {

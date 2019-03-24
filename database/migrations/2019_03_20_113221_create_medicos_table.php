@@ -59,7 +59,7 @@ class CreateMedicosTable extends Migration
             $table->string('especialid',30)->nullable();
             $table->decimal('consulta',10,2)->nullable();
             $table->longText('anotacione')->nullable();
-            $table->integer('numamo')->nullable();
+            $table->integer('numamp')->nullable();
             $table->string('socio',8)->nullable();
             $table->char('sh',1)->nullable();
 

@@ -25,6 +25,7 @@ class User extends Authenticatable
     public $fillable = [
         'name',
         'lastname',
+        'matricula',
         'email',
         'password'
     ];
@@ -54,6 +55,11 @@ class User extends Authenticatable
     public function isSuperAdmin()
     {
         return ($this->email == 'lucas@verticedigital.com.ar' || $this->email == 'fernando@verticedigital.com.ar');
+    }
+
+    public function isMedico()
+    {
+        return ($this->matricula)? true : false;
     }
 
     public function getFullnameAttribute()

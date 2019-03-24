@@ -21,7 +21,7 @@ class CreateHistLiqTable extends Migration
             $table->integer('carpeta')->nullable();
             $table->decimal('monto', 13, 2)->nullable();
             $table->dateTime('fecha')->nullable();
-            $table->string('descripcion', 40)->nullable();
+            $table->string('descripcio', 40)->nullable();
             $table->integer('num_liq')->nullable();
             $table->dateTime('fecha_l')->nullable();
             $table->decimal('amghi', 13, 2)->nullable();
@@ -31,7 +31,7 @@ class CreateHistLiqTable extends Migration
             $table->string('tipodes', 40)->nullable();
             $table->decimal('iva21', 13, 2)->nullable();
             $table->decimal('iva10', 13, 2)->nullable();
-            $table->string('coldiqui', 2)->nullable();
+            $table->string('codliqui', 2)->nullable();
             $table->decimal('neto', 13, 2)->nullable();
 
             $table->index('id');

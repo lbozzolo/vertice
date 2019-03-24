@@ -23,30 +23,34 @@
                     </h3>
 
                     <div class="bg-12 p-t-23 p-b-40 p-rl-22">
+
+                        {!! Form::open(['url' => route('medicos.login'), 'method' => 'post']) !!}
                         <div class="flex-wr-s-e m-b-27">
-								<span class="size-w-8 t1-s-2 text-uppercase cl-3">
-									Matricula:
-								</span>
+                            <span class="size-w-8 t1-s-2 text-uppercase cl-3">
+                                Matricula:
+                            </span>
 
                             <span class="size-w-9 t1-m-2 cl-6">
-									<input class="size-a-3 t1-m-2 plh-6 cl-6 p-rl-20 bo-1-rad-4 bcl-12 focus-in1" type="text" name="email" placeholder="Su Matricula">
-								</span>
+                                <input class="size-a-3 t1-m-2 plh-6 cl-6 p-rl-20 bo-1-rad-4 bcl-12 focus-in1" type="text" name="matricula" placeholder="Su Matricula">
+                            </span>
                         </div>
 
                         <div class="flex-wr-s-s m-b-36">
-								<span class="size-w-8 t1-s-2 text-uppercase cl-3">
-									Contraseña:
-								</span>
+                            <span class="size-w-8 t1-s-2 text-uppercase cl-3">
+                                Contraseña:
+                            </span>
 
                             <span class="size-w-9 t1-m-2 cl-6">
-									<input class="size-a-3 t1-m-2 plh-6 cl-6 p-rl-20 bo-1-rad-4 bcl-12 focus-in1" type="password" name="email" placeholder="Su Password">
-								</span>
+                                <input class="size-a-3 t1-m-2 plh-6 cl-6 p-rl-20 bo-1-rad-4 bcl-12 focus-in1" type="password" name="password" placeholder="Su Password">
+                            </span>
                         </div>
 
 
-                        <button class="d-inline-flex flex-c-c size-a-29 bg-11 t1-s-2 text-uppercase cl-0 hov-btn1 trans-02 p-rl-10">
+                        <button type="submit" class="d-inline-flex flex-c-c size-a-29 bg-11 t1-s-2 text-uppercase cl-0 hov-btn1 trans-02 p-rl-10">
                             Ingresar
                         </button>
+
+                        {!! Form::close() !!}
                     </div>
                 </div>
 

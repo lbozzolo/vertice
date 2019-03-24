@@ -45,6 +45,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'medico' => [
+            'driver' => 'session',
+            'provider' => 'medicos',
+        ],
     ],
 
     /*
@@ -70,6 +75,10 @@ return [
             'model' => Amghi\User::class,
         ],
 
+        'medicos' => [
+            'driver' => 'eloquent',
+            'model' => Amghi\Models\Medico::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

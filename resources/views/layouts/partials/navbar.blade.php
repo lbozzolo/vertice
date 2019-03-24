@@ -13,13 +13,30 @@
             </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
-            <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-                <li class="nav-item">
-                    <a href="{{ asset('web/home') }}" target="_blank" class="nav-link">
-                        <i class="mdi mdi-web"></i>WebSiter
-                    </a>
-                </li>
-            </ul>
+            @if(!Auth::user()->isMedico())
+                <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+                    <li class="nav-item">
+                        <a href="{{ asset('web/home') }}" target="_blank" class="nav-link">
+                            <i class="mdi mdi-web"></i>WebSite
+                        </a>
+                    </li>
+                </ul>
+            @else
+                <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+                    <li class="{{ Request::is('liquidaciones*') ? 'active' : '' }} nav-item">
+                        <a href="{!! route('liquidaciones.index') !!}" class="nav-link">
+                            <i class="mdi mdi-medical-bag menu-icon"></i>
+                            <span class="menu-title">Liquidaciones</span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('resumenes-mensuales') ? 'active' : '' }} nav-item">
+                        <a href="{!! route('liquidaciones.resumenes.mensuales') !!}" class="nav-link">
+                            <i class="mdi mdi-medical-bag menu-icon"></i>
+                            <span class="menu-title">Resúmenes mensuales</span>
+                        </a>
+                    </li>
+                </ul>
+            @endif
             <ul class="navbar-nav navbar-nav-right">
 
                 <li class="nav-item dropdown d-none d-xl-inline-block">

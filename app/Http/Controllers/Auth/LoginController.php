@@ -3,8 +3,12 @@
 namespace Amghi\Http\Controllers\Auth;
 
 use Amghi\Http\Controllers\Controller;
+use Amghi\Models\Medico;
+use Amghi\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -45,5 +49,36 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         return redirect('web');
+    }
+
+    public function loginMedicos(Request $request)
+    {
+        $this->validate($request, [
+            'matricula'   => 'required',
+            'password' => 'required|min:4'
+        ]);
+
+        $medico = Medico::where('matricula', '=', $request->matricula)->where('clave', '=', $request->password)->first();
+
+        if (!$medico)
+            return redirect()->back()->withErrors('Los datos ingresados no coinciden con nuestros registros');
+
+        $user = User::where('matricula', '=', $medico->matricula)->first();
+
+        if(!$user){
+            $user = User::create([
+                'name' => $medico->apynom,
+                'matricula' => $medico->matricula,
+                'email' => $medico->email,
+                'password' => Hash::make($medico->clave)
+            ]);
+        }
+
+        Auth::login($user);
+
+        $redirect = (Auth::user()->isMedico())? 'liquidaciones.index' : 'admin';
+
+        return redirect()->route($redirect);
+
     }
 }
