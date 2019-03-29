@@ -1,13 +1,13 @@
 <?php
 
-namespace Amghi\Repositories;
+namespace Nobre\Repositories;
 
-use Amghi\Models\Slider;
+use Nobre\Models\Slider;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class SliderRepository
- * @package Amghi\Repositories
+ * @package Nobre\Repositories
  * @version September 6, 2018, 11:58 am UTC
  *
  * @method Slider findWithoutFail($id, $columns = ['*'])

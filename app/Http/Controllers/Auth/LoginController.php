@@ -1,10 +1,10 @@
 <?php
 
-namespace Amghi\Http\Controllers\Auth;
+namespace Nobre\Http\Controllers\Auth;
 
-use Amghi\Http\Controllers\Controller;
-use Amghi\Models\Medico;
-use Amghi\User;
+use Nobre\Http\Controllers\Controller;
+use Nobre\Models\Medico;
+use Nobre\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Amghi\Providers;
+namespace Nobre\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Amghi\Model' => 'Amghi\Policies\ModelPolicy',
+        'Nobre\Model' => 'Nobre\Policies\ModelPolicy',
     ];
 
     /**

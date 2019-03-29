@@ -1,13 +1,13 @@
 <?php
 
-namespace Amghi\Models;
+namespace Nobre\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Image
- * @package Amghi\Models
+ * @package Nobre\Models
  * @version September 3, 2018, 10:53 pm UTC
  *
  * @property string path

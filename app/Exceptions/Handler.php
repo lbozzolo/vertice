@@ -1,6 +1,6 @@
 <?php
 
-namespace Amghi\Exceptions;
+namespace Nobre\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

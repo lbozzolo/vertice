@@ -1,6 +1,6 @@
 <?php
 
-namespace Amghi\Providers;
+namespace Nobre\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;

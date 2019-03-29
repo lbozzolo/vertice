@@ -19,8 +19,8 @@
     <a href="{!! route('noticias.index') !!}"><i class="fa fa-edit"></i><span>Noticias</span></a>
 </li>
 
-<li class="{{ Request::is('servicios*') ? 'active' : '' }}">
-    <a href="{!! route('servicios.index') !!}"><i class="fa fa-edit"></i><span>Servicios</span></a>
+<li class="{{ Request::is('applicants') ? 'active' : '' }}">
+    <a href="{!! route('applicants') !!}"><i class="fa fa-edit"></i><span>Servicios</span></a>
 </li>
 
 @if(Auth::check() && Auth::user()->isSuperAdmin())

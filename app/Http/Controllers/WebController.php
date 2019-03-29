@@ -1,19 +1,19 @@
 <?php
 
-namespace Amghi\Http\Controllers;
+namespace Nobre\Http\Controllers;
 
-use Amghi\Http\Controllers\AppBaseController;
-use Amghi\Http\Requests\ContactRequest;
-use Amghi\Models\Categoria;
-use Amghi\Models\Comision;
-use Amghi\Models\Estatuto;
-use Amghi\Models\Image;
-use Amghi\Models\Noticia;
-use Amghi\Models\Servicio;
+use Nobre\Http\Controllers\AppBaseController;
+use Nobre\Http\Requests\ContactRequest;
+use Nobre\Models\Category;
+use Nobre\Models\Comision;
+use Nobre\Models\Work;
+use Nobre\Models\Image;
+use Nobre\Models\Noticia;
+use Nobre\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Mail;
-use Amghi\Models\Slider;
+use Nobre\Models\Slider;
 use Illuminate\Support\Facades\DB;
 
 class WebController extends AppBaseController
@@ -30,7 +30,7 @@ class WebController extends AppBaseController
 
     public function estatuto()
     {
-        $data['estatuto'] = Estatuto::where('active', '=', 1)->first();
+        $data['estatuto'] = Work::where('active', '=', 1)->first();
         return view('web.estatuto')->with($data);
     }
 
@@ -48,7 +48,7 @@ class WebController extends AppBaseController
 
     public function medicos()
     {
-        $data['nosotros'] = Estatuto::where('active', 1)->first();
+        $data['nosotros'] = Work::where('active', 1)->first();
         return view('web.medicos')->with($data);
     }
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Amghi\Http\Requests;
+namespace Nobre\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Amghi\User;
+use Nobre\User;
 
 class CreateUserRequest extends FormRequest
 {

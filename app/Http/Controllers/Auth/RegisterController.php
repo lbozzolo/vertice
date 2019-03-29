@@ -1,9 +1,9 @@
 <?php
 
-namespace Amghi\Http\Controllers\Auth;
+namespace Nobre\Http\Controllers\Auth;
 
-use Amghi\User;
-use Amghi\Http\Controllers\Controller;
+use Nobre\User;
+use Nobre\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

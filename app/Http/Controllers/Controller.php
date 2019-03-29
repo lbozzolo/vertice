@@ -1,6 +1,6 @@
 <?php
 
-namespace Amghi\Http\Controllers;
+namespace Nobre\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

@@ -72,7 +72,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Amghi\User::class,
+            'model' => Nobre\User::class,
         ],
 
         'medicos' => [

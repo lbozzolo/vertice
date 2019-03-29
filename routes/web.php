@@ -39,9 +39,9 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@comision'
     ]);
 
-    Route::get('servicios', [
-        'as' => 'web.servicios',
-        'uses' => 'WebController@servicios'
+    Route::get('applicants', [
+        'as' => 'web.applicants',
+        'uses' => 'WebController@applicants'
     ]);
 
     Route::get('medicos', [

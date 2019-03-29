@@ -1,13 +1,13 @@
 <?php
 
-namespace Amghi\Models;
+namespace Nobre\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Slider
- * @package Amghi\Models
+ * @package Nobre\Models
  * @version September 6, 2018, 11:58 am UTC
  *
  * @property string name

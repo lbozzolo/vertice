@@ -1,9 +1,9 @@
 <?php
 
-namespace Amghi\Http\Requests;
+namespace Nobre\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Amghi\Models\Slider;
+use Nobre\Models\Slider;
 
 class UpdateSliderRequest extends FormRequest
 {

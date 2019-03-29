@@ -1,11 +1,11 @@
 <?php
 
-namespace Amghi\Http\Controllers;
+namespace Nobre\Http\Controllers;
 
-use Amghi\Models\Categoria;
-use Amghi\Models\Estatuto;
-use Amghi\Models\Noticia;
-use Amghi\Models\Servicio;
+use Nobre\Models\Category;
+use Nobre\Models\Work;
+use Nobre\Models\Noticia;
+use Nobre\Models\Servicio;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -17,10 +17,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        $data['estatutos'] = Estatuto::count();
-        $data['noticias'] = Noticia::count();
-        $data['servicios'] = Servicio::count();
-        $data['categorias'] = Categoria::count();
+        $data = '';
+//        $data['estatutos'] = Work::count();
+//        $data['noticias'] = Noticia::count();
+//        $data['applicants'] = Servicio::count();
+//        $data['categorias'] = Category::count();
 
         return view('home')->with($data);
     }

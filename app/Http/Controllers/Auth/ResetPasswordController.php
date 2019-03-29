@@ -1,8 +1,8 @@
 <?php
 
-namespace Amghi\Http\Controllers\Auth;
+namespace Nobre\Http\Controllers\Auth;
 
-use Amghi\Http\Controllers\Controller;
+use Nobre\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

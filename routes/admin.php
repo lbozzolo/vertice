@@ -2,12 +2,6 @@
 
 Auth::routes();
 
-Route::post('medicos/login', [
-    'as' => 'medicos.login',
-    'uses' => 'Auth\LoginController@loginMedicos'
-]);
-
-
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin', [
@@ -25,58 +19,17 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Sidebar Web
 
-    Route::resource('estatutos', 'EstatutoController');
-
-    Route::resource('comisiones', 'ComisionController');
-
     Route::resource('users', 'UserController');
 
-    Route::resource('servicios', 'ServicioController');
+    Route::resource('applicants', 'ApplicantController');
 
-    Route::resource('noticias', 'NoticiaController');
+    Route::resource('works', 'WorkController');
 
     Route::resource('images', 'ImageController');
 
-    Route::resource('categorias', 'CategoriaController');
+    Route::resource('categories', 'CategoryController');
 
     Route::resource('sliders', 'SliderController');
-
-    // Sidebar Sistema
-
-    Route::resource('medicos', 'MedicoController');
-
-    Route::resource('liquidaciones', 'LiquidacionController');
-
-    Route::post('liquidaciones/consultar', [
-        'as' => 'liquidaciones.consultar',
-        'uses' => 'LiquidacionController@consultar'
-    ]);
-
-    Route::get('liquidaciones/{id}/{fecha_desde}/{fecha_hasta}/imprimible', [
-        'as' => 'liquidaciones.consultar.imprimible',
-        'uses' => 'LiquidacionController@liquidacionImprimible'
-    ]);
-
-    Route::get('liquidaciones/{id}/iibb', [
-        'as' => 'liquidaciones.iibb',
-        'uses' => 'LiquidacionController@consultarIIBB'
-    ]);
-
-    Route::get('liquidaciones/{id}/detalles', [
-        'as' => 'liquidaciones.detalles',
-        'uses' => 'LiquidacionController@consultarDetalles'
-    ]);
-
-    Route::get('resumenes-mensuales', [
-        'as' => 'liquidaciones.resumenes.mensuales',
-        'uses' => 'LiquidacionController@resumenesMensuales'
-    ]);
-
-    Route::post('liquidaciones/mensuales', [
-        'as' => 'liquidaciones.consultar.resumenes.mensuales',
-        'uses' => 'LiquidacionController@consultarResumenesMensuales'
-    ]);
-
 
 
     // Imágenes

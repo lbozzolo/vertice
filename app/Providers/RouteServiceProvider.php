@@ -1,6 +1,6 @@
 <?php
 
-namespace Amghi\Providers;
+namespace Nobre\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Amghi\Http\Controllers';
+    protected $namespace = 'Nobre\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

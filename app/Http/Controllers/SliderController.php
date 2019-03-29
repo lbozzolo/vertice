@@ -1,16 +1,16 @@
 <?php
 
-namespace Amghi\Http\Controllers;
+namespace Nobre\Http\Controllers;
 
-use Amghi\Http\Requests\CreateSliderRequest;
-use Amghi\Http\Requests\UpdateSliderRequest;
-use Amghi\Repositories\SliderRepository;
-use Amghi\Http\Controllers\AppBaseController;
+use Nobre\Http\Requests\CreateSliderRequest;
+use Nobre\Http\Requests\UpdateSliderRequest;
+use Nobre\Repositories\SliderRepository;
+use Nobre\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
-use Amghi\Models\Slider;
+use Nobre\Models\Slider;
 
 class SliderController extends AppBaseController
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Amghi\Http\Requests;
+namespace Nobre\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Amghi\Models\Image;
+use Nobre\Models\Image;
 
 class CreateImageRequest extends FormRequest
 {

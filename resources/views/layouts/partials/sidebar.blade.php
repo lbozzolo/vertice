@@ -10,13 +10,6 @@
             {{--</li>--}}
         {{--@endif--}}
 
-        @if(!Auth::user()->isMedico())
-        <li class="nav-item">
-            <hr>
-            <p class="text-center">WebSite</p>
-            <hr>
-        </li>
-
         <li class="{{ Request::is('usuarios*') ? 'active' : '' }} nav-item">
             <a href="{!! route('users.index') !!}" class="nav-link">
                 <i class="mdi mdi-account-multiple menu-icon"></i>
@@ -24,36 +17,29 @@
             </a>
         </li>
 
-        <li class="{{ Request::is('estatutos*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('estatutos.index') !!}" class="nav-link">
+        <li class="{{ Request::is('trabajos*') ? 'active' : '' }} nav-item">
+            <a href="{!! route('works.index') !!}" class="nav-link">
                 <i class="mdi mdi-receipt menu-icon"></i>
-                <span class="menu-title">Estatutos</span>
+                <span class="menu-title">Works</span>
             </a>
         </li>
 
-        <li class="{{ Request::is('comisiones*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('comisiones.index') !!}" class="nav-link">
+        <li class="{{ Request::is('aspirantes*') ? 'active' : '' }} nav-item">
+            <a href="{!! route('applicants.index') !!}" class="nav-link">
                 <i class="mdi mdi-checkerboard menu-icon"></i>
-                <span class="menu-title">Comisiones</span>
+                <span class="menu-title">Aspirantes</span>
             </a>
         </li>
 
-        <li class="{{ Request::is('noticias*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('noticias.index') !!}" class="nav-link">
+        <li class="{{ Request::is('imagenes*') ? 'active' : '' }} nav-item">
+            <a href="{!! route('images.index') !!}" class="nav-link">
                 <i class="mdi mdi-newspaper menu-icon"></i>
                 <span class="menu-title">Noticias</span>
             </a>
         </li>
 
-        <li class="{{ Request::is('servicios*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('servicios.index') !!}" class="nav-link">
-                <i class="mdi mdi-polymer menu-icon"></i>
-                <span class="menu-title">Servicios</span>
-            </a>
-        </li>
-
         <li class="{{ Request::is('categorias*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('categorias.index') !!}" class="nav-link">
+            <a href="{!! route('categories.index') !!}" class="nav-link">
                 <i class="mdi mdi-cloud-tags menu-icon"></i>
                 <span class="menu-title">Categorias</span>
             </a>
@@ -65,21 +51,6 @@
                 <span class="menu-title">Sliders</span>
             </a>
         </li>
-
-        <li class="nav-item">
-            <hr>
-            <p class="text-center">Sistema</p>
-            <hr>
-        </li>
-
-        <li class="{{ Request::is('medicos*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('medicos.index') !!}" class="nav-link">
-                <i class="mdi mdi-medical-bag menu-icon"></i>
-                <span class="menu-title">Médicos</span>
-            </a>
-        </li>
-
-        @endif
 
     </ul>
 </nav>
@@ -137,8 +108,8 @@
                 {{--<a href="{!! route('noticias.index') !!}"><i class="fa fa-edit"></i><span>Noticias</span></a>--}}
             {{--</li>--}}
 
-            {{--<li class="{{ Request::is('servicios*') ? 'active' : '' }}">--}}
-                {{--<a href="{!! route('servicios.index') !!}"><i class="fa fa-edit"></i><span>Servicios</span></a>--}}
+            {{--<li class="{{ Request::is('applicants*') ? 'active' : '' }}">--}}
+                {{--<a href="{!! route('applicants.index') !!}"><i class="fa fa-edit"></i><span>Servicios</span></a>--}}
             {{--</li>--}}
 
             {{--@if(Auth::check() && Auth::user()->isSuperAdmin())--}}

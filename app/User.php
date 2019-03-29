@@ -1,6 +1,6 @@
 <?php
 
-namespace Amghi;
+namespace Nobre;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

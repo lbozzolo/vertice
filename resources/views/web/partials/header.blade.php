@@ -49,7 +49,7 @@
                     </li>
 
                     {{--<li>--}}
-                        {{--<a href="{{ route('web.noticias') }}">Noticias</a>--}}
+                        {{--<a href="{{ route('web.works') }}">Noticias</a>--}}
                     {{--</li>--}}
 
                     <li>

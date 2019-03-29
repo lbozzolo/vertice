@@ -1,13 +1,13 @@
 <?php
 
-namespace Amghi\Repositories;
+namespace Nobre\Repositories;
 
-use Amghi\User;
+use Nobre\User;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class ColorRepository
- * @package Amghi\Repositories
+ * @package Nobre\Repositories
  * @version September 3, 2018, 10:45 pm UTC
  *
  * @method Color findWithoutFail($id, $columns = ['*'])

@@ -18,6 +18,15 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('staradmin/images/logo_icon.png') }}" />
 
+    <style type="text/css">
+
+        .auth.auth-bg-1 {
+            background: url({{ asset('images/login-background.jpg') }});
+            background-size: cover;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -29,7 +38,7 @@
                     <div class="auto-form-wrapper">
 
                         <div class="card-body text-center">
-                            <img src="{{ asset('template-web/images/icons/logo_amghi.png') }}" alt="logo" class="img-responsive" />
+                            <img src="{{ asset('images/logos/black-logo.png') }}" alt="logo" class="img-responsive" />
                         </div>
                         <div class="card-body">
                             <form action="{{ url('/login') }}" method="post">
