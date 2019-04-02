@@ -20,12 +20,12 @@
         </div>
     </div>
 
-    <div class="card col-lg-12 mt-3">
-        <div class="card-body">
+    {{--<div class="card col-lg-12 mt-3">--}}
+        {{--<div class="card-body">--}}
 
-            @include('applicants.images-show')
+            {{--@include('applicants.images-show')--}}
 
-        </div>
-    </div>
+        {{--</div>--}}
+    {{--</div>--}}
 
 @endsection

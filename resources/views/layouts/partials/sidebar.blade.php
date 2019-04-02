@@ -20,25 +20,25 @@
         <li class="{{ Request::is('trabajos*') ? 'active' : '' }} nav-item">
             <a href="{!! route('works.index') !!}" class="nav-link">
                 <i class="mdi mdi-receipt menu-icon"></i>
-                <span class="menu-title">Works</span>
+                <span class="menu-title">Trabajos</span>
             </a>
         </li>
 
         <li class="{{ Request::is('aspirantes*') ? 'active' : '' }} nav-item">
             <a href="{!! route('applicants.index') !!}" class="nav-link">
-                <i class="mdi mdi-checkerboard menu-icon"></i>
+                <i class="mdi mdi-account-card-details menu-icon"></i>
                 <span class="menu-title">Aspirantes</span>
             </a>
         </li>
 
         <li class="{{ Request::is('imagenes*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('images.index') !!}" class="nav-link">
-                <i class="mdi mdi-newspaper menu-icon"></i>
-                <span class="menu-title">Noticias</span>
+            <a href="{!! route('medias.index') !!}" class="nav-link">
+                <i class="mdi mdi-image menu-icon"></i>
+                <span class="menu-title">Social & Media</span>
             </a>
         </li>
 
-        <li class="{{ Request::is('categorias*') ? 'active' : '' }} nav-item">
+        <li class="{{ Request::is('categories') ? 'active' : '' }} nav-item">
             <a href="{!! route('categories.index') !!}" class="nav-link">
                 <i class="mdi mdi-cloud-tags menu-icon"></i>
                 <span class="menu-title">Categorias</span>
@@ -118,8 +118,8 @@
                 {{--</li>--}}
             {{--@endif--}}
 
-            {{--<li class="{{ Request::is('categorias*') ? 'active' : '' }}">--}}
-                {{--<a href="{!! route('categorias.index') !!}"><i class="fa fa-edit"></i><span>Categorias</span></a>--}}
+            {{--<li class="{{ Request::is('ccategories') ? 'active' : '' }}">--}}
+                {{--<a href="{!! route('ccategoriesindex') !!}"><i class="fa fa-edit"></i><span>Categorias</span></a>--}}
             {{--</li>--}}
 
             {{--<li class="{{ Request::is('sliders*') ? 'active' : '' }}">--}}

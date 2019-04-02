@@ -16,7 +16,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('staradmin/css/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('staradmin/images/logo_icon.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('images') }}" />
 
     <style type="text/css">
 

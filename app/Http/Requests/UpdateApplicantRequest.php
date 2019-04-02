@@ -2,7 +2,7 @@
 
 namespace Nobre\Http\Requests;
 
-use Nobre\Models\Comision;
+use Nobre\Models\Applicant;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateApplicantRequest extends FormRequest
@@ -25,6 +25,6 @@ class UpdateApplicantRequest extends FormRequest
      */
     public function rules()
     {
-        return Comision::$rules;
+        return Applicant::$rules;
     }
 }

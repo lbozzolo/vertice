@@ -1,9 +1,10 @@
-<table class="table">
+<table class="table datatables">
     <thead>
         <tr>
             <th>Id</th>
             <th>Título</th>
             <th>Fecha</th>
+            <th>Tipo</th>
             <th>Estado</th>
             <th>Opciones</th>
         </tr>
@@ -15,10 +16,17 @@
             <td>{!! $work->title !!}</td>
             <td>{!! $work->fecha_creado !!}</td>
             <td>
-                @if($work->active)
-                    <label class="badge badge-success">ACTIVO</label>
+                @if($work->type == 'past')
+                    <label class="badge badge-warning">pasado</label>
                 @else
-                    <label class="badge badge-danger">INACTIVO</label>
+                    <label class="badge badge-primary">presente</label>
+                @endif
+            </td>
+            <td>
+                @if($work->active)
+                    <label class="badge badge-success">activo</label>
+                @else
+                    <label class="badge badge-danger">inactivo</label>
                 @endif
             </td>
             <td>

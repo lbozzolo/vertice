@@ -3,7 +3,7 @@
         <h3>Imágenes</h3>
     </div>
     <div class="card-body" style="background-color: #f2f8f9">
-        @forelse($work->images as $imagen)
+        @forelse($work->imagesThumb as $imagen)
 
             <span style="display: inline-block">
                 <a href="" data-toggle="modal" data-target="#modalVerImage{!! $imagen->id !!}">
@@ -19,9 +19,9 @@
     </div>
 </div>
 
-@foreach($work->images as $imagen)
+@foreach($work->imagesBig as $imagen)
 
-    <div class="modal fade" id="modalVerImage{!! $imagen->id !!}">
+    <div class="modal fade" id="modalVerImage{!! $imagen->thumbnail_id !!}">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">

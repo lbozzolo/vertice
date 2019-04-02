@@ -10,12 +10,18 @@
                 <a class="btn btn-primary btn-sm" href="{!! route('applicants.create') !!}">Agregar</a>
             </h1>
 
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-body">
+
             @if($applicants->count())
-            <div class="table-responsive">
-                @include('applicants.table')
-            </div>
+                <div class="table-responsive">
+                    @include('applicants.table')
+                </div>
             @else
-            <span class="text-muted">No hay ningún aspirante cargado en el sistema.</span>
+                <span class="text-muted">No hay ningún aspirante cargado en el sistema.</span>
             @endif
 
         </div>

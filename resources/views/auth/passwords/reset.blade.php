@@ -28,7 +28,7 @@
                     <div class="auto-form-wrapper">
 
                         <div class="card-body text-center">
-                            <img src="{{ asset('template-web/images/icons/logo_amghi.png') }}" alt="logo" class="img-responsive" />
+                            <img src="{{ asset('images') }}" alt="logo" class="img-responsive" />
                         </div>
                         <div class="card-body">
                             <p class="text-warning">Ingrese su email y le enviaremos un enlace para restaurar su contraseña.</p>

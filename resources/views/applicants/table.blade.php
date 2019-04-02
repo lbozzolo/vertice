@@ -1,11 +1,11 @@
-<table class="table">
+<table class="table datatables">
     <thead>
         <tr>
             <th>Id</th>
             <th>Nombre</th>
             <th>Email</th>
             <th>País</th>
-            <th>Áreas de interés</th>
+            <th>Provincia</th>
             <th style="width: 100px">Opciones</th>
         </tr>
     </thead>
@@ -16,11 +16,12 @@
             <td>{!! $applicant->full_name !!}</td>
             <td>{!! $applicant->email !!}</td>
             <td>{!! config('sistema.countries.'.$applicant->country) !!}</td>
-            <td>
-                @foreach($applicant->categories as $category)
-                    <span class="label badge-secondary">{!! $category->name !!}</span>
-                @endforeach
-            </td>
+            <td>{!! ($applicant->province)? config('sistema.provinces.'.$applicant->province) : '-' !!}</td>
+            {{--<td>--}}
+                {{--@foreach($applicant->categories as $category)--}}
+                    {{--<span class="badge badge-dark">{!! $category->name !!}</span>--}}
+                {{--@endforeach--}}
+            {{--</td>--}}
             <td>
 
                 <div class='btn-group'>

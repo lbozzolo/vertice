@@ -12,7 +12,7 @@
 
     </div>
     <div class="card-body" style="background-color: #f2f8f9">
-        @forelse($work->images as $imagen)
+        @forelse($work->imagesThumb as $imagen)
 
             <span style="display: inline-block">
             <a href="" data-toggle="modal" data-target="#modalVerImage{!! $imagen->id !!}">
@@ -48,9 +48,9 @@
 </div>
 
 
-@foreach($work->images as $imagen)
+@foreach($work->imagesBig as $imagen)
 
-    <div class="modal fade" id="modalVerImage{!! $imagen->id !!}">
+    <div class="modal fade" id="modalVerImage{!! $imagen->thumbnail_id !!}">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -59,13 +59,21 @@
                 <div class="modal-footer">
 
                     @if($imagen->main == 0)
-                        <a href="{{ route('images.main', ['id' => $work->id, 'class' => 'Work', 'imagen' => $imagen->id]) }}" class="btn btn-primary" title="Marcar como principal">Marcar como principal</a>
+                        <a href="{{ route('images.main', ['id' => $work->id, 'class' => 'Work', 'imagen' => $imagen->id]) }}" class="btn btn-outline-primary" title="Destacar imagen">
+                            <i class="mdi mdi-star"></i> Destacar
+                        </a>
                     @else
-                        <a href="#" class="btn btn-primary" disabled title="Marcar como principal">Marcar como principal</a>
+                        <button type="button" class="btn btn-outline-primary" disabled title="Destacar imagen">
+                            <i class="mdi mdi-star-outline"></i> Destacar
+                        </button>
                     @endif
-                    <button class="btn btn-danger" title="Eliminar foto" data-toggle="modal" data-target="#modalDeleteImage{!! $imagen->id !!}">Eliminar</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <div class="modal fade text-left" id="modalDeleteImage{!! $imagen->id !!}">
+                    <button class="btn btn-outline-danger" title="Eliminar foto" data-toggle="modal" data-target="#modalDeleteImage{!! $imagen->thumbnail_id !!}">
+                        <i class="mdi mdi-delete"></i> Eliminar
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+                        <i class="mdi mdi-close"></i> Cancelar
+                    </button>
+                    <div class="modal fade text-left" id="modalDeleteImage{!! $imagen->thumbnail_id !!}">
                         <div class="modal-dialog">
                             <div class="modal-content col-lg-6 col-lg-offset-3">
                                 <div class="modal-header">
@@ -78,7 +86,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-                                    {!! Form::open(['method' => 'DELETE', 'url' => route('images.destroy', $imagen->id)]) !!}
+                                    {!! Form::open(['method' => 'DELETE', 'url' => route('images.destroy', $imagen->thumbnail_id)]) !!}
                                     {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
                                     {!! Form::close() !!}
                                 </div>

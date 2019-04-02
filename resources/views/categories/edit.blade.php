@@ -12,10 +12,10 @@
             <div class="row">
                 <div class="card-body">
 
-                    {!! Form::model($categoria, ['route' => ['categorias.update', $categoria->id], 'method' => 'patch']) !!}
+                    {!! Form::model($category, ['route' => ['categories.update', $category->id], 'method' => 'patch']) !!}
 
                     <div class="row">
-                        @include('categorias.fields')
+                        @include('categories.fields')
                     </div>
 
                     {!! Form::close() !!}

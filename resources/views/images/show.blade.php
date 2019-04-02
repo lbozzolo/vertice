@@ -3,15 +3,15 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Categoría
+            Slider
         </h1>
     </section>
     <div class="content">
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('categorias.show_fields')
-                    <a href="{!! route('categorias.index') !!}" class="btn btn-default">Volver</a>
+                    @include('sliders.show_fields')
+                    <a href="{!! route('sliders.index') !!}" class="btn btn-default">Volver</a>
                 </div>
             </div>
         </div>

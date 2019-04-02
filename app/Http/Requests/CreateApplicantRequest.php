@@ -27,4 +27,15 @@ class CreateApplicantRequest extends FormRequest
     {
         return Applicant::$rules;
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'El campo nombre es obligatorio',
+            'lastname.required' => 'El campo apellido es obligatorio',
+            'email.required' => 'El campo email es obligatorio',
+            'phone.required' => 'El campo teléfono es obligatorio',
+            'country.required' => 'El campo país es obligatorio',
+        ];
+    }
 }

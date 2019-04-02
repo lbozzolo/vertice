@@ -70,7 +70,7 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="{{ route('home') }}"><img src="{{ asset('template-web/images/icons/logo_amghi.png') }}" alt="Logo Amghi"></a>
+            <a href="{{ route('home') }}"><img src="{{ asset('images') }}" alt="Logo Amghi"></a>
         </div>
 
         <!-- Button show menu -->

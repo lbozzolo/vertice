@@ -4,8 +4,9 @@ namespace Nobre\Http\Controllers;
 
 use Nobre\Http\Requests\CreateApplicantRequest;
 use Nobre\Http\Requests\UpdateApplicantRequest;
+use Nobre\Models\Category;
 use Nobre\Repositories\ApplicantRepository;
-use Nobre\Http\Controllers\AppBaseController;
+use Nobre\Http\Controllers\AppBaseController as AppBaseController;
 use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
 
@@ -50,7 +51,7 @@ class ApplicantController extends AppBaseController
     {
         $data['countries'] = config('sistema.countries');
         $data['provinces'] = config('sistema.provinces');
-        $data['interest_areas'] = config('sistema.interest-areas');
+        $data['interest_areas'] = Category::pluck('name', 'id');
 
         return view($this->modelPlural.'.create')->with($data);
     }
@@ -78,15 +79,19 @@ class ApplicantController extends AppBaseController
 
     public function edit($id)
     {
-        $item = $this->repo->findWithoutFail($id);
+        $data[$this->model] = $this->repo->findWithoutFail($id);
 
-        if (empty($item))
+        if (empty($data[$this->model]))
             return redirect()->back()->withErrors($this->show_failure_message);
 
-        return view($this->modelPlural.'.edit')->with($this->model, $item);
+        $data['countries'] = config('sistema.countries');
+        $data['provinces'] = config('sistema.provinces');
+        $data['interest_areas'] = Category::pluck('name', 'id');
+
+        return view($this->modelPlural.'.edit')->with($data);
     }
 
-    public function update($id, UpdateWorkRequest $request)
+    public function update($id, UpdateApplicantRequest $request)
     {
         $item = $this->repo->findWithoutFail($id);
         $items = $this->repo->all();

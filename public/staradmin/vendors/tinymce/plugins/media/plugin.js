@@ -81,7 +81,7 @@ var defineGlobal = function (id, ref) {
   define(id, [], function () { return ref; });
 };
 /*jsc
-["tinymce.plugins.media.Plugin","tinymce.core.html.Node","tinymce.core.PluginManager","tinymce.core.util.Tools","tinymce.plugins.media.core.Nodes","tinymce.plugins.media.core.Sanitize","tinymce.plugins.media.core.UpdateHtml","tinymce.plugins.media.ui.Dialog","global!tinymce.util.Tools.resolve","tinymce.core.html.Writer","tinymce.core.html.SaxParser","tinymce.core.html.Schema","tinymce.plugins.media.core.VideoScript","tinymce.core.Env","tinymce.core.dom.DOMUtils","tinymce.plugins.media.core.Size","tinymce.core.util.Delay","tinymce.plugins.media.core.HtmlToData","tinymce.plugins.media.core.Service","tinymce.plugins.media.ui.SizeManager","tinymce.plugins.media.core.DataToHtml","tinymce.core.util.Promise","tinymce.plugins.media.core.Mime","tinymce.plugins.media.core.UrlPatterns"]
+["tinymce.plugins.medias.Plugin","tinymce.core.html.Node","tinymce.core.PluginManager","tinymce.core.util.Tools","tinymce.plugins.medias.core.Nodes","tinymce.plugins.medias.core.Sanitize","tinymce.plugins.medias.core.UpdateHtml","tinymce.plugins.medias.ui.Dialog","global!tinymce.util.Tools.resolve","tinymce.core.html.Writer","tinymce.core.html.SaxParser","tinymce.core.html.Schema","tinymce.plugins.medias.core.VideoScript","tinymce.core.Env","tinymce.core.dom.DOMUtils","tinymce.plugins.medias.core.Size","tinymce.core.util.Delay","tinymce.plugins.medias.core.HtmlToData","tinymce.plugins.medias.core.Service","tinymce.plugins.medias.ui.SizeManager","tinymce.plugins.medias.core.DataToHtml","tinymce.core.util.Promise","tinymce.plugins.medias.core.Mime","tinymce.plugins.medias.core.UrlPatterns"]
 jsc*/
 defineGlobal("global!tinymce.util.Tools.resolve", tinymce.util.Tools.resolve);
 /**
@@ -350,8 +350,8 @@ define(
 define(
   'tinymce.plugins.media.core.Nodes',
   [
-    'tinymce.plugins.media.core.Sanitize',
-    'tinymce.plugins.media.core.VideoScript',
+    'tinymce.plugins.medias.core.Sanitize',
+    'tinymce.plugins.medias.core.VideoScript',
     'tinymce.core.html.Node',
     'tinymce.core.Env'
   ],
@@ -589,7 +589,7 @@ define(
     'tinymce.core.html.SaxParser',
     'tinymce.core.html.Schema',
     'tinymce.core.dom.DOMUtils',
-    'tinymce.plugins.media.core.Size'
+    'tinymce.plugins.medias.core.Size'
   ],
   function (Writer, SaxParser, Schema, DOMUtils, Size) {
     var DOM = DOMUtils.DOM;
@@ -823,8 +823,8 @@ define(
     'tinymce.core.html.SaxParser',
     'tinymce.core.html.Schema',
     'tinymce.core.dom.DOMUtils',
-    'tinymce.plugins.media.core.VideoScript',
-    'tinymce.plugins.media.core.Size'
+    'tinymce.plugins.medias.core.VideoScript',
+    'tinymce.plugins.medias.core.Size'
   ],
   function (Tools, SaxParser, Schema, DOMUtils, VideoScript, Size) {
     var DOM = DOMUtils.DOM;
@@ -1029,11 +1029,11 @@ define(
 define(
   'tinymce.plugins.media.core.DataToHtml',
   [
-    'tinymce.plugins.media.core.Mime',
-    'tinymce.plugins.media.core.HtmlToData',
-    'tinymce.plugins.media.core.UrlPatterns',
-    'tinymce.plugins.media.core.VideoScript',
-    'tinymce.plugins.media.core.UpdateHtml',
+    'tinymce.plugins.medias.core.Mime',
+    'tinymce.plugins.medias.core.HtmlToData',
+    'tinymce.plugins.medias.core.UrlPatterns',
+    'tinymce.plugins.medias.core.VideoScript',
+    'tinymce.plugins.medias.core.UpdateHtml',
     'tinymce.core.util.Tools'
   ],
   function (Mime, HtmlToData, UrlPatterns, VideoScript, UpdateHtml, Tools) {
@@ -1198,7 +1198,7 @@ define(
 define(
   'tinymce.plugins.media.core.Service',
   [
-    'tinymce.plugins.media.core.DataToHtml',
+    'tinymce.plugins.medias.core.DataToHtml',
     'tinymce.core.util.Promise'
   ],
   function (DataToHtml, Promise) {
@@ -1355,13 +1355,13 @@ define(
   'tinymce.plugins.media.ui.Dialog',
   [
     'tinymce.core.util.Delay',
-    'tinymce.plugins.media.core.HtmlToData',
-    'tinymce.plugins.media.core.UpdateHtml',
-    'tinymce.plugins.media.core.Service',
-    'tinymce.plugins.media.core.Size',
+    'tinymce.plugins.medias.core.HtmlToData',
+    'tinymce.plugins.medias.core.UpdateHtml',
+    'tinymce.plugins.medias.core.Service',
+    'tinymce.plugins.medias.core.Size',
     'tinymce.core.util.Tools',
     'tinymce.core.Env',
-    'tinymce.plugins.media.ui.SizeManager'
+    'tinymce.plugins.medias.ui.SizeManager'
   ],
   function (Delay, HtmlToData, UpdateHtml, Service, Size, Tools, Env, SizeManager) {
     var embedChange = (Env.ie && Env.ie <= 8) ? 'onChange' : 'onInput';
@@ -1537,7 +1537,7 @@ define(
       embedTextBox[embedChange] = updateValueOnChange;
 
       win = editor.windowManager.open({
-        title: 'Insert/edit media',
+        title: 'Insert/edit medias',
         data: data,
         bodyType: 'tabpanel',
         body: [
@@ -1601,10 +1601,10 @@ define(
     'tinymce.core.html.Node',
     'tinymce.core.PluginManager',
     'tinymce.core.util.Tools',
-    'tinymce.plugins.media.core.Nodes',
-    'tinymce.plugins.media.core.Sanitize',
-    'tinymce.plugins.media.core.UpdateHtml',
-    'tinymce.plugins.media.ui.Dialog'
+    'tinymce.plugins.medias.core.Nodes',
+    'tinymce.plugins.medias.core.Sanitize',
+    'tinymce.plugins.medias.core.UpdateHtml',
+    'tinymce.plugins.medias.ui.Dialog'
   ],
   function (Node, PluginManager, Tools, Nodes, Sanitize, UpdateHtml, Dialog) {
     var Plugin = function (editor) {
@@ -1634,11 +1634,11 @@ define(
           boolAttrs[name] = {};
         });
 
-        // Converts iframe, video etc into placeholder images
+        // Converts iframe, video etc into placeholder medias
         editor.parser.addNodeFilter('iframe,video,audio,object,embed,script',
           Nodes.placeHolderConverter(editor));
 
-        // Replaces placeholder images with real elements for video, object, iframe etc
+        // Replaces placeholder medias with real elements for video, object, iframe etc
         editor.serializer.addAttributeFilter('data-mce-object', function (nodes, name) {
           var i = nodes.length;
           var node;
@@ -1749,7 +1749,7 @@ define(
       };
 
       editor.addButton('media', {
-        tooltip: 'Insert/edit media',
+        tooltip: 'Insert/edit medias',
         onclick: this.showDialog,
         stateSelector: ['img[data-mce-object]', 'span[data-mce-object]', 'div[data-ephox-embed-iri]']
       });

@@ -19,6 +19,7 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->string('path');
             $table->string('title')->nullable();
+            $table->integer('thumbnail_id')->nullable();
             $table->integer('imageable_id')->nullable();
             $table->string('imageable_type')->nullable();
             $table->integer('main')->nullable();
@@ -28,7 +29,6 @@ class CreateImagesTable extends Migration
             $table->index('imageable_id');
 
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

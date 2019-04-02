@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-                                    {!! Form::open(['method' => 'DELETE', 'url' => route('images.destroy', $imagen->id)]) !!}
+                                    {!! Form::open(['method' => 'DELETE', 'url' => route('images', $imagen->id)]) !!}
                                     {!! Form::submit('Eliminar de todos modos', ['class' => 'btn btn-danger']) !!}
                                     {!! Form::close() !!}
                                 </div>

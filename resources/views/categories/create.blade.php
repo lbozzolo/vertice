@@ -8,10 +8,10 @@
             <h1>Categoría / <span class="text-warning">Agregar</span></h1>
             <div class="row">
                 <div class="card-body">
-                    {!! Form::open(['route' => 'categorias.store']) !!}
+                    {!! Form::open(['route' => 'categories.store']) !!}
 
                     <div class="row">
-                        @include('categorias.fields')
+                        @include('categories.fields')
                     </div>
 
                     {!! Form::close() !!}

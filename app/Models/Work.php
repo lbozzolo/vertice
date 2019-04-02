@@ -3,7 +3,7 @@
 namespace Nobre\Models;
 
 use Eloquent as Model;
-use Nobre\Models\Image;
+use Nobre\Models\Image as Image;
 
 class Work extends Model
 {
@@ -12,6 +12,7 @@ class Work extends Model
     public $fillable = [
         'title',
         'body',
+        'type',
         'active'
     ];
 
@@ -38,6 +39,16 @@ class Work extends Model
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function imagesThumb()
+    {
+        return $this->morphMany(Image::class, 'imageable')->where('thumbnail_id', null);
+    }
+
+    public function imagesBig()
+    {
+        return $this->morphMany(Image::class, 'imageable')->where('thumbnail_id', '!=', null);
     }
 
 }

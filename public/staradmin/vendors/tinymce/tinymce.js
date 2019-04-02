@@ -8733,9 +8733,9 @@ define(
       add("head", "", "base command link meta noscript script style title");
       add("title hr noscript br");
       add("base", "href target");
-      add("link", "href rel media hreflang type sizes hreflang");
+      add("link", "href rel images hreflang type sizes hreflang");
       add("meta", "name http-equiv content charset");
-      add("style", "media type scoped");
+      add("style", "images type scoped");
       add("script", "src async defer type charset");
       add("body", "onafterprint onbeforeprint onbeforeunload onblur onerror onfocus " +
         "onhashchange onload onmessage onoffline ononline onpagehide onpageshow " +
@@ -8747,7 +8747,7 @@ define(
       add("ul", "", "li");
       add("li", "value", flowContent);
       add("dl", "", "dt dd");
-      add("a", "href target rel media hreflang type", phrasingContent);
+      add("a", "href target rel images hreflang type", phrasingContent);
       add("q", "cite", phrasingContent);
       add("ins del", "cite datetime", flowContent);
       add("img", "src sizes srcset alt usemap ismap width height");
@@ -8756,7 +8756,7 @@ define(
       add("object", "data type typemustmatch name usemap form width height", [flowContent, "param"].join(' '));
       add("param", "name value");
       add("map", "name", [flowContent, "area"].join(' '));
-      add("area", "alt coords shape href target rel media hreflang type");
+      add("area", "alt coords shape href target rel images hreflang type");
       add("table", "border", "caption colgroup thead tfoot tbody tr" + (type == "html4" ? " col" : ""));
       add("colgroup", "span", "col");
       add("col", "span");
@@ -8791,7 +8791,7 @@ define(
         add("audio", "src crossorigin preload autoplay mediagroup loop muted controls " +
           "buffered volume", [flowContent, "track source"].join(' '));
         add("picture", "", "img source");
-        add("source", "src srcset type media sizes");
+        add("source", "src srcset type images sizes");
         add("track", "kind src srclang label default");
         add("datalist", "", [phrasingContent, "option"].join(' '));
         add("article section nav aside header footer", "", flowContent);

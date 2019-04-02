@@ -1,7 +1,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>AMGHI - Panel de control</title>
+<title>Nobre - Panel de control</title>
 <!-- plugins:css -->
 <link rel="stylesheet" href="{{ asset('staradmin/vendors/iconfonts/mdi/css/materialdesignicons.min.css') }}">
 <link rel="stylesheet" href="{{ asset('staradmin/vendors/css/vendor.bundle.base.css') }}">
@@ -18,11 +18,11 @@
 <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('staradmin/images/icons/apple-icon-57x57.png') }}">
 <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('staradmin/images/icons/apple-icon-60x60.png') }}">
 <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('staradmin/images/icons/apple-icon-72x72.png') }}">
-<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('staradmin/images/icons/apple-icon-76x76.png') }}">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images') }}">
 <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('staradmin/images/icons/apple-icon-114x114.png') }}">
-<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('staradmin/images/icons/apple-icon-120x120.png') }}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('medias') }}">
 <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('staradmin/images/icons/apple-icon-144x144.png') }}">
-<link rel="apple-touch-icon" sizes="152x152" href="{{ asset('staradmin/images/icons/apple-icon-152x152.png') }}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ asset('media') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('staradmin/images/icons/apple-icon-180x180.png') }}">
 <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('staradmin/images/icons/android-icon-192x192.png') }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('staradmin/images/icons/favicon-32x32.png') }}">

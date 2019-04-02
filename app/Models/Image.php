@@ -18,21 +18,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Image extends Model
 {
-    use SoftDeletes;
-
     public $table = 'images';
-    
-
-    protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'path',
         'title',
+        'thumb_id',
         'imageable_id',
         'imageable_type',
-        'main'
+        'main',
+        'type'
     ];
 
     /**
@@ -57,9 +52,19 @@ class Image extends Model
         
     ];
 
+    public function pathIsThumb()
+    {
+        return starts_with($this->attributes['path'], 'thumb');
+    }
+
     public function getTitleAttribute()
     {
         return ($this->attributes['title'])? $this->attributes['title'] : 'Imagen de muestra';
+    }
+
+    public function getThumbPathAttribute()
+    {
+        return 'thumb-'.$this->attributes['path'];
     }
 
     public function imageable()

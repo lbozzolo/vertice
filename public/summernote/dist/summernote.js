@@ -5165,7 +5165,7 @@
     };
 
     /**
-     * remove media object
+     * remove images object
      */
     this.removeMedia = this.wrapCommand(function () {
       var $target = $(this.restoreTarget()).detach();

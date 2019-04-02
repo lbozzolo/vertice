@@ -21,7 +21,7 @@ class HomeController extends Controller
 //        $data['estatutos'] = Work::count();
 //        $data['noticias'] = Noticia::count();
 //        $data['applicants'] = Servicio::count();
-//        $data['categorias'] = Category::count();
+//        $data['categories'] = Category::count();
 
         return view('home')->with($data);
     }

@@ -23,7 +23,6 @@ class CreateCategoriesTable extends Migration
             $table->index('id');
 
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

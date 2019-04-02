@@ -5,20 +5,15 @@ namespace Nobre\Http\Controllers;
 use Nobre\Http\Requests\CreateImageRequest;
 use Nobre\Http\Requests\UpdateImageRequest;
 use Nobre\Repositories\ImageRepository;
-use Nobre\Http\Controllers\AppBaseController;
+use Nobre\Http\Controllers\AppBaseController as AppBaseController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
-use Flash;
 use Illuminate\Support\Facades\Validator;
-use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
 use Nobre\Models\Image;
-use Nobre\Models\Empresa;
-use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image as Intervention;
 
 class ImageController extends AppBaseController
 {
-    /** @var  ImageRepository */
     private $imageRepository;
 
     public function __construct(ImageRepository $imageRepo)
@@ -26,46 +21,35 @@ class ImageController extends AppBaseController
         $this->imageRepository = $imageRepo;
     }
 
-    /**
-     * Display a listing of the Image.
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function index(Request $request)
+    public function index()
     {
-        if(!Auth::user()->isSuperAdmin())
-            return abort(403);
+        //$data['images'] = $this->imageRepository->all();
+        $images = $this->imageRepository->all();
 
-        $this->imageRepository->pushCriteria(new RequestCriteria($request));
-        //$images = $this->imageRepository->all();
+        $data['images_big'] = $images->filter(function ($query) {
+            return !starts_with($query->path, 'thumb');
+        });
+        $data['images_thumb'] = $images->filter(function ($query) {
+            return starts_with($query->path, 'thumb');
+        });
 
-        $images = Image::where('imageable_id', null)->get();
-        $otras = Image::where('imageable_id', '!=', null)->get();
 
-        return view('images.index')
-            ->with(['images' => $images, 'otras' => $otras]);
+        return view('images.index')->with($data);
     }
 
-    /**
-     * Show the form for creating a new Image.
-     *
-     * @return Response
-     */
     public function create()
     {
         return view('images.create');
     }
 
-    /**
-     * Store a newly created Image in storage.
-     *
-     * @param CreateImageRequest $request
-     *
-     * @return Response
-     */
     public function store(CreateImageRequest $request)
     {
+        //dd($request->all());
+
+        $img = Intervention::make($request->file('img'));
+
+        dd($img);
+
        /* $input = $request->all();
         $image = $this->imageRepository->create($input);
 
@@ -157,14 +141,16 @@ class ImageController extends AppBaseController
     public function destroy($id)
     {
         $image = $this->imageRepository->findWithoutFail($id);
+        $image_big = Image::where('thumbnail_id', $id)->first();
 
         if (empty($image))
             return redirect(route('images.index'))->withErrors('Imagen no encontrada');
 
-        //$this->imageRepository->forceDelete($id);
         $image->forceDelete();
+        $image_big->forceDelete();
 
         File::delete(public_path("imagenes/".$image->path));
+        File::delete(public_path("imagenes/".$image_big->path));
 
         return redirect()->back()->with('ok', 'Imagen eliminada con éxito');
     }
@@ -172,13 +158,14 @@ class ImageController extends AppBaseController
     public function verImage($file)
     {
         $ruta = storage_path("imagenes\\".$file);
-        //dd($ruta);
+
         return response()->make(File::get($ruta),200)
             ->header('Content-Type', 'image/jpg');
     }
 
     public function storeImage(Request $request, $id, $class)
     {
+        dd($request->all());
         if(!$request->hasFile('img'))
             return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
 
@@ -223,6 +210,17 @@ class ImageController extends AppBaseController
         return $nombre;
     }
 
+    public function makeThumb($img, $name, $model = null, $type = null)
+    {
+        $img->save(public_path('/imagenes/'). 'thumb-'.$name);
+        $image_thumb = Image::create(['path' => 'thumb-'.$name, 'main' => 0, 'type' => $type ]);
+
+        if($model)
+            $model->images()->save($image_thumb);
+
+        return $image_thumb;
+    }
+
     public function principalImage($id, $class, $image)
     {
         $imagen = Image::find($image);
@@ -244,18 +242,18 @@ class ImageController extends AppBaseController
 
     public function saveJqueryImageUpload(Request $request, $id, $class)
     {
-        $validator = Validator::make($request->all(), [
-            'img' => 'required|image|max:1024000',
-        ]);
+        $validator = Validator::make($request->all(), ['img' => 'required|image|max:1024000']);
 
-        if ($validator->fails()) {
+        if ($validator->fails())
             return $validator->errors();
-        }
 
         $status = "";
 
         if(!$request->hasFile('img'))
             return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
+
+        // Resize to image thumbnail
+        $img_thumb = Intervention::make($request->file('img'))->resize(config('imagenes.WIDTH_THUMB'), config('imagenes.HEIGHT_THUMB'));
 
         $class = 'Nobre\Models\\'.$class;
         $model = $class::find($id);
@@ -280,6 +278,53 @@ class ImageController extends AppBaseController
             $file->move(public_path('imagenes'), $nombre);
 
             $model->images()->save($imagen);
+
+            $image_thumb = $this->makeThumb($img_thumb, $nombre, $model, null);
+            $imagen->thumbnail_id = $image_thumb->id;
+            $imagen->save();
+
+            $status = "uploaded";
+
+        }
+
+        return response($status,200);
+    }
+
+    public function saveWithoutModel(Request $request, $type)
+    {
+        $validator = Validator::make($request->all(), ['img' => 'required|image|max:1024000']);
+
+        if ($validator->fails())
+            return $validator->errors();
+
+        $status = "";
+
+        if(!$request->hasFile('img'))
+            return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
+
+        $type = ($type == 'past')? 0 : 1;
+        // Resize to image thumbnail
+        $img_thumb = Intervention::make($request->file('img'))->resize(config('imagenes.WIDTH_THUMB'), config('imagenes.HEIGHT_THUMB'));
+
+        if($request->file('img')){
+
+            $file = $request->file('img');
+
+            // Redirección si excede el máximo tamaño de imagen permitido
+            if($file->getClientSize() > config('sistema.imagenes.MAX_SIZE_IMAGE'))
+                return redirect()->back()->withErrors('La foto es demasiado grande (Debe ser menor a 5M)');
+
+            // Confirma que el archivo no exista en el destino
+            $nombre = $this->changeFileNameIfExists($file);
+
+            $imagen = Image::create(['path' => $nombre, 'main' => 0, 'type' => $type]);
+            $imagen->title = ($request->title)? $request->title : '';
+            $file->move(public_path('imagenes'), $nombre);
+
+
+            $image_thumb = $this->makeThumb($img_thumb, $nombre, null, $type);
+            $imagen->thumbnail_id = $image_thumb->id;
+            $imagen->save();
 
             $status = "uploaded";
 

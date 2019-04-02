@@ -161,7 +161,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
       var bool;
 
-      injectElementWithStyles('@media ' + mq + ' { #' + mod + ' { position: absolute; } }', function( node ) {
+      injectElementWithStyles('@images ' + mq + ' { #' + mod + ' { position: absolute; } }', function( node ) {
         bool = (window.getComputedStyle ?
                   getComputedStyle(node, null) :
                   node.currentStyle)['position'] == 'absolute';
@@ -454,7 +454,7 @@ window.Modernizr = (function( window, document, undefined ) {
         if(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
           bool = true;
         } else {
-          injectElementWithStyles(['@media (',prefixes.join('touch-enabled),('),mod,')','{#modernizr{top:9px;position:absolute}}'].join(''), function( node ) {
+          injectElementWithStyles(['@images (',prefixes.join('touch-enabled),('),mod,')','{#modernizr{top:9px;position:absolute}}'].join(''), function( node ) {
             bool = node.offsetTop === 9;
           });
         }
@@ -660,9 +660,9 @@ window.Modernizr = (function( window, document, undefined ) {
         //   will sometimes throw a false positive, thus we must do a more thorough check:
         if ( ret && 'webkitPerspective' in docElement.style ) {
 
-          // Webkit allows this media query to succeed only if the feature is enabled.
-          // `@media (transform-3d),(-webkit-transform-3d){ ... }`
-          injectElementWithStyles('@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}', function( node, rule ) {
+          // Webkit allows this images query to succeed only if the feature is enabled.
+          // `@images (transform-3d),(-webkit-transform-3d){ ... }`
+          injectElementWithStyles('@images (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}', function( node, rule ) {
             ret = node.offsetLeft === 9 && node.offsetHeight === 3;
           });
         }
@@ -1321,11 +1321,11 @@ window.Modernizr = (function( window, document, undefined ) {
     /*>>domprefixes*/
 
     /*>>mq*/
-    // Modernizr.mq tests a given media query, live against the current state of the window
+    // Modernizr.mq tests a given images query, live against the current state of the window
     // A few important notes:
-    //   * If a browser does not support media queries at all (eg. oldIE) the mq() will always return false
+    //   * If a browser does not support images queries at all (eg. oldIE) the mq() will always return false
     //   * A max-width or orientation query will be evaluated against the current state, which may change later.
-    //   * You must specify values. Eg. If you are testing support for the min-width media query use:
+    //   * You must specify values. Eg. If you are testing support for the min-width images query use:
     //       Modernizr.mq('(min-width:0)')
     // usage:
     // Modernizr.mq('only screen and (max-width:768)')

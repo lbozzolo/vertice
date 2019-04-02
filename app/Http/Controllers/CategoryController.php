@@ -5,89 +5,99 @@ namespace Nobre\Http\Controllers;
 use Nobre\Http\Requests\CreateCategoryRequest;
 use Nobre\Http\Requests\UpdateCategoryRequest;
 use Nobre\Repositories\CategoryRepository;
-use Nobre\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
-use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
+use Nobre\Http\Controllers\AppBaseController as AppBaseController;
 
 class CategoryController extends AppBaseController
 {
-    private $categoriaRepository;
+    private $repo;
+    private $model;
+    private $modelSpanish;
+    private $modelPlural;
+    private $store_success_message;
+    private $store_failure_message;
+    private $show_failure_message;
+    private $update_success_message;
+    private $update_failure_message;
+    private $destroy_success_message;
+    private $destroy_failure_message;
 
-    public function __construct(CategoryRepository $categoriaRepo)
+    public function __construct(CategoryRepository $repository)
     {
-        $this->categoriaRepository = $categoriaRepo;
+        $this->repo = $repository;
+        $this->model = 'category';
+        $this->modelPlural = 'categories';
+        $this->modelSpanish = 'categoría';
+        $this->store_success_message = ucfirst($this->modelSpanish).' creado con éxito';
+        $this->store_failure_message = 'Ocurrió un error. No se pudo crear el'.ucfirst($this->modelSpanish);
+        $this->show_failure_message = 'No se encontró el'.ucfirst($this->modelSpanish.' especificado');
+        $this->update_success_message = ucfirst($this->modelSpanish).' actualizado con éxito';
+        $this->update_failure_message = 'Ocurrió un error. No se pudo actualizar el'.ucfirst($this->modelSpanish).' especificado';
+        $this->destroy_success_message = ucfirst($this->modelSpanish).' eliminado con éxito';
+        $this->destroy_failure_message = 'Ocurrió un error. No se pudo eliminar el'.ucfirst($this->modelSpanish).' especificado';
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        $this->categoriaRepository->pushCriteria(new RequestCriteria($request));
-        $categorias = $this->categoriaRepository->all();
-
-        return view('categorias.index')
-            ->with('categorias', $categorias);
+        $items = $this->repo->all();
+        return view($this->modelPlural.'.index')->with($this->modelPlural, $items);
     }
 
     public function create()
     {
-        return view('categorias.create');
+        $data['countries'] = config('sistema.countries');
+        $data['provinces'] = config('sistema.provinces');
+        $data['interest_areas'] = collect(config('sistema.interest-areas'));
+
+        return view($this->modelPlural.'.create')->with($data);
     }
 
     public function store(CreateCategoryRequest $request)
     {
         $input = $request->all();
-        $input['slug'] = str_slug($request->name, '.');
+        $input['slug'] = str_slug($input['name'], '.');
 
-        $categoria = $this->categoriaRepository->create($input);
+        $item = $this->repo->create($input);
 
-        return redirect(route('categorias.index'))->with('ok', 'Categoría creada con éxito');
-    }
+        if (!$item)
+            return redirect()->back()->withErrors($this->store_failure_message);
 
-    public function show($id)
-    {
-        $categoria = $this->categoriaRepository->findWithoutFail($id);
-
-        if (empty($categoria))
-            return redirect(route('categorias.index'))->withErrors('Categoría no encontrada');
-
-        return view('categorias.show')->with('categoria', $categoria);
+        return redirect(route($this->modelPlural.'.index'))->with('ok', $this->store_success_message);
     }
 
     public function edit($id)
     {
-        $categoria = $this->categoriaRepository->findWithoutFail($id);
+        $item = $this->repo->findWithoutFail($id);
 
-        if (empty($categoria))
-            return redirect(route('categorias.index'))->withErrors('Categoría no encontrada');
+        if (empty($item))
+            return redirect()->back()->withErrors($this->show_failure_message);
 
-        return view('categorias.edit')->with('categoria', $categoria);
+        return view($this->modelPlural.'.edit')->with($this->model, $item);
     }
 
     public function update($id, UpdateCategoryRequest $request)
     {
-        $categoria = $this->categoriaRepository->findWithoutFail($id);
+        $item = $this->repo->findWithoutFail($id);
 
-        if (empty($categoria))
-            return redirect(route('categorias.index'))->withErrors('Categoría no encontrada');
+        if (!$item)
+            return redirect()->back()->withErrors($this->update_failure_message);
 
-        $categoria = $this->categoriaRepository->update($request->all(), $id);
+        $input = $request->all();
+        $input['slug'] = str_slug($input['name'], '.');
 
-        $categoria->slug = str_slug($categoria->name, '.');
-        $categoria->save();
+        $this->repo->update($input, $id);
 
-        return redirect(route('categorias.index'))->with('ok', 'Categoría actualizada con éxito');
+        return redirect(route($this->modelPlural.'.index'))->with('ok', $this->update_success_message);
     }
 
     public function destroy($id)
     {
-        $categoria = $this->categoriaRepository->findWithoutFail($id);
+        $item = $this->repo->findWithoutFail($id);
 
-        if (empty($categoria))
-            return redirect(route('categorias.index'))->withErrors('Categoría no encontrada');
+        if (empty($item))
+            return redirect()->back()->withErrors($this->destroy_failure_message);
 
-        $this->categoriaRepository->delete($id);
+        $this->repo->delete($id);
 
-        return redirect(route('categorias.index'))->with('ok', 'Categoría eliminada con éxito');
+        return redirect(route($this->modelPlural.'.index'))->with('ok', $this->destroy_success_message);
     }
 }

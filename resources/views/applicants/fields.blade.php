@@ -36,15 +36,25 @@
 
 <div class="form-group col-lg-6">
     {!! Form::label('categories[]', 'Áreas de interés:') !!}
-    {!! Form::select('categories[]', $interest_areas, null, ['class' => 'form-control select2', 'placeholder' => '']) !!}
+    @if(isset($interest_areas))
+        <select name="categories[]" class="select2 form-control" placeholder="" multiple style="width: 100%">
+            @foreach ($interest_areas as $key => $value)
+
+                <option value="{{ $key }}" @if (isset($applicant) && $applicant->categories->contains($key)) selected @endif>
+                    {{ $value }}
+                </option>
+
+            @endforeach
+        </select>
+    @else
+        {!! Form::select('categories[]', $interest_areas, null, ['class' => 'form-control select2', 'placeholder' => '']) !!}
+    @endif
 </div>
-
-
 
 <!-- Body Field -->
 <div class="form-group col-lg-12">
-    {!! Form::label('body', 'Texto:') !!}
-    {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+    {!! Form::label('text', 'Texto:') !!}
+    {!! Form::textarea('text', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

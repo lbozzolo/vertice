@@ -26,7 +26,7 @@
                             @if($servicio->images->count())
                                 <img src="{{ route('imagenes.ver', $servicio->mainImageOrNext()->path) }}" alt="{!! ($servicio->mainImageOrNext()->title)? $servicio->mainImageOrNext()->title : 'Servicio AMGHI' !!}">
                             @else
-                                <img src="{{ asset('template-web/images/project-01.jpg')}}">
+                                <img src="{{ asset('images')}}">
                             @endif
                         </a>
 
