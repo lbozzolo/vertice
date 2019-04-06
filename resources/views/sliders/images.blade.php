@@ -2,7 +2,7 @@
     <div class="card-header">
 
         <span class="float-right">
-            <span id="producto-id" data-producto-id="{!! route('subir.imagen', ['id' => $slider->id, 'class' => 'Slider']) !!}"></span>
+            <span id="producto-id" data-producto-id="{!! route('subir.imagen', ['id' => $item->id, 'class' => ucfirst($model)]) !!}"></span>
             <meta name="csrf-token" content="{{ csrf_token() }}">
             <input type="file" class="file-upload form-control" id="file-upload" name="img" accept="image/*">
         </span>
@@ -11,7 +11,7 @@
 
     </div>
     <div class="card-body" style="background-color: #f2f8f9">
-        @forelse($slider->imagesThumb as $imagen)
+        @forelse($item->imagesThumb as $imagen)
 
             <span style="display: inline-block">
             <a href="" data-toggle="modal" data-target="#modalVerImage{!! $imagen->id !!}">
@@ -37,7 +37,7 @@
             <div class="lead text-center">
                 <button class="btn btn-secondary rotate" data-deg="90"><i class="mdi mdi-rotate-left" style="font-size: 2em"></i></button>
                 <button class="btn btn-primary" id="upload" >Aceptar</button>
-                <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-light">Cancelar</a>
+                <a href="{{ route($modelPlural.'.edit', $item->id) }}" class="btn btn-light">Cancelar</a>
                 <button class="btn btn-secondary rotate" data-deg="-90"><i class="mdi mdi-rotate-right" style="font-size: 2em"></i></button>
             </div>
 
@@ -46,7 +46,7 @@
     </div>
 </div>
 
-@foreach($slider->imagesBig as $imagen)
+@foreach($item->imagesBig as $imagen)
 
     <div class="modal fade" id="modalVerImage{!! $imagen->thumbnail_id !!}">
         <div class="modal-dialog">
@@ -57,7 +57,7 @@
                 <div class="modal-footer">
 
                     @if($imagen->main == 0)
-                        <a href="{{ route('images.main', ['id' => $slider->id, 'class' => 'Slider', 'imagen' => $imagen->id]) }}" class="btn btn-outline-primary" title="Destacar imagen">
+                        <a href="{{ route('images.main', ['id' => $item->id, 'class' => ucfirst($model), 'imagen' => $imagen->id]) }}" class="btn btn-outline-primary" title="Destacar imagen">
                             <i class="mdi mdi-star"></i> Destacar
                         </a>
                     @else

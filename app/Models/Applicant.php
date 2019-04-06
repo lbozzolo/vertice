@@ -1,6 +1,6 @@
 <?php
 
-namespace Nobre\Models;
+namespace Ramiroquai\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

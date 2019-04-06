@@ -5,13 +5,13 @@
     <div class="card col-lg-12">
         <div class="card-body">
 
-            <h1>Categoría / <span class="text-warning">Agregar</span></h1>
+            <h1>{!! ucfirst($modelSpanish) !!} / <span class="text-warning">Agregar</span></h1>
             <div class="row">
                 <div class="card-body">
-                    {!! Form::open(['route' => 'categories.store']) !!}
+                    {!! Form::open(['route' => $modelPlural.'.store']) !!}
 
                     <div class="row">
-                        @include('categories.fields')
+                        @include($modelPlural.'.fields')
                     </div>
 
                     {!! Form::close() !!}

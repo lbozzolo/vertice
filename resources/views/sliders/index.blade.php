@@ -6,16 +6,16 @@
         <div class="card-body">
 
             <h1>
-                Sliders
-                <a class="btn btn-primary btn-sm" href="{!! route('sliders.create') !!}">Agregar</a>
+                {!! ucfirst($modelSpanishPlural) !!}
+                <a class="btn btn-primary btn-sm" href="{!! route($modelPlural.'.create') !!}">Agregar</a>
             </h1>
 
-            @if($sliders->count())
+            @if($items->count())
             <div class="table-responsive">
-                @include('sliders.table')
+                @include($modelPlural.'.table')
             </div>
             @else
-                <span class="text-muted">No hay ningún slider cargado en el sistema.</span>
+                <span class="text-muted">{!! $noResultsMessage !!}</span>
             @endif
 
         </div>

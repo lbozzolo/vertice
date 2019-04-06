@@ -841,7 +841,7 @@ define(
         } else {
           startPos = endPos = null;
 
-          // Calculate start/end pos by checking for selected cells in grid works better with context menu
+          // Calculate start/end pos by checking for selected cells in grid events better with context menu
           each(grid, function (row, y) {
             each(row, function (cell, x) {
               if (isCellSelected(cell)) {

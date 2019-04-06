@@ -1,8 +1,8 @@
 <?php
 
-namespace Nobre\Repositories;
+namespace Ramiroquai\Repositories;
 
-use Nobre\Models\Category;
+use Ramiroquai\Models\Category;
 use InfyOm\Generator\Common\BaseRepository;
 
 class CategoryRepository extends BaseRepository

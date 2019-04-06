@@ -1,6 +1,6 @@
 <?php
 
-namespace Nobre\Console;
+namespace Ramiroquai\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

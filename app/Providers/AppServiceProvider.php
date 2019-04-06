@@ -1,6 +1,6 @@
 <?php
 
-namespace Nobre\Providers;
+namespace Ramiroquai\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;

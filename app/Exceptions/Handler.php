@@ -1,6 +1,6 @@
 <?php
 
-namespace Nobre\Exceptions;
+namespace Ramiroquai\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

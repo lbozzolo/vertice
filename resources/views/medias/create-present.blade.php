@@ -4,7 +4,7 @@
 
     <div class="card">
         <div class="card-body">
-            <h1>Social & Media / <span class="text-warning">Agregar</span></h1>
+            <h1>Media / <span class="text-warning">Agregar</span></h1>
         </div>
     </div>
 

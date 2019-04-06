@@ -32,5 +32,5 @@
 <!-- Submit Field -->
 <div class="form-group col-lg-12" >
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('sliders.index') !!}" class="btn btn-default">Cancelar</a>
+    <a href="{!! route($modelPlural.'.index') !!}" class="btn btn-default">Cancelar</a>
 </div>

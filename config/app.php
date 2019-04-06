@@ -176,11 +176,11 @@ return [
         /*
          * Application Service Providers...
          */
-        Nobre\Providers\AppServiceProvider::class,
-        Nobre\Providers\AuthServiceProvider::class,
-        // Nobre\Providers\BroadcastServiceProvider::class,
-        Nobre\Providers\EventServiceProvider::class,
-        Nobre\Providers\RouteServiceProvider::class,
+        Ramiroquai\Providers\AppServiceProvider::class,
+        Ramiroquai\Providers\AuthServiceProvider::class,
+        // Ramiroquai\Providers\BroadcastServiceProvider::class,
+        Ramiroquai\Providers\EventServiceProvider::class,
+        Ramiroquai\Providers\RouteServiceProvider::class,
         /*
          * GUI Interface - Generator Builder...
          */

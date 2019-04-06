@@ -1,6 +1,6 @@
 <?php
 
-namespace Nobre\Http\Middleware;
+namespace Ramiroquai\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

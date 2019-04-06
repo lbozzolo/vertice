@@ -1,6 +1,6 @@
 <?php
 
-namespace Nobre\Http\Middleware;
+namespace Ramiroquai\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

@@ -702,7 +702,7 @@ $.Widget.prototype = {
 					.apply( instance, arguments );
 			}
 
-			// copy the guid so direct unbinding works
+			// copy the guid so direct unbinding events
 			if ( typeof handler !== "string" ) {
 				handlerProxy.guid = handler.guid =
 					handler.guid || handlerProxy.guid || $.guid++;
@@ -879,7 +879,7 @@ $.widget("ui.mouse", {
 
 		var that = this,
 			btnIsLeft = (event.which === 1),
-			// event.target.nodeName works around a bug in IE 8 with
+			// event.target.nodeName events around a bug in IE 8 with
 			// disabled inputs (#7620)
 			elIsCancel = (typeof this.options.cancel === "string" && event.target.nodeName ? $(event.target).closest(this.options.cancel).length : false);
 		if (!btnIsLeft || elIsCancel || !this._mouseCapture(event)) {
@@ -3854,7 +3854,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 			}
 
 			// Only put the placeholder inside the current Container, skip all
-			// items form other containers. This works because when moving
+			// items form other containers. This events because when moving
 			// an item from one container to another the
 			// currentContainer is switched before the placeholder is moved.
 			//
@@ -5932,7 +5932,7 @@ $.fn.extend({
 			}
 
 			// If the element already has the correct final state, delegate to
-			// the core methods so the internal tracking of "olddisplay" works.
+			// the core methods so the internal tracking of "olddisplay" events.
 			if ( elem.is( ":hidden" ) ? mode === "hide" : mode === "show" ) {
 				elem[ mode ]();
 				done();

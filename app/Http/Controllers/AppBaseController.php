@@ -1,6 +1,6 @@
 <?php
 
-namespace Nobre\Http\Controllers;
+namespace Ramiroquai\Http\Controllers;
 
 use InfyOm\Generator\Utils\ResponseUtil;
 use Response;

@@ -1,10 +1,10 @@
 <?php
 
-namespace Nobre\Http\Controllers\Auth;
+namespace Ramiroquai\Http\Controllers\Auth;
 
-use Nobre\Http\Controllers\Controller;
-use Nobre\Models\Medico;
-use Nobre\User;
+use Ramiroquai\Http\Controllers\Controller;
+use Ramiroquai\Models\Medico;
+use Ramiroquai\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

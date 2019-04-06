@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => Nobre\User::class,
+        'model' => Ramiroquai\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

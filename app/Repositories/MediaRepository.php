@@ -1,8 +1,8 @@
 <?php
 
-namespace Nobre\Repositories;
+namespace Ramiroquai\Repositories;
 
-use Nobre\Models\Media;
+use Ramiroquai\Models\Media;
 use InfyOm\Generator\Common\BaseRepository;
 
 class MediaRepository extends BaseRepository

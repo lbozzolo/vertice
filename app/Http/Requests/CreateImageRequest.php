@@ -1,9 +1,9 @@
 <?php
 
-namespace Nobre\Http\Requests;
+namespace Ramiroquai\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Nobre\Models\Image;
+use Ramiroquai\Models\Image;
 
 class CreateImageRequest extends FormRequest
 {

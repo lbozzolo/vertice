@@ -1,9 +1,9 @@
 <?php
 
-namespace Nobre\Http\Requests;
+namespace Ramiroquai\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Nobre\Models\Slider;
+use Ramiroquai\Models\Slider;
 
 class CreateSliderRequest extends FormRequest
 {

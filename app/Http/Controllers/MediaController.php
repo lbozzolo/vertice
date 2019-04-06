@@ -1,18 +1,19 @@
 <?php
 
-namespace Nobre\Http\Controllers;
+namespace Ramiroquai\Http\Controllers;
 
-use Nobre\Http\Requests\CreateMediaRequest;
-use Nobre\Http\Requests\UpdateMediaRequest;
-use Nobre\Repositories\MediaRepository;
-use Nobre\Http\Controllers\AppBaseController as AppBaseController;
-use Nobre\Models\Image;
+use Ramiroquai\Http\Requests\CreateMediaRequest;
+use Ramiroquai\Repositories\MediaRepository;
+use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
+use Ramiroquai\Models\Image;
 
 class MediaController extends AppBaseController
 {
     private $repo;
+    private $gender;
     private $model;
     private $modelSpanish;
+    private $modelSpanishPlural;
     private $modelPlural;
     private $store_success_message;
     private $store_failure_message;
@@ -21,20 +22,32 @@ class MediaController extends AppBaseController
     private $update_failure_message;
     private $destroy_success_message;
     private $destroy_failure_message;
+    private $no_results_message;
+    private $data;
 
     public function __construct(MediaRepository $repository)
     {
         $this->repo = $repository;
+        $this->gender = 'F';
         $this->model = 'medias';
         $this->modelPlural = 'medias';
         $this->modelSpanish = 'medias';
-        $this->store_success_message = ucfirst($this->modelSpanish).' creado con éxito';
-        $this->store_failure_message = 'Ocurrió un error. No se pudo crear el'.ucfirst($this->modelSpanish);
-        $this->show_failure_message = 'No se encontró el'.ucfirst($this->modelSpanish.' especificado');
-        $this->update_success_message = ucfirst($this->modelSpanish).' actualizado con éxito';
-        $this->update_failure_message = 'Ocurrió un error. No se pudo actualizar el'.ucfirst($this->modelSpanish).' especificado';
-        $this->destroy_success_message = ucfirst($this->modelSpanish).' eliminado con éxito';
-        $this->destroy_failure_message = 'Ocurrió un error. No se pudo eliminar el'.ucfirst($this->modelSpanish).' especificado';
+        $this->modelSpanishPlural = 'medias';
+        $this->store_success_message = ($this->gender == 'M')? ucfirst($this->modelSpanish).' creado con éxito' : ucfirst($this->modelSpanish).' creada con éxito';
+        $this->store_failure_message = ($this->gender == 'M')? 'Ocurrió un error. No se pudo crear el'.ucfirst($this->modelSpanish) : 'Ocurrió un error. No se pudo crear la'.ucfirst($this->modelSpanish);
+        $this->show_failure_message = ($this->gender == 'M')? 'No se encontró el'.ucfirst($this->modelSpanish.' especificado') : 'No se encontró la'.ucfirst($this->modelSpanish.' especificada');
+        $this->update_success_message = ($this->gender == 'M')? ucfirst($this->modelSpanish).' actualizado con éxito' : ucfirst($this->modelSpanish).' actualizada con éxito';
+        $this->update_failure_message = ($this->gender == 'M')? 'Ocurrió un error. No se pudo actualizar el'.ucfirst($this->modelSpanish).' especificado' : 'Ocurrió un error. No se pudo actualizar la'.ucfirst($this->modelSpanish).' especificada';
+        $this->destroy_success_message = ($this->gender == 'M')? ucfirst($this->modelSpanish).' eliminado con éxito' : ucfirst($this->modelSpanish).' eliminada con éxito';
+        $this->destroy_failure_message = ($this->gender == 'M')? 'Ocurrió un error. No se pudo eliminar el'.ucfirst($this->modelSpanish).' especificado' : 'Ocurrió un error. No se pudo eliminar la'.ucfirst($this->modelSpanish).' especificada';
+        $this->no_results_message = ($this->gender == 'M')? 'No hay ningún '.$this->modelSpanish. ' cargado en el sistema.' : 'No hay ninguna '. $this->modelSpanish . ' cargada en el sistema.';
+
+        $this->data['model'] = $this->model;
+        $this->data['gender'] = $this->gender;
+        $this->data['modelPlural'] = $this->modelPlural;
+        $this->data['modelSpanish'] = $this->modelSpanish;
+        $this->data['modelSpanishPlural'] = $this->modelSpanishPlural;
+        $this->data['noResultsMessage'] = $this->no_results_message;
     }
 
     public function index()
@@ -68,44 +81,19 @@ class MediaController extends AppBaseController
         $input = $request->all();
         $input['slug'] = str_slug($input['name'], '.');
 
-        $item = $this->repo->create($input);
+        $this->data['item'] = $this->repo->create($input);
 
-        if (!$item)
+        if (!$this->data['item'])
             return redirect()->back()->withErrors($this->store_failure_message);
 
         return redirect(route($this->modelPlural.'.index'))->with('ok', $this->store_success_message);
     }
 
-    public function edit($id)
-    {
-        $item = $this->repo->findWithoutFail($id);
-
-        if (empty($item))
-            return redirect()->back()->withErrors($this->show_failure_message);
-
-        return view($this->modelPlural.'.edit')->with($this->model, $item);
-    }
-
-    public function update($id, UpdateMediaRequest $request)
-    {
-        $item = $this->repo->findWithoutFail($id);
-
-        if (!$item)
-            return redirect()->back()->withErrors($this->update_failure_message);
-
-        $input = $request->all();
-        $input['slug'] = str_slug($input['name'], '.');
-
-        $this->repo->update($input, $id);
-
-        return redirect(route($this->modelPlural.'.index'))->with('ok', $this->update_success_message);
-    }
-
     public function destroy($id)
     {
-        $item = $this->repo->findWithoutFail($id);
+        $this->data['item'] = $this->repo->findWithoutFail($id);
 
-        if (empty($item))
+        if (empty($this->data['item']))
             return redirect()->back()->withErrors($this->destroy_failure_message);
 
         $this->repo->delete($id);

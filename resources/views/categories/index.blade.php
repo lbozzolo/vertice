@@ -6,8 +6,8 @@
         <div class="card-body">
 
             <h1>
-                Categorías
-                <a class="btn btn-primary btn-sm" href="{!! route('categories.create') !!}">Agregar</a>
+                {!! ucfirst($modelSpanishPlural) !!}
+                <a class="btn btn-primary btn-sm" href="{!! route($modelPlural.'.create') !!}">Agregar</a>
             </h1>
 
         </div>
@@ -15,12 +15,12 @@
     <div class="card mt-2">
         <div class="card-body">
 
-            @if($categories->count())
+            @if($items->count())
                 <div class="table-responsive">
-                    @include('categories.table')
+                    @include($modelPlural.'.table')
                 </div>
             @else
-                <span class="text-muted">No hay ninguna categoría cargada en el sistema.</span>
+                <span class="text-muted">{!! $noResultsMessage !!}</span>
             @endif
 
         </div>

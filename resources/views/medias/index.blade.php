@@ -6,7 +6,7 @@
         <div class="card-body">
 
             <h1>
-                Social & Media
+                Media
                 <a class="btn btn-primary btn-sm" href="{!! route('medias.create') !!}">Agregar</a>
             </h1>
 

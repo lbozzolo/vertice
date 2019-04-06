@@ -1,9 +1,9 @@
 <?php
 
-namespace Nobre\Http\Requests;
+namespace Ramiroquai\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Nobre\Models\Category;
+use Ramiroquai\Models\Category;
 
 class UpdateCategoryRequest extends FormRequest
 {

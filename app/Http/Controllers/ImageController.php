@@ -1,15 +1,13 @@
 <?php
 
-namespace Nobre\Http\Controllers;
+namespace Ramiroquai\Http\Controllers;
 
-use Nobre\Http\Requests\CreateImageRequest;
-use Nobre\Http\Requests\UpdateImageRequest;
-use Nobre\Repositories\ImageRepository;
-use Nobre\Http\Controllers\AppBaseController as AppBaseController;
+use Ramiroquai\Repositories\ImageRepository;
+use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Nobre\Models\Image;
+use Ramiroquai\Models\Image;
 use Intervention\Image\Facades\Image as Intervention;
 
 class ImageController extends AppBaseController
@@ -21,123 +19,6 @@ class ImageController extends AppBaseController
         $this->imageRepository = $imageRepo;
     }
 
-    public function index()
-    {
-        //$data['images'] = $this->imageRepository->all();
-        $images = $this->imageRepository->all();
-
-        $data['images_big'] = $images->filter(function ($query) {
-            return !starts_with($query->path, 'thumb');
-        });
-        $data['images_thumb'] = $images->filter(function ($query) {
-            return starts_with($query->path, 'thumb');
-        });
-
-
-        return view('images.index')->with($data);
-    }
-
-    public function create()
-    {
-        return view('images.create');
-    }
-
-    public function store(CreateImageRequest $request)
-    {
-        //dd($request->all());
-
-        $img = Intervention::make($request->file('img'));
-
-        dd($img);
-
-       /* $input = $request->all();
-        $image = $this->imageRepository->create($input);
-
-        return redirect(route('images.index'))->with('ok', 'Imagen creada con éxito');*/
-        if(!$request->hasFile('img'))
-            return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
-
-        if($request->file('img')){
-
-            $file = $request->file('img');
-
-            // Redirección si excede el máximo tamaño de imagen permitido
-            if($file->getClientSize() > config('imagenes.MAX_SIZE_IMAGE'))
-                return redirect()->back()->withErrors('La foto es demasiado grande (Debe ser menor a 2M)');
-
-            // Confirma que el archivo no exista en el destino
-            $nombre = $this->changeFileNameIfExists($file);
-
-            $imagen = Image::create(['path' => $nombre, 'main' => 0]);
-            $imagen->title = ($request->title)? $request->title : '';
-            $file->move(public_path('imagenes'), $nombre);
-
-        }
-        return redirect()->route('images.index')->with('ok', 'Imagen subida con éxito');
-
-    }
-
-    /**
-     * Display the specified Image.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        $image = $this->imageRepository->findWithoutFail($id);
-
-        if (empty($image))
-            return redirect(route('images.index'))->withErrors('Imagen no encontrada');
-
-        return view('images.show')->with('image', $image);
-    }
-
-    /**
-     * Show the form for editing the specified Image.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $image = $this->imageRepository->findWithoutFail($id);
-
-        if (empty($image))
-            return redirect(route('images.index'))->withErrors('Imagen no encontrada');
-
-        return view('images.edit')->with('image', $image);
-    }
-
-    /**
-     * Update the specified Image in storage.
-     *
-     * @param  int              $id
-     * @param UpdateImageRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateImageRequest $request)
-    {
-        $image = $this->imageRepository->findWithoutFail($id);
-
-        if (empty($image))
-            return redirect(route('images.index'))->withErrors('Imagen no encontrada');
-
-        $image = $this->imageRepository->update($request->all(), $id);
-
-        return redirect(route('images.index'))->with('ok', 'Imagen actualizada con éxito');
-    }
-
-    /**
-     * Remove the specified Image from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function destroy($id)
     {
         $image = $this->imageRepository->findWithoutFail($id);
@@ -163,47 +44,10 @@ class ImageController extends AppBaseController
             ->header('Content-Type', 'image/jpg');
     }
 
-    public function storeImage(Request $request, $id, $class)
-    {
-        dd($request->all());
-        if(!$request->hasFile('img'))
-            return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
-
-        $class = 'Nobre\Models\\'.$class;
-        $model = $class::find($id);
-        //dd($request->file('img'));
-
-        // Redirección si supera el máximo de fotos permitido
-        if($model->images->count() >= config('imagenes.MAX_NUMBER_IMAGES'))
-            return redirect()->back()->withErrors('El número máximo de fotos permitido es '.config('sistema.imagenes.MAX_NUMBER_IMAGES').'. Elimine una foto y vuelva a intentarlo');
-
-        if($request->file('img')){
-
-            $file = $request->file('img');
-
-            // Redirección si excede el máximo tamaño de imagen permitido
-            if($file->getClientSize() > config('imagenes.MAX_SIZE_IMAGE'))
-                return redirect()->back()->withErrors('La foto es demasiado grande (Debe ser menor a 2M)');
-
-            // Confirma que el archivo no exista en el destino
-            $nombre = $this->changeFileNameIfExists($file);
-
-            $imagen = Image::create(['path' => $nombre, 'main' => 0]);
-            $imagen->title = ($request->title)? $request->title : '';
-            $file->move(public_path('imagenes'), $nombre);
-            $model->images()->save($imagen);
-
-        }
-        return redirect()->back()->with('ok', 'Imagen subida con éxito');
-    }
-
     public function changeFileNameIfExists($file)
     {
         $nombre = $file->getClientOriginalName();
         $extension = $file->guessExtension();
-
-//        if (file_exists( public_path("imagenes/".$nombre)))
-//            $nombre = preg_replace('/\\.[^.\\s]{3,4}$/', '', $nombre) . '-' . str_random(12) . '.' . $extension;
 
         $nombre = preg_replace('/\\.[^.\\s]{3,4}$/', '', $nombre) . '-' . str_random(18) . '.' . $extension;
 
@@ -224,7 +68,7 @@ class ImageController extends AppBaseController
     public function principalImage($id, $class, $image)
     {
         $imagen = Image::find($image);
-        $class = 'Nobre\Models\\'.$class;
+        $class = 'Ramiroquai\Models\\'.$class;
         $model = $class::find($id);
 
         foreach($model->images as $img){
@@ -259,7 +103,7 @@ class ImageController extends AppBaseController
             $img_thumb = Intervention::make($request->file('img'))->resize(config('sistema.imagenes.WIDTH_THUMB'), config('sistema.imagenes.HEIGHT_THUMB'));
         }
 
-        $class = 'Nobre\Models\\'.$class;
+        $class = 'Ramiroquai\Models\\'.$class;
         $model = $class::find($id);
 
         // Redirección si supera el máximo de fotos permitido

@@ -1,12 +1,12 @@
 <?php
 
-namespace Nobre\Models;
+namespace Ramiroquai\Models;
 
 use Eloquent as Model;
 
 /**
  * Class Category
- * @package Nobre\Models
+ * @package Ramiroquai\Models
  * @version September 3, 2018, 10:55 pm UTC
  *
  * @property string name

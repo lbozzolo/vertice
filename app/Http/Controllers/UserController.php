@@ -1,11 +1,11 @@
 <?php
 
-namespace Nobre\Http\Controllers;
+namespace Ramiroquai\Http\Controllers;
 
-use Nobre\Http\Requests\CreateUserRequest;
-use Nobre\Http\Requests\UpdateUserRequest;
-use Nobre\Repositories\UserRepository;
-use Nobre\Http\Controllers\AppBaseController as AppBaseController;
+use Ramiroquai\Http\Requests\CreateUserRequest;
+use Ramiroquai\Http\Requests\UpdateUserRequest;
+use Ramiroquai\Repositories\UserRepository;
+use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends AppBaseController
 {
-    /** @var  UserRepository */
     private $userRepository;
 
     public function __construct(UserRepository $userRepo)
@@ -23,12 +22,6 @@ class UserController extends AppBaseController
         $this->userRepository = $userRepo;
     }
 
-    /**
-     * Display a listing of the User.
-     *
-     * @param Request $request
-     * @return Response
-     */
     public function index(Request $request)
     {
         $this->userRepository->pushCriteria(new RequestCriteria($request));
@@ -38,23 +31,11 @@ class UserController extends AppBaseController
             ->with('users', $users);
     }
 
-    /**
-     * Show the form for creating a new User.
-     *
-     * @return Response
-     */
     public function create()
     {
         return view('users.create');
     }
 
-    /**
-     * Store a newly created User in storage.
-     *
-     * @param CreateUserRequest $request
-     *
-     * @return Response
-     */
     public function store(CreateUserRequest $request)
     {
         $password = Hash::make($request->password);
@@ -67,13 +48,6 @@ class UserController extends AppBaseController
         return redirect(route('users.index'))->with('ok', 'Usuario creado correctamente');
     }
 
-    /**
-     * Display the specified Slider.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function show($id)
     {
         $user = $this->userRepository->findWithoutFail($id);
@@ -85,13 +59,6 @@ class UserController extends AppBaseController
         return view('users.show')->with('user', $user);
     }
 
-    /**
-     * Show the form for editing the specified User.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function edit($id)
     {
         $user = $this->userRepository->findWithoutFail($id);
@@ -102,14 +69,6 @@ class UserController extends AppBaseController
         return view('users.edit')->with('user', $user);
     }
 
-    /**
-     * Update the specified User in storage.
-     *
-     * @param  int              $id
-     * @param UpdateUserRequest $request
-     *
-     * @return Response
-     */
     public function update($id, UpdateUserRequest $request)
     {
         $user = $this->userRepository->findWithoutFail($id);
@@ -122,13 +81,6 @@ class UserController extends AppBaseController
         return redirect(route('users.index'))->with('ok', 'Usuario editado con éxito');
     }
 
-    /**
-     * Remove the specified User from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
     public function destroy($id)
     {
         $user = $this->userRepository->findWithoutFail($id);

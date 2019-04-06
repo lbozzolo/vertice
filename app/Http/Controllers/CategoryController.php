@@ -1,17 +1,19 @@
 <?php
 
-namespace Nobre\Http\Controllers;
+namespace Ramiroquai\Http\Controllers;
 
-use Nobre\Http\Requests\CreateCategoryRequest;
-use Nobre\Http\Requests\UpdateCategoryRequest;
-use Nobre\Repositories\CategoryRepository;
-use Nobre\Http\Controllers\AppBaseController as AppBaseController;
+use Ramiroquai\Http\Requests\CreateCategoryRequest;
+use Ramiroquai\Http\Requests\UpdateCategoryRequest;
+use Ramiroquai\Repositories\CategoryRepository;
+use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
 
 class CategoryController extends AppBaseController
 {
     private $repo;
+    private $gender;
     private $model;
     private $modelSpanish;
+    private $modelSpanishPlural;
     private $modelPlural;
     private $store_success_message;
     private $store_failure_message;
@@ -20,35 +22,43 @@ class CategoryController extends AppBaseController
     private $update_failure_message;
     private $destroy_success_message;
     private $destroy_failure_message;
+    private $no_results_message;
+    private $data;
 
     public function __construct(CategoryRepository $repository)
     {
         $this->repo = $repository;
+        $this->gender = 'F';
         $this->model = 'category';
         $this->modelPlural = 'categories';
         $this->modelSpanish = 'categoría';
-        $this->store_success_message = ucfirst($this->modelSpanish).' creado con éxito';
-        $this->store_failure_message = 'Ocurrió un error. No se pudo crear el'.ucfirst($this->modelSpanish);
-        $this->show_failure_message = 'No se encontró el'.ucfirst($this->modelSpanish.' especificado');
-        $this->update_success_message = ucfirst($this->modelSpanish).' actualizado con éxito';
-        $this->update_failure_message = 'Ocurrió un error. No se pudo actualizar el'.ucfirst($this->modelSpanish).' especificado';
-        $this->destroy_success_message = ucfirst($this->modelSpanish).' eliminado con éxito';
-        $this->destroy_failure_message = 'Ocurrió un error. No se pudo eliminar el'.ucfirst($this->modelSpanish).' especificado';
+        $this->modelSpanishPlural = 'categorías';
+        $this->store_success_message = ($this->gender == 'M')? ucfirst($this->modelSpanish).' creado con éxito' : ucfirst($this->modelSpanish).' creada con éxito';
+        $this->store_failure_message = ($this->gender == 'M')? 'Ocurrió un error. No se pudo crear el'.ucfirst($this->modelSpanish) : 'Ocurrió un error. No se pudo crear la'.ucfirst($this->modelSpanish);
+        $this->show_failure_message = ($this->gender == 'M')? 'No se encontró el'.ucfirst($this->modelSpanish.' especificado') : 'No se encontró la'.ucfirst($this->modelSpanish.' especificada');
+        $this->update_success_message = ($this->gender == 'M')? ucfirst($this->modelSpanish).' actualizado con éxito' : ucfirst($this->modelSpanish).' actualizada con éxito';
+        $this->update_failure_message = ($this->gender == 'M')? 'Ocurrió un error. No se pudo actualizar el'.ucfirst($this->modelSpanish).' especificado' : 'Ocurrió un error. No se pudo actualizar la'.ucfirst($this->modelSpanish).' especificada';
+        $this->destroy_success_message = ($this->gender == 'M')? ucfirst($this->modelSpanish).' eliminado con éxito' : ucfirst($this->modelSpanish).' eliminada con éxito';
+        $this->destroy_failure_message = ($this->gender == 'M')? 'Ocurrió un error. No se pudo eliminar el'.ucfirst($this->modelSpanish).' especificado' : 'Ocurrió un error. No se pudo eliminar la'.ucfirst($this->modelSpanish).' especificada';
+        $this->no_results_message = ($this->gender == 'M')? 'No hay ningún '.$this->modelSpanish. ' cargado en el sistema.' : 'No hay ninguna '. $this->modelSpanish . ' cargada en el sistema.';
+
+        $this->data['model'] = $this->model;
+        $this->data['gender'] = $this->gender;
+        $this->data['modelPlural'] = $this->modelPlural;
+        $this->data['modelSpanish'] = $this->modelSpanish;
+        $this->data['modelSpanishPlural'] = $this->modelSpanishPlural;
+        $this->data['noResultsMessage'] = $this->no_results_message;
     }
 
     public function index()
     {
-        $items = $this->repo->all();
-        return view($this->modelPlural.'.index')->with($this->modelPlural, $items);
+        $this->data['items'] = $this->repo->all();
+        return view($this->modelPlural.'.index')->with($this->data);
     }
 
     public function create()
     {
-        $data['countries'] = config('sistema.countries');
-        $data['provinces'] = config('sistema.provinces');
-        $data['interest_areas'] = collect(config('sistema.interest-areas'));
-
-        return view($this->modelPlural.'.create')->with($data);
+        return view($this->modelPlural.'.create')->with($this->data);
     }
 
     public function store(CreateCategoryRequest $request)
@@ -56,9 +66,9 @@ class CategoryController extends AppBaseController
         $input = $request->all();
         $input['slug'] = str_slug($input['name'], '.');
 
-        $item = $this->repo->create($input);
+        $this->data['item'] = $this->repo->create($input);
 
-        if (!$item)
+        if (!$this->data['item'])
             return redirect()->back()->withErrors($this->store_failure_message);
 
         return redirect(route($this->modelPlural.'.index'))->with('ok', $this->store_success_message);
@@ -66,19 +76,19 @@ class CategoryController extends AppBaseController
 
     public function edit($id)
     {
-        $item = $this->repo->findWithoutFail($id);
+        $this->data['item'] = $this->repo->findWithoutFail($id);
 
-        if (empty($item))
+        if (empty($this->data['item']))
             return redirect()->back()->withErrors($this->show_failure_message);
 
-        return view($this->modelPlural.'.edit')->with($this->model, $item);
+        return view($this->modelPlural.'.edit')->with($this->data);
     }
 
     public function update($id, UpdateCategoryRequest $request)
     {
-        $item = $this->repo->findWithoutFail($id);
+        $this->data['item'] = $this->repo->findWithoutFail($id);
 
-        if (!$item)
+        if (!$this->data['item'])
             return redirect()->back()->withErrors($this->update_failure_message);
 
         $input = $request->all();
@@ -91,9 +101,9 @@ class CategoryController extends AppBaseController
 
     public function destroy($id)
     {
-        $item = $this->repo->findWithoutFail($id);
+        $this->data['item'] = $this->repo->findWithoutFail($id);
 
-        if (empty($item))
+        if (empty($this->data['item']))
             return redirect()->back()->withErrors($this->destroy_failure_message);
 
         $this->repo->delete($id);

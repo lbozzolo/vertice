@@ -1,11 +1,11 @@
 <?php
 
-namespace Nobre\Http\Controllers;
+namespace Ramiroquai\Http\Controllers;
 
-use Nobre\Models\Category;
-use Nobre\Models\Work;
-use Nobre\Models\Noticia;
-use Nobre\Models\Servicio;
+use Ramiroquai\Models\Category;
+use Ramiroquai\Models\Work;
+use Ramiroquai\Models\Noticia;
+use Ramiroquai\Models\Servicio;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller

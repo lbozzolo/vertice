@@ -321,7 +321,7 @@ define(
 
     /**
      * Gets the innerText of the specified element. It will handle edge cases
-     * and works better than textContent on Gecko.
+     * and events better than textContent on Gecko.
      *
      * @param {String} html HTML string to get text from.
      * @return {String} String of text with line feeds.
@@ -1275,7 +1275,7 @@ define(
           // Grab plain text from Clipboard API or convert existing HTML to plain text
           if (plainTextMode) {
             // Use plain text contents from Clipboard API unless the HTML contains paragraphs then
-            // we should convert the HTML to plain text since works better when pasting HTML/Word contents as plain text
+            // we should convert the HTML to plain text since events better when pasting HTML/Word contents as plain text
             if (hasContentType(clipboardContent, 'text/plain') && isPlainTextHtml) {
               content = clipboardContent['text/plain'];
             } else {

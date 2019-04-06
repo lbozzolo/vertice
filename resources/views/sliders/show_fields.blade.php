@@ -1,31 +1,31 @@
 <!-- Id Field -->
 <div class="form-group">
     {!! Form::label('id', 'Id:') !!}
-    <p>{!! $slider->id !!}</p>
+    <p>{!! $item->id !!}</p>
 </div>
 
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Nombre:') !!}
-    <p>{!! $slider->name !!}</p>
+    <p>{!! $item->name !!}</p>
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $slider->created_at !!}</p>
+    <p>{!! $item->created_at !!}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
     {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $slider->updated_at !!}</p>
+    <p>{!! $item->updated_at !!}</p>
 </div>
 
 <div class="form-group">
     {!! Form::label('images', 'Imágenes') !!}
     <ul class="list-inline" style="border: 2px dotted lightgrey; padding: 5px">
-        @forelse($slider->images as $imagen)
+        @forelse($item->images as $imagen)
 
             <li>
                 <span style="display: inline-block">
@@ -43,7 +43,7 @@
     </ul>
 </div>
 
-@foreach($slider->images as $imagen)
+@foreach($item->images as $imagen)
 
     <div class="modal fade" id="modalVerImage{!! $imagen->id !!}">
         <div class="modal-dialog">

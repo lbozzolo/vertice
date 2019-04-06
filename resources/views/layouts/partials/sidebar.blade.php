@@ -17,24 +17,17 @@
             </a>
         </li>
 
-        <li class="{{ Request::is('trabajos*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('works.index') !!}" class="nav-link">
+        <li class="{{ Request::is('eventos*') ? 'active' : '' }} nav-item">
+            <a href="{!! route('events.index') !!}" class="nav-link">
                 <i class="mdi mdi-receipt menu-icon"></i>
-                <span class="menu-title">Trabajos</span>
-            </a>
-        </li>
-
-        <li class="{{ Request::is('aspirantes*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('applicants.index') !!}" class="nav-link">
-                <i class="mdi mdi-account-card-details menu-icon"></i>
-                <span class="menu-title">Aspirantes</span>
+                <span class="menu-title">Eventos</span>
             </a>
         </li>
 
         <li class="{{ Request::is('imagenes*') ? 'active' : '' }} nav-item">
             <a href="{!! route('medias.index') !!}" class="nav-link">
                 <i class="mdi mdi-image menu-icon"></i>
-                <span class="menu-title">Social & Media</span>
+                <span class="menu-title">Media</span>
             </a>
         </li>
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Nobre\Repositories;
+namespace Ramiroquai\Repositories;
 
-use Nobre\Models\Slider;
+use Ramiroquai\Models\Slider;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class SliderRepository
- * @package Nobre\Repositories
+ * @package Ramiroquai\Repositories
  * @version September 6, 2018, 11:58 am UTC
  *
  * @method Slider findWithoutFail($id, $columns = ['*'])

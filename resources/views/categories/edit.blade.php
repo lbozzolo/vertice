@@ -6,16 +6,16 @@
         <div class="card-body">
 
             <h1>
-                Categorías /
+                {!! ucfirst($modelSpanish) !!} /
                 <span class="text-warning">Editar</span>
             </h1>
             <div class="row">
                 <div class="card-body">
 
-                    {!! Form::model($category, ['route' => ['categories.update', $category->id], 'method' => 'patch']) !!}
+                    {!! Form::model($item, ['route' => [$modelPlural.'.update', $item->id], 'method' => 'patch']) !!}
 
                     <div class="row">
-                        @include('categories.fields')
+                        @include($modelPlural.'.fields')
                     </div>
 
                     {!! Form::close() !!}

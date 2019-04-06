@@ -1,18 +1,18 @@
 <?php
 
-namespace Nobre\Http\Controllers;
+namespace Ramiroquai\Http\Controllers;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
-use Nobre\Http\Controllers\AppBaseController as AppBaseController;
-use Nobre\Http\Requests\ContactRequest;
-use Nobre\Http\Requests\CreateApplicantRequest;
-use Nobre\Models\Applicant;
-use Nobre\Models\Category;
+use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
+use Ramiroquai\Http\Requests\ContactRequest;
+use Ramiroquai\Http\Requests\CreateApplicantRequest;
+use Ramiroquai\Models\Applicant;
+use Ramiroquai\Models\Category;
 use Illuminate\Support\Facades\Mail;
-use Nobre\Models\Image;
-use Nobre\Models\Slider;
-use Nobre\Models\Work;
+use Ramiroquai\Models\Image;
+use Ramiroquai\Models\Slider;
+use Ramiroquai\Models\Work;
 
 class WebController extends AppBaseController
 {

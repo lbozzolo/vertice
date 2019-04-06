@@ -1,9 +1,9 @@
 <?php
 
-namespace Nobre\Http\Controllers\Auth;
+namespace Ramiroquai\Http\Controllers\Auth;
 
-use Nobre\User;
-use Nobre\Http\Controllers\Controller;
+use Ramiroquai\User;
+use Ramiroquai\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

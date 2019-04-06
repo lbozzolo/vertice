@@ -136,7 +136,7 @@
                 <h3 class="content-title">WORKS</h3>
                 <p class="sub-title">Te mostramos los trabajos de algunos de nuestros talentos.</p>
                 <div class="text-center">
-                    <a class="boton" href="{{ route('works') }}">Ver trabajos</a>
+                    <a class="boton" href="{{ route('events') }}">Ver trabajos</a>
                 </div>
             </div><!--/.top-content-->
         </div><!--/.container-->

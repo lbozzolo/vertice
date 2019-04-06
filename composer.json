@@ -29,7 +29,7 @@
             "database"
         ],
         "psr-4": {
-            "Nobre\\": "app/"
+            "Ramiroquai\\": "app/"
         }
     },
     "autoload-dev": {

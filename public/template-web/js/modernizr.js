@@ -326,7 +326,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // Because the testing of the CSS property names (with "-", as
     // opposed to the camelCase DOM properties) is non-portable and
-    // non-standard but works in WebKit and IE (but not Gecko or Opera),
+    // non-standard but events in WebKit and IE (but not Gecko or Opera),
     // we explicitly reject properties with dashes so that authors
     // developing in WebKit or IE first don't end up with
     // browser-specific content by accident.
@@ -655,7 +655,7 @@ window.Modernizr = (function( window, document, undefined ) {
         var ret = !!testPropsAll('perspective');
 
         // Webkit's 3D transforms are passed off to the browser's own graphics renderer.
-        //   It works fine in Safari on Leopard and Snow Leopard, but not in Chrome in
+        //   It events fine in Safari on Leopard and Snow Leopard, but not in Chrome in
         //   some conditions. As a result, Webkit typically recognizes the syntax but
         //   will sometimes throw a false positive, thus we must do a more thorough check:
         if ( ret && 'webkitPerspective' in docElement.style ) {

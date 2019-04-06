@@ -1,13 +1,13 @@
 <?php
 
-namespace Nobre\Repositories;
+namespace Ramiroquai\Repositories;
 
-use Nobre\User;
+use Ramiroquai\User;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class ColorRepository
- * @package Nobre\Repositories
+ * @package Ramiroquai\Repositories
  * @version September 3, 2018, 10:45 pm UTC
  *
  * @method Color findWithoutFail($id, $columns = ['*'])

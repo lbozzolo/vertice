@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Nobre\User::class, function (Faker\Generator $faker) {
+$factory->define(Ramiroquai\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [

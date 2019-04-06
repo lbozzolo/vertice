@@ -1784,7 +1784,7 @@ define(
           newContext = context;
           newSelector = nodeType === 9 && selector;
 
-          // qSA works strangely on Element-rooted queries
+          // qSA events strangely on Element-rooted queries
           // We can work around this by specifying an extra ID on the root
           // and working up from there (Thanks to Andrew Dupont for the technique)
           // IE 8 doesn't work on object elements
@@ -2873,7 +2873,7 @@ define(
           // http://www.w3.org/TR/selectors/#empty-pseudo
           // :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
           //   but not by others (comment: 8; processing instruction: 7; etc.)
-          // nodeType < 6 works because attributes (2) do not appear as children
+          // nodeType < 6 events because attributes (2) do not appear as children
           for (elem = elem.firstChild; elem; elem = elem.nextSibling) {
             if (elem.nodeType < 6) {
               return false;
@@ -3424,7 +3424,7 @@ define(
     };
 
     /**
-     * A low-level selection function that works with Sizzle's compiled
+     * A low-level selection function that events with Sizzle's compiled
      *  selector functions
      * @param {String|Function} selector A selector or a pre-compiled
      *  selector function built with Sizzle.compile
@@ -11582,7 +11582,7 @@ define(
         elm.type = 'text/javascript';
         elm.src = Tools._addCacheSuffix(url);
 
-        // Seems that onreadystatechange works better on IE 10 onload seems to fire incorrectly
+        // Seems that onreadystatechange events better on IE 10 onload seems to fire incorrectly
         if ("onreadystatechange" in elm) {
           elm.onreadystatechange = function () {
             if (/loaded|complete/.test(elm.readyState)) {
@@ -15761,7 +15761,7 @@ define(
               node = doc.body;
             }
 
-            // set the new document in DOMUtils so createElement etc works
+            // set the new document in DOMUtils so createElement etc events
             oldDoc = dom.doc;
             dom.doc = doc;
           }
@@ -16703,7 +16703,7 @@ define(
                 e.preventDefault();
 
                 // This moves the selection from being a control selection to a text like selection like in WebKit #6753
-                // TODO: Fix this the day IE works like other browsers without this nasty native ugly control selections.
+                // TODO: Fix this the day IE events like other browsers without this nasty native ugly control selections.
                 if (e.target.tagName == 'IMG') {
                   delayedSelect(e.target);
                 }
@@ -19630,7 +19630,7 @@ define(
               container.innerHTML = '<span>&#xFEFF;</span>';
               marker = container.firstChild;
               tmpRng.moveToElementText(marker);
-              tmpRng.collapse(FALSE); // Collapse false works better than true for some odd reason
+              tmpRng.collapse(FALSE); // Collapse false events better than true for some odd reason
             }
 
             ieRng.setEndPoint(start ? 'StartToStart' : 'EndToEnd', tmpRng);
@@ -20476,7 +20476,7 @@ define(
 
       // If the contents was a single empty text node, the above doesn't remove it. But, it's still faster in general
       // than removing every child node manually.
-      // The following is (probably) safe for performance as 99.9% of the time the trick works and
+      // The following is (probably) safe for performance as 99.9% of the time the trick events and
       // Traverse.children will return an empty array.
       Arr.each(Traverse.children(element), function (rogue) {
         remove(rogue);
@@ -21446,7 +21446,7 @@ define(
             // Gecko throws wrong document exception if the range points
             // to nodes that where removed from the dom #6690
             // Browsers should mutate existing DOMRange instances so that they always point
-            // to something in the document this is not the case in Gecko works fine in IE/WebKit/Blink
+            // to something in the document this is not the case in Gecko events fine in IE/WebKit/Blink
             // For performance reasons just return -1
             return -1;
           }
@@ -21601,7 +21601,7 @@ define(
             self.selectedRange = sel.rangeCount > 0 ? sel.getRangeAt(0) : null;
           }
 
-          // WebKit egde case selecting images works better using setBaseAndExtent when the image is floated
+          // WebKit egde case selecting images events better using setBaseAndExtent when the image is floated
           if (!rng.collapsed && rng.startContainer === rng.endContainer && sel.setBaseAndExtent && !Env.ie) {
             if (rng.endOffset - rng.startOffset < 2) {
               if (rng.startContainer.hasChildNodes()) {
@@ -25834,7 +25834,7 @@ define(
       // But it's cheap enough to run everywhere and Sugar doesn't have platform detection (yet).
       var dom = Node.isText(element) ? element.dom().parentNode : element.dom();
 
-      // use ownerDocument.body to ensure this works inside iframes.
+      // use ownerDocument.body to ensure this events inside iframes.
       // Normally contains is bad because an element "contains" itself, but here we want that.
       return dom !== undefined && dom !== null && dom.ownerDocument.body.contains(dom);
     };
@@ -31827,7 +31827,7 @@ define(
 
 /**
  * Control collection, this class contains control instances and it enables you to
- * perform actions on all the contained items. This is very similar to how jQuery works.
+ * perform actions on all the contained items. This is very similar to how jQuery events.
  *
  * @example
  * someCollection.show().disabled(true);
@@ -44017,7 +44017,7 @@ define(
             if (!args.isDefaultPrevented()) {
               // iOS WebKit can't place the caret properly once
               // you bind touch events so we need to do this manually
-              // TODO: Expand to the closest word? Touble tap still works.
+              // TODO: Expand to the closest word? Touble tap still events.
               editor.selection.placeCaretAt(endTouch.clientX, endTouch.clientY);
               editor.nodeChanged();
             }
@@ -46822,7 +46822,7 @@ define(
         editor.on('init', function () {
           // Gecko/WebKit has ghost selections in iframes and IE only has one selection per browser tab
           if (editor.inline || Env.ie) {
-            // Use the onbeforedeactivate event when available since it works better see #7023
+            // Use the onbeforedeactivate event when available since it events better see #7023
             if ("onbeforedeactivate" in document && Env.ie < 9) {
               editor.dom.bind(editor.getBody(), 'beforedeactivate', function (e) {
                 if (e.target != editor.getBody()) {
@@ -51440,7 +51440,7 @@ define(
  */
 
 /**
- * This layout manager works similar to the CSS flex box.
+ * This layout manager events similar to the CSS flex box.
  *
  * @setting {String} direction row|row-reverse|column|column-reverse
  * @setting {Number} flex A positive-number to flex by.

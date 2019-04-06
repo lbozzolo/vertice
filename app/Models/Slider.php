@@ -1,13 +1,13 @@
 <?php
 
-namespace Nobre\Models;
+namespace Ramiroquai\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Slider
- * @package Nobre\Models
+ * @package Ramiroquai\Models
  * @version September 6, 2018, 11:58 am UTC
  *
  * @property string name

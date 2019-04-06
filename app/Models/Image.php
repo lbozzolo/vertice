@@ -1,13 +1,12 @@
 <?php
 
-namespace Nobre\Models;
+namespace Ramiroquai\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Image
- * @package Nobre\Models
+ * @package Ramiroquai\Models
  * @version September 3, 2018, 10:53 pm UTC
  *
  * @property string path

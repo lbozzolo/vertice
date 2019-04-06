@@ -6,16 +6,16 @@
         <div class="card-body">
 
             <h1>
-                Slider /
+                {!! ucfirst($modelSpanish) !!} /
                 <span class="text-warning">Editar</span>
             </h1>
             <div class="row">
                 <div class="card-body">
 
-                    {!! Form::model($slider, ['route' => ['sliders.update', $slider->id], 'method' => 'patch']) !!}
+                    {!! Form::model($item, ['route' => [$modelPlural.'.update', $item->id], 'method' => 'patch']) !!}
 
                     <div class="row">
-                        @include('sliders.fields')
+                        @include($modelPlural.'.fields')
                     </div>
 
                     {!! Form::close() !!}
@@ -29,7 +29,7 @@
     <div class="card col-lg-12 mt-3">
         <div class="card-body">
 
-            @include('sliders.images')
+            @include($modelPlural.'.images')
 
         </div>
     </div>

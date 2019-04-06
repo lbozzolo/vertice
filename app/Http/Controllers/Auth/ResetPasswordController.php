@@ -1,8 +1,8 @@
 <?php
 
-namespace Nobre\Http\Controllers\Auth;
+namespace Ramiroquai\Http\Controllers\Auth;
 
-use Nobre\Http\Controllers\Controller;
+use Ramiroquai\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller
