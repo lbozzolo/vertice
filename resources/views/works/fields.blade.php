@@ -1,4 +1,4 @@
-<div class="form-group col-lg-12">
+<div class="form-group col-lg-6">
     {!! Form::label('title', 'Título:') !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
@@ -8,10 +8,10 @@
     {!! Form::select('active', ['0' => 'Inactivo', '1' => 'Activo'], (isset($work))? $work->active : null, ['class' => 'form-control']) !!}
 </div>
 
-<div class="form-group col-lg-6">
-    {!! Form::label('type', 'Tipo:') !!}
-    {!! Form::select('type', ['past' => 'Pasado', 'present' => 'Presente'], (isset($work))? $work->type : null, ['class' => 'form-control']) !!}
-</div>
+{{--<div class="form-group col-lg-6">--}}
+    {{--{!! Form::label('type', 'Tipo:') !!}--}}
+    {{--{!! Form::select('type', ['past' => 'Pasado', 'present' => 'Presente'], (isset($work))? $work->type : null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 <!-- Description Field -->
 <div class="form-group col-lg-12">

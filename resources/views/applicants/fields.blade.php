@@ -30,8 +30,18 @@
 </div>
 
 <div class="form-group col-lg-6">
+    {!! Form::label('position', 'Puesto:') !!}
+    {!! Form::text('position', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-lg-6">
     {!! Form::label('company', 'Empresa:') !!}
     {!! Form::text('company', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-lg-6">
+    {!! Form::label('area', 'Rubro:') !!}
+    {!! Form::text('area', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group col-lg-6">

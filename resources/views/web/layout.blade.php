@@ -3,15 +3,19 @@
     <head>
         @include('web.partials.head')
     </head>
-    <body class="animsition">
+    <body>
 
-        <header>@include('web.partials.header')</header>
 
-        <div class="card-body">@include('flash::web-messages')</div>
 
+        <div id="preloader">
+            <div id="status"><img src="{{ asset('template-web/images/black-logo.png') }}" alt="cargando contenido.."></div>
+        </div>
+
+        <div id="home" class="clearfix">
 
             @yield('content')
 
+        </div>
 
         <footer>@include('web.partials.footer')</footer>
 

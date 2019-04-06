@@ -23,7 +23,9 @@ class CreateApplicantsTable extends Migration
             $table->string('phone');
             $table->integer('country');
             $table->integer('province')->nullable();
+            $table->string('position', '255')->nullable();
             $table->string('company', '255')->nullable();
+            $table->string('area', '255')->nullable();
             $table->text('text', '1000')->nullable();
 
             $table->index('id');

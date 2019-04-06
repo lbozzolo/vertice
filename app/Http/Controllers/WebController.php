@@ -2,19 +2,17 @@
 
 namespace Nobre\Http\Controllers;
 
-use Nobre\Http\Controllers\AppBaseController;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
+use Nobre\Http\Controllers\AppBaseController as AppBaseController;
 use Nobre\Http\Requests\ContactRequest;
+use Nobre\Http\Requests\CreateApplicantRequest;
+use Nobre\Models\Applicant;
 use Nobre\Models\Category;
-use Nobre\Models\Comision;
-use Nobre\Models\Work;
-use Nobre\Models\Image;
-use Nobre\Models\Noticia;
-use Nobre\Models\Servicio;
-use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Mail;
+use Nobre\Models\Image;
 use Nobre\Models\Slider;
-use Illuminate\Support\Facades\DB;
+use Nobre\Models\Work;
 
 class WebController extends AppBaseController
 {
@@ -22,51 +20,47 @@ class WebController extends AppBaseController
     public function index()
     {
         $data['slider'] = Slider::where('active', '1')->first();
-        $data['noticias'] = Noticia::where('highlight', 1)->get();
         $data['images'] = ($data['slider'])? $data['slider']->images->sortByDesc('main') : '';
+        $data['countries'] = config('sistema.countries');
+        $data['provinces'] = config('sistema.provinces');
+        $data['interest_areas'] = Category::pluck('name', 'id');
+        $data['slider'] = Slider::where('active', '!=', null)->first();
 
         return view('web.home')->with($data);
     }
 
-    public function estatuto()
+    public function past()
     {
-        $data['estatuto'] = Work::where('active', '=', 1)->first();
-        return view('web.estatuto')->with($data);
+        $data['past_big'] = Image::where('type', 0)->where('thumbnail_id', '!=', null)->get();
+        $data['past_thumb'] = Image::where('type', 0)->where('thumbnail_id', '=', null)->get();
+
+        return view('web.past')->with($data);
     }
 
-    public function comision()
+    public function present()
     {
-        $data['comision'] = Comision::where('active', '=', 1)->first();
-        return view('web.comision')->with($data);
+        $data['present_big'] = Image::where('type', 1)->where('thumbnail_id', '!=', null)->get();
+        $data['present_thumb'] = Image::where('type', 1)->where('thumbnail_id', '=', null)->get();
+
+        return view('web.present')->with($data);
     }
 
-    public function servicios()
+    public function works()
     {
-        $data['servicios'] = Servicio::where('active', '!=', null)->get();
-        return view('web.servicios')->with($data);
+        $data['works'] = Work::all();
+
+        return view('web.works')->with($data);
     }
 
-    public function medicos()
+    public function sendDataApplicant(CreateApplicantRequest $request)
     {
-        $data['nosotros'] = Work::where('active', 1)->first();
-        return view('web.medicos')->with($data);
-    }
+        $input = $request->all();
+        $item = Applicant::create($input);
 
-    public function noticias()
-    {
-        $data['noticias'] = Noticia::where('active', '!=', null)->get();
-        return view('web.noticias')->with($data);
-    }
+        if (!$item)
+            return redirect()->back()->withErrors('Ocurrió un error. No se pudieron enviar los datos');
 
-    public function verNoticia($id)
-    {
-        $data['noticia'] = Noticia::find($id);
-        return view('web.noticia-detalle')->with($data);
-    }
-
-    public function contacto()
-    {
-        return view('web.contacto');
+        return Redirect::to(URL::previous() . "#contact")->with('ok', 'Se han enviado los datos con éxito');
     }
 
     public function postContacto(ContactRequest $request)

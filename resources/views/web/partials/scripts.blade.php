@@ -1,35 +1,23 @@
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/animsition/js/animsition.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/bootstrap/js/popper.js') }}"></script>
-<script src="{{ asset('template-web/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
-<script src="{{ asset('template-web/vendor/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
-<script src="{{ asset('template-web/js/revo-custom.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/select2/select2.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/parallax100/parallax100.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/waypoint/jquery.waypoints.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/countterup/jquery.counterup.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/slick/slick.min.js') }}"></script>
-<script src="{{ asset('template-web/js/slick-custom.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/vendor/MagnificPopup/jquery.magnific-popup.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('template-web/js/main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/modernizr.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.js') }}"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.ui.map.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.easing.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/isotope.pkgd.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.fitvids.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/contact.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.prettyPhoto.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/owl.carousel.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.imagesloaded.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.nav.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.scrollTo.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/jquery.sticky.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/ticker.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template-web/js/script.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+
+@yield('js')

@@ -41,6 +41,11 @@ class Work extends Model
         return $this->morphMany(Image::class, 'imageable');
     }
 
+    public function mainImage()
+    {
+        return $this->images()->where('main', 1)->first();
+    }
+
     public function imagesThumb()
     {
         return $this->morphMany(Image::class, 'imageable')->where('thumbnail_id', null);

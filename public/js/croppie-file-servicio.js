@@ -53,13 +53,13 @@ $(document).ready(function() {
             // Initailize croppie instance and assign it to global variable
             croppie = new Croppie(el, {
                 viewport: {
-                    width: 720,
-                    height: 555,
+                    width: 960,
+                    height: 720,
                     type: 'rectangle'
                 },
                 boundary: {
-                    width: 1240,
-                    height: 600
+                    width: 1056,
+                    height: 792
                 },
                 enableOrientation: true
             });

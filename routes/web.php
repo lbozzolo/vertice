@@ -29,45 +29,26 @@ Route::group(['prefix' => 'web'], function () {
         'uses' => 'WebController@index'
     ]);
 
-    Route::get('estatuto', [
-        'as' => 'web.estatuto',
-        'uses' => 'WebController@estatuto'
+    Route::get('past', [
+        'as' => 'pictures.past',
+        'uses' => 'WebController@past'
     ]);
 
-    Route::get('comision', [
-        'as' => 'web.comision',
-        'uses' => 'WebController@comision'
+    Route::get('/present', [
+        'as' => 'pictures.present',
+        'uses' => 'WebController@present'
     ]);
 
-    Route::get('applicants', [
-        'as' => 'web.applicants',
-        'uses' => 'WebController@applicants'
+    Route::get('/works', [
+        'as' => 'works',
+        'uses' => 'WebController@works'
     ]);
 
-    Route::get('medicos', [
-        'as' => 'web.medicos',
-        'uses' => 'WebController@medicos'
+    Route::post('/enviar-datos', [
+        'as' => 'send.data.applicant',
+        'uses' => 'WebController@sendDataApplicant'
     ]);
 
-    Route::get('noticias/{categoriaId?}', [
-        'as' => 'web.noticias',
-        'uses' => 'WebController@noticias'
-    ]);
-
-    Route::get('noticias/{id}/ver', [
-        'as' => 'web.noticias.ver',
-        'uses' => 'WebController@verNoticia'
-    ]);
-
-    Route::get('contacto', [
-        'as' => 'web.contacto',
-        'uses' => 'WebController@contacto'
-    ]);
-
-    Route::post('contacto', [
-        'as' => 'web.post.contacto',
-        'uses' => 'WebController@postContacto'
-    ]);
 
     Route::get('/home', 'WebController@index');
 

@@ -41,13 +41,6 @@ class MediaController extends AppBaseController
     {
         $items = Image::where('thumbnail_id', '!=', null)->get();
         return view($this->modelPlural.'.index')->with($this->modelPlural, $items);
-
-        $data['past_big'] = Image::where('type', 0)->where('thumbnail_id', '!=', null)->get();
-        $data['past_thumb'] = Image::where('type', 0)->where('thumbnail_id', '=', null)->get();
-        $data['present_big'] = Image::where('type', 1)->where('thumbnail_id', '!=', null)->get();
-        $data['present_thumb'] = Image::where('type', 1)->where('thumbnail_id', '=', null)->get();
-
-        //return view($this->modelPlural.'.index')->with($data);
     }
 
     public function create()

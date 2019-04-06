@@ -54,12 +54,12 @@ $(document).ready(function() {
             croppie = new Croppie(el, {
                 viewport: {
                     width: 1200,
-                    height: 480,
+                    height: 600,
                     type: 'rectangle'
                 },
                 boundary: {
                     width: 1240,
-                    height: 600
+                    height: 640
                 },
                 enableOrientation: true
             });

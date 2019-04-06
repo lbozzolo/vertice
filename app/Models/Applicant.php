@@ -15,20 +15,20 @@ class Applicant extends Model
         'phone',
         'country',
         'province',
+        'position',
         'company',
         'area',
         'text',
     ];
 
     protected $casts = [
-        'title' => 'string',
-        'body' => 'string',
         'name' => 'string',
         'lastname' => 'string',
         'email' => 'string',
         'phone' => 'string',
         'country' => 'integer',
         'province' => 'integer',
+        'position' => 'string',
         'company' => 'string',
         'area' => 'string',
         'text' => 'string',

@@ -252,14 +252,18 @@ class ImageController extends AppBaseController
         if(!$request->hasFile('img'))
             return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
 
-        // Resize to image thumbnail
-        $img_thumb = Intervention::make($request->file('img'))->resize(config('imagenes.WIDTH_THUMB'), config('imagenes.HEIGHT_THUMB'));
+        // Resize to image thumbnail. Different size if Slider image.
+        if($class == 'Slider') {
+            $img_thumb = Intervention::make($request->file('img'))->resize(config('sistema.imagenes.SLIDER_WIDTH_THUMB'), config('sistema.imagenes.SLIDER_HEIGHT_THUMB'));
+        } else {
+            $img_thumb = Intervention::make($request->file('img'))->resize(config('sistema.imagenes.WIDTH_THUMB'), config('sistema.imagenes.HEIGHT_THUMB'));
+        }
 
         $class = 'Nobre\Models\\'.$class;
         $model = $class::find($id);
 
         // Redirección si supera el máximo de fotos permitido
-        if($model->images->count() >= config('imagenes.MAX_NUMBER_IMAGES'))
+        if($model->images->count() >= config('sistema.imagenes.MAX_NUMBER_IMAGES'))
             return redirect()->back()->withErrors('El número máximo de fotos permitido es '.config('sistema.imagenes.MAX_NUMBER_IMAGES').'. Elimine una foto y vuelva a intentarlo');
 
         if($request->file('img')){
@@ -303,8 +307,9 @@ class ImageController extends AppBaseController
             return redirect()->back()->withErrors('No ha seleccionado ningún archivo');
 
         $type = ($type == 'past')? 0 : 1;
+
         // Resize to image thumbnail
-        $img_thumb = Intervention::make($request->file('img'))->resize(config('imagenes.WIDTH_THUMB'), config('imagenes.HEIGHT_THUMB'));
+        $img_thumb = Intervention::make($request->file('img'))->resize(config('sistema.imagenes.WIDTH_THUMB'), config('sistema.imagenes.HEIGHT_THUMB'));
 
         if($request->file('img')){
 

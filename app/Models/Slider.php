@@ -53,4 +53,15 @@ class Slider extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+
+    public function imagesThumb()
+    {
+        return $this->morphMany(Image::class, 'imageable')->where('thumbnail_id', null);
+    }
+
+    public function imagesBig()
+    {
+        return $this->morphMany(Image::class, 'imageable')->where('thumbnail_id', '!=', null);
+    }
+
 }
