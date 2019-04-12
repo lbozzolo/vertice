@@ -68,7 +68,8 @@ class ImageController extends AppBaseController
     public function principalImage($id, $class, $image)
     {
         $imagen = Image::find($image);
-        $class = 'Ramiroquai\Models\\'.$class;
+        $imagen_thumb = Image::find($imagen->thumbnail_id);
+        $class = env('APP_NAME').'\Models\\'.$class;
         $model = $class::find($id);
 
         foreach($model->images as $img){
@@ -77,7 +78,9 @@ class ImageController extends AppBaseController
         }
 
         $imagen->main = 1;
+        $imagen_thumb->main = 1;
         $imagen->save();
+        $imagen_thumb->save();
 
         return redirect()->back();
     }

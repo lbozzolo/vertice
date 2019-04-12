@@ -45,16 +45,20 @@ $(document).ready(function() {
 
         $("#file-upload").on("change", function(event) {
 
-            $("#croppie-image").show();
+            var croppieDiv = $("#croppie-image");
+            croppieDiv.show();
             $("#form-fields").hide();
             $("#list-images").hide();
             $("#file-upload").hide();
 
+            var width = croppieDiv.attr('data-width');
+            var height = croppieDiv.attr('data-height');
+
             // Initailize croppie instance and assign it to global variable
             croppie = new Croppie(el, {
                 viewport: {
-                    width: 1200,
-                    height: 600,
+                    width: width,
+                    height: height,
                     type: 'rectangle'
                 },
                 boundary: {

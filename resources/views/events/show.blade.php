@@ -17,7 +17,7 @@
     <div class="card col-lg-12 mt-3">
         <div class="card-body">
 
-            @include('events.images-show')
+            @include('images.images-show')
 
         </div>
     </div>

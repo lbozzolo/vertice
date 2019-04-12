@@ -2,8 +2,7 @@
 
 namespace Ramiroquai\Models;
 
-use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Ramiroquai\Models\Entity as Entity;
 
 /**
  * Class Category
@@ -13,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string name
  * @property string slug
  */
-class Category extends Model
+class Category extends Entity
 {
     public $table = 'categories';
 
@@ -40,16 +39,6 @@ class Category extends Model
     public static $rules = [
         'name' => 'required'
     ];
-
-    public function getFechaCreadoAttribute()
-    {
-        return date_format($this->created_at,"d/m/Y");
-    }
-
-    public function getFechaEditadoAttribute()
-    {
-        return date_format($this->updated_at,"d/m/Y");
-    }
 
     public function applicants()
     {

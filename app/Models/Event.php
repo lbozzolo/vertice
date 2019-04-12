@@ -2,12 +2,13 @@
 
 namespace Ramiroquai\Models;
 
-use Eloquent as Model;
-use Ramiroquai\Models\Image as Image;
+use Ramiroquai\Models\Entity as Entity;
 
-class Event extends Model
+class Event extends Entity
 {
     public $table = 'events';
+    public $image_croppie_width = 960;
+    public $image_croppie_height = 720;
 
     public $fillable = [
         'title',
@@ -18,42 +19,12 @@ class Event extends Model
 
     protected $casts = [
         'title' => 'string',
-        'body' => 'string',
+        'description' => 'string',
     ];
 
     public static $rules = [
         'title' => 'required',
-        'body' => 'required'
+        'description' => 'required'
     ];
-
-    public function getFechaCreadoAttribute()
-    {
-        return date_format($this->created_at,"d/m/Y");
-    }
-
-    public function getFechaEditadoAttribute()
-    {
-        return date_format($this->updated_at,"d/m/Y");
-    }
-
-    public function images()
-    {
-        return $this->morphMany(Image::class, 'imageable');
-    }
-
-    public function mainImage()
-    {
-        return $this->images()->where('main', 1)->first();
-    }
-
-    public function imagesThumb()
-    {
-        return $this->morphMany(Image::class, 'imageable')->where('thumbnail_id', null);
-    }
-
-    public function imagesBig()
-    {
-        return $this->morphMany(Image::class, 'imageable')->where('thumbnail_id', '!=', null);
-    }
 
 }

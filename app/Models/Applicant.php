@@ -2,9 +2,9 @@
 
 namespace Ramiroquai\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Ramiroquai\Models\Entity as Entity;
 
-class Applicant extends Model
+class Applicant extends Entity
 {
     public $table = 'applicants';
 
@@ -42,24 +42,9 @@ class Applicant extends Model
         'country' => 'required',
     ];
 
-    public function getFechaCreadoAttribute()
-    {
-        return date_format($this->created_at,"d/m/Y");
-    }
-
-    public function getFechaEditadoAttribute()
-    {
-        return date_format($this->updated_at,"d/m/Y");
-    }
-
     public function getFullNameAttribute()
     {
         return $this->name.' '.$this->lastname;
-    }
-
-    public function images()
-    {
-        return $this->morphMany(Image::class, 'imageable');
     }
 
     public function categories()

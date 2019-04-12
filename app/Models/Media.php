@@ -2,7 +2,7 @@
 
 namespace Ramiroquai\Models;
 
-use Eloquent as Model;
+use Ramiroquai\Models\Entity as Entity;
 
 /**
  * Class Category
@@ -12,7 +12,7 @@ use Eloquent as Model;
  * @property string name
  * @property string slug
  */
-class Media extends Model
+class Media extends Entity
 {
     public $table = 'medias';
 
@@ -33,16 +33,6 @@ class Media extends Model
     public static $rules = [
         'type' => 'required'
     ];
-
-    public function getFechaCreadoAttribute()
-    {
-        return date_format($this->created_at,"d/m/Y");
-    }
-
-    public function getFechaEditadoAttribute()
-    {
-        return date_format($this->updated_at,"d/m/Y");
-    }
 
     public function images()
     {

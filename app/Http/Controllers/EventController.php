@@ -6,8 +6,6 @@ use Ramiroquai\Http\Requests\CreateEventRequest;
 use Ramiroquai\Http\Requests\UpdateEventRequest;
 use Ramiroquai\Repositories\EventRepository;
 use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
-use Illuminate\Http\Request;
-use Prettus\Repository\Criteria\RequestCriteria;
 
 class EventController extends AppBaseController
 {
@@ -52,11 +50,9 @@ class EventController extends AppBaseController
         $this->data['noResultsMessage'] = $this->no_results_message;
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        $this->repo->pushCriteria(new RequestCriteria($request));
         $this->data['items'] = $this->repo->all();
-
         return view($this->modelPlural.'.index')->with($this->data);
     }
 

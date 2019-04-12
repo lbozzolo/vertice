@@ -30,4 +30,5 @@ class ImageRepository extends BaseRepository
     {
         return Image::class;
     }
+
 }

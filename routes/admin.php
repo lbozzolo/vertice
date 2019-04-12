@@ -79,5 +79,6 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'SliderController@activate'
     ]);
 
+
 });
 

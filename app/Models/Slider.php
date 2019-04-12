@@ -2,7 +2,7 @@
 
 namespace Ramiroquai\Models;
 
-use Eloquent as Model;
+use Ramiroquai\Models\Entity as Entity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -12,12 +12,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property string name
  */
-class Slider extends Model
+class Slider extends Entity
 {
     use SoftDeletes;
 
     public $table = 'sliders';
-    
+    public $image_croppie_width = 1200;
+    public $image_croppie_height = 600;
 
     protected $dates = ['deleted_at'];
 
@@ -43,25 +44,5 @@ class Slider extends Model
     public static $rules = [
         'name' => 'required'
     ];
-
-    public function mainImage()
-    {
-        return $this->images()->where('main', 1)->first();
-    }
-
-    public function images()
-    {
-        return $this->morphMany(Image::class, 'imageable');
-    }
-
-    public function imagesThumb()
-    {
-        return $this->morphMany(Image::class, 'imageable')->where('thumbnail_id', null);
-    }
-
-    public function imagesBig()
-    {
-        return $this->morphMany(Image::class, 'imageable')->where('thumbnail_id', '!=', null);
-    }
 
 }
