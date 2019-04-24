@@ -1,12 +1,12 @@
 <?php
 
-namespace Ramiroquai\Models;
+namespace Vertice\Models;
 
 use Eloquent as Model;
 
 /**
  * Class Image
- * @package Ramiroquai\Models
+ * @package Vertice\Models
  * @version September 3, 2018, 10:53 pm UTC
  *
  * @property string path

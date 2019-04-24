@@ -1,12 +1,12 @@
 <?php
 
-namespace Ramiroquai\Http\Controllers;
+namespace Vertice\Http\Controllers;
 
-use Ramiroquai\Http\Requests\CreateSliderRequest;
-use Ramiroquai\Http\Requests\UpdateSliderRequest;
-use Ramiroquai\Repositories\SliderRepository;
-use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
-use Ramiroquai\Models\Slider;
+use Vertice\Http\Requests\CreateSliderRequest;
+use Vertice\Http\Requests\UpdateSliderRequest;
+use Vertice\Repositories\SliderRepository;
+use Vertice\Http\Controllers\AppBaseController as AppBaseController;
+use Vertice\Models\Slider;
 
 class SliderController extends AppBaseController
 {

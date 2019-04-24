@@ -38,7 +38,7 @@
                     <div class="auto-form-wrapper">
 
                         <div class="card-body text-center">
-                            <img src="{{ asset('images/logos/black-logo.png') }}" alt="logo" class="img-responsive" />
+                            <img src="{{ asset('images/logos/logo_sin_cubo.png') }}" alt="logo" class="img-responsive" style="width: 75%" />
                         </div>
                         <div class="card-body">
                             <form action="{{ url('/login') }}" method="post">
@@ -72,7 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary submit-btn btn-block">Ingresar</button>
+                                    <button type="submit" class="btn btn-secondary submit-btn btn-block">Ingresar</button>
                                 </div>
                                 <div class="form-group d-flex justify-content-between">
                                     <div class="form-check form-check-flat mt-0">

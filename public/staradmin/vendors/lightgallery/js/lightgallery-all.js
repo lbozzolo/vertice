@@ -2329,7 +2329,7 @@
         Video.prototype.init = function() {
             var _this = this;
     
-            // Event triggered when video url found without poster
+            // Project triggered when video url found without poster
             _this.core.$el.on('hasVideo.lg.tm', onHasVideo.bind(this));
     
             // Set max width for video

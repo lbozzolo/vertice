@@ -1,13 +1,13 @@
 <?php
 
-namespace Ramiroquai\Models;
+namespace Vertice\Models;
 
-use Ramiroquai\Models\Entity as Entity;
+use Vertice\Models\Entity as Entity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Slider
- * @package Ramiroquai\Models
+ * @package Vertice\Models
  * @version September 6, 2018, 11:58 am UTC
  *
  * @property string name

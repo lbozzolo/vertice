@@ -1,8 +1,8 @@
 <?php
 
-namespace Ramiroquai\Models;
+namespace Vertice\Models;
 
-use Ramiroquai\Models\Entity as Entity;
+use Vertice\Models\Entity as Entity;
 
 class Applicant extends Entity
 {

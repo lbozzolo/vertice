@@ -1,6 +1,6 @@
 <?php
 
-namespace Ramiroquai\Exceptions;
+namespace Vertice\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

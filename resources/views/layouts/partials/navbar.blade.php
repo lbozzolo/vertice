@@ -6,7 +6,7 @@
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
             <a class="navbar-brand brand-logo" href="{{ route('admin') }}">
-                <img src="{{ asset('images/logos/logo2.png') }}" alt="logo" class="img-responsive" style="max-width: 80px"/>
+                <img src="{{ asset('images/logos/logo_sin_cubo.png') }}" alt="logo" class="img-responsive" style="max-width: 80px"/>
             </a>
             <a class="navbar-brand brand-logo-mini" href="{{ route('home') }}">
                 <img src="{{ asset('images/logos/favicon.png') }}" alt="logo" />
@@ -27,7 +27,7 @@
                 <li class="nav-item dropdown d-none d-xl-inline-block">
                     <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                         <span class="profile-text">{!! Auth::user()->full_name !!}</span>
-                        <img class="img-xs rounded-circle" src="{{ asset('images/logos/logo-n.png') }}" alt="Profile image">
+                        <img class="img-xs rounded" src="{{ asset('images/logos/logo-profile.png') }}" alt="Profile image">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
 

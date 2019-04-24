@@ -1,9 +1,9 @@
 <?php
 
-namespace Ramiroquai\Models;
+namespace Vertice\Models;
 
 use Eloquent as Model;
-use Ramiroquai\Models\Image as Image;
+use Vertice\Models\Image as Image;
 
 class Entity extends Model
 {

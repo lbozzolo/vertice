@@ -21,7 +21,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('users', 'UserController');
 
-    Route::resource('events', 'EventController');
+    Route::resource('events', 'ProjectController');
 
     Route::resource('images', 'ImageController');
 

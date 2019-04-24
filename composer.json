@@ -29,7 +29,7 @@
             "database"
         ],
         "psr-4": {
-            "Ramiroquai\\": "app/"
+            "Vertice\\": "app/"
         }
     },
     "autoload-dev": {

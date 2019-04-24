@@ -1,11 +1,11 @@
 <?php
 
-namespace Ramiroquai\Http\Controllers;
+namespace Vertice\Http\Controllers;
 
-use Ramiroquai\Http\Requests\CreateMediaRequest;
-use Ramiroquai\Repositories\MediaRepository;
-use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
-use Ramiroquai\Models\Image;
+use Vertice\Http\Requests\CreateMediaRequest;
+use Vertice\Repositories\MediaRepository;
+use Vertice\Http\Controllers\AppBaseController as AppBaseController;
+use Vertice\Models\Image;
 
 class MediaController extends AppBaseController
 {

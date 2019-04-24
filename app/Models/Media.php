@@ -1,12 +1,12 @@
 <?php
 
-namespace Ramiroquai\Models;
+namespace Vertice\Models;
 
-use Ramiroquai\Models\Entity as Entity;
+use Vertice\Models\Entity as Entity;
 
 /**
  * Class Category
- * @package Ramiroquai\Models
+ * @package Vertice\Models
  * @version September 3, 2018, 10:55 pm UTC
  *
  * @property string name

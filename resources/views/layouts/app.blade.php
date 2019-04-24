@@ -19,6 +19,7 @@
                 <div class="content-wrapper">
 
                     @include('vendor.flash.message')
+
                     @yield('content')
 
                 </div>

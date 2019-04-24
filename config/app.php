@@ -176,11 +176,11 @@ return [
         /*
          * Application Service Providers...
          */
-        Ramiroquai\Providers\AppServiceProvider::class,
-        Ramiroquai\Providers\AuthServiceProvider::class,
-        // Ramiroquai\Providers\BroadcastServiceProvider::class,
-        Ramiroquai\Providers\EventServiceProvider::class,
-        Ramiroquai\Providers\RouteServiceProvider::class,
+        Vertice\Providers\AppServiceProvider::class,
+        Vertice\Providers\AuthServiceProvider::class,
+        // Vertice\Providers\BroadcastServiceProvider::class,
+        Vertice\Providers\EventServiceProvider::class,
+        Vertice\Providers\RouteServiceProvider::class,
         /*
          * GUI Interface - Generator Builder...
          */
@@ -215,7 +215,7 @@ return [
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
-        'Event' => Illuminate\Support\Facades\Event::class,
+        'Project' => Illuminate\Support\Facades\Event::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,

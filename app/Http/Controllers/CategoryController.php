@@ -1,11 +1,11 @@
 <?php
 
-namespace Ramiroquai\Http\Controllers;
+namespace Vertice\Http\Controllers;
 
-use Ramiroquai\Http\Requests\CreateCategoryRequest;
-use Ramiroquai\Http\Requests\UpdateCategoryRequest;
-use Ramiroquai\Repositories\CategoryRepository;
-use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
+use Vertice\Http\Requests\CreateCategoryRequest;
+use Vertice\Http\Requests\UpdateCategoryRequest;
+use Vertice\Repositories\CategoryRepository;
+use Vertice\Http\Controllers\AppBaseController as AppBaseController;
 
 class CategoryController extends AppBaseController
 {

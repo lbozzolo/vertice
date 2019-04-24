@@ -1,11 +1,11 @@
 <?php
 
-namespace Ramiroquai\Http\Controllers;
+namespace Vertice\Http\Controllers;
 
-use Ramiroquai\Http\Requests\CreateUserRequest;
-use Ramiroquai\Http\Requests\UpdateUserRequest;
-use Ramiroquai\Repositories\UserRepository;
-use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
+use Vertice\Http\Requests\CreateUserRequest;
+use Vertice\Http\Requests\UpdateUserRequest;
+use Vertice\Repositories\UserRepository;
+use Vertice\Http\Controllers\AppBaseController as AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Facades\Auth;

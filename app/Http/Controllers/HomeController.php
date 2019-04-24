@@ -1,11 +1,11 @@
 <?php
 
-namespace Ramiroquai\Http\Controllers;
+namespace Vertice\Http\Controllers;
 
-use Ramiroquai\Models\Category;
-use Ramiroquai\Models\Work;
-use Ramiroquai\Models\Noticia;
-use Ramiroquai\Models\Servicio;
+use Vertice\Models\Category;
+use Vertice\Models\Work;
+use Vertice\Models\Noticia;
+use Vertice\Models\Servicio;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller

@@ -1,8 +1,8 @@
 <?php
 
-namespace Ramiroquai\Repositories;
+namespace Vertice\Repositories;
 
-use Ramiroquai\Models\Category;
+use Vertice\Models\Category;
 use InfyOm\Generator\Common\BaseRepository;
 
 class CategoryRepository extends BaseRepository

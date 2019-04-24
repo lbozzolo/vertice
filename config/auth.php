@@ -72,7 +72,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Ramiroquai\User::class,
+            'model' => Vertice\User::class,
         ],
 
         'medicos' => [

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ramiroquai\Http\Requests;
+namespace Vertice\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

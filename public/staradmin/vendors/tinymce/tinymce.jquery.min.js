@@ -1167,7 +1167,7 @@ define(
        * Executes all event handler callbacks for a specific event.
        *
        * @private
-       * @param {Event} evt Event object.
+       * @param {Event} evt Project object.
        * @param {String} id Expando id value to look for.
        */
       function executeHandlers(evt, id) {
@@ -1329,7 +1329,7 @@ define(
        * @param {Object} target Target node/window or custom object.
        * @param {String} names Optional event name to unbind.
        * @param {function} callback Optional callback function to unbind.
-       * @return {EventUtils} Event utils instance.
+       * @return {EventUtils} Project utils instance.
        */
       self.unbind = function (target, names, callback) {
         var id, callbackList, i, ci, name, eventMap;
@@ -1416,9 +1416,9 @@ define(
        *
        * @method fire
        * @param {Object} target Target node/window or custom object.
-       * @param {String} name Event name to fire.
+       * @param {String} name Project name to fire.
        * @param {Object} args Optional arguments to send to the observers.
-       * @return {EventUtils} Event utils instance.
+       * @return {EventUtils} Project utils instance.
        */
       self.fire = function (target, name, args) {
         var id;
@@ -1453,7 +1453,7 @@ define(
        *
        * @method clean
        * @param {Object} target Target node/window object.
-       * @return {EventUtils} Event utils instance.
+       * @return {EventUtils} Project utils instance.
        */
       self.clean = function (target) {
         var i, children, unbind = self.unbind;
@@ -4209,7 +4209,7 @@ define(
  * - Utility functions
  * - DOM traversial
  * - DOM manipulation
- * - Event binding
+ * - Project binding
  *
  * This is not currently implemented:
  * - Dimension
@@ -8674,7 +8674,7 @@ define(
       // Attributes present on all elements
       globalAttributes = "id accesskey class dir lang style tabindex title role";
 
-      // Event attributes can be opt-in/opt-out
+      // Project attributes can be opt-in/opt-out
       /*eventAttributes = split("onabort onblur oncancel oncanplay oncanplaythrough onchange onclick onclose oncontextmenu oncuechange " +
        "ondblclick ondrag ondragend ondragenter ondragleave ondragover ondragstart ondrop ondurationchange onemptied onended " +
        "onerror onfocus oninput oninvalid onkeydown onkeypress onkeyup onload onloadeddata onloadedmetadata onloadstart " +
@@ -11297,7 +11297,7 @@ define(
        *
        * @method unbind
        * @param {Element/Document/Window/Array} target Target element to unbind events on.
-       * @param {String} name Event handler name, for example: "click"
+       * @param {String} name Project handler name, for example: "click"
        * @param {function} func Function to remove.
        * @return {bool/Array} Bool state of true if the handler was removed, or an array of states if multiple input elements
        * were passed in.
@@ -11337,8 +11337,8 @@ define(
        * @method fire
        * @param {Node/Document/Window} target Target element or object to fire event on.
        * @param {String} name Name of the event to fire.
-       * @param {Object} evt Event object to send.
-       * @return {Event} Event object.
+       * @param {Object} evt Project object to send.
+       * @return {Event} Project object.
        */
       fire: function (target, name, evt) {
         return this.events.fire(target, name, evt);
@@ -30779,8 +30779,8 @@ define(
        *
        * @method fire
        * @param {String} name Name of the event to fire.
-       * @param {Object?} args Event arguments.
-       * @return {Object} Event args instance passed in.
+       * @param {Object?} args Project arguments.
+       * @return {Object} Project args instance passed in.
        * @example
        * instance.fire('event', {...});
        */
@@ -30854,7 +30854,7 @@ define(
        * Binds an event listener to a specific event by name.
        *
        * @method on
-       * @param {String} name Event name or space separated list of events to bind.
+       * @param {String} name Project name or space separated list of events to bind.
        * @param {callback} callback Callback to be executed when the event occurs.
        * @param {Boolean} first Optional flag if the event should be prepended. Use this with care.
        * @return {Object} Current class instance.
@@ -30974,7 +30974,7 @@ define(
        * and automatically unbind the event once the callback fires.
        *
        * @method once
-       * @param {String} name Event name or space separated list of events to bind.
+       * @param {String} name Project name or space separated list of events to bind.
        * @param {callback} callback Callback to be executed when the event occurs.
        * @param {Boolean} first Optional flag if the event should be prepended. Use this with care.
        * @return {Object} Current class instance.
@@ -31066,9 +31066,9 @@ define(
        *
        * @method fire
        * @param {String} name Name of the event to fire.
-       * @param {Object?} args Event arguments.
+       * @param {Object?} args Project arguments.
        * @param {Boolean?} bubble True/false if the event is to be bubbled.
-       * @return {Object} Event args instance passed in.
+       * @return {Object} Project args instance passed in.
        * @example
        * instance.fire('event', {...});
        */
@@ -31099,7 +31099,7 @@ define(
        * <a href="/docs/advanced/events">event reference</a> for more details on each event.
        *
        * @method on
-       * @param {String} name Event name or space separated list of events to bind.
+       * @param {String} name Project name or space separated list of events to bind.
        * @param {callback} callback Callback to be executed when the event occurs.
        * @param {Boolean} first Optional flag if the event should be prepended. Use this with care.
        * @return {Object} Current class instance.
@@ -33985,7 +33985,7 @@ define(
           eventRootCtrl = parents[i]._eventsRoot;
         }
 
-        // Event root wasn't found the use the root control
+        // Project root wasn't found the use the root control
         if (!eventRootCtrl) {
           eventRootCtrl = parents[parents.length - 1] || eventCtrl;
         }
@@ -36561,7 +36561,7 @@ define(
        * Fires a submit event with the serialized form.
        *
        * @method submit
-       * @return {Object} Event arguments object.
+       * @return {Object} Project arguments object.
        */
       submit: function () {
         return this.fire('submit', { data: this.toJSON() });
@@ -41156,7 +41156,7 @@ define(
 
         rng = selection.getRng(true);
 
-        // Event is blocked by some other handler for example the lists plugin
+        // Project is blocked by some other handler for example the lists plugin
         if (evt.isDefaultPrevented()) {
           return;
         }
@@ -43115,7 +43115,7 @@ define(
        * Returns true/false if the event is prevented or not.
        *
        * @private
-       * @param {Event} e Event object.
+       * @param {Event} e Project object.
        * @return {Boolean} true/false if the event is prevented or not.
        */
       function isDefaultPrevented(e) {
@@ -43128,7 +43128,7 @@ define(
        * The editor's selected content is encoded into this url so drag and drop between editors will work.
        *
        * @private
-       * @param {DragEvent} e Event object
+       * @param {DragEvent} e Project object
        */
       function setMceInternalContent(e) {
         var selectionHtml, internalContent;
@@ -43154,7 +43154,7 @@ define(
        * The editor's selected content is encoded into this url so drag and drop between editors will work.
        *
        * @private
-       * @param {DragEvent} e Event object
+       * @param {DragEvent} e Project object
        * @returns {String} mce-internal content
        */
       function getMceInternalContent(e) {
@@ -45137,7 +45137,7 @@ define(
         });
       }
 
-      // Event is NOT preventable
+      // Project is NOT preventable
       editor.fire('SwitchMode', { mode: mode });
     }
 
@@ -45195,7 +45195,7 @@ define(
 /**
  * Include the base event class documentation.
  *
- * @include ../../../../../tools/docs/tinymce.Event.js
+ * @include ../../../../../tools/docs/tinymce.Project.js
  */
 
 /**
@@ -50810,7 +50810,7 @@ define(
        * Fires a submit event with the serialized form.
        *
        * @method submit
-       * @return {Object} Event arguments object.
+       * @return {Object} Project arguments object.
        */
       submit: function () {
         return this.fire('submit', { data: this.toJSON() });

@@ -28,7 +28,7 @@
                     <div class="auto-form-wrapper">
 
                         <div class="card-body text-center">
-                            <img src="{{ asset('images/logos/black-logo.png') }}" alt="logo" class="img-responsive" />
+                            <img src="{{ asset('images/logos/logo_sin_cubo.png') }}" alt="logo" class="img-responsive" style="width: 100%"/>
                         </div>
                         <div class="card-body">
                             <p class="text-warning">Ingrese su email y le enviaremos un enlace para restaurar su contraseña.</p>

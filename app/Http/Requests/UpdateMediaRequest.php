@@ -1,9 +1,9 @@
 <?php
 
-namespace Ramiroquai\Http\Requests;
+namespace Vertice\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Ramiroquai\Models\Media;
+use Vertice\Models\Media;
 
 class UpdateMediaRequest extends FormRequest
 {

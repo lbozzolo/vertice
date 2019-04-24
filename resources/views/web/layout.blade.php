@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
     <head>
         @include('web.partials.head')
     </head>
-    <body>
 
+    <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
+        <div class="body">
 
-        <div id="preloader">
-            <div id="status"><img src="{{ asset('template-web/images/black-logo.png') }}" alt="cargando contenido.."></div>
+            @include('web.partials.header')
+
         </div>
-
-        <div id="home" class="clearfix">
 
             @yield('content')
 
-        </div>
 
-        <footer>@include('web.partials.footer')</footer>
+        <footer>
+
+            @include('web.partials.footer')
+
+        </footer>
 
         @include('web.partials.scripts')
 

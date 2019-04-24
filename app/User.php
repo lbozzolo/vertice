@@ -1,6 +1,6 @@
 <?php
 
-namespace Ramiroquai;
+namespace Vertice;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

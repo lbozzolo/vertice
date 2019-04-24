@@ -1,8 +1,8 @@
 <?php
 
-namespace Ramiroquai\Repositories;
+namespace Vertice\Repositories;
 
-use Ramiroquai\Models\Media;
+use Vertice\Models\Media;
 use InfyOm\Generator\Common\BaseRepository;
 
 class MediaRepository extends BaseRepository

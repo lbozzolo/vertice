@@ -1,10 +1,10 @@
 <?php
 
-namespace Ramiroquai\Http\Controllers\Auth;
+namespace Vertice\Http\Controllers\Auth;
 
-use Ramiroquai\Http\Controllers\Controller;
-use Ramiroquai\Models\Medico;
-use Ramiroquai\User;
+use Vertice\Http\Controllers\Controller;
+use Vertice\Models\Medico;
+use Vertice\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

@@ -1,18 +1,18 @@
 <?php
 
-namespace Ramiroquai\Http\Controllers;
+namespace Vertice\Http\Controllers;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
-use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
-use Ramiroquai\Http\Requests\ContactRequest;
-use Ramiroquai\Http\Requests\CreateApplicantRequest;
-use Ramiroquai\Models\Applicant;
-use Ramiroquai\Models\Category;
+use Vertice\Http\Controllers\AppBaseController as AppBaseController;
+use Vertice\Http\Requests\ContactRequest;
+use Vertice\Http\Requests\CreateApplicantRequest;
+use Vertice\Models\Applicant;
+use Vertice\Models\Category;
 use Illuminate\Support\Facades\Mail;
-use Ramiroquai\Models\Image;
-use Ramiroquai\Models\Slider;
-use Ramiroquai\Models\Work;
+use Vertice\Models\Image;
+use Vertice\Models\Slider;
+use Vertice\Models\Work;
 
 class WebController extends AppBaseController
 {

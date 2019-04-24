@@ -1,13 +1,13 @@
 <?php
 
-namespace Ramiroquai\Http\Controllers;
+namespace Vertice\Http\Controllers;
 
-use Ramiroquai\Repositories\ImageRepository;
-use Ramiroquai\Http\Controllers\AppBaseController as AppBaseController;
+use Vertice\Repositories\ImageRepository;
+use Vertice\Http\Controllers\AppBaseController as AppBaseController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Ramiroquai\Models\Image;
+use Vertice\Models\Image;
 use Intervention\Image\Facades\Image as Intervention;
 
 class ImageController extends AppBaseController
@@ -106,7 +106,7 @@ class ImageController extends AppBaseController
             $img_thumb = Intervention::make($request->file('img'))->resize(config('sistema.imagenes.WIDTH_THUMB'), config('sistema.imagenes.HEIGHT_THUMB'));
         }
 
-        $class = 'Ramiroquai\Models\\'.$class;
+        $class = 'Vertice\Models\\'.$class;
         $model = $class::find($id);
 
         // Redirección si supera el máximo de fotos permitido

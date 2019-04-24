@@ -4,39 +4,29 @@
 
     <style type="text/css">
 
-        @media (max-width: 600px) {
-            /* Styles for screen with max width of 600px */
-            header {
-                height: auto;
-            }
-            .content-title {
-                margin: 10px 0px;
-                font-size: 45px;
-                text-align: center;
-            }
-        }
-        @media (max-width: 320px) {
-            /* Styles for screen with max width of 320px */
-            header {
-                height: auto;
-            }
-            .content-title {
-                margin: 10px 0px;
-                font-size: 25px;
-            }
+        .intro {
+            background: url({{ asset('template-web/images/tech.jpg') }}) no-repeat center;
+            background-size: cover;
         }
 
-        .boton {
-            border: 2px solid lightgrey;
-            border-radius: 0px;
-            color: gray;
-            font-family: montserrat;
-            font-size: 12px;
-            font-weight: bold;
-            line-height: 1;
-            padding: 10px;
-            margin-bottom: 3px;
-            text-transform: uppercase;
+        .intro-page {
+            background: url({{ asset('template-web/demo/bg/1.jpg') }}) no-repeat center;
+        }
+
+        .facts-content {
+            background:#313131 url({{ asset('template-web/demo/bg/4.jpg') }}) no-repeat center;
+        }
+
+        .services-content {
+            background:#313131 url({{ asset('template-web/demo/bg/4.jpg') }}) no-repeat center;
+        }
+
+        .testimonial-wrap {
+            background:#313131 url({{ asset('template-web/demo/bg/6.jpg') }}) no-repeat center;
+        }
+
+        .cover {
+            background: url({{ asset('template-web/images/overlay.png') }});
         }
 
     </style>
@@ -51,246 +41,394 @@
         @include('web.partials.sliders')
     @endif
 
-    <!--ABOUT START-->
-    <div id="marketing" class="content clearfix">
 
-        <div class="container">
-            <div class="top-content clearfix">
-                <i class="fa fa-heart-o content-icon"></i>
-                <h3 class="content-title">MARKETING & MANAGEMENT</h3>
-
-                <p class="sub-title">Brindamos consultoría privada para empresas y personas físicas. Soluciones completas de business intelligence, marketing estratégico y operativo, publicidad y promoción, transformación digital y community manager, personal branding, coaching y asesoría de imagen mediante técnicas de neuromarketing. </p>
-                <p class="sub-title">Las neurociencias aplicadas constituyen la llave maestra para la innovación en materia de liderazgo, conducción y gestión de organizaciones y empresas. </p>
-                <p class="sub-title">Elaboramos planes de negocios y realizamos toda la comunicación institucional, desde la estrategia / idea hasta la implementación final. Combinamos funcionalidad operativa, eficacia técnica, refinamiento estético y originalidad de acciones y campañas. </p>
-                <p class="sub-title">Contamos con profesionales en diversas áreas para brindarle calidad en el servicio, coherencia y seriedad al momento que su empresa lo necesite. </p>
-
-            </div><!--/.top-content-->
-        </div><!--/.container-->
-
-        <div id="press" class="content clearfix">
-
+    <!-- Intro top content -->
+    <section class="intro" id="home" data-slide="1" data-stellar-background-ratio="0.5">
+        <div class="cover"></div>
+        <div class="intro-body">
             <div class="container">
-                <div class="top-content clearfix">
-                    <i class="fa fa-heart-o content-icon"></i>
-                    <h3 class="content-title">PRESS & COMUNICATION</h3>
-
-                    <p class="sub-title">Ofrecemos todos los servicios de una agencia de comunicación y organización de eventos. Desde la planificación integral, implementación de estrategias y su posterior ajuste. Canalizamos de la manera más adecuada la actualidad de su empresa a los medios de comunicación más afines.</p>
-                    <p class="sub-title">Para mejorar su imagen social y corporativa, contamos con una base de datos y servicios de apoyo a medida, fortaleciendo el área de prensa  y comunicación.  </p>
-                    <p class="sub-title">Somos especialistas en la organización de eventos aplicando conceptos de marketing & management.</p>
-
-                </div><!--/.top-content-->
-            </div><!--/.container-->
-
-        </div><!--/about-->
-        <!--/gallery about end-->
-    </div><!--/about-->
-    <!--ABOUT END-->
-
-    <!--WORKS START-->
-    <div id="social" class="content clearfix">
-        <div class="container">
-            <div class="top-content clearfix">
-                <i class="fa fa-newspaper-o content-icon"></i>
-                <h3 class="content-title">SOCIAL & MEDIA</h3>
-
-                <p class="sub-title">Producimos contenidos multiplataforma tanto para video como para fotografía, pudiendo tener flexibilidad a la hora de tratar con las necesidades del cliente.</p>
-                <p class="sub-title">Contamos con las habilidades y tecnologías de punta para grandes producciones,  campañas institucionales hasta para redes sociales.</p>
-                <p class="sub-title">vNos especializamos en la planificación, desarrollo e implementación de estrategias de marketing digital orientadas a segmentos de públicos definidos.</p>
-                <p class="sub-title">Aplicamos las prácticas recomendadas para cada canal para asegurar altos niveles de alcance, lectura y engagement con el usuario final.</p>
-
-            </div><!--/.top-content-->
-
-            <div class="text-center">
-                <a class="boton"  href="">FUTURE</a>
-                <a class="boton" href="{{ route('pictures.present') }}">PRESENT</a>
-                <a class="boton" href="{{ route('pictures.past') }}">PAST</a>
-            </div>
-
-            {{--<ul class="port-filter clearboth clearfix">--}}
-                {{--<li><a data-filter=".future" href="#">FUTURE</a></li>--}}
-                {{--<li><a data-filter=".present" href="{{ route('pictures.present') }}">PRESENT</a></li>--}}
-                {{--<li><a href="{{ route('pictures.past') }}">PAST</a></li>--}}
-            {{--</ul>--}}
-        </div><!--/container-->
-
-
-        <div id="worksajax"><!--work ajax anchor--></div>
-        <div class="worksajax clearboth clearfix"></div><!--portfolio ajax content here-->
-    </div><!--/works-->
-    <!--WORKS END-->
-
-
-    <!--TALENTS START-->
-    <div id="talents" class="content clearfix">
-
-        <div class="container">
-            <div class="top-content clearfix">
-                <i class="fa fa-heart-o content-icon"></i>
-                <h3 class="content-title">TALENTS & FRIENDS</h3>
-
-                <p class="sub-title">Nobre Management cuenta con un equipo de celebrities y profesionales como modelos, promotores, cantantes, actores, djs, entre otros.</p>
-                <p class="sub-title">Nuestro staff se caracteriza por su profesionalidad y frescura a la hora de desempeñar su tarea. Cuenta con una visión global, avant-garde y cosmopolita que nos ha permitido diferenciarnos de las agencias tradicionales.</p>
-                <p class="sub-title">El objetivo es promover un selecto grupo conocedores del mundo de la moda que con su talento estén a la altura de las más exigentes firmas del mercado mundial.</p>
-
-                <i class="fa fa-edit content-icon"></i>
-                <h3 class="content-title">WORKS</h3>
-                <p class="sub-title">Te mostramos los trabajos de algunos de nuestros talentos.</p>
-                <div class="text-center">
-                    <a class="boton" href="{{ route('events') }}">Ver trabajos</a>
-                </div>
-            </div><!--/.top-content-->
-        </div><!--/.container-->
-
-    </div>
-
-
-
-    <div id="contact" class="content clearfix">
-        <div class="container">
-            <div class="top-content clearfix">
-                <i class="fa fa-hand-peace-o content-icon"></i>
-                <h3 class="content-title">CONTACT & NETWORKS</h3>
-
-                <p class="sub-title">Para más información contactenos a los mails y teléfonos brindados. Recordar enviar cv y book.</p>
-            </div><!--/.top-content-->
-        </div><!--/.container-->
-        <!-- <div id="map_canvas" class="map_canvas"></div> -->
-
-        <!--MAP MARKER CONTENT-->
-        <div class="hidden map-content">
-            <div class="box-map">
-                <img src="{{ asset('template-web/images/maps.jpg') }}" alt="">
-                <h3>NOBRE MANAGEMENT</h3>
-                <p><b>Teléfono:</b> +54 11 55 05 49 21 </p>
-                <p><b>Email:</b> info@nobremanagement.com.ar</p>
-            </div>
-        </div>
-        <!--MAP MARKER CONTENT END-->
-
-
-        <div class="container contact-list">
-            <div class="row bottom-content">
-
-                <div class="col-md-4">
-                    <h3 class="small-title"><i class="fa fa-building-o"></i>  NOBRE MANAGEMENT</h3>
-                    <p>MATIAS DAVID NOBRE <br>R. M. 577/96</p>
-                    <div class="spacing20"></div>
-
-
-                    <h3 class="small-title"><i class="fa fa-phone"></i> Teléfono</h3>
-                    <p>+54 11 55 05 49 21 </p>
-                    <div class="spacing20"></div>
-
-                    <h3 class="small-title"><i class="fa fa-envelope"></i> Email</h3>
-                    <p><a href="#">info@nobremanagement.com.ar</a></p>
-                    <div class="spacing20"></div>
-                </div><!--/.col-md-4-->
-
-
-
-                <div id="contact-form" class="col-md-8 clearfix">
-
-
-                    <div id="form-wrapper">
-                        <div id="form-inner">
-                            <div id="ErrResults">
-                                @include('vendor.flash.message')
-                            </div>
-                            <div id="MainContent">
-
-                            {!! Form::open(['url' => route('send.data.applicant'), 'method' => 'post', 'id' => 'MyContactForm']) !!}
-
-                                <div class="row">
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::text('name', null, ['placeholder' => 'Tu nombre...']) !!}
-                                    </div>
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::text('lastname', null, ['placeholder' => 'Tu Apellido...']) !!}
-                                    </div>
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::text('email', null, ['placeholder' => 'Tu email...']) !!}
-                                    </div>
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::text('phone', null, ['placeholder' => 'Tu teléfono']) !!}
-                                    </div>
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::label('country', 'País:') !!}
-                                        {!! Form::select('country', $countries, null, ['class' => 'form-control', 'placeholder' => '']) !!}
-                                    </div>
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::label('province', 'Provincia:') !!}
-                                        {!! Form::select('province', $provinces, null, ['class' => 'form-control', 'placeholder' => '']) !!}
-                                    </div>
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::text('position', null, ['placeholder' => 'Puesto...']) !!}
-                                    </div>
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::text('company', null, ['placeholder' => 'Tu empresa...']) !!}
-                                    </div>
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::text('area', null, ['placeholder' => 'Rubro...']) !!}
-                                    </div>
-
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::label('categories[]', 'Áreas de interés:') !!}
-                                        @if(isset($interest_areas))
-                                            <select name="categories[]" id="select2" class="form-control" placeholder="Tus áreas de interés..." multiple style="width: 100%">
-                                                @foreach ($interest_areas as $key => $value)
-
-                                                    <option value="{{ $key }}" @if (isset($applicant) && $applicant->categories->contains($key)) selected @endif>
-                                                        {{ $value }}
-                                                    </option>
-
-                                                @endforeach
-                                            </select>
-                                        @else
-                                            {!! Form::select('categories[]', $interest_areas, null, ['class' => 'form-control select2', 'placeholder' => '']) !!}
-                                        @endif
-                                    </div>
-
-                                    <!-- Body Field -->
-                                    <div class="form-group col-lg-12">
-                                        {!! Form::label('text', 'Texto:') !!}
-                                        {!! Form::textarea('text', null, ['class' => 'form-control']) !!}
-                                    </div>
-
-                                    <!-- Submit Field -->
-                                    <div class="form-group col-lg-4">
-                                        {!! Form::submit('Enviar datos', ['class' => 'boton']) !!}
-                                    </div>
-
-                                </div>
-
-                            {!! Form::close() !!}
-
-                            </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 animated text-slide">
+                        <div id="intro-slider" class="flexslider" style="height: 250px">
+                            <ul class="slides">
+                                <li>
+                                    <h3 class="brand-heading">Diseñamos tu página web</h3>
+                                    <div class="line"></div>
+                                    <p class="intro-text">Nos adaptamos a tus necesidades</p>
+                                </li>
+                                <li>
+                                    <h3 class="brand-heading">Encontramos la solución a tu proyecto</h3>
+                                    <div class="line"></div>
+                                    <p class="intro-text">Adaptabilidad y enfoque en los reales objetivos</p>
+                                </li>
+                                <li>
+                                    <h3 class="brand-heading">Compromiso y dedicación</h3>
+                                    <div class="line"></div>
+                                    <p class="intro-text">Comprometidos y dedicados al cliente desde el primer instante</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Intro top content -->
 
-                    <div class="spacing40"></div>
-                </div><!--/.contact-form-->
-            </div><!--/.row-->
-        </div><!--/contact-list-->
+    <!-- Welcome content -->
+    <section class="welcome-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 welcome-text animated">
+                    <h3>Bienvenidos a nuestra agencia</h3>
+                    <div class="line1"></div>
+                    <p>Vestibulum pulvinar adipiscing turpis vitae ultrices. Suspendisse eu lectus dui, vitae lobortis lorem. Fusce gravida nibh et ante accusan molestie. Duis convallis semper felis. Curabitur fringilla placerat vestibulum. Aenean dignissim libero et quam tristique vel vehicula nunc suscipit. Fusce id dui sem. Cras gravida odio et magna faucbus iaculis. Vestibulum ante ipsum primis in faucibus orci. Luctus et ultrices posuere..</p>
+                    <a class="btn1" href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Welcome content -->
 
-@endsection
+    <!-- Facts content -->
+    <section class="facts-content" id="facts" data-slide="2" data-stellar-background-ratio="0.5">
+        <div class="cover"></div>
+        <div class="container">
+            <div class="row">
+                <h3>Algunos números</h3>
+                <div class="col-md-6 fact-info animated">
+                    <h4><em id="lines">0</em> <span>Proyectos</span></h4>
+                    <div class="line2"></div>
+                    <p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>
+                </div>
+                <div class="col-md-6 fact-info animated">
+                    <h4><em id="lines1">0</em> <span>Clientes</span></h4>
+                    <div class="line2"></div>
+                    <p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>
+                </div>
+                {{--<div class="col-md-3 fact-info animated">--}}
+                    {{--<h4><em id="lines2">0</em> <span>Pizza's Ordered</span></h4>--}}
+                    {{--<div class="line2"></div>--}}
+                    {{--<p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>--}}
+                {{--</div>--}}
+                {{--<div class="col-md-3 fact-info animated">--}}
+                    {{--<h4><em id="lines3">0</em> <span>Awwards</span></h4>--}}
+                    {{--<div class="line2"></div>--}}
+                    {{--<p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>--}}
+                {{--</div>--}}
+            </div>
+        </div>
+    </section>
+    <!-- Facts content -->
 
-@section('js')
+    <!-- Team content -->
+    <section class="team-content" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="fade-text animated">
+                    <h3>Quiénes somos</h3>
+                    <div class="line1"></div>
+                    <p>Somos un equipo de profesionales preparados para encontrarte la vuelta a tus ideas, negocios o proyectos a los que quieras dar un impulso y crecimiento.</p>
+                </div>
+                <div class="space90"></div>
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-3 staff-content animated"></div>
+                    <div class="col-md-3 staff-content animated">
+                        <div class="staff-img">
+						<span class="overlay">
+							<ul class="team-social">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-skype"></i></a></li>
+							</ul>
+						</span>
+                            <img src="{{ asset('images/pela.jpg') }}" class="img-responsive" alt=""/>
+                        </div>
+                        <h4>Fernando Alfonso <span>Analista</span></h4>
+                    </div>
+                    <div class="col-md-3 staff-content animated">
+                        <div class="staff-img">
+						<span class="overlay">
+							<ul class="team-social">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-skype"></i></a></li>
+							</ul>
+						</span>
+                            <img src="{{ asset('images/lucas.jpg') }}" class="img-responsive" alt=""/>
+                        </div>
+                        <h4>Lucas Bozzolo <span>Programador</span></h4>
+                    </div>
+                    {{--<div class="col-md-3 staff-content animated">--}}
+                        {{--<div class="staff-img">--}}
+						{{--<span class="overlay">--}}
+							{{--<ul class="team-social">--}}
+								{{--<li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
+								{{--<li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+								{{--<li><a href="#"><i class="fa fa-dribbble"></i></a></li>--}}
+								{{--<li><a href="#"><i class="fa fa-skype"></i></a></li>--}}
+							{{--</ul>--}}
+						{{--</span>--}}
+                            {{--<img src="{{ asset('template-web/demo/team/3.jpg') }}" class="img-responsive" alt=""/>--}}
+                        {{--</div>--}}
+                        {{--<h4>John Dee <span>Web Designer</span></h4>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-3 staff-content animated">--}}
+                        {{--<div class="staff-img">--}}
+						{{--<span class="overlay">--}}
+							{{--<ul class="team-social">--}}
+								{{--<li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
+								{{--<li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+								{{--<li><a href="#"><i class="fa fa-dribbble"></i></a></li>--}}
+								{{--<li><a href="#"><i class="fa fa-skype"></i></a></li>--}}
+							{{--</ul>--}}
+						{{--</span>--}}
+                            {{--<img src="{{ asset('template-web/demo/team/4.jpg') }}" class="img-responsive" alt=""/>--}}
+                        {{--</div>--}}
+                        {{--<h4>Mary Roberts <span>Web Developer</span></h4>--}}
+                    {{--</div>--}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team content -->
 
-    <script>
+    <!-- Services content -->
+    <section class="services-content" id="services" data-slide="3" data-stellar-background-ratio="0.5">
+        <div class="cover"></div>
+        <div class="container">
+            <div class="row">
+                <div class="fade-text animated">
+                    <h3>Nuestros servicios</h3>
+                    <div class="line3"></div>
+                    <p>Aenean dignissim libero et quam tristique vel vehicula nunc suscipit. Fusce id dui sem. Cras gravida odio et magna faucbus iaculis. Vestibulum ante ipsum primis in faucibus orci. Luctus et ultrices posuere..</p>
+                </div>
+                <div class="space60"></div>
+                <div class="col-md-12 no-padding space30">
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner">
+                            <img src="{{ asset('template-web/images/ico1.png') }}" alt=""/>
+                            <h4>Mobile Application</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner">
+                            <img src="{{ asset('template-web/images/ico2.png') }}" alt=""/>
+                            <h4>Photography</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner">
+                            <img src="{{ asset('template-web/images/ico3.png') }}" alt=""/>
+                            <h4>Email Marketing</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner">
+                            <img src="{{ asset('template-web/images/ico4.png') }}" alt=""/>
+                            <h4>Networking</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner">
+                            <img src="{{ asset('template-web/images/ico5.png') }}" alt=""/>
+                            <h4>Web Designing</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner">
+                            <img src="{{ asset('template-web/images/ico6.png') }}" alt=""/>
+                            <h4>Branding</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services content -->
 
-        $(function() {
-            $('#select2').select2();
-        });
+    <!-- Portfolio content -->
+    <section class="portfolio-wrap" id="portfolio">
+        <div class="fade-text animated">
+            <h3>Nuestro portfolio</h3>
+        </div>
+        <div class="line1"></div>
+        <div class="col-md-12 no-padding portfolio-main">
+            <ul id="filters" class="clearfix">
+                <li><span class="filter active" data-filter="sort1 sort2 sort3 sort4">All</span></li>
+                <li><span class="filter" data-filter="sort1">Web Design</span></li>
+                <li><span class="filter" data-filter="sort2">Photography</span></li>
+                <li><span class="filter" data-filter="sort3">Video</span></li>
+                <li><span class="filter" data-filter="sort4">Branding</span></li>
+            </ul>
+            <div id="portfoliolist">
+                <div class="portfolio sort1 animated" data-cat="sort1">
+                    <div class="portfolio-wrapper">
+                        <img src="{{ asset('template-web/demo/works/1.jpg') }}" alt="" />
+                        <div class="overlay1">
+                            <a href="./portfolio_single_img.html">
+                                <div class="overlay-text">View Project</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio sort2 animated" data-cat="sort2">
+                    <div class="portfolio-wrapper">
+                        <img src="{{ asset('template-web/demo/works/2.jpg') }}" alt="" />
+                        <div class="overlay1">
+                            <a href="./portfolio_single_video.html">
+                                <div class="overlay-text">View Project</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio sort3 animated" data-cat="sort3">
+                    <div class="portfolio-wrapper">
+                        <img src="{{ asset('template-web/demo/works/3.jpg') }}" alt="" />
+                        <div class="overlay1">
+                            <a href="./portfolio_single_slider.html">
+                                <div class="overlay-text">View Project</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio sort4 animated" data-cat="sort4">
+                    <div class="portfolio-wrapper">
+                        <img src="{{ asset('template-web/demo/works/4.jpg') }}" alt="" />
+                        <div class="overlay1">
+                            <a href="./portfolio_single_img.html">
+                                <div class="overlay-text">View Project</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio sort1 animated" data-cat="sort1">
+                    <div class="portfolio-wrapper">
+                        <img src="{{ asset('template-web/demo/works/6.jpg') }}" alt="" />
+                        <div class="overlay1">
+                            <a href="./portfolio_single_video.html">
+                                <div class="overlay-text">View Project</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio sort2 animated" data-cat="sort2">
+                    <div class="portfolio-wrapper">
+                        <img src="{{ asset('template-web/demo/works/5.jpg') }}" alt="" />
+                        <div class="overlay1">
+                            <a href="./portfolio_single_slider.html">
+                                <div class="overlay-text">View Project</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio sort3 animated" data-cat="sort3">
+                    <div class="portfolio-wrapper">
+                        <img src="{{ asset('template-web/demo/works/7.jpg') }}" alt="" />
+                        <div class="overlay1">
+                            <a href="./portfolio_single_img.html">
+                                <div class="overlay-text">View Project</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio sort4 animated" data-cat="sort4">
+                    <div class="portfolio-wrapper">
+                        <img src="{{ asset('template-web/demo/works/8.jpg') }}" alt="" />
+                        <div class="overlay1">
+                            <a href="./portfolio_single_video.html">
+                                <div class="overlay-text">View Project</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn1" href="#">Load More</a>
+    </section>
+    <!-- Portfolio content -->
 
-    </script>
+    <!-- Testimonial content -->
+    {{--<section class="testimonial-wrap" id="testimonials" data-slide="4" data-stellar-background-ratio="0.5">--}}
+        {{--<div class="cover"></div>--}}
+        {{--<div class="container">--}}
+            {{--<div class="row">--}}
+                {{--<div class="fade-text animated">--}}
+                    {{--<h3>Our clients</h3>--}}
+                {{--</div>--}}
+                {{--<div class="col-md-12 quote-slide animated">--}}
+                    {{--<div id="quote-slider" class="flexslider">--}}
+                        {{--<ul class="slides">--}}
+                            {{--<li data-thumb="{{ asset('template-web/demo/quote/1.png') }}">--}}
+                                {{--<img src="{{ asset('template-web/demo/quote/client1.png') }}" class="client-img" alt=""/>--}}
+                                {{--<div class="sign">Dave Lucker <span>Ceo</span></div>--}}
+                                {{--<p>Aenean dignissim libero et quam tristique vel vehicula nunc suscipit. Fusce id dui sem. Cras gravida odio et magna faucbus iaculis. Vestibulum ante ipsum primis in faucibus orci. Luctus et ultrices posuere..</p>--}}
+                            {{--</li>--}}
+                            {{--<li data-thumb="{{ asset('template-web/demo/quote/2.png') }}">--}}
+                                {{--<img src="{{ asset('template-web/demo/quote/client2.png') }}" class="client-img" alt=""/>--}}
+                                {{--<div class="sign">John Doe <span>Manager</span></div>--}}
+                                {{--<p>Aenean dignissim libero et quam tristique vel vehicula nunc suscipit. Fusce id dui sem. Cras gravida odio et magna faucbus iaculis. Vestibulum ante ipsum primis in faucibus orci. Luctus et ultrices posuere..</p>--}}
+                            {{--</li>--}}
+                            {{--<li data-thumb="{{ asset('template-web/demo/quote/3.png') }}">--}}
+                                {{--<img src="{{ asset('template-web/demo/quote/client3.png') }}" class="client-img" alt=""/>--}}
+                                {{--<div class="sign">Maria vel <span>Designer</span></div>--}}
+                                {{--<p>Aenean dignissim libero et quam tristique vel vehicula nunc suscipit. Fusce id dui sem. Cras gravida odio et magna faucbus iaculis. Vestibulum ante ipsum primis in faucibus orci. Luctus et ultrices posuere..</p>--}}
+                            {{--</li>--}}
+                            {{--<li data-thumb="{{ asset('template-web/demo/quote/4.png') }}">--}}
+                                {{--<img src="{{ asset('template-web/demo/quote/client4.png') }}" class="client-img" alt=""/>--}}
+                                {{--<div class="sign">David Joe <span>Founder</span></div>--}}
+                                {{--<p>Aenean dignissim libero et quam tristique vel vehicula nunc suscipit. Fusce id dui sem. Cras gravida odio et magna faucbus iaculis. Vestibulum ante ipsum primis in faucibus orci. Luctus et ultrices posuere..</p>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+    <!-- Testimonial content -->
+
+    <!-- Contact content -->
+    <section class="contact-wrap" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="fade-text animated">
+                    <h3>Contactanos</h3>
+                    <div class="line1"></div>
+                    <p>
+                        Envianos un mensaje a través de cualquiera de nuestros medios de comunicación y a la brevedad te estaremos respondiendo para que
+                        podamos coordinar un encuentro ( presencial o virtual ) en el que nos puedas contar sobre tus ideas.
+                        Estaremos siempre dispuestos a empezar un nuevo proyecto.
+                    </p>
+                </div>
+                <div class="space80"></div>
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-4 contact-info animated">
+                        <h5><i class="fa fa-phone"></i> Teléfonos</h5>
+                        <p>
+                            +54-911-6358-3276<br>
+                            +54-911-5132-1300
+                        </p>
+                    </div>
+                    <div class="col-md-4 contact-info animated">
+                        <h5><i class="fa fa-map-marker"></i> Dirección</h5>
+                        <p>Belgrano, Buenos Aires.<br>Argentina</p>
+                    </div>
+                    <div class="col-md-4 contact-info animated">
+                        <h5><i class="fa fa-envelope-o"></i> Email</h5>
+                        <p>
+                            lucas@verticedigital.com.ar<br>
+                            fernando@verticedigital.com.ar
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact content -->
+
 
 @endsection
