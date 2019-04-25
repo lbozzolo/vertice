@@ -321,7 +321,7 @@ define(
 
     /**
      * Gets the innerText of the specified element. It will handle edge cases
-     * and events better than textContent on Gecko.
+     * and projects better than textContent on Gecko.
      *
      * @param {String} html HTML string to get text from.
      * @return {String} String of text with line feeds.
@@ -802,7 +802,7 @@ define(
 
       /**
        * Pastes the specified HTML. This means that the HTML is filtered and then
-       * inserted at the current selection in the editor. It will also fire paste events
+       * inserted at the current selection in the editor. It will also fire paste projects
        * for custom user filtering.
        *
        * @param {String} html HTML code to paste into the current selection.
@@ -819,7 +819,7 @@ define(
         html = args.content;
 
         if (!args.isDefaultPrevented()) {
-          // User has bound PastePostProcess events then we need to pass it through a DOM node
+          // User has bound PastePostProcess projects then we need to pass it through a DOM node
           // This is not ideal but we don't want to let the browser mess up the HTML for example
           // some browsers add &nbsp; to P tags etc
           if (editor.hasEventListeners('PastePostProcess') && !args.isDefaultPrevented()) {
@@ -838,7 +838,7 @@ define(
 
       /**
        * Pastes the specified text. This means that the plain text is processed
-       * and converted into BR and P elements. It will fire paste events for custom filtering.
+       * and converted into BR and P elements. It will fire paste projects for custom filtering.
        *
        * @param {String} text Text to paste as the current selection location.
        */
@@ -959,7 +959,7 @@ define(
           dom.setStyle(pasteBinElm, 'left', dom.getStyle(body, 'direction', true) == 'rtl' ? 0xFFFF : -0xFFFF);
         }
 
-        // Prevent focus events from bubbeling fixed FocusManager issues
+        // Prevent focus projects from bubbeling fixed FocusManager issues
         dom.bind(pasteBinElm, 'beforedeactivate focusin focusout', function (e) {
           e.stopPropagation();
         });
@@ -1275,7 +1275,7 @@ define(
           // Grab plain text from Clipboard API or convert existing HTML to plain text
           if (plainTextMode) {
             // Use plain text contents from Clipboard API unless the HTML contains paragraphs then
-            // we should convert the HTML to plain text since events better when pasting HTML/Word contents as plain text
+            // we should convert the HTML to plain text since projects better when pasting HTML/Word contents as plain text
             if (hasContentType(clipboardContent, 'text/plain') && isPlainTextHtml) {
               content = clipboardContent['text/plain'];
             } else {
@@ -2296,7 +2296,7 @@ define(
         }
       });
 
-      // Block all drag/drop events
+      // Block all drag/drop projects
       if (editor.settings.paste_block_drop) {
         editor.on('dragend dragover draggesture dragdrop drop drag', function (e) {
           e.preventDefault();

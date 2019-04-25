@@ -58,6 +58,7 @@ class ProjectController extends AppBaseController
 
     public function create()
     {
+        $this->data['categories'] = config('sistema.categories');
         return view($this->modelPlural.'.create')->with($this->data);
     }
 
@@ -89,6 +90,8 @@ class ProjectController extends AppBaseController
         if (empty($this->data['item']))
             return redirect()->back()->withErrors($this->show_failure_message);
 
+        $this->data['categories'] = config('sistema.categories');
+
         return view($this->modelPlural.'.edit')->with($this->data);
     }
 
@@ -97,23 +100,20 @@ class ProjectController extends AppBaseController
         $this->data['item'] = $this->repo->findWithoutFail($id);
         $this->data['items'] = $this->repo->all();
 
-        if($request['active'] == 0)
-            $request['active'] = 1;
-
         if (!$this->data['item'])
             return redirect()->back()->withErrors($this->update_failure_message);
 
         $this->data['item'] = $this->repo->update($request->all(), $id);
 
 
-        if($this->data['item']->active == 1){
-            foreach($this->data['items'] as $far){
-                $far->active = null;
-                $far->save();
-            }
-            $this->data['item']->active = 1;
-            $this->data['item']->save();
-        }
+//        if($this->data['item']->active == 1){
+//            foreach($this->data['items'] as $far){
+//                $far->active = null;
+//                $far->save();
+//            }
+//            $this->data['item']->active = 1;
+//            $this->data['item']->save();
+//        }
 
         return redirect(route($this->modelPlural.'.index'))->with('ok', $this->update_success_message);
     }

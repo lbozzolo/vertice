@@ -265,7 +265,7 @@
 	};
 	
 	/**
-	 * Debounce all fired events types listed in `types`
+	 * Debounce all fired projects types listed in `types`
 	 * while executing the provided `fn`.
 	 *
 	 * @param {object} self
@@ -291,7 +291,7 @@
 		fn.apply(self, []);
 		self.trigger = trigger;
 	
-		// trigger queued events
+		// trigger queued projects
 		for (type in event_args) {
 			if (event_args.hasOwnProperty(type)) {
 				trigger.apply(self, event_args[type]);
@@ -714,7 +714,7 @@
 	
 			$document.on('mousedown' + eventNS, function(e) {
 				if (self.isFocused) {
-					// prevent events on the dropdown scrollbar from causing the control to blur
+					// prevent projects on the dropdown scrollbar from causing the control to blur
 					if (e.target === self.$dropdown[0] || e.target.parentNode === self.$dropdown[0]) {
 						return false;
 					}
@@ -810,7 +810,7 @@
 		},
 	
 		/**
-		 * Maps fired events to callbacks provided
+		 * Maps fired projects to callbacks provided
 		 * in the settings used when creating the control.
 		 */
 		setupCallbacks: function() {

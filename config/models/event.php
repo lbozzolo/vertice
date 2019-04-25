@@ -1,7 +1,7 @@
 <?php
 
     $model = 'event';
-    $model_plural = 'events';
+    $model_plural = 'projects';
     $model_spanish = 'evento';
     $model_spanish_plural = 'eventos';
 

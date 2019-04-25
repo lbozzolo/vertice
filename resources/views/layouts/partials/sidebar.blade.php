@@ -17,19 +17,26 @@
             </a>
         </li>
 
-        <li class="{{ Request::is('eventos*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('events.index') !!}" class="nav-link">
+        <li class="{{ Request::is('proyectos*') ? 'active' : '' }} nav-item">
+            <a href="{!! route('projects.index') !!}" class="nav-link">
                 <i class="mdi mdi-receipt menu-icon"></i>
-                <span class="menu-title">Eventos</span>
+                <span class="menu-title">Proyectos</span>
             </a>
         </li>
 
-        <li class="{{ Request::is('imagenes*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('medias.index') !!}" class="nav-link">
-                <i class="mdi mdi-image menu-icon"></i>
-                <span class="menu-title">Media</span>
+        <li class="{{ Request::is('servicios*') ? 'active' : '' }} nav-item">
+            <a href="{!! route('services.index') !!}" class="nav-link">
+                <i class="mdi mdi-receipt menu-icon"></i>
+                <span class="menu-title">Servicios</span>
             </a>
         </li>
+
+        {{--<li class="{{ Request::is('imagenes*') ? 'active' : '' }} nav-item">--}}
+            {{--<a href="{!! route('medias.index') !!}" class="nav-link">--}}
+                {{--<i class="mdi mdi-image menu-icon"></i>--}}
+                {{--<span class="menu-title">Media</span>--}}
+            {{--</a>--}}
+        {{--</li>--}}
 
         <li class="{{ Request::is('categories') ? 'active' : '' }} nav-item">
             <a href="{!! route('categories.index') !!}" class="nav-link">
@@ -38,12 +45,12 @@
             </a>
         </li>
 
-        <li class="{{ Request::is('sliders*') ? 'active' : '' }} nav-item">
-            <a href="{!! route('sliders.index') !!}" class="nav-link">
-                <i class="mdi mdi-folder-multiple-image menu-icon"></i>
-                <span class="menu-title">Sliders</span>
-            </a>
-        </li>
+        {{--<li class="{{ Request::is('sliders*') ? 'active' : '' }} nav-item">--}}
+            {{--<a href="{!! route('sliders.index') !!}" class="nav-link">--}}
+                {{--<i class="mdi mdi-folder-multiple-image menu-icon"></i>--}}
+                {{--<span class="menu-title">Sliders</span>--}}
+            {{--</a>--}}
+        {{--</li>--}}
 
     </ul>
 </nav>

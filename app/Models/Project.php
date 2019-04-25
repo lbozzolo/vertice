@@ -13,7 +13,7 @@ class Project extends Entity
     public $fillable = [
         'title',
         'description',
-        'type',
+        'url',
         'active'
     ];
 
@@ -26,5 +26,10 @@ class Project extends Entity
         'title' => 'required',
         'description' => 'required'
     ];
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'categories_projects');
+    }
 
 }

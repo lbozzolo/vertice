@@ -11,7 +11,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $categories = config('sistema.interest-areas');
+        $categories = config('sistema.categories');
 
         foreach ($categories as $key => $value) {
             DB::table('categories')->insert([

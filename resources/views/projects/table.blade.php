@@ -4,7 +4,7 @@
             <th>Id</th>
             <th>Título</th>
             <th>Fecha</th>
-            <th>Tipo</th>
+            <th>Categorías</th>
             <th>Estado</th>
             <th>Opciones</th>
         </tr>
@@ -16,11 +16,11 @@
             <td>{!! $item->title !!}</td>
             <td>{!! $item->fecha_creado !!}</td>
             <td>
-                @if($item->type == 'past')
-                    <label class="badge badge-warning">pasado</label>
-                @else
-                    <label class="badge badge-primary">presente</label>
-                @endif
+                @foreach($item->categories as $category)
+
+                    <label class="badge badge-info">{!! $category->name !!}</label>
+
+                @endforeach
             </td>
             <td>
                 @if($item->active)

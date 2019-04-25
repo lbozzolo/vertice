@@ -6,25 +6,22 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
 use Vertice\Http\Controllers\AppBaseController as AppBaseController;
 use Vertice\Http\Requests\ContactRequest;
-use Vertice\Http\Requests\CreateApplicantRequest;
 use Vertice\Models\Applicant;
-use Vertice\Models\Category;
 use Illuminate\Support\Facades\Mail;
+use Vertice\Models\Category;
 use Vertice\Models\Image;
+use Vertice\Models\Project;
 use Vertice\Models\Slider;
-use Vertice\Models\Work;
 
 class WebController extends AppBaseController
 {
 
     public function index()
     {
-        $data['slider'] = Slider::where('active', '1')->first();
-        $data['images'] = ($data['slider'])? $data['slider']->images->sortByDesc('main') : '';
-        $data['countries'] = config('sistema.countries');
-        $data['provinces'] = config('sistema.provinces');
-        $data['interest_areas'] = Category::pluck('name', 'id');
         $data['slider'] = Slider::where('active', '!=', null)->first();
+        $data['projects'] = Project::where('active', '=', 1)->get();
+        $data['categories'] = Category::all();
+        //dd($data);
 
         return view('web.home')->with($data);
     }

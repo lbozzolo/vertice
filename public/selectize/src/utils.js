@@ -125,7 +125,7 @@ var debounce = function(fn, delay) {
 };
 
 /**
- * Debounce all fired events types listed in `types`
+ * Debounce all fired projects types listed in `types`
  * while executing the provided `fn`.
  *
  * @param {object} self
@@ -151,7 +151,7 @@ var debounce_events = function(self, types, fn) {
 	fn.apply(self, []);
 	self.trigger = trigger;
 
-	// trigger queued events
+	// trigger queued projects
 	for (type in event_args) {
 		if (event_args.hasOwnProperty(type)) {
 			trigger.apply(self, event_args[type]);

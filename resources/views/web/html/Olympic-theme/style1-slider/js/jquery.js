@@ -397,7 +397,7 @@ jQuery.extend({
     // If there are functions bound, to execute
     readyList.resolveWith( document, [ jQuery ] );
 
-    // Trigger any bound ready events
+    // Trigger any bound ready projects
     if ( jQuery.fn.trigger ) {
       jQuery( document ).trigger("ready").off("ready");
     }
@@ -4317,7 +4317,7 @@ function safeActiveElement() {
 }
 
 /*
- * Helper functions for managing events -- not part of the public interface.
+ * Helper functions for managing projects -- not part of the public interface.
  * Props to Dean Edwards' addEvent library for many of the ideas.
  */
 jQuery.event = {
@@ -4331,7 +4331,7 @@ jQuery.event = {
       special, handlers, type, namespaces, origType,
       elemData = data_priv.get( elem );
 
-    // Don't attach events to noData or text/comment nodes (but allow plain objects)
+    // Don't attach projects to noData or text/comment nodes (but allow plain objects)
     if ( !elemData ) {
       return;
     }
@@ -4360,11 +4360,11 @@ jQuery.event = {
           jQuery.event.dispatch.apply( eventHandle.elem, arguments ) :
           undefined;
       };
-      // Add elem as a property of the handle fn to prevent a memory leak with IE non-native events
+      // Add elem as a property of the handle fn to prevent a memory leak with IE non-native projects
       eventHandle.elem = elem;
     }
 
-    // Handle multiple events separated by a space
+    // Handle multiple projects separated by a space
     types = ( types || "" ).match( core_rnotwhite ) || [""];
     t = types.length;
     while ( t-- ) {
@@ -4403,7 +4403,7 @@ jQuery.event = {
         handlers = events[ type ] = [];
         handlers.delegateCount = 0;
 
-        // Only use addEventListener if the special events handler returns false
+        // Only use addEventListener if the special projects handler returns false
         if ( !special.setup || special.setup.call( elem, data, namespaces, eventHandle ) === false ) {
           if ( elem.addEventListener ) {
             elem.addEventListener( type, eventHandle, false );
@@ -4426,7 +4426,7 @@ jQuery.event = {
         handlers.push( handleObj );
       }
 
-      // Keep track of which events have ever been used, for event optimization
+      // Keep track of which projects have ever been used, for event optimization
       jQuery.event.global[ type ] = true;
     }
 
@@ -4434,7 +4434,7 @@ jQuery.event = {
     elem = null;
   },
 
-  // Detach an event or set of events from an element
+  // Detach an event or set of projects from an element
   remove: function( elem, types, handler, selector, mappedTypes ) {
 
     var j, origCount, tmp,
@@ -4454,7 +4454,7 @@ jQuery.event = {
       type = origType = tmp[1];
       namespaces = ( tmp[2] || "" ).split( "." ).sort();
 
-      // Unbind all events (on this namespace, if provided) for the element
+      // Unbind all projects (on this namespace, if provided) for the element
       if ( !type ) {
         for ( type in events ) {
           jQuery.event.remove( elem, type + types[ t ], handler, selector, true );
@@ -4467,7 +4467,7 @@ jQuery.event = {
       handlers = events[ type ] || [];
       tmp = tmp[2] && new RegExp( "(^|\\.)" + namespaces.join("\\.(?:.*\\.|)") + "(\\.|$)" );
 
-      // Remove matching events
+      // Remove matching projects
       origCount = j = handlers.length;
       while ( j-- ) {
         handleObj = handlers[ j ];
@@ -4514,7 +4514,7 @@ jQuery.event = {
 
     cur = tmp = elem = elem || document;
 
-    // Don't do events on text and comment nodes
+    // Don't do projects on text and comment nodes
     if ( elem.nodeType === 3 || elem.nodeType === 8 ) {
       return;
     }
@@ -4555,13 +4555,13 @@ jQuery.event = {
       [ event ] :
       jQuery.makeArray( data, [ event ] );
 
-    // Allow special events to draw outside the lines
+    // Allow special projects to draw outside the lines
     special = jQuery.event.special[ type ] || {};
     if ( !onlyHandlers && special.trigger && special.trigger.apply( elem, data ) === false ) {
       return;
     }
 
-    // Determine event propagation path in advance, per W3C events spec (#9951)
+    // Determine event propagation path in advance, per W3C projects spec (#9951)
     // Bubble up to document, then to window; watch for a global ownerDocument var (#9724)
     if ( !onlyHandlers && !special.noBubble && !jQuery.isWindow( elem ) ) {
 
@@ -4748,7 +4748,7 @@ jQuery.event = {
     props: "char charCode key keyCode".split(" "),
     filter: function( event, original ) {
 
-      // Add which for key events
+      // Add which for key projects
       if ( event.which == null ) {
         event.which = original.charCode != null ? original.charCode : original.keyCode;
       }
@@ -4811,7 +4811,7 @@ jQuery.event = {
     }
 
     // Support: Cordova 2.5 (WebKit) (#13255)
-    // All events should have a target; Cordova deviceready doesn't
+    // All projects should have a target; Cordova deviceready doesn't
     if ( !event.target ) {
       event.target = document;
     }
@@ -4827,7 +4827,7 @@ jQuery.event = {
 
   special: {
     load: {
-      // Prevent triggered image.load events from bubbling to window.load
+      // Prevent triggered image.load projects from bubbling to window.load
       noBubble: true
     },
     focus: {
@@ -4970,7 +4970,7 @@ jQuery.Event.prototype = {
   }
 };
 
-// Create mouseenter/leave events using mouseover/out and event-time checks
+// Create mouseenter/leave projects using mouseover/out and event-time checks
 // Support: Chrome 15+
 jQuery.each({
   mouseenter: "mouseover",
@@ -4998,7 +4998,7 @@ jQuery.each({
   };
 });
 
-// Create "bubbling" focus and blur events
+// Create "bubbling" focus and blur projects
 // Support: Firefox, Chrome, Safari
 if ( !jQuery.support.focusinBubbles ) {
   jQuery.each({ focus: "focusin", blur: "focusout" }, function( orig, fix ) {
@@ -5732,7 +5732,7 @@ jQuery.extend({
       }
     }
 
-    // Copy the events from the original to the clone
+    // Copy the projects from the original to the clone
     if ( dataAndEvents ) {
       if ( deepDataAndEvents ) {
         srcElements = srcElements || getAll( elem );
@@ -5935,7 +5935,7 @@ function cloneCopyEvent( src, dest ) {
     return;
   }
 
-  // 1. Copy private data: events, handlers, etc.
+  // 1. Copy private data: projects, handlers, etc.
   if ( data_priv.hasData( src ) ) {
     pdataOld = data_priv.access( src );
     pdataCur = data_priv.set( dest, pdataOld );
@@ -6938,7 +6938,7 @@ jQuery.fn.load = function( url, params, callback ) {
   return this;
 };
 
-// Attach a bunch of functions for handling common AJAX events
+// Attach a bunch of functions for handling common AJAX projects
 jQuery.each( [ "ajaxStart", "ajaxStop", "ajaxComplete", "ajaxError", "ajaxSuccess", "ajaxSend" ], function( i, type ){
   jQuery.fn[ type ] = function( fn ){
     return this.on( type, fn );
@@ -7059,7 +7059,7 @@ jQuery.extend({
       timeoutTimer,
       // Cross-domain detection vars
       parts,
-      // To know if global events are to be dispatched
+      // To know if global projects are to be dispatched
       fireGlobals,
       // Loop variable
       i,
@@ -7067,7 +7067,7 @@ jQuery.extend({
       s = jQuery.ajaxSetup( {}, options ),
       // Callbacks context
       callbackContext = s.context || s,
-      // Context for global events is callbackContext if it is a DOM node or jQuery collection
+      // Context for global projects is callbackContext if it is a DOM node or jQuery collection
       globalEventContext = s.context && ( callbackContext.nodeType || callbackContext.jquery ) ?
         jQuery( callbackContext ) :
         jQuery.event,
@@ -7194,7 +7194,7 @@ jQuery.extend({
       return jqXHR;
     }
 
-    // We can fire global events as of now if asked to
+    // We can fire global projects as of now if asked to
     fireGlobals = s.global;
 
     // Watch for a new set of requests
@@ -7834,7 +7834,7 @@ jQuery.ajaxTransport(function( options ) {
             }
           };
         };
-        // Listen to events
+        // Listen to projects
         xhr.onload = callback();
         xhr.onerror = callback("error");
         // Create the abort callback

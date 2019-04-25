@@ -40,9 +40,9 @@ class Category extends Entity
         'name' => 'required'
     ];
 
-    public function applicants()
+    public function projects()
     {
-        return $this->belongsToMany(Applicant::class, 'applicants_categories');
+        return $this->belongsToMany(Project::class, 'categories_projects');
     }
 
     

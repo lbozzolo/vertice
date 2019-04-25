@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateEventsTable extends Migration
+class CreateProjectsTable extends Migration
 {
 
     /**
@@ -18,8 +18,8 @@ class CreateEventsTable extends Migration
 
             $table->increments('id');
             $table->string('title');
-            $table->text('description')->nullable();
-            $table->integer('type')->nullable();
+            $table->string('description')->nullable();
+            $table->string('url')->nullable();
             $table->integer('active')->nullable();
 
             $table->index('id');
@@ -36,6 +36,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('events');
+        Schema::drop('projects');
     }
 }

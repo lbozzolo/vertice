@@ -21,11 +21,13 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('users', 'UserController');
 
-    Route::resource('events', 'ProjectController');
+    Route::resource('projects', 'ProjectController');
 
     Route::resource('images', 'ImageController');
 
     Route::resource('categories', 'CategoryController');
+
+    Route::resource('services', 'ServiceController');
 
     Route::resource('sliders', 'SliderController');
 

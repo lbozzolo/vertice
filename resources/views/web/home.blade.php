@@ -259,96 +259,42 @@
         <div class="line1"></div>
         <div class="col-md-12 no-padding portfolio-main">
             <ul id="filters" class="clearfix">
-                <li><span class="filter active" data-filter="sort1 sort2 sort3 sort4">All</span></li>
-                <li><span class="filter" data-filter="sort1">Web Design</span></li>
-                <li><span class="filter" data-filter="sort2">Photography</span></li>
-                <li><span class="filter" data-filter="sort3">Video</span></li>
-                <li><span class="filter" data-filter="sort4">Branding</span></li>
+                <li><span class="filter active" data-filter="@foreach($categories as $category) {!! $category->slug !!} @endforeach">Todo</span></li>
+                @foreach($categories as $category)
+                    <li><span class="filter" data-filter="{!! $category->slug !!}">{!! $category->name !!}</span></li>
+                @endforeach
+                {{--<li><span class="filter active" data-filter="sort1 sort2 sort3 sort4">Todo</span></li>--}}
+                {{--<li><span class="filter" data-filter="sort1">Web</span></li>--}}
+                {{--<li><span class="filter" data-filter="sort2">Projecto</span></li>--}}
+                {{--<li><span class="filter" data-filter="sort3">Sistema</span></li>--}}
+                {{--<li><span class="filter" data-filter="sort4">Branding</span></li>--}}
             </ul>
             <div id="portfoliolist">
-                <div class="portfolio sort1 animated" data-cat="sort1">
-                    <div class="portfolio-wrapper">
-                        <img src="{{ asset('template-web/demo/works/1.jpg') }}" alt="" />
-                        <div class="overlay1">
-                            <a href="./portfolio_single_img.html">
-                                <div class="overlay-text">View Project</div>
-                            </a>
+
+                @forelse($projects as $project)
+
+                    <div class="portfolio animated {!! $project->categories->first()->slug !!}" data-cat="{!! $project->categories->first()->slug !!}">
+                        <div class="portfolio-wrapper">
+                            @if($project->mainImage())
+                            <img src="{{ asset('imagenes/thumb-'.$project->mainImage()->path) }}" alt="" />
+                            @endif
+                            <div class="overlay1">
+                                <a href="{!! $project->url !!}" target="_blank">
+                                    <div class="overlay-text">Visitar web</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio sort2 animated" data-cat="sort2">
-                    <div class="portfolio-wrapper">
-                        <img src="{{ asset('template-web/demo/works/2.jpg') }}" alt="" />
-                        <div class="overlay1">
-                            <a href="./portfolio_single_video.html">
-                                <div class="overlay-text">View Project</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio sort3 animated" data-cat="sort3">
-                    <div class="portfolio-wrapper">
-                        <img src="{{ asset('template-web/demo/works/3.jpg') }}" alt="" />
-                        <div class="overlay1">
-                            <a href="./portfolio_single_slider.html">
-                                <div class="overlay-text">View Project</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio sort4 animated" data-cat="sort4">
-                    <div class="portfolio-wrapper">
-                        <img src="{{ asset('template-web/demo/works/4.jpg') }}" alt="" />
-                        <div class="overlay1">
-                            <a href="./portfolio_single_img.html">
-                                <div class="overlay-text">View Project</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio sort1 animated" data-cat="sort1">
-                    <div class="portfolio-wrapper">
-                        <img src="{{ asset('template-web/demo/works/6.jpg') }}" alt="" />
-                        <div class="overlay1">
-                            <a href="./portfolio_single_video.html">
-                                <div class="overlay-text">View Project</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio sort2 animated" data-cat="sort2">
-                    <div class="portfolio-wrapper">
-                        <img src="{{ asset('template-web/demo/works/5.jpg') }}" alt="" />
-                        <div class="overlay1">
-                            <a href="./portfolio_single_slider.html">
-                                <div class="overlay-text">View Project</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio sort3 animated" data-cat="sort3">
-                    <div class="portfolio-wrapper">
-                        <img src="{{ asset('template-web/demo/works/7.jpg') }}" alt="" />
-                        <div class="overlay1">
-                            <a href="./portfolio_single_img.html">
-                                <div class="overlay-text">View Project</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio sort4 animated" data-cat="sort4">
-                    <div class="portfolio-wrapper">
-                        <img src="{{ asset('template-web/demo/works/8.jpg') }}" alt="" />
-                        <div class="overlay1">
-                            <a href="./portfolio_single_video.html">
-                                <div class="overlay-text">View Project</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
+                @empty
+
+                    <p>Todavía no hay ningún proyecto cargado</p>
+
+                @endforelse
+
             </div>
         </div>
-        <a class="btn1" href="#">Load More</a>
+        {{--<a class="btn1" href="#">Load More</a>--}}
     </section>
     <!-- Portfolio content -->
 

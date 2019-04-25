@@ -656,7 +656,7 @@ define(
 
         panel = match.toolbar.panel;
 
-        // Only show the panel on some events not for example nodeChange since that fires when context menu is opened
+        // Only show the panel on some projects not for example nodeChange since that fires when context menu is opened
         if (shouldShow) {
           panel.show();
         }
@@ -1453,7 +1453,7 @@ define(
 
       var hide = function () {
         if (panel) {
-          // We require two events as the inline float panel based toolbar does not have autohide=true
+          // We require two projects as the inline float panel based toolbar does not have autohide=true
           panel.hide();
 
           // All other autohidden float panels will be closed below.

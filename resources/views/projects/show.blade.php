@@ -9,7 +9,7 @@
                 <span class="text-warning">Detalles</span>
             </h1>
 
-            @include('events.show_fields')
+            @include('projects.show_fields')
 
         </div>
     </div>
