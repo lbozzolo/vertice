@@ -22,37 +22,22 @@ Route::get('home', function () {
 });
 
 
-Route::group(['prefix' => 'web'], function () {
+//Route::group(['prefix' => 'web'], function () {
 
     Route::get('/', [
         'as' => 'home',
         'uses' => 'WebController@index'
     ]);
 
-    Route::get('past', [
-        'as' => 'pictures.past',
-        'uses' => 'WebController@past'
-    ]);
-
-    Route::get('/present', [
-        'as' => 'pictures.present',
-        'uses' => 'WebController@present'
-    ]);
-
-    Route::get('/works', [
-        'as' => 'works',
-        'uses' => 'WebController@works'
-    ]);
-
-    Route::post('/enviar-datos', [
-        'as' => 'send.data.applicant',
-        'uses' => 'WebController@sendDataApplicant'
-    ]);
-
-
     Route::get('/home', 'WebController@index');
 
-});
+    Route::get('/contacto', [
+        'as' => 'contacto',
+        'uses' => 'WebController@contacto'
+    ]);
+
+
+//});
 
 
 

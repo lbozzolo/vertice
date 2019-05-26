@@ -26,27 +26,9 @@ class WebController extends AppBaseController
         return view('web.home')->with($data);
     }
 
-    public function past()
+    public function contacto()
     {
-        $data['past_big'] = Image::where('type', 0)->where('thumbnail_id', '!=', null)->get();
-        $data['past_thumb'] = Image::where('type', 0)->where('thumbnail_id', '=', null)->get();
-
-        return view('web.past')->with($data);
-    }
-
-    public function present()
-    {
-        $data['present_big'] = Image::where('type', 1)->where('thumbnail_id', '!=', null)->get();
-        $data['present_thumb'] = Image::where('type', 1)->where('thumbnail_id', '=', null)->get();
-
-        return view('web.present')->with($data);
-    }
-
-    public function works()
-    {
-        $data['works'] = Work::all();
-
-        return view('web.works')->with($data);
+        return view('web.contact');
     }
 
     public function sendDataApplicant(CreateApplicantRequest $request)

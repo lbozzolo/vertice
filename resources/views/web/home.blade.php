@@ -68,26 +68,39 @@
                                 </li>
                             </ul>
                         </div>
+                        {{--<a href="{{ route('contacto') }}" target="_blank" class="btn btn-primary">Cotactanos ahora</a>--}}
+                        {{--<a href="#contact" class="btn btn-primary" style="z-index: -1">Cotactanos ahora</a>--}}
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
     <!-- Intro top content -->
 
     <!-- Welcome content -->
-    <section class="welcome-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 welcome-text animated">
-                    <h3>Bienvenidos a nuestra agencia</h3>
-                    <div class="line1"></div>
-                    <p>Vestibulum pulvinar adipiscing turpis vitae ultrices. Suspendisse eu lectus dui, vitae lobortis lorem. Fusce gravida nibh et ante accusan molestie. Duis convallis semper felis. Curabitur fringilla placerat vestibulum. Aenean dignissim libero et quam tristique vel vehicula nunc suscipit. Fusce id dui sem. Cras gravida odio et magna faucbus iaculis. Vestibulum ante ipsum primis in faucibus orci. Luctus et ultrices posuere..</p>
-                    <a class="btn1" href="#">Read More</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{--<section class="welcome-content">--}}
+        {{--<div class="container">--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-md-12 welcome-text animated">--}}
+                    {{--<h3>Bienvenidos a nuestra agencia</h3>--}}
+                    {{--<div class="line1"></div>--}}
+                    {{--<p>--}}
+                        {{--Vestibulum pulvinar adipiscing turpis vitae ultrices.--}}
+                        {{--Suspendisse eu lectus dui, vitae lobortis lorem. Fusce gravida nibh et ante accusan molestie. Duis convallis semper felis.--}}
+                        {{--Curabitur fringilla placerat vestibulum. Aenean dignissim libero et quam tristique vel vehicula nunc suscipit.--}}
+                        {{--Fusce id dui sem. Cras gravida odio et magna faucbus iaculis. Vestibulum ante ipsum primis in faucibus orci.--}}
+                        {{--Luctus et ultrices posuere.--}}
+                    {{--</p>--}}
+                    {{--<a class="btn1" href="#">Read More</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
     <!-- Welcome content -->
 
     <!-- Facts content -->
@@ -99,12 +112,12 @@
                 <div class="col-md-6 fact-info animated">
                     <h4><em id="lines">0</em> <span>Proyectos</span></h4>
                     <div class="line2"></div>
-                    <p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>
+                    <p>Exitosos proyectos que tuvimos el placer de construir junto a nuestros clientes.</p>
                 </div>
                 <div class="col-md-6 fact-info animated">
                     <h4><em id="lines1">0</em> <span>Clientes</span></h4>
                     <div class="line2"></div>
-                    <p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>
+                    <p>Satisfechos clientes que siempre vuelven a recurrir a nosotros y nos recomiendan constantemente.</p>
                 </div>
                 {{--<div class="col-md-3 fact-info animated">--}}
                     {{--<h4><em id="lines2">0</em> <span>Pizza's Ordered</span></h4>--}}
@@ -128,36 +141,41 @@
                 <div class="fade-text animated">
                     <h3>Quiénes somos</h3>
                     <div class="line1"></div>
-                    <p>Somos un equipo de profesionales preparados para encontrarte la vuelta a tus ideas, negocios o proyectos a los que quieras dar un impulso y crecimiento.</p>
+                    <p>
+                    Somos un equipo de profesionales preparados para encontrarle la vuelta a tus ideas, negocios o proyectos
+                    dándoles impulso y crecimiento.<br>
+                    Nos destaca el compromiso constante con la satisfacción de nuestros clientes. A cada inquietud que surge, ofrecemos siempre
+                    una solución.
+                    </p>
                 </div>
                 <div class="space90"></div>
                 <div class="col-md-12 no-padding">
                     <div class="col-md-3 staff-content animated"></div>
                     <div class="col-md-3 staff-content animated">
                         <div class="staff-img">
-						<span class="overlay">
-							<ul class="team-social">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-skype"></i></a></li>
-							</ul>
-						</span>
-                            <img src="{{ asset('images/pela.jpg') }}" class="img-responsive" alt=""/>
+                            <span class="overlay">
+                                <ul class="team-social">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                            </span>
+                            {{--<img src="{{ asset('images/pela.jpg') }}" class="img-responsive" alt=""/>--}}
                         </div>
                         <h4>Fernando Alfonso <span>Analista</span></h4>
                     </div>
                     <div class="col-md-3 staff-content animated">
                         <div class="staff-img">
-						<span class="overlay">
-							<ul class="team-social">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-skype"></i></a></li>
-							</ul>
-						</span>
-                            <img src="{{ asset('images/lucas.jpg') }}" class="img-responsive" alt=""/>
+                            <span class="overlay">
+                                <ul class="team-social">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                            </span>
+                            {{--<img src="{{ asset('images/lucas.jpg') }}" class="img-responsive" alt=""/>--}}
                         </div>
                         <h4>Lucas Bozzolo <span>Programador</span></h4>
                     </div>
@@ -203,46 +221,67 @@
                 <div class="fade-text animated">
                     <h3>Nuestros servicios</h3>
                     <div class="line3"></div>
-                    <p>Aenean dignissim libero et quam tristique vel vehicula nunc suscipit. Fusce id dui sem. Cras gravida odio et magna faucbus iaculis. Vestibulum ante ipsum primis in faucibus orci. Luctus et ultrices posuere..</p>
+                    <p>
+                        Te ofrecemos numerosos productos y servicios que se adaptan justamente a lo que requiere tu empresa.
+                        Si necesitás un servicio diferente consultanos que siempre podremos resolverlo.
+                    </p>
                 </div>
                 <div class="space60"></div>
                 <div class="col-md-12 no-padding space30">
                     <div class="col-md-4 service-content animated">
-                        <div class="service-content-inner">
-                            <img src="{{ asset('template-web/images/ico1.png') }}" alt=""/>
-                            <h4>Mobile Application</h4>
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-cellphone-android" style="font-size: 5em"></i>
+                            <h4>Aplicaciones Mobile</h4>
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
-                        <div class="service-content-inner">
-                            <img src="{{ asset('template-web/images/ico2.png') }}" alt=""/>
-                            <h4>Photography</h4>
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-tune-vertical" style="font-size: 5em"></i>
+                            <h4>Sitios autoadministrables</h4>
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
-                        <div class="service-content-inner">
-                            <img src="{{ asset('template-web/images/ico3.png') }}" alt=""/>
-                            <h4>Email Marketing</h4>
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-email-outline" style="font-size: 5em"></i>
+                            <h4>Envío de Newsletter</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 no-padding">
                     <div class="col-md-4 service-content animated">
-                        <div class="service-content-inner">
-                            <img src="{{ asset('template-web/images/ico4.png') }}" alt=""/>
-                            <h4>Networking</h4>
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-wordpress" style="font-size: 5em"></i>
+                            <h4>Moodle / Wordpress</h4>
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
-                        <div class="service-content-inner">
-                            <img src="{{ asset('template-web/images/ico5.png') }}" alt=""/>
-                            <h4>Web Designing</h4>
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-laptop-mac" style="font-size: 5em"></i>
+                            <h4>Diseño Web</h4>
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
-                        <div class="service-content-inner">
-                            <img src="{{ asset('template-web/images/ico6.png') }}" alt=""/>
-                            <h4>Branding</h4>
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-wrench" style="font-size: 5em"></i>
+                            <h4>Soporte</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-database" style="font-size: 5em"></i>
+                            <h4>Hosting</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-cart-outline" style="font-size: 5em"></i>
+                            <h4>Tienda online</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-currency-usd" style="font-size: 5em"></i>
+                            <h4>Marketing digital</h4>
                         </div>
                     </div>
                 </div>
@@ -259,11 +298,11 @@
         <div class="line1"></div>
         <div class="col-md-12 no-padding portfolio-main">
             <ul id="filters" class="clearfix">
-                <li><span class="filter active" data-filter="@foreach($categories as $category) {!! $category->slug !!} @endforeach">Todo</span></li>
-                @foreach($categories as $category)
-                    <li><span class="filter" data-filter="{!! $category->slug !!}">{!! $category->name !!}</span></li>
-                @endforeach
-                {{--<li><span class="filter active" data-filter="sort1 sort2 sort3 sort4">Todo</span></li>--}}
+                {{--<li><span class="filter active" data-filter="@foreach($categories as $category) {!! $category->slug !!} @endforeach">Todo</span></li>--}}
+                {{--@foreach($categories as $category)--}}
+                    {{--<li><span class="filter" data-filter="{!! $category->slug !!}">{!! $category->name !!}</span></li>--}}
+                {{--@endforeach--}}
+                {{--<li><span class="filter active" data-filter="sort1 sort2 sort3 sort4">all</span></li>--}}
                 {{--<li><span class="filter" data-filter="sort1">Web</span></li>--}}
                 {{--<li><span class="filter" data-filter="sort2">Projecto</span></li>--}}
                 {{--<li><span class="filter" data-filter="sort3">Sistema</span></li>--}}
@@ -353,11 +392,8 @@
                 <div class="space80"></div>
                 <div class="col-md-12 no-padding">
                     <div class="col-md-4 contact-info animated">
-                        <h5><i class="fa fa-phone"></i> Teléfonos</h5>
-                        <p>
-                            +54-911-6358-3276<br>
-                            +54-911-5132-1300
-                        </p>
+                        <h5><i class="fa fa-phone"></i> Teléfono</h5>
+                        <p>+54-911-6358-3276</p>
                     </div>
                     <div class="col-md-4 contact-info animated">
                         <h5><i class="fa fa-map-marker"></i> Dirección</h5>

@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="{{ asset('template-web/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('template-web/css/flexslider.css') }}"/>
 <link rel="stylesheet" href="{{ asset('template-web/css/animate.css') }}"/>
+<link rel="stylesheet" href="{{ asset('staradmin/vendors/iconfonts/mdi/css/materialdesignicons.min.css') }}">
 
 <!-- Add custom CSS here -->
 <link href="{{ asset('template-web/css/custom.css') }}" rel="stylesheet">
