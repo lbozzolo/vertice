@@ -6,7 +6,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="#page-top" style="margin-top: 0px">
-                    <img src="{{ asset('images/logos/logo_sin_cubo_gris.png') }}" alt="logo" height="50">
+                    <img src="{{ asset('images/logos/logo_sin_cubo_gris_medio.png') }}" alt="logo" height="50">
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
