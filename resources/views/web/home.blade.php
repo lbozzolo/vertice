@@ -80,9 +80,9 @@
 
     </section>
 
-    <!-- Intro top content -->
-
     <!-- Welcome content -->
+
+    {{--<!-- Welcome content -->--}}
     {{--<section class="welcome-content">--}}
         {{--<div class="container">--}}
             {{--<div class="row">--}}
@@ -101,38 +101,7 @@
             {{--</div>--}}
         {{--</div>--}}
     {{--</section>--}}
-    <!-- Welcome content -->
-
-    <!-- Facts content -->
-    <section class="facts-content" id="facts" data-slide="2" data-stellar-background-ratio="0.5">
-        <div class="cover"></div>
-        <div class="container">
-            <div class="row">
-                <h3>Algunos números</h3>
-                <div class="col-md-6 fact-info animated">
-                    <h4><em id="lines">0</em> <span>Proyectos</span></h4>
-                    <div class="line2"></div>
-                    <p>Exitosos proyectos que tuvimos el placer de construir junto a nuestros clientes.</p>
-                </div>
-                <div class="col-md-6 fact-info animated">
-                    <h4><em id="lines1">0</em> <span>Clientes</span></h4>
-                    <div class="line2"></div>
-                    <p>Satisfechos clientes que siempre vuelven a recurrir a nosotros y nos recomiendan constantemente.</p>
-                </div>
-                {{--<div class="col-md-3 fact-info animated">--}}
-                    {{--<h4><em id="lines2">0</em> <span>Pizza's Ordered</span></h4>--}}
-                    {{--<div class="line2"></div>--}}
-                    {{--<p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-3 fact-info animated">--}}
-                    {{--<h4><em id="lines3">0</em> <span>Awwards</span></h4>--}}
-                    {{--<div class="line2"></div>--}}
-                    {{--<p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>--}}
-                {{--</div>--}}
-            </div>
-        </div>
-    </section>
-    <!-- Facts content -->
+    {{--<!-- Welcome content -->--}}
 
     <!-- Team content -->
     <section class="team-content" id="team">
@@ -142,10 +111,10 @@
                     <h3>Quiénes somos</h3>
                     <div class="line1"></div>
                     <p>
-                    Somos un equipo de profesionales preparados para encontrarle la vuelta a tus ideas, negocios o proyectos
-                    dándoles impulso y crecimiento.<br>
-                    Nos destaca el compromiso constante con la satisfacción de nuestros clientes. A cada inquietud que surge, ofrecemos siempre
-                    una solución.
+                        Somos un equipo de profesionales preparados para encontrarle la vuelta a tus ideas, negocios o proyectos
+                        dándoles impulso y crecimiento.<br>
+                        Nos destaca el compromiso constante con la satisfacción de nuestros clientes. A cada inquietud que surge, ofrecemos siempre
+                        una solución.
                     </p>
                 </div>
                 <div class="space90"></div>
@@ -180,38 +149,90 @@
                         <h4>Lucas Bozzolo <span>Programador</span></h4>
                     </div>
                     {{--<div class="col-md-3 staff-content animated">--}}
-                        {{--<div class="staff-img">--}}
-						{{--<span class="overlay">--}}
-							{{--<ul class="team-social">--}}
-								{{--<li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
-								{{--<li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
-								{{--<li><a href="#"><i class="fa fa-dribbble"></i></a></li>--}}
-								{{--<li><a href="#"><i class="fa fa-skype"></i></a></li>--}}
-							{{--</ul>--}}
-						{{--</span>--}}
-                            {{--<img src="{{ asset('template-web/demo/team/3.jpg') }}" class="img-responsive" alt=""/>--}}
-                        {{--</div>--}}
-                        {{--<h4>John Dee <span>Web Designer</span></h4>--}}
+                    {{--<div class="staff-img">--}}
+                    {{--<span class="overlay">--}}
+                    {{--<ul class="team-social">--}}
+                    {{--<li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
+                    {{--<li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+                    {{--<li><a href="#"><i class="fa fa-dribbble"></i></a></li>--}}
+                    {{--<li><a href="#"><i class="fa fa-skype"></i></a></li>--}}
+                    {{--</ul>--}}
+                    {{--</span>--}}
+                    {{--<img src="{{ asset('template-web/demo/team/3.jpg') }}" class="img-responsive" alt=""/>--}}
+                    {{--</div>--}}
+                    {{--<h4>John Dee <span>Web Designer</span></h4>--}}
                     {{--</div>--}}
                     {{--<div class="col-md-3 staff-content animated">--}}
-                        {{--<div class="staff-img">--}}
-						{{--<span class="overlay">--}}
-							{{--<ul class="team-social">--}}
-								{{--<li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
-								{{--<li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
-								{{--<li><a href="#"><i class="fa fa-dribbble"></i></a></li>--}}
-								{{--<li><a href="#"><i class="fa fa-skype"></i></a></li>--}}
-							{{--</ul>--}}
-						{{--</span>--}}
-                            {{--<img src="{{ asset('template-web/demo/team/4.jpg') }}" class="img-responsive" alt=""/>--}}
-                        {{--</div>--}}
-                        {{--<h4>Mary Roberts <span>Web Developer</span></h4>--}}
+                    {{--<div class="staff-img">--}}
+                    {{--<span class="overlay">--}}
+                    {{--<ul class="team-social">--}}
+                    {{--<li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
+                    {{--<li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+                    {{--<li><a href="#"><i class="fa fa-dribbble"></i></a></li>--}}
+                    {{--<li><a href="#"><i class="fa fa-skype"></i></a></li>--}}
+                    {{--</ul>--}}
+                    {{--</span>--}}
+                    {{--<img src="{{ asset('template-web/demo/team/4.jpg') }}" class="img-responsive" alt=""/>--}}
+                    {{--</div>--}}
+                    {{--<h4>Mary Roberts <span>Web Developer</span></h4>--}}
                     {{--</div>--}}
                 </div>
             </div>
         </div>
     </section>
     <!-- Team content -->
+
+    <!-- Facts content -->
+    <section class="facts-content" id="facts" data-slide="2" data-stellar-background-ratio="0.5">
+        <div class="cover"></div>
+        <div class="container">
+            <div class="row">
+                <h3>Algunos números</h3>
+                <div class="col-md-6 fact-info animated">
+                    <h4><em id="lines">0</em> <span>Proyectos</span></h4>
+                    <div class="line2"></div>
+                    <p>Exitosos proyectos que tuvimos el placer de construir junto a nuestros clientes.</p>
+                </div>
+                <div class="col-md-6 fact-info animated">
+                    <h4><em id="lines1">0</em> <span>Clientes</span></h4>
+                    <div class="line2"></div>
+                    <p>Satisfechos clientes que siempre vuelven a recurrir a nosotros y nos recomiendan constantemente.</p>
+                </div>
+                {{--<div class="col-md-3 fact-info animated">--}}
+                    {{--<h4><em id="lines2">0</em> <span>Pizza's Ordered</span></h4>--}}
+                    {{--<div class="line2"></div>--}}
+                    {{--<p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>--}}
+                {{--</div>--}}
+                {{--<div class="col-md-3 fact-info animated">--}}
+                    {{--<h4><em id="lines3">0</em> <span>Awwards</span></h4>--}}
+                    {{--<div class="line2"></div>--}}
+                    {{--<p>Cras gravida odio et magna faucbus iaculis aenean dignissim libero et quam tristique.</p>--}}
+                {{--</div>--}}
+            </div>
+        </div>
+    </section>
+    <!-- Facts content -->
+
+    <section class="welcome-content">
+        <div class="container">
+            <div class="row">
+                <div class=" welcome-text animated">
+                    <h3>Con quiénes trabajamos</h3>
+                    <div class="line1"></div>
+                    <div class="text-center">
+                        <a href="https://www.cuartocreativo.com.ar/" target="_blank">
+                            <img src="{{ asset('images/cuarto_creativo.png') }}" width="300" style="margin: 30px">
+                        </a>
+                        <a href="http://www.rizomagroup.com.ar/" target="_blank">
+                            <img src="{{ asset('images/rizoma.png') }}" width="300" style="margin: 30px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Services content -->
     <section class="services-content" id="services" data-slide="3" data-stellar-background-ratio="0.5">
@@ -266,6 +287,28 @@
                             <h4>Soporte</h4>
                         </div>
                     </div>
+                    {{--nuevos--}}
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-radio-tower" style="font-size: 5em"></i>
+                            <h4>Streaming</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-widgets" style="font-size: 5em"></i>
+                            <h4>Desarrollos a medida</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 service-content animated">
+                        <div class="service-content-inner text-center">
+                            <i class="mdi mdi-account-location" style="font-size: 5em"></i>
+                            <h4>Consultoría</h4>
+                        </div>
+                    </div>
+                    {{--fin nuevos--}}
                     <div class="col-md-4 service-content animated">
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-database" style="font-size: 5em"></i>
@@ -337,7 +380,7 @@
     </section>
     <!-- Portfolio content -->
 
-    <!-- Testimonial content -->
+    {{--<!-- Testimonial content -->--}}
     {{--<section class="testimonial-wrap" id="testimonials" data-slide="4" data-stellar-background-ratio="0.5">--}}
         {{--<div class="cover"></div>--}}
         {{--<div class="container">--}}
@@ -374,39 +417,88 @@
             {{--</div>--}}
         {{--</div>--}}
     {{--</section>--}}
-    <!-- Testimonial content -->
+    {{--<!-- Testimonial content -->--}}
 
     <!-- Contact content -->
+
+
     <section class="contact-wrap" id="contact">
         <div class="container">
             <div class="row">
-                <div class="fade-text animated">
+
+                <div class="col-lg-12">
                     <h3>Contactanos</h3>
                     <div class="line1"></div>
-                    <p>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <p style="padding: 20px 30px">
                         Envianos un mensaje a través de cualquiera de nuestros medios de comunicación y a la brevedad te estaremos respondiendo para que
                         podamos coordinar un encuentro ( presencial o virtual ) en el que nos puedas contar sobre tus ideas.
                         Estaremos siempre dispuestos a empezar un nuevo proyecto.
                     </p>
                 </div>
-                <div class="space80"></div>
-                <div class="col-md-12 no-padding">
-                    <div class="col-md-4 contact-info animated">
-                        <h5><i class="fa fa-phone"></i> Teléfono</h5>
-                        <p>+54-911-6358-3276</p>
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div style="padding: 20px 30px">
+                        <form method="post" action="{{ asset('formulario/sendemail.php') }}" id="wrapped">
+{{--                        <form method="post" action="{{ route('contacto.post') }}" id="wrapped">--}}
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <div id="middle-wizard">
+                                <div class="submit step">
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="form-control required" placeholder="Nombre">
+                                        <i class="icon-user"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="last_name" class="form-control required" placeholder="Apellido">
+                                        <i class="icon-user"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control required" placeholder="Email">
+                                        <i class="icon-envelope"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="phone" class="form-control" placeholder="Telefono">
+                                        <i class="icon-phone"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control notes" name="message" placeholder="Comentario"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" name="process" class="btn btn-primary pull-right">Enviar</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-md-4 contact-info animated">
-                        <h5><i class="fa fa-map-marker"></i> Dirección</h5>
-                        <p>Belgrano, Buenos Aires.<br>Argentina</p>
-                    </div>
-                    <div class="col-md-4 contact-info animated">
-                        <h5><i class="fa fa-envelope-o"></i> Email</h5>
-                        <p>
-                            lucas@verticedigital.com.ar<br>
-                            fernando@verticedigital.com.ar
-                        </p>
-                    </div>
+
                 </div>
+
+                <div class="col-lg-12">
+
+                    <div class="space80"></div>
+                    <div class="col-md-12 no-padding">
+                        <div class="col-md-4 contact-info animated">
+                            <h5><i class="fa fa-phone"></i> Teléfono</h5>
+                            <p>+54-911-6358-3276</p>
+                        </div>
+                        <div class="col-md-4 contact-info animated">
+                            <h5><i class="fa fa-map-marker"></i> Dirección</h5>
+                            <p>Belgrano, Buenos Aires.<br>Argentina</p>
+                        </div>
+                        <div class="col-md-4 contact-info animated">
+                            <h5><i class="fa fa-envelope-o"></i> Email</h5>
+                            <p>
+                                lucas@verticedigital.com.ar<br>
+                                fernando@verticedigital.com.ar
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </section>

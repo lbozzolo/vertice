@@ -28,7 +28,7 @@ class ContactRequest extends FormRequest
             'name' => 'required|max:255',
             'email' => 'required|email',
             'phone' => 'max:255',
-            'msg' => 'required|max:1000'
+            'message' => 'required|max:1000'
         ];
     }
 
@@ -43,8 +43,8 @@ class ContactRequest extends FormRequest
 
             'phone.max' => 'El campo Teléfono no puede exceder los 255 caracteres',
 
-            'msg.required' => 'El campo Mensaje es obligatorio',
-            'msg.max' => 'El campo Mensaje no puede exceder los 1000 caracteres',
+            'message.required' => 'El campo Mensaje es obligatorio',
+            'message.max' => 'El campo Mensaje no puede exceder los 1000 caracteres',
         ];
     }
 }

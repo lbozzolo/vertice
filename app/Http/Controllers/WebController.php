@@ -2,14 +2,10 @@
 
 namespace Vertice\Http\Controllers;
 
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\URL;
 use Vertice\Http\Controllers\AppBaseController as AppBaseController;
 use Vertice\Http\Requests\ContactRequest;
-use Vertice\Models\Applicant;
 use Illuminate\Support\Facades\Mail;
 use Vertice\Models\Category;
-use Vertice\Models\Image;
 use Vertice\Models\Project;
 use Vertice\Models\Slider;
 
@@ -21,7 +17,6 @@ class WebController extends AppBaseController
         $data['slider'] = Slider::where('active', '!=', null)->first();
         $data['projects'] = Project::where('active', '=', 1)->get();
         $data['categories'] = Category::all();
-        //dd($data);
 
         return view('web.home')->with($data);
     }
@@ -31,15 +26,18 @@ class WebController extends AppBaseController
         return view('web.contact');
     }
 
-    public function sendDataApplicant(CreateApplicantRequest $request)
+    public function test()
     {
-        $input = $request->all();
-        $item = Applicant::create($input);
+        $data = array(
+            'name' => 'nombre',
+            'lastname' => 'apellido',
+            'email' => 'email',
+            'phone' => 'telefono',
+            'message' => 'mensaje',
+            'subject' => 'Contacto de cliente'
+        );
 
-        if (!$item)
-            return redirect()->back()->withErrors('Ocurrió un error. No se pudieron enviar los datos');
-
-        return Redirect::to(URL::previous() . "#contact")->with('ok', 'Se han enviado los datos con éxito');
+        return view('emails.contacto')->with(['data' => $data]);
     }
 
     public function postContacto(ContactRequest $request)
@@ -47,23 +45,29 @@ class WebController extends AppBaseController
         //dd($request->all());
 
         $data = array(
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'msg' => $request->msg,
+            'name' => $request['name'],
+            'lastname' => $request['last_name'],
+            'email' => $request['email'],
+            'phone' => $request['phone'],
+            'message' => $request['message'],
             'subject' => 'Contacto de cliente'
         );
 
+        //dd($data);
 
         Mail::send('emails.contacto', ['data' => $data], function($message) use ($data){
-            $message->to(config('mail.username'));
+            $message->to('lucas@verticedigital.com.ar');
+            $message->subject($data['subject']);
+            $message->from($data['email']);
+        });
+
+        Mail::send('emails.contacto', ['data' => $data], function($message) use ($data){
+            $message->to('fernando@verticedigital.com.ar');
             $message->subject($data['subject']);
             $message->from($data['email']);
         });
 
         return redirect()->back()->with('ok', 'Su correo se ha enviado con éxito.');
-
-
     }
 
 

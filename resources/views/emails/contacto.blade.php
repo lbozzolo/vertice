@@ -264,7 +264,7 @@
                                                                                     <td valign="middle" style='vertical-align: middle;'>
                                                                                         <div class='contentEditableContainer contentTextEditable'>
                                                                                             <div class='contentEditable' style='text-align: left;font-weight: light; color:#555555;font-size:26;line-height: 39px;font-family: Helvetica Neue;'>
-                                                                                                <h1 class='big'>AMGHI</h1>
+                                                                                                <h1 class='big'>Vértice Digital</h1>
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>
@@ -308,7 +308,7 @@
                                                                                             <div class='contentEditable' style='text-align: center;'>
                                                                                                 <h2 style="font-size: 20px;">Contacto vía web de {!! $data['name'] !!}</h2>
                                                                                                 <br>
-                                                                                                <p>{!! $data['msg'] !!}</p>
+                                                                                                <p>{!! $data['message'] !!}</p>
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>

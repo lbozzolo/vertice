@@ -24,6 +24,11 @@ Route::get('home', function () {
 
 //Route::group(['prefix' => 'web'], function () {
 
+    Route::get('test', [
+        'as' => 'home',
+        'uses' => 'WebController@test'
+    ]);
+
     Route::get('/', [
         'as' => 'home',
         'uses' => 'WebController@index'
@@ -34,6 +39,11 @@ Route::get('home', function () {
     Route::get('/contacto', [
         'as' => 'contacto',
         'uses' => 'WebController@contacto'
+    ]);
+
+    Route::post('contacto', [
+        'as' => 'contacto.post',
+        'uses' => 'WebController@postContacto'
     ]);
 
 

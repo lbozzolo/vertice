@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
 
             $table->increments('id');
             $table->string('title');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('url')->nullable();
             $table->integer('active')->nullable();
 

@@ -77,7 +77,7 @@
                                 <div class="form-group d-flex justify-content-between">
                                     <div class="form-check form-check-flat mt-0">
                                         <label class="form-check-label">
-                                            <input type="checkbox" name="remember" class="form-check-input" checked> Recordarme
+                                            <input type="checkbox" name="remember" class="form-check-input" > Recordarme
                                         </label>
                                     </div>
                                     <a href="{{ url('/password/reset') }}" class="text-small forgot-password text-black">Olvidé mi contraseña</a>
