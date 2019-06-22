@@ -253,18 +253,21 @@
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-cellphone-android" style="font-size: 5em"></i>
                             <h4>Aplicaciones Mobile</h4>
+                            <p>En Vertice somos especialistas en el desarrollo de aplicaciones para iOS y Android.</p>
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-tune-vertical" style="font-size: 5em"></i>
                             <h4>Sitios autoadministrables</h4>
+                            <p>Desarrollo de productos personalizados con tecnología web que se adaptan a tus necesidades</p>
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-email-outline" style="font-size: 5em"></i>
                             <h4>Envío de Newsletter</h4>
+                            <p>Utilice la poderosa herramienta de comunicación y marketing que le brinda nuestro servicio de envíos de Newsletters para sus clientes.</p>
                         </div>
                     </div>
                 </div>
@@ -273,25 +276,31 @@
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-wordpress" style="font-size: 5em"></i>
                             <h4>Moodle / Wordpress</h4>
+                            <p>Desarrollamos y brindamos soporte sobre plataformas de elearning y Wordpress para nuestros clientes.</p>
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-laptop-mac" style="font-size: 5em"></i>
                             <h4>Diseño Web</h4>
+                            <p>Ofrecemos una solución integral a tu empresa, complementamos tus desarrollos con sitios webs dinámicos desarrollados con las últimas tecnologías.</p>
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-wrench" style="font-size: 5em"></i>
                             <h4>Soporte</h4>
+                            <p>Brindamos la mejor atención personalizada para nuestros clientes proporcionándoles un servicio de calidad.</p>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-12 no-padding">
                     {{--nuevos--}}
                     <div class="col-md-4 service-content animated">
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-radio-tower" style="font-size: 5em"></i>
                             <h4>Streaming</h4>
+                            <p>Sus oyentes podrán escuchar o visualizar lo que transmita a través de internet en tiempo real a traves de nuestro servicio de Streaming para radios.</p>
                         </div>
                     </div>
 
@@ -299,6 +308,7 @@
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-widgets" style="font-size: 5em"></i>
                             <h4>Desarrollos a medida</h4>
+                            <p>Nos ajustamos a las necesidades de tus ideas: buscamos la manera más simple y eficiente de concretar tu proyecto.</p>
                         </div>
                     </div>
 
@@ -306,25 +316,32 @@
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-account-location" style="font-size: 5em"></i>
                             <h4>Consultoría</h4>
+                            <p>Ponemos a disposición nuestra experiencia en más de 100 soluciones exitosas para asesorar a tu equipo de trabajo en proyectos tecnológicos.</p>
                         </div>
                     </div>
                     {{--fin nuevos--}}
+                </div>
+                <div class="col-md-12 no-padding">
                     <div class="col-md-4 service-content animated">
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-database" style="font-size: 5em"></i>
                             <h4>Hosting</h4>
+                            <p>Brindamos todas las alternativas de almacenamiento de su web acorde a lo necesario.</p>
+
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-cart-outline" style="font-size: 5em"></i>
                             <h4>Tienda online</h4>
+                            <p>Desarrollos seguros y confiables para implementar su tienda online en el competitivo mundo digital.</p>
                         </div>
                     </div>
                     <div class="col-md-4 service-content animated">
                         <div class="service-content-inner text-center">
                             <i class="mdi mdi-currency-usd" style="font-size: 5em"></i>
                             <h4>Marketing digital</h4>
+                            <p>Nos especializamos en brindar soluciones integrales de marketing y publicidad online para empresas de todos los rubros.</p>
                         </div>
                     </div>
                 </div>
