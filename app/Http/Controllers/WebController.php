@@ -56,7 +56,8 @@ class WebController extends AppBaseController
         //dd($data);
 
         Mail::send('emails.contacto', ['data' => $data], function($message) use ($data){
-            $message->to(['lucas@verticedigital.com.ar', 'fernando@verticedigital.com.ar']);
+//            $message->to(['lucas@verticedigital.com.ar', 'fernando@verticedigital.com.ar']);
+            $message->to(explode(',', env('ADMIN_EMAILS')));
             $message->subject($data['subject']);
             $message->from($data['email']);
         });
