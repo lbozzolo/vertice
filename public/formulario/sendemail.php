@@ -2,8 +2,8 @@
 
 // Define some constants
 define( "RECIPIENT_NAME", "Vertice Digital" );
-//define( "RECIPIENT_EMAIL", "fernando@verticedigital.com.ar" );
-define( "RECIPIENT_EMAIL", "lucas@verticedigital.com.ar" );
+define( "RECIPIENT_EMAIL1", "fernando@verticedigital.com.ar" );
+define( "RECIPIENT_EMAIL2", "lucas@verticedigital.com.ar" );
 
 
 // Read the form values
@@ -16,12 +16,14 @@ $message = isset( $_POST['message'] ) ? preg_replace( "/(From:|To:|BCC:|CC:|Subj
 
 // If all values exist, send the email
 if ( $senderName && $senderEmail && $phone && $message) {
-  $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
+  $recipient1 = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL1 . ">";
+  $recipient2 = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL2 . ">";
   $headers = "De: " . $senderName . " <" . $senderEmail . ">";
   //$msgBody = " Telefono: " . $phone . " Mensaje: " . $message . "";
   $msgBody = " Telefono: ". $phone . " --- ";
   $msgBody .= " Mensaje: " . $message;
-  $success = mail( $recipient, $headers, $msgBody );
+  $success1 = mail( $recipient1, $headers, $msgBody );
+  $success2 = mail( $recipient2, $headers, $msgBody );
 
   //Set Location After Successsfull Submission
   header('Location: /');
