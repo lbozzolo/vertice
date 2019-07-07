@@ -448,69 +448,80 @@
                     <div class="line1"></div>
                 </div>
 
-                <div class="col-lg-6 col-md-6">
-                    <p style="padding: 20px 30px">
-                        Envianos un mensaje a través de cualquiera de nuestros medios de comunicación y a la brevedad te estaremos respondiendo para que
-                        podamos coordinar un encuentro ( presencial o virtual ) en el que nos puedas contar sobre tus ideas.
-                        Estaremos siempre dispuestos a empezar un nuevo proyecto.
-                    </p>
-                </div>
+                {{--<div class="col-lg-6 col-md-6">--}}
+                    {{--<p style="padding: 20px 30px">--}}
+                        {{--Envianos un mensaje a través de cualquiera de nuestros medios de comunicación y a la brevedad te estaremos respondiendo para que--}}
+                        {{--podamos coordinar un encuentro ( presencial o virtual ) en el que nos puedas contar sobre tus ideas.--}}
+                        {{--Estaremos siempre dispuestos a empezar un nuevo proyecto.--}}
+                    {{--</p>--}}
+                {{--</div>--}}
 
-                <div class="col-lg-6 col-md-6">
+                {{--<div class="col-lg-6 col-md-6">--}}
 
-                    <div style="padding: 20px 30px">
-                        <form method="post" action="{{ asset('formulario/sendemail.php') }}" id="wrapped">
-{{--                        <form method="post" action="{{ route('contacto.post') }}" id="wrapped">--}}
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <div id="middle-wizard">
-                                <div class="submit step">
-                                    <div class="form-group">
-                                        <input type="text" name="name" class="form-control required" placeholder="Nombre">
-                                        <i class="icon-user"></i>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="last_name" class="form-control required" placeholder="Apellido">
-                                        <i class="icon-user"></i>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" name="email" class="form-control required" placeholder="Email">
-                                        <i class="icon-envelope"></i>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="phone" class="form-control" placeholder="Telefono">
-                                        <i class="icon-phone"></i>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control notes" name="message" placeholder="Comentario"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <button type="submit" name="process" class="btn btn-primary pull-right">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
+                    {{--<div style="padding: 20px 30px">--}}
+{{--                        <form method="post" action="{{ asset('formulario/sendemail.php') }}" id="wrapped">--}}
+                        {{--<form method="post" action="{{ route('contacto.post') }}" id="wrapped">--}}
+                            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
 
-                </div>
+                            {{--<div id="middle-wizard">--}}
+                                {{--<div class="submit step">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<input type="text" name="name" class="form-control required" placeholder="Nombre">--}}
+                                        {{--<i class="icon-user"></i>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<input type="text" name="last_name" class="form-control required" placeholder="Apellido">--}}
+                                        {{--<i class="icon-user"></i>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<input type="email" name="email" class="form-control required" placeholder="Email">--}}
+                                        {{--<i class="icon-envelope"></i>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<input type="text" name="phone" class="form-control" placeholder="Telefono">--}}
+                                        {{--<i class="icon-phone"></i>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<textarea class="form-control notes" name="message" placeholder="Comentario"></textarea>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="form-group" style="text-align: left">--}}
+                                        {{--{!! Captcha::img() !!}--}}
+                                        {{--{!! Form::text('captcha', null, ['class' => 'form-control', 'placeholder' => 'Ingrese los caracteres del captcha']) !!}--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div>--}}
+                                {{--<button type="submit" name="process" class="btn btn-primary pull-right">Enviar</button>--}}
+                            {{--</div>--}}
+                        {{--</form>--}}
+                    {{--</div>--}}
+
+                {{--</div>--}}
 
                 <div class="col-lg-12">
 
                     <div class="space80"></div>
                     <div class="col-md-12 no-padding">
-                        <div class="col-md-4 contact-info animated">
+                        <div class="col-md-3 contact-info animated">
                             <h5><i class="fa fa-phone"></i> Teléfono</h5>
                             <p>+54-911-6358-3276</p>
                         </div>
-                        <div class="col-md-4 contact-info animated">
+                        <div class="col-md-3 contact-info animated">
                             <h5><i class="fa fa-map-marker"></i> Dirección</h5>
                             <p>Belgrano, Buenos Aires.<br>Argentina</p>
                         </div>
-                        <div class="col-md-4 contact-info animated">
+                        <div class="col-md-3 contact-info animated">
                             <h5><i class="fa fa-envelope-o"></i> Email</h5>
                             <p>
                                 lucas@verticedigital.com.ar<br>
                                 fernando@verticedigital.com.ar
                             </p>
+                        </div>
+                        <div class="col-md-3 contact-info animated">
+                            <a href="{!! route('contacto') !!}">
+                            <h5><i class="fa fa-arrow-circle-right"></i> Directo</h5>
+                            <p>Formulario de contacto</p>
+                            </a>
                         </div>
                     </div>
 

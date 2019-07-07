@@ -35,7 +35,8 @@
                         {{--<a href="./blog.html">Blog</a>--}}
                     {{--</li>--}}
                     <li class="page-scroll">
-                        <a href="#contact">Contacto</a>
+                        {{--<a href="#contact">Contacto</a>--}}
+                        <a href="{!! route('contacto') !!}">Contacto</a>
                     </li>
                 </ul>
             </div>

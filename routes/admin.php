@@ -38,7 +38,6 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'MediaController@createPresent'
     ]);
 
-
     // Imágenes
 
     Route::get('imagenes/{file}', [

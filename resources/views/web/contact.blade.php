@@ -89,48 +89,55 @@
                 <!-- /top-wizard -->
 
 
-                <form method="post" action="{{ asset('formulario/sendemail.php') }}" id="wrapped">
+{{--                <form method="post" action="{{ asset('formulario/sendemail.php') }}" id="wrapped">--}}
+                <form method="post" action="{{ route('contacto.post') }}" id="wrapped">
+
+                    {!! csrf_field() !!}
+
+                    @include('vendor.flash.message')
 
                     <div id="middle-wizard">
 
-                        <!-- /step-->
-
-
-                        <!-- /step-->
-
                         <div class="submit step">
-                            <h3 class="main_question">Por favor completá la información y nos comunicaremos a la brevedad.</h3>
+                            <p class="main_question">
+                                Envianos un mensaje a través de cualquiera de nuestros medios de comunicación y a la brevedad te estaremos respondiendo para que
+                                podamos coordinar un encuentro ( presencial o virtual ) en el que nos puedas contar sobre tus ideas.
+                                Estaremos siempre dispuestos a empezar un nuevo proyecto.
+                            </p>
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control required" placeholder="Nombre">
+                                {!! Form::text('name', null, ['class' => 'form-control required', 'placeholder' => 'Nombre']) !!}
                                 <i class="icon-user"></i>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="last_name" class="form-control required" placeholder="Apellido">
+                                {!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Apellido']) !!}
                                 <i class="icon-user"></i>
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control required" placeholder="Email">
+                                {!! Form::email('email', null, ['class' => 'form-control required', 'placeholder' => 'Email']) !!}
                                 <i class="icon-envelope"></i>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="phone" class="form-control" placeholder="Telefono">
+                                {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Teléfono']) !!}
                                 <i class="icon-phone"></i>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control notes" name="message" placeholder="Comentario"></textarea>
+                                {!! Form::textarea('message', null, ['class' => 'form-control notes required', 'placeholder' => 'Mensaje']) !!}
+                            </div>
+                            <div class="form-group" style="text-align: left">
+                                {!! Captcha::img() !!}
+                                {!! Form::text('captcha', null, ['class' => 'form-control required', 'autocomplete' => 'off', 'placeholder' => 'Ingrese los caracteres del captcha']) !!}
                             </div>
                         </div>
-                        <!-- /step-->
 
                     </div>
-                    <!-- /middle-wizard -->
+
                     <div>
                         <button type="submit" name="process" class="submit">Enviar</button>
                     </div>
-                    <!-- /bottom-wizard -->
+
                 </form>
             </div>
-            <!-- /Wizard container -->
+
 
             <div class="footer">
 
