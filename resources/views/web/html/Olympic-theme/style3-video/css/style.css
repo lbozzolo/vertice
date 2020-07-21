@@ -318,7 +318,7 @@ a:focus {
 
 .facts-content {
     padding: 130px 0;
-    background:#313131 url(../demo/bg/4.jpg) no-repeat center;
+    /*background:#313131 url(../demo/bg/4.jpg) no-repeat center;*/
     background-size: 100% auto;
     position: relative;
 }
