@@ -19,9 +19,6 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-<!-- Google Webfonts -->
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
-
 <!-- CSS -->
 <link rel="stylesheet" href="{{ asset('template-web/css/bootstrap.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('template-web/font-awesome/css/font-awesome.min.css') }}">
@@ -37,6 +34,9 @@
 <script src="{{ asset('template-web/js/html5shiv.js') }}"></script>
 <script src="{{ asset('template-web/js/respond.js') }}"></script>
 <![endif]-->
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
 
 @yield('css')
